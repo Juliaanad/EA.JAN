@@ -79,12 +79,13 @@
       border-radius: 16px;
       border: 1px solid rgba(42, 97, 69, 0.12);
       overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.15s ease-out, box-shadow 0.2s;
       background: var(--cream);
+      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
     }
 
     .work-card:hover {
-      transform: translateY(-4px);
+      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(calc(var(--drift, 0px) - 4px));
       box-shadow: 0 16px 48px rgba(42, 97, 69, 0.12);
     }
 
@@ -428,11 +429,12 @@
       border-radius: 16px;
       padding: 2rem;
       border: 1px solid rgba(42, 97, 69, 0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.15s ease-out, box-shadow 0.2s;
+      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
     }
 
     .service-card:hover {
-      transform: translateY(-4px);
+      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(calc(var(--drift, 0px) - 4px));
       box-shadow: 0 12px 40px rgba(42, 97, 69, 0.1);
     }
 
@@ -533,28 +535,6 @@
 
     .contact-meta { font-size: 0.72rem; color: rgba(255,255,255,0.38); margin-bottom: 0.15rem; }
 
-    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-
-    .contact-form input,
-    .contact-form textarea {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 10px;
-      padding: 0.9rem 1.2rem;
-      color: var(--white);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.88rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder { color: rgba(255,255,255,0.3); }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus { border-color: var(--rose-light); }
-
-    .contact-form textarea { resize: vertical; min-height: 120px; }
 
     /* FOOTER */
     footer {
@@ -715,11 +695,12 @@
       display: flex;
       flex-direction: column;
       gap: 1.4rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.15s ease-out, box-shadow 0.2s;
+      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
     }
 
     .testimonial-card:hover {
-      transform: translateY(-4px);
+      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(calc(var(--drift, 0px) - 4px));
       box-shadow: 0 16px 48px rgba(42, 97, 69, 0.1);
     }
 
@@ -810,49 +791,21 @@
       .etsy-bar-phases { flex: none; width: 100%; justify-content: flex-start; }
     }
 
-    /* GLOW HALO ON HOVER */
-    .work-card:hover,
-    .service-card:hover,
-    .testimonial-card:hover {
-      box-shadow:
-        0 0 0 1.5px rgba(87, 150, 122, 0.35),
-        0 0 18px rgba(87, 150, 122, 0.45),
-        0 0 55px rgba(42, 97, 69, 0.22),
-        0 20px 50px rgba(42, 97, 69, 0.18);
-    }
-
     .stat-card {
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .stat-card:hover {
       transform: translateY(-3px);
-      box-shadow:
-        0 0 0 1.5px rgba(87, 150, 122, 0.35),
-        0 0 18px rgba(87, 150, 122, 0.45),
-        0 0 50px rgba(42, 97, 69, 0.2),
-        0 12px 36px rgba(42, 97, 69, 0.14);
-    }
-
-    .portfolio-img-card:hover {
-      box-shadow:
-        0 0 0 1.5px rgba(87, 150, 122, 0.35),
-        0 0 18px rgba(87, 150, 122, 0.4),
-        0 0 50px rgba(42, 97, 69, 0.18),
-        0 12px 36px rgba(42, 97, 69, 0.14);
     }
 
     .canva-slide,
     .canva-slide-wide {
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.15s ease-out, box-shadow 0.2s;
+      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
     }
     .canva-slide:hover,
     .canva-slide-wide:hover {
-      transform: translateY(-3px);
-      box-shadow:
-        0 0 0 1.5px rgba(87, 150, 122, 0.35),
-        0 0 18px rgba(87, 150, 122, 0.45),
-        0 0 50px rgba(42, 97, 69, 0.2),
-        0 12px 36px rgba(42, 97, 69, 0.14);
+      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(calc(var(--drift, 0px) - 3px));
     }
 
   </style>
@@ -1147,10 +1100,6 @@
             <div class="canva-slide-label">Pest-Ex: Job Posting</div>
           </div>
           <div class="canva-slide">
-            <img src="CANVA%20Sample.png" alt="Event Poster" />
-            <div class="canva-slide-label">Event Poster</div>
-          </div>
-          <div class="canva-slide">
             <img src="Tinidor%20Foods%20.PNG" alt="Tinidor Foods: Kitchen Menu" />
             <div class="canva-slide-label">Tinidor Foods: Kitchen Menu Design</div>
           </div>
@@ -1177,6 +1126,10 @@
           <div class="canva-slide">
             <img src="EVE'S%20GARDEN%2013.JPG" alt="Eve's Garden: Venue & Catering" />
             <div class="canva-slide-label">Eve's Garden: Venue & Catering Packages</div>
+          </div>
+          <div class="canva-slide">
+            <img src="CANVA%20Sample.png" alt="Canva Sample" />
+            <div class="canva-slide-label">Event Poster</div>
           </div>
         </div>
       </div>
@@ -1345,7 +1298,7 @@
       <div class="canva-carousel-wrap" style="background:var(--charcoal);margin-left:-2.5rem;margin-right:-2.5rem;padding:2.5rem 2.5rem 2rem;">
         <p class="section-label" style="margin-bottom:0.4rem;color:var(--rose-light);">Portfolio</p>
         <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);margin-bottom:1rem;">Credentials and certifications that back my expertise.</p>
-        <div class="canva-carousel">
+        <div class="canva-carousel" style="justify-content:center;">
           <div class="canva-slide-wide">
             <img src="SOP%20previous%20works.JPG" alt="Udemy: Executive Business Assistant Certificate" />
             <div class="canva-slide-label">Udemy: Executive Business Assistant Certificate</div>
@@ -1465,21 +1418,14 @@
     <div class="section-inner" style="max-width:680px;">
       <p class="section-label" style="text-align:center;">Get In Touch</p>
       <h2 class="section-title" style="text-align:center;">Let's work <em>together.</em></h2>
-      <p class="section-subtitle" style="text-align:center;margin:0.8rem auto 2.5rem;max-width:480px;">Available for remote opportunities worldwide. Fill in the form below and I'll get back to you.</p>
+      <p class="section-subtitle" style="text-align:center;margin:0.8rem auto 2.5rem;max-width:480px;">Available for remote opportunities worldwide. Reach out directly and I'll get back to you.</p>
 
-      <form class="contact-form" onsubmit="sendEmail(event)">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-          <input type="text" id="cf-name" placeholder="Your Name" required />
-          <input type="email" id="cf-email" placeholder="Your Email" required />
-        </div>
-        <input type="text" id="cf-subject" placeholder="Subject (e.g. VA Role, Project Inquiry)" />
-        <textarea id="cf-message" placeholder="Tell me about your role, project, or how I can help..." required style="min-height:140px;"></textarea>
-        <button type="submit" class="btn-primary" style="width:100%;font-size:0.9rem;padding:1rem;border-radius:10px;border:none;cursor:pointer;">Send Message</button>
-      </form>
+      <div style="display:flex;justify-content:center;">
+        <a href="mailto:juliaangnadal@gmail.com" class="btn-primary" style="font-size:0.95rem;padding:1rem 2.2rem;">✉ Email Me</a>
+      </div>
 
       <div style="margin-top:1.8rem;text-align:center;font-size:0.82rem;color:rgba(255,255,255,0.45);">
-        Or reach me directly at &nbsp;
-        <a href="mailto:juliaangnadal@gmail.com" style="color:var(--rose-light);text-decoration:underline;">juliaangnadal@gmail.com</a>
+        juliaangnadal@gmail.com
       </div>
     </div>
   </section>
@@ -1489,30 +1435,6 @@
     <p>© 2026 Julia N. · <a href="mailto:juliaangnadal@gmail.com">juliaangnadal@gmail.com</a> · Manila, Philippines</p>
     <p style="margin-top:0.5rem;font-size:0.68rem;color:rgba(255,255,255,0.18);">All portfolio materials are original works by Julia N. Published with client consent. Unauthorized use is prohibited.</p>
   </footer>
-
-  <script>
-    function sendEmail(e) {
-      e.preventDefault();
-      const name    = document.getElementById('cf-name').value.trim();
-      const email   = document.getElementById('cf-email').value.trim();
-      const subject = document.getElementById('cf-subject').value.trim() || 'Inquiry from Portfolio';
-      const message = document.getElementById('cf-message').value.trim();
-
-      const body = `Hi Julia,\n\nName: ${name}\nEmail: ${email}\n\n${message}`;
-      window.location.href =
-        `mailto:juliaangnadal@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      const btn = e.target.querySelector('button');
-      btn.textContent = 'Opening your email app...';
-      btn.style.background = '#4caf87';
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.style.background = '';
-        e.target.reset();
-      }, 3000);
-    }
-  </script>
-
 
   <canvas id="particles" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
   <script>
@@ -1549,6 +1471,54 @@
     draw();
   </script>
 
+  <script>
+    (function () {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+
+      const cards = document.querySelectorAll(
+        '.work-card, .service-card, .testimonial-card, .canva-slide, .canva-slide-wide'
+      );
+      if (!cards.length) return;
+
+      // Slightly different speeds per card so they drift at different rates, giving a sense of depth.
+      const speeds = [0.85, 1, 1.15, 0.95, 1.1];
+      const items = Array.from(cards).map((el, i) => ({ el, speed: speeds[i % speeds.length] }));
+
+      const MAX_TILT = 7;   // degrees
+      const MAX_DRIFT = 22; // px
+      let ticking = false;
+
+      function update() {
+        const vh = window.innerHeight;
+        const center = vh / 2;
+
+        items.forEach(({ el, speed }) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.bottom < -300 || rect.top > vh + 300) return;
+
+          const cardCenter = rect.top + rect.height / 2;
+          const progress = Math.max(-1, Math.min(1, (cardCenter - center) / center));
+
+          el.style.setProperty('--tilt', `${(progress * -MAX_TILT * speed).toFixed(2)}deg`);
+          el.style.setProperty('--drift', `${(progress * MAX_DRIFT * speed).toFixed(1)}px`);
+        });
+
+        ticking = false;
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      update();
+    })();
+  </script>
 
 </body>
 </html>
