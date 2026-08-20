@@ -633,6 +633,7 @@
     .canva-carousel-wrap { margin-top: 3rem; }
     .canva-carousel {
       display: flex;
+      align-items: flex-start;
       gap: 1rem;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
@@ -1531,8 +1532,15 @@
       if (!cards.length) return;
 
       // Slightly different speeds per card so they drift at different rates, giving a sense of depth.
+      // Cards inside a horizontal carousel all share one speed. Otherwise neighbours in the same
+      // row drift and tilt by different amounts, and their labels stop lining up.
       const speeds = [0.85, 1, 1.15, 0.95, 1.1];
-      const items = Array.from(cards).map((el, i) => ({ el, speed: speeds[i % speeds.length] }));
+      const rows = Array.from(document.querySelectorAll('.canva-carousel'));
+      const items = Array.from(cards).map((el, i) => {
+        const row = el.closest('.canva-carousel');
+        const idx = row ? rows.indexOf(row) : i;
+        return { el, speed: speeds[idx % speeds.length] };
+      });
 
       const MAX_TILT = 7;   // degrees
       const MAX_DRIFT = 22; // px
