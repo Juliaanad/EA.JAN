@@ -68,7 +68,7 @@
     .nav-links a:hover { color: var(--rose-light); }
 
     /* WORK SAMPLES */
-    #work { background: #cfe4d6; }
+    #work { background: var(--white); }
 
     .work-grid {
       display: grid;
@@ -182,7 +182,7 @@
       display: flex;
       align-items: center;
       padding: 7rem 2.5rem 4rem;
-      background: linear-gradient(135deg, #dcefe4 0%, #c9e2d5 50%, #b6d8c6 100%);
+      background: linear-gradient(135deg, #faf8f3 0%, #edf4ee 50%, #e8f5ec 100%);
       position: relative;
       overflow: hidden;
     }
@@ -353,30 +353,6 @@
     section { padding: 6rem 2.5rem; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
 
-    /* Soft section boundaries: each section fades in from the colour of the
-       one above it, so no hard horizontal seam. */
-    section { position: relative; }
-    .section-inner { position: relative; z-index: 1; }
-    #about::before,
-    #services::before,
-    #skills::before,
-    #work::before,
-    #contact::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 130px;
-      pointer-events: none;
-      z-index: 0;
-    }
-    #about::before    { background: linear-gradient(to bottom, #b6d8c6, #ffffff); }
-    #services::before { background: linear-gradient(to bottom, #ffffff, #172b1c); }
-    #skills::before   { background: linear-gradient(to bottom, #172b1c, #ffffff); }
-    #work::before     { background: linear-gradient(to bottom, #ffffff, #cfe4d6); }
-    #contact::before  { background: linear-gradient(to bottom, #cfe4d6, #172b1c); }
-
     .section-label {
       font-size: 0.7rem;
       letter-spacing: 0.2em;
@@ -485,7 +461,7 @@
     .service-card p { font-size: 0.85rem; color: var(--mid); line-height: 1.7; }
 
     /* SKILLS */
-    #skills { background: var(--white); }
+    #skills { background: var(--blush); }
 
     .skills-grid {
       display: grid;
