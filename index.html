@@ -700,12 +700,47 @@
       align-items: center;
       justify-content: flex-end;
       gap: 0.4rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.04em;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.5);
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.78);
       margin-bottom: 0.6rem;
       user-select: none;
+    }
+
+    .certs-scroller { position: relative; }
+    .carousel-nav {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(20, 40, 30, 0.72);
+      color: #fff;
+      font-size: 1.25rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 4;
+      padding: 0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      transition: background 0.2s, border-color 0.2s, opacity 0.2s;
+    }
+    .carousel-nav:hover {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--charcoal);
+      border-color: transparent;
+    }
+    .carousel-nav.prev { left: 8px; }
+    .carousel-nav.next { right: 8px; }
+    .carousel-nav[hidden] { display: none; }
+    @media (max-width: 600px) {
+      .carousel-nav { width: 38px; height: 38px; font-size: 1.05rem; }
     }
     .swipe-hint span {
       display: inline-block;
@@ -1340,6 +1375,9 @@
         <p class="section-label" style="margin-bottom:0.4rem;color:var(--rose-light);">Portfolio</p>
         <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);margin-bottom:1rem;">Credentials and certifications that back my expertise.</p>
         <div class="swipe-hint">Swipe for more <span aria-hidden="true">&rarr;</span></div>
+        <div class="certs-scroller">
+        <button type="button" class="carousel-nav prev" aria-label="Previous certificates" hidden>&#8592;</button>
+        <button type="button" class="carousel-nav next" aria-label="Next certificates">&#8594;</button>
         <div class="canva-carousel certs">
           <div class="canva-slide-wide">
             <img src="SOP%20previous%20works.JPG" alt="Udemy: Executive Business Assistant Certificate" />
@@ -1357,6 +1395,7 @@
             <img src="ClickUp%20Brain%20Certificate.jpg" alt="ClickUp: Brain Expert Certified" />
             <div class="canva-slide-label">ClickUp: Brain Expert Certified</div>
           </div>
+        </div>
         </div>
       </div>
 
@@ -1577,5 +1616,30 @@
     })();
   </script>
 
+<script>
+  // Arrow controls for the certificates carousel.
+  (function () {
+    const row = document.querySelector('.canva-carousel.certs');
+    const prev = document.querySelector('.carousel-nav.prev');
+    const next = document.querySelector('.carousel-nav.next');
+    if (!row || !prev || !next) return;
+
+    function step() {
+      const card = row.querySelector('.canva-slide-wide');
+      return (card ? card.offsetWidth : 500) + 16;
+    }
+    function sync() {
+      const max = row.scrollWidth - row.clientWidth - 2;
+      prev.hidden = row.scrollLeft <= 2;
+      next.hidden = max <= 0 || row.scrollLeft >= max;
+    }
+    prev.addEventListener('click', () => row.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next.addEventListener('click', () => row.scrollBy({ left: step(), behavior: 'smooth' }));
+    row.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    window.addEventListener('load', sync);
+    sync();
+  })();
+</script>
 </body>
 </html>
