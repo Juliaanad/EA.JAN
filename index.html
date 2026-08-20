@@ -678,6 +678,47 @@
       font-weight: 500;
     }
 
+    /* Certificates carousel: identical image box so every label lines up */
+    .canva-carousel.certs .canva-slide-wide {
+      display: flex;
+      flex-direction: column;
+    }
+    .canva-carousel.certs .canva-slide-wide img {
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      background: #fff;
+      padding: 0.75rem;
+    }
+    .canva-carousel.certs .canva-slide-label {
+      margin-top: auto;
+      border-top: 1px solid rgba(42, 97, 69, 0.1);
+    }
+
+    .swipe-hint {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 0.6rem;
+      user-select: none;
+    }
+    .swipe-hint span {
+      display: inline-block;
+      font-size: 1rem;
+      animation: swipeNudge 1.6s ease-in-out infinite;
+    }
+    @keyframes swipeNudge {
+      0%, 100% { transform: translateX(0); opacity: 0.55; }
+      50%      { transform: translateX(6px); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .swipe-hint span { animation: none; opacity: 0.9; }
+    }
+
     /* TESTIMONIALS */
     #testimonials { background: var(--cream); }
 
@@ -1297,7 +1338,8 @@
       <div class="canva-carousel-wrap" style="background:var(--charcoal);margin-left:-2.5rem;margin-right:-2.5rem;padding:2.5rem 2.5rem 2rem;">
         <p class="section-label" style="margin-bottom:0.4rem;color:var(--rose-light);">Portfolio</p>
         <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);margin-bottom:1rem;">Credentials and certifications that back my expertise.</p>
-        <div class="canva-carousel">
+        <div class="swipe-hint">Swipe for more <span aria-hidden="true">&rarr;</span></div>
+        <div class="canva-carousel certs">
           <div class="canva-slide-wide">
             <img src="SOP%20previous%20works.JPG" alt="Udemy: Executive Business Assistant Certificate" />
             <div class="canva-slide-label">Udemy: Executive Business Assistant Certificate</div>
