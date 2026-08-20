@@ -21,6 +21,7 @@
     html { scroll-behavior: smooth; }
 
     body {
+      overflow-x: clip;
       font-family: 'Inter', sans-serif;
       background: var(--cream);
       color: var(--charcoal);
@@ -673,26 +674,31 @@
       display: block;
     }
     .canva-slide-label {
-      padding: 0.65rem 0.9rem;
+      padding: 0.5rem 0.75rem;
       font-size: 0.75rem;
+      line-height: 1.3;
       color: var(--mid);
       font-weight: 500;
     }
 
-    /* Certificates carousel: identical image box so every label lines up */
-    .canva-carousel.certs .canva-slide-wide {
-      display: flex;
-      flex-direction: column;
+    /* Full-bleed green band for the certificates section */
+    .certs-band {
+      background: var(--rose);
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 3rem calc(50vw - 50%) 2.5rem;
     }
+
+    /* Certificates: one identical image box, filled edge to edge, so every
+       card is the same size and the labels sit on one line. */
     .canva-carousel.certs .canva-slide-wide img {
       aspect-ratio: 4 / 3;
-      object-fit: contain;
-      background: #fff;
-      padding: 0.75rem;
+      object-fit: cover;
+      object-position: center;
     }
     .canva-carousel.certs .canva-slide-label {
-      margin-top: auto;
-      border-top: 1px solid rgba(42, 97, 69, 0.1);
+      padding: 0.5rem 0.75rem;
+      line-height: 1.3;
     }
 
     .swipe-hint {
@@ -1371,8 +1377,8 @@
       </div>
 
       <!-- Portfolio / Certificates Carousel -->
-      <div class="canva-carousel-wrap" style="background:var(--charcoal);margin-left:-2.5rem;margin-right:-2.5rem;padding:2.5rem 2.5rem 2rem;">
-        <p class="section-label" style="margin-bottom:0.4rem;color:var(--rose-light);">Portfolio</p>
+      <div class="canva-carousel-wrap certs-band">
+        <p class="section-label" style="margin-bottom:0.4rem;color:rgba(255,255,255,0.85);">Portfolio</p>
         <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);margin-bottom:1rem;">Credentials and certifications that back my expertise.</p>
         <div class="swipe-hint">Swipe for more <span aria-hidden="true">&rarr;</span></div>
         <div class="certs-scroller">
