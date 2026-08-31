@@ -1358,6 +1358,26 @@
         </div>
       </div>
 
+      <!-- ClickUp Project Management -->
+      <div class="canva-carousel-wrap">
+        <p class="section-label" style="margin-bottom:0.4rem;">ClickUp Project Management</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Bug tracking board built and run in ClickUp for a software development team. Intake, severity triage, assignment, and status all in one view.</p>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(42,97,69,0.15);background:var(--cream);box-shadow:0 4px 24px rgba(42,97,69,0.07);">
+          <div style="padding:0.9rem 1.4rem;background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ee 100%);border-bottom:1px solid rgba(42,97,69,0.1);display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;">
+            <div class="notion-badge" style="margin:0;">&#128202; ClickUp &middot; Bug Tracking</div>
+            <span style="font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:600;color:var(--charcoal);">Reported Bugs board &middot; 18 open items</span>
+          </div>
+          <img src="Click%20Up%20Project%20Management.JPG" alt="ClickUp bug tracking board with confirmed, assignee, reporter, source, severity, report type and device fields" class="zoom-shot" style="width:100%;height:auto;display:block;cursor:zoom-in;" />
+        </div>
+        <div style="margin-top:1rem;padding:1rem 1.3rem;background:#f0f5f1;border:1px solid rgba(42,97,69,0.2);border-radius:12px;display:flex;align-items:flex-start;gap:0.8rem;">
+          <span style="font-size:1.05rem;flex-shrink:0;">&#128274;</span>
+          <p style="font-size:0.78rem;color:var(--mid);line-height:1.7;margin:0;">
+            <strong style="color:var(--charcoal);">Task names and reporter details are blurred for client confidentiality.</strong>
+            The board structure, custom fields, severity levels, and workflow are shown exactly as built.
+          </p>
+        </div>
+      </div>
+
       <!-- Operational Work Carousel -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Operational Work</p>
@@ -1499,20 +1519,20 @@
         <button type="button" class="carousel-nav next" aria-label="Next certificates">&#8594;</button>
         <div class="canva-carousel certs">
           <div class="canva-slide-wide">
-            <img src="SOP%20previous%20works.JPG" alt="Udemy: Executive Business Assistant Certificate" />
-            <div class="canva-slide-label">Udemy: Executive Business Assistant Certificate</div>
-          </div>
-          <div class="canva-slide-wide">
-            <img src="Hubspot%20Certificate.png" alt="HubSpot: Sales Hub Software Certified" />
-            <div class="canva-slide-label">HubSpot: Sales Hub Software Certified</div>
-          </div>
-          <div class="canva-slide-wide">
             <img src="ClickUp%20Novice%20Certificate.jpg" alt="ClickUp: Novice Certified" />
             <div class="canva-slide-label">ClickUp: Novice Certified</div>
           </div>
           <div class="canva-slide-wide">
             <img src="ClickUp%20Brain%20Certificate.jpg" alt="ClickUp: Brain Expert Certified" />
             <div class="canva-slide-label">ClickUp: Brain Expert Certified</div>
+          </div>
+          <div class="canva-slide-wide">
+            <img src="SOP%20previous%20works.JPG" alt="Udemy: Executive Business Assistant Certificate" />
+            <div class="canva-slide-label">Udemy: Executive Business Assistant Certificate</div>
+          </div>
+          <div class="canva-slide-wide">
+            <img src="Hubspot%20Certificate.png" alt="HubSpot: Sales Hub Software Certified" />
+            <div class="canva-slide-label">HubSpot: Sales Hub Software Certified</div>
           </div>
         </div>
         </div>
@@ -1790,7 +1810,7 @@
     const img = lb.querySelector('img');
     const cap = lb.querySelector('.lightbox-caption');
     const closeBtn = lb.querySelector('.lightbox-close');
-    const shots = document.querySelectorAll('#work .canva-slide img, #work .canva-slide-wide img');
+    const shots = document.querySelectorAll('#work .canva-slide img, #work .canva-slide-wide img, #work img.zoom-shot');
     let lastFocus = null;
 
     shots.forEach((t) => {
