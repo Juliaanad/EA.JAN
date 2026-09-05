@@ -87,10 +87,25 @@
     }
     /* Sample Notion Documents: horizontal, swipeable, like the other
        galleries, instead of a static 2-up grid. */
+    .canva-carousel.onboarding-carousel { align-items: stretch; }
     .onboarding-carousel .work-card {
       flex: 0 0 420px;
       scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
     }
+    .onboarding-carousel .work-card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .onboarding-carousel .work-card-body p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      overflow: hidden;
+    }
+    .onboarding-carousel .work-card-footer { margin-top: auto; }
     @media (max-width: 480px) {
       .onboarding-carousel .work-card { flex: 0 0 88vw; }
     }
@@ -437,9 +452,8 @@
     .stat-card {
       background: var(--white);
       border-radius: var(--card-radius);
-      padding: 1.5rem;
+      padding: 0.85rem 1.1rem;
       box-shadow: var(--card-shadow);
-      aspect-ratio: 1 / 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -461,11 +475,11 @@
     }
 
     .stat-card p {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       letter-spacing: 0.01em;
-      line-height: 1.4;
+      line-height: 1.25;
       color: var(--mid);
-      margin-top: 0.5rem;
+      margin-top: 0.2rem;
     }
 
     .about-text p { font-size: 0.95rem; color: var(--mid); margin-bottom: 1rem; }
@@ -1101,7 +1115,10 @@
 
 
     /* WHY DIRECT + RATE */
-    #rates { background: var(--blush); }
+    /* No blush background here: the compare cards and rate card are
+       already white/charcoal, and they need to read against something
+       other than white or they'd disappear into it. Cream (the page's
+       own default) is that something, not light green. */
 
     .compare {
       display: grid;
@@ -1988,7 +2005,7 @@
           </div>
         </div>
         <div class="work-card-body">
-          <p>A full project management system built in Notion for a fintech launch: five linked project outcomes, two-week sprints tracking committed against delivered points, and twenty-four tasks running across board, calendar, and by-owner views. Includes an escalation matrix, a definition of done, a risk register, and a founder weekly-review template built to protect executive focus. Sample data throughout. Built end-to-end by Julia N.</p>
+          <p>A full project management system built in Notion for a fintech launch: five projects, two-week sprints, and twenty-four tasks across board, calendar, and owner views, plus an escalation matrix and a founder weekly-review template. Built end-to-end by Julia N.</p>
           <div class="work-card-footer">
             <div class="work-tags">
               <span class="work-tag">Project Management</span>
