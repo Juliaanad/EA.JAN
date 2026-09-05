@@ -98,6 +98,25 @@
         radial-gradient(circle 70px at 80% 60%, rgba(143, 201, 168, 0.4) 0%, transparent 70%),
         radial-gradient(circle 60px at 55% 80%, rgba(143, 201, 168, 0.4) 0%, transparent 70%),
         var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Flashlight: follows the cursor, lighting the paint background only.
+       It's a pseudo-element painted behind the section's real content
+       (cards etc.), so it never brightens a card - only the section's
+       own background shows through it. */
+    #work::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle 280px at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.18), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    #work.is-glowing::before { opacity: 1; }
+    @media (prefers-reduced-motion: reduce) {
+      #work::before { display: none; }
     }
     #work .section-title { color: var(--white); }
     #work .section-title em { color: #8fc9a8; }
@@ -468,7 +487,7 @@
     }
 
     /* ABOUT */
-    #about { background: var(--white); }
+    #about { background: linear-gradient(135deg, var(--blush) 0%, #94b4a3 100%); }
 
     .about-grid {
       display: grid;
@@ -934,7 +953,7 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.78);
+      color: var(--rose-light);
       margin-bottom: 0.6rem;
       user-select: none;
     }
@@ -1004,7 +1023,7 @@
     }
 
     .testimonial-card {
-      background: linear-gradient(135deg, var(--white) 0%, #b5cabf 100%);
+      background: var(--white);
       border-radius: var(--card-radius);
       padding: 2rem;
       border: 1px solid rgba(26, 69, 48, 0.12);
@@ -1477,19 +1496,19 @@
         <div class="about-text">
           <p style="font-size:0.95rem;color:var(--charcoal);font-weight:500;margin-bottom:1.2rem;">I started as an Executive Assistant and grew into an Operations Manager for the same employer, based in Manila. Now I'm looking for an executive to give that same honesty and commitment to.</p>
           <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.75rem;">
-            <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
+            <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--charcoal);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
               Executive support for founders and owners.
             </li>
-            <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
+            <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--charcoal);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
               Calendars, inbox, and daily operations.
             </li>
-            <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
+            <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--charcoal);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
               Systems that scale with your business.
             </li>
-            <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
+            <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--charcoal);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
               Remote, worldwide.
             </li>
@@ -1946,9 +1965,9 @@
       </div>
 
       <!-- Portfolio / Certificates Carousel -->
-      <div class="canva-carousel-wrap certs-band" style="background:var(--rose);border-radius:var(--card-radius);padding:2rem;">
+      <div class="canva-carousel-wrap certs-band" style="background:var(--white);border-radius:var(--card-radius);padding:2rem;box-shadow:var(--card-shadow);">
         <p class="section-label" style="margin-bottom:0.4rem;">Certificates</p>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);margin-bottom:1rem;">Credentials and certifications that back my expertise.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Credentials and certifications that back my expertise.</p>
         <div class="swipe-hint">Swipe for more <span aria-hidden="true">&rarr;</span></div>
         <div class="carousel-scroller">
         <button type="button" class="carousel-nav prev" aria-label="Previous certificates" hidden>&#8592;</button>
@@ -2296,6 +2315,25 @@
       window.addEventListener('load', sync);
       sync();
     });
+  })();
+</script>
+<script>
+  // Flashlight: a soft glow that follows the cursor over the Work
+  // section's paint background. It's a pseudo-element positioned
+  // behind the section's actual content, so it only ever lights the
+  // background - cards sit on top of it, unaffected.
+  (function () {
+    const work = document.getElementById('work');
+    if (!work) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    work.addEventListener('mousemove', (e) => {
+      const rect = work.getBoundingClientRect();
+      work.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+      work.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+    });
+    work.addEventListener('mouseenter', () => work.classList.add('is-glowing'));
+    work.addEventListener('mouseleave', () => work.classList.remove('is-glowing'));
   })();
 </script>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
