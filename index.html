@@ -391,34 +391,31 @@
       align-items: start;
     }
 
-    /* One column, all four stats stacked, rather than a 2x2 block that
-       leaves the shorter text column with empty space beside it. */
     .about-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
     }
 
     .stat-card {
       background: var(--blush);
       border-radius: 12px;
-      padding: 0.85rem 1.2rem;
+      padding: 1.4rem;
       box-shadow: 0 3px 14px rgba(23, 43, 28, 0.08);
+      aspect-ratio: 1 / 1;
       display: flex;
-      align-items: baseline;
-      gap: 0.8rem;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .stat-card .number {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
+      font-size: 1.9rem;
       font-weight: 600;
       color: var(--rose);
-      flex: 0 0 auto;
-      min-width: 3.2rem;
     }
 
-    .stat-card p { font-size: 0.78rem; color: var(--mid); margin: 0; }
+    .stat-card p { font-size: 0.78rem; color: var(--mid); margin-top: 0.2rem; }
 
     .about-text p { font-size: 0.95rem; color: var(--mid); margin-bottom: 1rem; }
 
@@ -595,7 +592,6 @@
          two-column layout so the stats strip sits beside the text instead
          of adding a full extra screen of scroll below it. */
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .stat-card { padding: 0.7rem 1rem; }
     }
 
     /* PORTFOLIO IMAGE GRID */
@@ -1114,12 +1110,15 @@
       object-fit: cover;
     }
 
-    /* Sample Itinerary + Sample PM System, side by side */
+    /* Sample Itinerary + Sample Project Management System, side by side */
     .sample-pair {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
-      align-items: start;
+      /* No align-items override: grid's default (stretch) is what makes
+         both cards match the taller one's height. Overriding it to
+         "start" earlier let each card size to its own content instead,
+         which is why the two boxes weren't matching. */
     }
     .sample-pair .work-card {
       height: 100%;
@@ -1671,7 +1670,7 @@
         </div>
       </div>
 
-      <!-- Sample Itinerary + Sample PM System, side by side -->
+      <!-- Sample Itinerary + Sample Project Management System, side by side -->
       <div class="sample-pair">
       <div class="sample-col">
       <div style="margin-top:3rem;margin-bottom:1rem;">
@@ -1720,7 +1719,7 @@
 
       <div class="sample-col">
       <div style="margin-top:3rem;margin-bottom:1rem;">
-        <p class="section-label" style="margin-bottom:0.4rem;">Sample PM System</p>
+        <p class="section-label" style="margin-bottom:0.4rem;">Sample Project Management System</p>
         <p style="font-size:0.85rem;color:var(--mid);">A complete project management system built end-to-end in Notion for a startup product launch. Click to explore the full workspace.</p>
       </div>
       <div class="work-card" style="margin-top:0;">
