@@ -85,6 +85,15 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
+    /* Sample Notion Documents: horizontal, swipeable, like the other
+       galleries, instead of a static 2-up grid. */
+    .onboarding-carousel .work-card {
+      flex: 0 0 420px;
+      scroll-snap-align: start;
+    }
+    @media (max-width: 480px) {
+      .onboarding-carousel .work-card { flex: 0 0 88vw; }
+    }
 
     .work-card {
       display: block;
@@ -95,7 +104,7 @@
       box-shadow: var(--card-shadow);
       overflow: hidden;
       transition: var(--card-transition);
-      background: var(--cream);
+      background: var(--white);
     }
     .work-card:hover {
       transform: var(--card-lift);
@@ -103,7 +112,7 @@
     }
 
     .work-card-preview {
-      background: linear-gradient(135deg, #f0f7f3 0%, #e8f4ee 100%);
+      background: var(--white);
       padding: 2rem;
       min-height: 200px;
       display: flex;
@@ -116,13 +125,15 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      background: rgba(255,255,255,0.8);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(26, 69, 48, 0.1);
       border-radius: 6px;
       padding: 0.25rem 0.6rem;
       font-size: 0.72rem;
       font-weight: 500;
       color: var(--mid);
       width: fit-content;
+      white-space: nowrap;
       margin-bottom: 0.4rem;
     }
 
@@ -1786,7 +1797,7 @@
         <p class="section-label" style="margin-bottom:0.4rem;">Business Presentations</p>
         <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Client-facing company profile, designed end to end. 7 slides, use the arrows.</p>
         <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(26, 69, 48,0.15);background:var(--cream);box-shadow:0 4px 20px rgba(15, 30, 20,0.1);">
-          <div style="padding:0.9rem 1.4rem;background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ee 100%);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
+          <div style="padding:0.9rem 1.4rem;background:var(--white);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Pest-Ex Company Profile · 7 slides</div>
           </div>
           <div style="position:relative;width:100%;padding-bottom:56.25%;background:#000;">
@@ -1807,7 +1818,7 @@
         <p class="section-label" style="margin-bottom:0.4rem;">EA Onboarding Presentations</p>
         <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Shared with an executive on day one. Sets expectations and maps the first two weeks.</p>
         <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(26, 69, 48,0.15);background:var(--cream);box-shadow:0 4px 20px rgba(15, 30, 20,0.1);">
-          <div style="padding:0.9rem 1.4rem;background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ee 100%);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
+          <div style="padding:0.9rem 1.4rem;background:var(--white);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Canva · 8 slides</div>
             <span style="font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:600;color:var(--charcoal);">Your First 2 Weeks With Me</span>
           </div>
@@ -1875,7 +1886,7 @@
         <p class="section-label" style="margin-bottom:0.4rem;">Operational Work</p>
         <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Systems and documentation samples from client engagements.</p>
         <div class="canva-carousel op-work">
-          <a class="canva-slide-wide" href="Pest%20ex%20company%20profile.pdf" target="_blank" style="background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ee 100%);padding:1.8rem;">
+          <a class="canva-slide-wide" href="Pest%20ex%20company%20profile.pdf" target="_blank" style="background:var(--white);padding:1.8rem;">
             <div class="notion-badge" style="margin-bottom:0.8rem;">
               📄 PDF Document
             </div>
@@ -1919,7 +1930,7 @@
         <p style="font-size:0.85rem;color:var(--mid);">A sample executive travel itinerary built end-to-end. Click to view the full document in Notion.</p>
       </div>
       <a class="work-card" href="https://app.notion.com/p/3858cfe1721181c2a195d3097ff2744d" target="_blank" style="margin-top:0;">
-        <div class="work-card-preview" style="background:linear-gradient(135deg,#edf4ee 0%,#f0f7f3 100%);min-height:220px;">
+        <div class="work-card-preview" style="background:var(--white);min-height:220px;">
           <div class="notion-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
             Notion Document
@@ -1962,7 +1973,7 @@
         <p style="font-size:0.85rem;color:var(--mid);">A complete project management system built end-to-end in Notion for a startup product launch. Click to explore the full workspace.</p>
       </div>
       <a class="work-card" href="https://app.notion.com/p/3cd8cfe172118133bcf5c50550e541da" target="_blank" style="margin-top:0;">
-        <div class="work-card-preview" style="background:linear-gradient(135deg,#edf4ee 0%,#f0f7f3 100%);min-height:220px;">
+        <div class="work-card-preview" style="background:var(--white);min-height:220px;">
           <div class="notion-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
             Notion Workspace
@@ -2049,11 +2060,12 @@
         <h2 class="section-title">Ready to work together? <em>Here's how.</em></h2>
         <p class="section-subtitle">Fill in the onboarding form that fits, and I take it from there. Or send a job description and I will build onboarding around it.</p>
       </div>
-      <div class="work-grid">
+      <p class="section-label" style="margin-bottom:1rem;">Sample Notion Documents</p>
+      <div class="canva-carousel onboarding-carousel">
 
         <!-- Card 1: Business Operations -->
         <div class="work-card">
-          <div class="work-card-preview" style="background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ee 100%);min-height:220px;">
+          <div class="work-card-preview" style="background:var(--white);min-height:220px;">
             <div class="notion-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
               Notion Document
@@ -2091,7 +2103,7 @@
 
         <!-- Card 2: Lifestyle Manager -->
         <div class="work-card">
-          <div class="work-card-preview" style="background:linear-gradient(135deg,#edf4ee 0%,#f0f7f3 100%);min-height:220px;">
+          <div class="work-card-preview" style="background:var(--white);min-height:220px;">
             <div class="notion-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
               Notion Document
