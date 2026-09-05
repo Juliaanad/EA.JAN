@@ -11,6 +11,7 @@
     :root {
       --rose:       #2a6145;
       --rose-light: #57967a;
+      --label-dark: #68a087;
       --blush:      #e2eee6;
       --cream:      #faf8f3;
       --charcoal:   #172b1c;
@@ -78,7 +79,8 @@
 
     .work-card {
       border-radius: 16px;
-      border: 1px solid rgba(42, 97, 69, 0.12);
+      border: 1px solid rgba(42, 97, 69, 0.14);
+      box-shadow: 0 2px 12px rgba(23, 43, 28, 0.07);
       overflow: hidden;
       transition: transform 0.15s ease-out, box-shadow 0.2s;
       background: var(--cream);
@@ -346,6 +348,7 @@
       inset: -10px;
       border: 2px solid var(--rose-light);
       border-radius: 16px;
+      box-shadow: 0 18px 44px rgba(23, 43, 28, 0.16);
       z-index: -1;
     }
 
@@ -399,6 +402,7 @@
       background: var(--blush);
       border-radius: 12px;
       padding: 1.4rem;
+      box-shadow: 0 2px 8px rgba(23, 43, 28, 0.05);
     }
 
     .stat-card .number {
@@ -433,7 +437,8 @@
       background: var(--white);
       border-radius: 16px;
       padding: 1.5rem;
-      border: 1px solid rgba(42, 97, 69, 0.1);
+      border: 1px solid rgba(42, 97, 69, 0.12);
+      box-shadow: 0 2px 10px rgba(23, 43, 28, 0.06);
       transition: transform 0.15s ease-out, box-shadow 0.2s;
       transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
     }
@@ -505,7 +510,7 @@
 
     /* CONTACT */
     #contact { background: var(--charcoal); }
-    #contact .section-label { color: var(--rose-light); }
+    #contact .section-label { color: var(--label-dark); }
     #contact .section-title { color: var(--white); }
     #contact .section-title em { color: var(--rose-light); }
     #contact .section-subtitle { color: rgba(255,255,255,0.55); }
@@ -654,7 +659,8 @@
       scroll-snap-align: start;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(42, 97, 69, 0.12);
+      border: 1px solid rgba(42, 97, 69, 0.14);
+      box-shadow: 0 2px 10px rgba(23, 43, 28, 0.06);
       background: var(--cream);
     }
     .canva-slide img {
@@ -670,7 +676,8 @@
       scroll-snap-align: start;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(42, 97, 69, 0.12);
+      border: 1px solid rgba(42, 97, 69, 0.14);
+      box-shadow: 0 2px 10px rgba(23, 43, 28, 0.06);
       background: var(--cream);
     }
 
@@ -838,7 +845,8 @@
       background: var(--white);
       border-radius: 20px;
       padding: 2.2rem;
-      border: 1px solid rgba(42, 97, 69, 0.1);
+      border: 1px solid rgba(42, 97, 69, 0.12);
+      box-shadow: 0 2px 12px rgba(23, 43, 28, 0.06);
       display: flex;
       flex-direction: column;
       gap: 1.4rem;
@@ -901,7 +909,7 @@
     }
 
     .section-dark { background: var(--charcoal); }
-    .section-dark .section-label { color: var(--rose-light); }
+    .section-dark .section-label { color: var(--label-dark); }
     .section-dark .section-title { color: #ffffff; }
     .section-dark .section-title em { color: var(--rose-light); }
     .section-dark .section-subtitle { color: rgba(255,255,255,0.65); }
@@ -970,7 +978,8 @@
       background: var(--white);
       border-radius: 16px;
       padding: 2rem;
-      border: 1px solid rgba(42, 97, 69, 0.1);
+      border: 1px solid rgba(42, 97, 69, 0.12);
+      box-shadow: 0 2px 12px rgba(23, 43, 28, 0.06);
     }
     .compare-col.is-muted {
       background: transparent;
@@ -1019,6 +1028,7 @@
       grid-template-columns: 1fr minmax(0, 1fr);
       gap: 2.5rem;
       align-items: center;
+      box-shadow: 0 12px 36px rgba(23, 43, 28, 0.16);
     }
     .rate-label {
       font-size: 0.7rem;
@@ -1095,23 +1105,6 @@
       .services-grid .service-card { flex: 0 0 calc(33.333% - 1rem); }
     }
 
-    /* Presentation embeds, two up */
-    .pres-pair {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: stretch;
-    }
-    .pres-pair > .canva-carousel-wrap {
-      display: flex;
-      flex-direction: column;
-      margin-top: 0;
-    }
-    .pres-pair .pres-frame { margin-top: auto; }
-
-    @media (max-width: 900px) {
-      .pres-pair { grid-template-columns: 1fr; gap: 3rem; }
-    }
 
     /* Hero rate bubble */
     .hero-rate-bubble {
@@ -1164,6 +1157,19 @@
         bottom: -0.5rem;
       }
       .hero-rate-bubble .amount { font-size: 1.2rem; }
+    }
+
+    /* Sample Itinerary + Sample PM System, side by side */
+    .sample-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .sample-pair .work-card { height: 100%; display: flex; flex-direction: column; }
+    .sample-pair .work-card-body { flex: 1; }
+    @media (max-width: 900px) {
+      .sample-pair { grid-template-columns: 1fr; gap: 3rem; }
     }
   </style>
 </head>
@@ -1554,8 +1560,7 @@
         </div>
       </div>
 
-      <!-- Presentations, side by side -->
-      <div class="pres-pair canva-carousel-wrap">
+      <!-- Business Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Business Presentations</p>
         <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Client-facing company profile, designed end to end. 7 slides, use the arrows.</p>
@@ -1576,6 +1581,7 @@
         </div>
       </div>
 
+      <!-- EA Onboarding Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">EA Onboarding Presentations</p>
         <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Shared with an executive on day one. Sets expectations and maps the first two weeks.</p>
@@ -1595,8 +1601,6 @@
             </iframe>
           </div>
         </div>
-      </div>
-
       </div>
 
       <!-- Project Management -->
@@ -1691,7 +1695,9 @@
         </div>
       </div>
 
-      <!-- Sample Itinerary -->
+      <!-- Sample Itinerary + Sample PM System, side by side -->
+      <div class="sample-pair">
+      <div class="sample-col">
       <div style="margin-top:3rem;margin-bottom:1rem;">
         <p class="section-label" style="margin-bottom:0.4rem;">Sample Itinerary</p>
         <p style="font-size:0.85rem;color:var(--mid);">A sample executive travel itinerary built end-to-end. Click to view the full document in Notion.</p>
@@ -1734,7 +1740,9 @@
         </div>
       </div>
 
-      <!-- Sample PM System -->
+      </div>
+
+      <div class="sample-col">
       <div style="margin-top:3rem;margin-bottom:1rem;">
         <p class="section-label" style="margin-bottom:0.4rem;">Sample PM System</p>
         <p style="font-size:0.85rem;color:var(--mid);">A complete project management system built end-to-end in Notion for a startup product launch. Click to explore the full workspace.</p>
@@ -1779,6 +1787,9 @@
             </a>
           </div>
         </div>
+      </div>
+
+      </div>
       </div>
 
       <!-- Portfolio / Certificates Carousel -->
@@ -1934,7 +1945,7 @@
   <!-- FOOTER -->
   <footer>
     <p>© 2026 Julia N. · <a href="mailto:juliaangnadal@gmail.com">juliaangnadal@gmail.com</a> · Manila, Philippines</p>
-    <p style="margin-top:0.5rem;font-size:0.68rem;color:rgba(255,255,255,0.18);">All portfolio materials are original works by Julia N. Published with client consent. Unauthorized use is prohibited.</p>
+    <p style="margin-top:0.5rem;font-size:0.68rem;color:rgba(255,255,255,0.5);">All portfolio materials are original works by Julia N. Published with client consent. Unauthorized use is prohibited.</p>
   </footer>
 
   <canvas id="particles" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
