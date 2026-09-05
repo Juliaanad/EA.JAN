@@ -420,15 +420,16 @@
       flex-wrap: wrap;
       gap: 1.5rem;
       justify-content: center;
+      align-items: flex-start;
     }
     .services-grid .service-card {
-      flex: 0 0 calc(33.333% - 1rem);
+      flex: 0 0 calc(25% - 1.125rem);
     }
 
     .service-card {
       background: var(--white);
       border-radius: 16px;
-      padding: 2rem;
+      padding: 1.5rem;
       border: 1px solid rgba(42, 97, 69, 0.1);
       transition: transform 0.15s ease-out, box-shadow 0.2s;
       transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
@@ -440,20 +441,21 @@
     }
 
     .service-icon {
-      width: 48px;
-      height: 48px;
+      width: 40px;
+      height: 40px;
       background: var(--blush);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.9rem;
     }
 
     .service-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
+      font-size: 1rem;
+      line-height: 1.35;
       color: var(--charcoal);
       margin-bottom: 0.6rem;
     }
@@ -565,6 +567,7 @@
       .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .work-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
+      .testimonial-card.is-wide .testimonial-quote { columns: 1; }
       .canva-slide-wide { flex: 0 0 85vw; }
       .canva-slide { flex: 0 0 200px; }
       .about-stats { grid-template-columns: 1fr 1fr; }
@@ -820,6 +823,12 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+      align-items: start;
+    }
+    .testimonial-card.is-wide { grid-column: 1 / -1; }
+    .testimonial-card.is-wide .testimonial-quote {
+      columns: 2;
+      column-gap: 2.5rem;
     }
 
     .testimonial-card {
@@ -885,6 +894,7 @@
 
     @media (max-width: 768px) {
       .testimonials-grid { grid-template-columns: 1fr; }
+      .testimonial-card.is-wide .testimonial-quote { columns: 1; }
     }
 
     .section-dark { background: var(--charcoal); }
@@ -1077,6 +1087,10 @@
         border-top: 1px solid rgba(87, 150, 122, 0.3);
       }
     }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .services-grid .service-card { flex: 0 0 calc(33.333% - 1rem); }
+    }
   </style>
 </head>
 <body>
@@ -1212,7 +1226,7 @@
           </div>
 
 
-          <div class="testimonial-card">
+          <div class="testimonial-card is-wide">
             <div class="testimonial-stars">★★★★★</div>
             <p class="testimonial-quote">"Julia has been a fantastic addition to the Tinidor Foods team. She's <strong>reliable, detail-oriented, and consistently delivers high-quality work on time</strong>, even when things get hectic during market prep or event crunch time. She takes initiative, communicates clearly, and adapts quickly to shifting priorities, exactly what a small, fast-moving operation like ours needs. Beyond the day-to-day execution, Julia brings a great attitude and genuine care to her work, which makes collaborating with her easy and enjoyable. I'd <strong>recommend her without hesitation</strong> to anyone looking for a dependable, sharp virtual assistant."</p>
             <div class="testimonial-author">
