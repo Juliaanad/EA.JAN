@@ -225,6 +225,12 @@
       align-items: center;
     }
 
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
     .hero-text .badge {
       display: inline-flex;
       align-items: center;
@@ -235,7 +241,6 @@
       padding: 0.35rem 1rem;
       font-size: 0.75rem;
       color: var(--mid);
-      margin-bottom: 1.5rem;
     }
 
     .hero-roles {
@@ -1164,11 +1169,13 @@
     <div class="hero-blob hero-blob-4"></div>
     <div class="hero-inner" style="position:relative;z-index:1;">
       <div class="hero-text">
-        <div class="badge">
-          📍 Manila, Philippines &nbsp;·&nbsp; <strong style="color:var(--rose)">Open to Remote</strong>
-        </div>
-        <div class="badge">
-          💵 $12/hr &nbsp;·&nbsp; <strong style="color:var(--rose)">Honest work, real commitment</strong>
+        <div class="hero-badges">
+          <div class="badge">
+            📍 Manila, Philippines &nbsp;·&nbsp; <strong style="color:var(--rose)">Open to Remote</strong>
+          </div>
+          <div class="badge">
+            💵 $12/hr &nbsp;·&nbsp; <strong style="color:var(--rose)">Honest work, real commitment</strong>
+          </div>
         </div>
         <p class="hero-roles">
           Virtual Assistant <span>·</span> Operations Manager <span>·</span> Executive Assistant
