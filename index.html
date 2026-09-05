@@ -420,13 +420,16 @@
       flex-wrap: wrap;
       gap: 1.5rem;
       justify-content: center;
-      align-items: flex-start;
+      align-items: stretch;
     }
     .services-grid .service-card {
       flex: 0 0 calc(25% - 1.125rem);
+      min-height: 265px;
     }
 
     .service-card {
+      display: flex;
+      flex-direction: column;
       background: var(--white);
       border-radius: 16px;
       padding: 1.5rem;
@@ -1091,6 +1094,24 @@
     @media (min-width: 769px) and (max-width: 1024px) {
       .services-grid .service-card { flex: 0 0 calc(33.333% - 1rem); }
     }
+
+    /* Presentation embeds, two up */
+    .pres-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+    .pres-pair > .canva-carousel-wrap {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+    }
+    .pres-pair .pres-frame { margin-top: auto; }
+
+    @media (max-width: 900px) {
+      .pres-pair { grid-template-columns: 1fr; gap: 3rem; }
+    }
   </style>
 </head>
 <body>
@@ -1149,31 +1170,27 @@
       <h2 class="section-title">Organized. Reliable. <em>Detail-driven.</em></h2>
       <div class="about-grid" style="margin-top:2.5rem;">
         <div class="about-text">
-          <p style="font-size:0.95rem;color:var(--charcoal);font-weight:500;margin-bottom:1.2rem;">I'm Julia, an Executive Assistant and Business Operations Manager based in Manila, Philippines.</p>
+          <p style="font-size:0.95rem;color:var(--charcoal);font-weight:500;margin-bottom:1.2rem;">Executive Assistant and Business Operations Manager, based in Manila.</p>
           <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.75rem;">
             <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
-              Work with executives and business owners who need someone they can fully rely on to keep things running
+              Executive support and operational efficiency for founders and owners.
             </li>
             <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
-              Specialise in executive support and operational efficiency
+              High-level calendars, inbox, and daily operations.
             </li>
             <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
-              Manage high-level calendars, communications, and day-to-day operations
+              Systems and workflows that scale as the business grows.
             </li>
             <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
-              Build systems and workflows that scale with your business
+              Full ownership of the backend. You keep the work only you can do.
             </li>
             <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
-              Take full ownership of the backend so you can focus on what matters most
-            </li>
-            <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
-              <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
-              Currently open to remote opportunities worldwide
+              Open to remote roles worldwide.
             </li>
           </ul>
         </div>
@@ -1301,7 +1318,7 @@
     <div class="section-inner">
       <p class="section-label">What I Offer</p>
       <h2 class="section-title">Services built for <em>busy executives.</em></h2>
-      <p class="section-subtitle">Comprehensive support so you can focus on what only you can do.</p>
+      <p class="section-subtitle">Full coverage of the day to day, from calendar to vendors.</p>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">📅</div>
@@ -1375,7 +1392,7 @@
     <div class="section-inner">
       <p class="section-label">Tools & Skills</p>
       <h2 class="section-title">Equipped to handle <em>any workflow.</em></h2>
-      <p class="section-subtitle">Proficient across a wide range of tools used by modern remote teams.</p>
+      <p class="section-subtitle">Fluent in the stack most remote teams already run on.</p>
       <div class="skills-grid">
         <div class="skill-group">
           <h3>Communication</h3>
@@ -1438,12 +1455,12 @@
     <div class="section-inner">
       <p class="section-label">Portfolio</p>
       <h2 class="section-title">Work samples from real <em>client engagements.</em></h2>
-      <p class="section-subtitle">A selection of design, operations, and travel coordination work. All original, all built for real businesses.</p>
+      <p class="section-subtitle">Design, operations, and coordination work. All original, all shipped for real clients.</p>
 
       <!-- Canva Design Samples -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Canva Design Samples</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Swipe to browse graphic design and marketing materials created for clients.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Graphic design and marketing material built for clients. Swipe to browse.</p>
         <div class="canva-carousel">
           <div class="canva-slide">
             <img src="JOB%20POSTING.png" alt="Pest-Ex: Job Posting" />
@@ -1484,11 +1501,12 @@
         </div>
       </div>
 
-      <!-- Business Presentations -->
+      <!-- Presentations, side by side -->
+      <div class="pres-pair canva-carousel-wrap">
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Business Presentations</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Client-facing presentation built and designed for real business use. Use the arrows to browse all 7 slides.</p>
-        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(42,97,69,0.15);background:var(--cream);box-shadow:0 4px 24px rgba(42,97,69,0.07);">
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Client-facing company profile, designed end to end. 7 slides, use the arrows.</p>
+        <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(42,97,69,0.15);background:var(--cream);box-shadow:0 4px 24px rgba(42,97,69,0.07);">
           <div style="padding:0.9rem 1.4rem;background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ee 100%);border-bottom:1px solid rgba(42,97,69,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Pest-Ex Company Profile · 7 slides</div>
           </div>
@@ -1505,11 +1523,10 @@
         </div>
       </div>
 
-      <!-- EA Onboarding Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">EA Onboarding Presentations</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Executive-facing presentation shared on Day 1, setting expectations and outlining the first two weeks of support.</p>
-        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(42,97,69,0.15);background:var(--cream);box-shadow:0 4px 24px rgba(42,97,69,0.07);">
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Shared with an executive on day one. Sets expectations and maps the first two weeks.</p>
+        <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(42,97,69,0.15);background:var(--cream);box-shadow:0 4px 24px rgba(42,97,69,0.07);">
           <div style="padding:0.9rem 1.4rem;background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ee 100%);border-bottom:1px solid rgba(42,97,69,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Canva · 8 slides</div>
             <span style="font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:600;color:var(--charcoal);">Your First 2 Weeks With Me</span>
@@ -1527,10 +1544,12 @@
         </div>
       </div>
 
+      </div>
+
       <!-- Project Management -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Project Management</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">End-to-end operational checklist built to manage a full Etsy shop launch from setup to order workflow.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Operational checklist running a full Etsy launch, from account setup to order intake.</p>
         <div style="border-radius:14px;border:1px solid rgba(42,97,69,0.15);background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ee 100%);box-shadow:0 4px 24px rgba(42,97,69,0.07);padding:1.1rem 1.6rem;">
           <div class="etsy-bar-row">
             <div class="etsy-bar-meta">
@@ -1562,7 +1581,7 @@
       <!-- ClickUp Project Management -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">ClickUp Project Management</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Bug tracking board built and run in ClickUp for a software development team. Intake, severity triage, assignment, and status in one view, 18 open items. Click to enlarge.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Bug board built and run for a dev team. Intake, triage, assignment, and status in one view. 18 open items, click to enlarge.</p>
         <div class="canva-carousel">
           <div class="canva-slide-wide">
             <img src="Click%20Up%20Project%20Management.JPG" alt="ClickUp: Bug Tracking Board" />
@@ -1581,7 +1600,7 @@
       <!-- Operational Work Carousel -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Operational Work</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Operations, systems, and documentation samples from client engagements.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Systems and documentation samples from client engagements.</p>
         <div class="canva-carousel">
           <div class="canva-slide-wide" style="background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ee 100%);padding:1.8rem;">
             <div class="notion-badge" style="margin-bottom:0.8rem;">
@@ -1752,7 +1771,7 @@
       <div style="margin-top:4rem;border-top:1px solid rgba(42,97,69,0.12);padding-top:3.5rem;">
         <p class="section-label" style="margin-bottom:0.6rem;">Get Started With Me</p>
         <h2 class="section-title">Ready to work together? <em>Here's how.</em></h2>
-        <p class="section-subtitle">Choose the onboarding form that fits your needs and fill it out and I'll take it from there. Or send me a job description and I'll build a custom onboarding tailored specifically to you and your business.</p>
+        <p class="section-subtitle">Fill in the onboarding form that fits, and I take it from there. Or send a job description and I will build onboarding around it.</p>
       </div>
       <div class="work-grid">
 
@@ -1847,7 +1866,7 @@
     <div class="section-inner" style="max-width:680px;">
       <p class="section-label" style="text-align:center;">Get In Touch</p>
       <h2 class="section-title" style="text-align:center;">Let's work <em>together.</em></h2>
-      <p class="section-subtitle" style="text-align:center;margin:0.8rem auto 2.5rem;max-width:480px;">Available for remote opportunities worldwide. Reach out directly and I'll get back to you.</p>
+      <p class="section-subtitle" style="text-align:center;margin:0.8rem auto 2.5rem;max-width:480px;">Open to remote roles worldwide. Message me directly and I will reply.</p>
 
       <div style="display:flex;justify-content:center;">
         <a href="mailto:juliaangnadal@gmail.com" class="btn-primary" style="font-size:0.95rem;padding:1rem 2.2rem;">✉ Email Me</a>
