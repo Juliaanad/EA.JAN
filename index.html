@@ -80,15 +80,19 @@
     /* WORK SAMPLES */
     #work {
       background:
-        radial-gradient(circle at 12% 18%, rgba(69, 123, 96, 0.30) 0%, transparent 30%),
-        radial-gradient(circle at 82% 12%, rgba(26, 69, 48, 0.16) 0%, transparent 26%),
-        radial-gradient(circle at 68% 55%, rgba(69, 123, 96, 0.26) 0%, transparent 34%),
-        radial-gradient(circle at 22% 68%, rgba(26, 69, 48, 0.14) 0%, transparent 28%),
-        radial-gradient(circle at 92% 82%, rgba(69, 123, 96, 0.24) 0%, transparent 30%),
-        radial-gradient(circle at 45% 92%, rgba(26, 69, 48, 0.15) 0%, transparent 26%),
-        radial-gradient(circle at 38% 38%, rgba(69, 123, 96, 0.18) 0%, transparent 40%),
-        var(--blush);
+        radial-gradient(circle at 12% 18%, rgba(69, 123, 96, 0.48) 0%, transparent 32%),
+        radial-gradient(circle at 82% 12%, rgba(26, 69, 48, 0.6) 0%, transparent 28%),
+        radial-gradient(circle at 68% 55%, rgba(69, 123, 96, 0.42) 0%, transparent 36%),
+        radial-gradient(circle at 22% 68%, rgba(26, 69, 48, 0.55) 0%, transparent 30%),
+        radial-gradient(circle at 92% 82%, rgba(69, 123, 96, 0.45) 0%, transparent 32%),
+        radial-gradient(circle at 45% 92%, rgba(26, 69, 48, 0.5) 0%, transparent 28%),
+        radial-gradient(circle at 38% 38%, rgba(69, 123, 96, 0.3) 0%, transparent 42%),
+        var(--charcoal);
     }
+    #work .section-label { color: #8fc9a8; }
+    #work .section-title { color: var(--white); }
+    #work .section-title em { color: #8fc9a8; }
+    #work .section-subtitle { color: rgba(255, 255, 255, 0.75); }
 
     .work-grid {
       display: grid;
@@ -1750,7 +1754,7 @@
       <!-- Canva Design Samples -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Canva Design Samples</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Graphic design and marketing material built for clients. Swipe to browse.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Graphic design and marketing material built for clients. Swipe to browse.</p>
         <div class="carousel-scroller">
           <button type="button" class="carousel-nav prev" aria-label="Previous designs" hidden>&#8592;</button>
           <button type="button" class="carousel-nav next" aria-label="Next designs">&#8594;</button>
@@ -1798,7 +1802,7 @@
       <!-- Business Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Business Presentations</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Client-facing company profile, designed end to end. 7 slides, use the arrows.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Client-facing company profile, designed end to end. 7 slides, use the arrows.</p>
         <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(26, 69, 48,0.15);background:var(--cream);box-shadow:0 4px 20px rgba(15, 30, 20,0.1);">
           <div style="padding:0.9rem 1.4rem;background:var(--white);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Pest-Ex Company Profile · 7 slides</div>
@@ -1819,7 +1823,7 @@
       <!-- EA Onboarding Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">EA Onboarding Presentations</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Shared with an executive on day one. Sets expectations and maps the first two weeks.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Shared with an executive on day one. Sets expectations and maps the first two weeks.</p>
         <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(26, 69, 48,0.15);background:var(--cream);box-shadow:0 4px 20px rgba(15, 30, 20,0.1);">
           <div style="padding:0.9rem 1.4rem;background:var(--white);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Canva · 8 slides</div>
@@ -1842,7 +1846,7 @@
       <div class="pm-pair">
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Project Management</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Operational checklist running a full Etsy launch, from account setup to order intake.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Operational checklist running a full Etsy launch, from account setup to order intake.</p>
         <a class="pm-box pm-box-etsy doc-card" href="https://docs.google.com/spreadsheets/d/1qS1PBpkhBANTAjybqbtqpMWRmhmdSHG7KeAKrtpxi8c/edit?usp=sharing" target="_blank">
           <div class="etsy-bar-row">
             <div class="etsy-bar-meta">
@@ -1874,7 +1878,7 @@
       <!-- ClickUp Project Management -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">ClickUp Project Management</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Bug board built and run for a dev team. Intake, triage, assignment, and status in one view. 18 open items, click to enlarge.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Bug board built and run for a dev team. Intake, triage, assignment, and status in one view. 18 open items, click to enlarge.</p>
         <div class="pm-box pm-box-clickup canva-carousel">
           <div class="canva-slide-wide">
             <img src="Click%20Up%20Project%20Management.JPG" alt="ClickUp: Bug Tracking Board" />
@@ -1887,7 +1891,7 @@
       <!-- Operational Work Carousel -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Operational Work</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Systems and documentation samples from client engagements.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Systems and documentation samples from client engagements.</p>
         <div class="carousel-scroller">
           <button type="button" class="carousel-nav prev" aria-label="Previous work samples" hidden>&#8592;</button>
           <button type="button" class="carousel-nav next" aria-label="Next work samples">&#8594;</button>
@@ -2130,7 +2134,7 @@
       </div>
       </div>
 
-      <p style="text-align:center;font-size:0.78rem;font-weight:700;color:var(--mid);margin-top:1.2rem;letter-spacing:0.02em;"><strong>All work displayed in this portfolio is original content created by Julia N.</strong></p>
+      <p style="text-align:center;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.7);margin-top:1.2rem;letter-spacing:0.02em;"><strong style="color:var(--white);">All work displayed in this portfolio is original content created by Julia N.</strong></p>
 
 
     </div>
