@@ -1350,49 +1350,6 @@
       object-fit: cover;
     }
 
-    /* Sample Itinerary + Sample Project Management System, side by side */
-    .sample-pair {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      /* No align-items override: grid's default (stretch) is what makes
-         both cards match the taller one's height. Overriding it to
-         "start" earlier let each card size to its own content instead,
-         which is why the two boxes weren't matching. */
-    }
-    .sample-pair .work-card {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    /* Fixed floor rather than height:100% alone, so the two cards still
-       match once the grid collapses to a single column and there is no
-       row to stretch against. Sized down from the original min-height
-       260/clamp-4/padding-1.4rem: these were oversized relative to the
-       rest of the Work section. */
-    .sample-pair .work-card-preview { min-height: 190px; padding: 1.5rem; }
-    .sample-pair .work-card-body {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      padding: 1.1rem 1.4rem;
-    }
-    .sample-pair .work-card-body p {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      overflow: hidden;
-      margin-bottom: 0.7rem;
-    }
-    .sample-pair .work-card-footer { margin-top: auto; }
-    @media (max-width: 900px) {
-      .sample-pair { grid-template-columns: 1fr; gap: 2rem; }
-      .sample-pair .work-card { height: auto; min-height: 400px; }
-    }
-    /* Extra clearance below the pair, on top of .canva-carousel-wrap's
-       normal 3rem margin-top, so the certificates band never crowds the
-       cards above it regardless of how tall their content runs. */
-    .sample-pair { margin-bottom: 2rem; }
   </style>
 </head>
 <body>
@@ -1922,99 +1879,6 @@
         </div>
       </div>
 
-      <!-- Sample Itinerary + Sample Project Management System, side by side -->
-      <div class="sample-pair">
-      <div class="sample-col">
-      <div style="margin-top:0;margin-bottom:0.8rem;">
-        <p class="section-label" style="margin-bottom:0.4rem;">Sample Itinerary</p>
-        <p style="font-size:0.85rem;color:var(--mid);">A sample executive travel itinerary built end-to-end. Click to view the full document in Notion.</p>
-      </div>
-      <a class="work-card" href="https://app.notion.com/p/3858cfe1721181c2a195d3097ff2744d" target="_blank" style="margin-top:0;">
-        <div class="work-card-preview" style="background:var(--white);min-height:220px;">
-          <div class="notion-badge">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
-            Notion Document
-          </div>
-          <h4 style="font-size:1.15rem;">Executive Travel: Melbourne to Manila &nbsp;|&nbsp; Dec 17–28, 2026</h4>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-top:0.8rem;">
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">✈️ Flights</div>
-              PR 218 · 09:20 AEDT<br/>Business Class · Seat 3A
-            </div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🏨 Hotel</div>
-              Discovery Primea, Makati<br/>11 nights · Deluxe King Suite
-            </div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">💰 Budget</div>
-              AUD $19,850 total<br/>Full expense breakdown
-            </div>
-          </div>
-        </div>
-        <div class="work-card-body">
-          <p>A full 12-day executive travel itinerary covering flights, hotel, hour-by-hour schedule, business meetings, curated dining, day trips, Christmas Eve arrangements, and a complete expense tracker. Built end-to-end by Julia N.</p>
-          <div class="work-card-footer">
-            <div class="work-tags">
-              <span class="work-tag">Travel Coordination</span>
-              <span class="work-tag">Itinerary</span>
-              <span class="work-tag">Expense Management</span>
-              <span class="work-tag">Notion</span>
-            </div>
-            <span class="btn-notion">View in Notion →</span>
-          </div>
-        </div>
-      </a>
-
-      </div>
-
-      <div class="sample-col">
-      <div style="margin-top:0;margin-bottom:0.8rem;">
-        <p class="section-label" style="margin-bottom:0.4rem;">Sample Project Management System</p>
-        <p style="font-size:0.85rem;color:var(--mid);">A complete project management system built end-to-end in Notion for a startup product launch. Click to explore the full workspace.</p>
-      </div>
-      <a class="work-card" href="https://app.notion.com/p/3cd8cfe172118133bcf5c50550e541da" target="_blank" style="margin-top:0;">
-        <div class="work-card-preview" style="background:var(--white);min-height:220px;">
-          <div class="notion-badge">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
-            Notion Workspace
-          </div>
-          <h4 style="font-size:1.15rem;">Project Management Hub &nbsp;|&nbsp; Fintech App Launch</h4>
-          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-top:0.8rem;">
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#128202; 5 Projects</div>
-              Owner, health status<br/>and target date on each
-            </div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#9201;&#65039; 3 Sprints</div>
-              Committed vs delivered<br/>points, with retros
-            </div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#9989; 24 Tasks</div>
-              Board, calendar and<br/>by-owner views
-            </div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#128221; Meeting Log</div>
-              Every decision turned<br/>into an assigned action
-            </div>
-          </div>
-        </div>
-        <div class="work-card-body">
-          <p>A full project management system built in Notion for a fintech launch: five linked project outcomes, two-week sprints tracking committed against delivered points, and twenty-four tasks running across board, calendar, and by-owner views. Includes an escalation matrix, a definition of done, a risk register, and a founder weekly-review template built to protect executive focus. Sample data throughout. Built end-to-end by Julia N.</p>
-          <div class="work-card-footer">
-            <div class="work-tags">
-              <span class="work-tag">Project Management</span>
-              <span class="work-tag">Sprint Planning</span>
-              <span class="work-tag">Stakeholder Reporting</span>
-              <span class="work-tag">Notion</span>
-            </div>
-            <span class="btn-notion">View in Notion &rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      </div>
-      </div>
-
       <!-- Portfolio / Certificates Carousel -->
       <div class="canva-carousel-wrap certs-band">
         <p class="section-label" style="margin-bottom:0.4rem;color:rgba(255,255,255,0.85);">Portfolio</p>
@@ -2056,12 +1920,87 @@
 
 
       <div style="margin-top:4rem;border-top:1px solid rgba(26, 69, 48,0.12);padding-top:3.5rem;">
-        <p class="section-label" style="margin-bottom:0.6rem;">Get Started With Me</p>
-        <h2 class="section-title">Ready to work together? <em>Here's how.</em></h2>
-        <p class="section-subtitle">Fill in the onboarding form that fits, and I take it from there. Or send a job description and I will build onboarding around it.</p>
+        <p class="section-label" style="margin-bottom:0.6rem;">Sample Notion Documents</p>
+        <h2 class="section-title">Real work, <em>built in Notion.</em></h2>
+        <p class="section-subtitle">Itineraries, project systems, and ready-to-fill onboarding forms. Swipe to browse.</p>
       </div>
-      <p class="section-label" style="margin-bottom:1rem;">Sample Notion Documents</p>
       <div class="canva-carousel onboarding-carousel">
+      <a class="work-card" href="https://app.notion.com/p/3858cfe1721181c2a195d3097ff2744d" target="_blank" style="margin-top:0;">
+        <div class="work-card-preview" style="background:var(--white);min-height:220px;">
+          <div class="notion-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
+            Notion Document
+          </div>
+          <h4 style="font-size:1.15rem;">Executive Travel: Melbourne to Manila &nbsp;|&nbsp; Dec 17–28, 2026</h4>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-top:0.8rem;">
+            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
+              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">✈️ Flights</div>
+              PR 218 · 09:20 AEDT<br/>Business Class · Seat 3A
+            </div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
+              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🏨 Hotel</div>
+              Discovery Primea, Makati<br/>11 nights · Deluxe King Suite
+            </div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
+              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">💰 Budget</div>
+              AUD $19,850 total<br/>Full expense breakdown
+            </div>
+          </div>
+        </div>
+        <div class="work-card-body">
+          <p>A full 12-day executive travel itinerary covering flights, hotel, hour-by-hour schedule, business meetings, curated dining, day trips, Christmas Eve arrangements, and a complete expense tracker. Built end-to-end by Julia N.</p>
+          <div class="work-card-footer">
+            <div class="work-tags">
+              <span class="work-tag">Travel Coordination</span>
+              <span class="work-tag">Itinerary</span>
+              <span class="work-tag">Expense Management</span>
+              <span class="work-tag">Notion</span>
+            </div>
+            <span class="btn-notion">View in Notion →</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="work-card" href="https://app.notion.com/p/3cd8cfe172118133bcf5c50550e541da" target="_blank" style="margin-top:0;">
+        <div class="work-card-preview" style="background:var(--white);min-height:220px;">
+          <div class="notion-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
+            Notion Workspace
+          </div>
+          <h4 style="font-size:1.15rem;">Project Management Hub &nbsp;|&nbsp; Fintech App Launch</h4>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-top:0.8rem;">
+            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
+              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#128202; 5 Projects</div>
+              Owner, health status<br/>and target date on each
+            </div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
+              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#9201;&#65039; 3 Sprints</div>
+              Committed vs delivered<br/>points, with retros
+            </div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
+              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#9989; 24 Tasks</div>
+              Board, calendar and<br/>by-owner views
+            </div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
+              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#128221; Meeting Log</div>
+              Every decision turned<br/>into an assigned action
+            </div>
+          </div>
+        </div>
+        <div class="work-card-body">
+          <p>A full project management system built in Notion for a fintech launch: five linked project outcomes, two-week sprints tracking committed against delivered points, and twenty-four tasks running across board, calendar, and by-owner views. Includes an escalation matrix, a definition of done, a risk register, and a founder weekly-review template built to protect executive focus. Sample data throughout. Built end-to-end by Julia N.</p>
+          <div class="work-card-footer">
+            <div class="work-tags">
+              <span class="work-tag">Project Management</span>
+              <span class="work-tag">Sprint Planning</span>
+              <span class="work-tag">Stakeholder Reporting</span>
+              <span class="work-tag">Notion</span>
+            </div>
+            <span class="btn-notion">View in Notion &rarr;</span>
+          </div>
+        </div>
+      </a>
+
 
         <!-- Card 1: Business Operations -->
         <div class="work-card">
