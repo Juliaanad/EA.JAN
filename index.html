@@ -17,6 +17,15 @@
       --charcoal:   #0f1e14;
       --mid:        #3a5545;
       --white:      #ffffff;
+
+      /* One shared box system for every card on the site: radius, rest
+         shadow, hover shadow, and the lift/transition every card uses
+         on hover. Change these four and every card updates together. */
+      --card-radius: 16px;
+      --card-shadow: 0 4px 20px rgba(15, 30, 20, 0.1);
+      --card-shadow-hover: 0 16px 38px rgba(15, 30, 20, 0.18);
+      --card-lift: translateY(-5px);
+      --card-transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.25s ease;
     }
 
     html { scroll-behavior: smooth; }
@@ -78,13 +87,16 @@
     }
 
     .work-card {
-      border-radius: 16px;
+      border-radius: var(--card-radius);
       border: 1px solid rgba(26, 69, 48, 0.14);
-      box-shadow: 0 4px 20px rgba(15, 30, 20, 0.11);
+      box-shadow: var(--card-shadow);
       overflow: hidden;
-      transition: transform 0.15s ease-out, box-shadow 0.2s;
+      transition: var(--card-transition);
       background: var(--cream);
-      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
+    }
+    .work-card:hover {
+      transform: var(--card-lift);
+      box-shadow: var(--card-shadow-hover);
     }
 
     .work-card-preview {
@@ -227,8 +239,11 @@
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
+      gap: 0.7rem;
       margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .hero-badges { justify-content: center; }
     }
     .hero-text .badge {
       display: inline-flex;
@@ -237,20 +252,28 @@
       background: var(--white);
       border: 1px solid var(--rose-light);
       border-radius: 999px;
-      padding: 0.35rem 1rem;
+      padding: 0.5rem 1.1rem;
       font-size: 0.75rem;
+      line-height: 1.3;
       color: var(--mid);
+      box-shadow: 0 2px 8px rgba(15, 30, 20, 0.06);
     }
 
     .hero-roles {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      row-gap: 0.35rem;
       font-size: 0.7rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--mid);
       margin-bottom: 1.2rem;
     }
-
-    .hero-roles span { color: var(--rose-light); margin: 0 0.5rem; }
+    /* Each role is its own flex item and never wraps internally, so a
+       narrow viewport breaks between whole phrases, not mid-word. */
+    .hero-roles .role { white-space: nowrap; }
+    .hero-roles .dot { color: var(--rose-light); margin: 0 0.5rem; }
 
     .hero-text h1 {
       font-family: 'Inter', sans-serif;
@@ -403,16 +426,20 @@
 
     .stat-card {
       background: linear-gradient(135deg, var(--blush) 0%, #cfe4d7 100%);
-      border-radius: 12px;
-      padding: 1.4rem;
-      box-shadow: 0 3px 14px rgba(15, 30, 20, 0.08);
+      border-radius: var(--card-radius);
+      padding: 1.5rem;
+      box-shadow: var(--card-shadow);
       aspect-ratio: 1 / 1;
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
-      transition: background 0.25s ease;
+      text-align: center;
+      transition: var(--card-transition);
     }
     .stat-card:hover {
+      transform: var(--card-lift);
+      box-shadow: var(--card-shadow-hover);
       background: linear-gradient(135deg, var(--rose) 0%, var(--charcoal) 100%);
     }
     .stat-card:hover .number { color: var(--white); }
@@ -420,12 +447,19 @@
 
     .stat-card .number {
       font-family: 'Playfair Display', serif;
-      font-size: 1.9rem;
+      font-size: 2rem;
       font-weight: 600;
+      line-height: 1;
       color: var(--rose);
     }
 
-    .stat-card p { font-size: 0.78rem; color: var(--mid); margin-top: 0.2rem; }
+    .stat-card p {
+      font-size: 0.72rem;
+      letter-spacing: 0.01em;
+      line-height: 1.4;
+      color: var(--mid);
+      margin-top: 0.5rem;
+    }
 
     .about-text p { font-size: 0.95rem; color: var(--mid); margin-bottom: 1rem; }
 
@@ -448,14 +482,15 @@
       display: flex;
       flex-direction: column;
       background: linear-gradient(135deg, var(--white) 0%, var(--blush) 100%);
-      border-radius: 16px;
-      padding: 1.5rem;
+      border-radius: var(--card-radius);
+      padding: 1.6rem;
       border: 1px solid rgba(26, 69, 48, 0.12);
-      box-shadow: 0 4px 18px rgba(15, 30, 20, 0.1);
-      transition: transform 0.15s ease-out, box-shadow 0.2s, background 0.25s ease;
-      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
+      box-shadow: var(--card-shadow);
+      transition: var(--card-transition);
     }
     .service-card:hover {
+      transform: var(--card-lift);
+      box-shadow: var(--card-shadow-hover);
       background: linear-gradient(135deg, var(--rose) 0%, var(--charcoal) 100%);
     }
     .service-card:hover h3 { color: var(--white); }
@@ -463,15 +498,17 @@
     .service-card:hover .service-icon { background: rgba(255, 255, 255, 0.16); }
 
     .service-icon {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
+      flex: none;
       background: var(--blush);
-      border-radius: 12px;
+      border-radius: 11px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
-      margin-bottom: 0.9rem;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      transition: background 0.25s ease;
     }
 
     .service-card h3 {
@@ -479,7 +516,8 @@
       font-size: 1rem;
       line-height: 1.35;
       color: var(--charcoal);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.7rem;
+      transition: color 0.25s ease;
     }
 
     .service-card p { font-size: 0.85rem; color: var(--mid); line-height: 1.7; }
@@ -501,18 +539,24 @@
       margin-bottom: 1rem;
     }
 
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.55rem; }
 
     .skill-tag {
       background: var(--white);
-      border: 1px solid rgba(26, 69, 48, 0.2);
+      border: 1px solid rgba(26, 69, 48, 0.18);
       border-radius: 999px;
-      padding: 0.35rem 0.9rem;
+      padding: 0.4rem 0.95rem;
       font-size: 0.8rem;
       color: var(--mid);
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.4rem;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+    .skill-tag:hover {
+      background: var(--blush);
+      border-color: var(--rose-light);
+      color: var(--charcoal);
     }
 
     .skill-tag img {
@@ -580,6 +624,7 @@
       .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
       .hero-photo { order: -1; }
       .photo-frame { width: 220px; height: 280px; }
+      .hero-roles { justify-content: center; }
       .hero-tagline { margin-left: auto; margin-right: auto; }
       .hero-cta { justify-content: center; }
       section { padding: 4rem 1.5rem; }
@@ -672,13 +717,15 @@
     }
     .canva-carousel::-webkit-scrollbar { display: none; }
     .canva-slide {
+      position: relative;
       flex: 0 0 240px;
       scroll-snap-align: start;
-      border-radius: 12px;
+      border-radius: var(--card-radius);
       overflow: hidden;
       border: 1px solid rgba(26, 69, 48, 0.14);
-      box-shadow: 0 4px 16px rgba(15, 30, 20, 0.09);
+      box-shadow: var(--card-shadow);
       background: var(--cream);
+      transition: var(--card-transition);
     }
     .canva-slide img {
       width: 100%;
@@ -689,13 +736,15 @@
     }
 
     .canva-slide-wide {
+      position: relative;
       flex: 0 0 500px;
       scroll-snap-align: start;
-      border-radius: 12px;
+      border-radius: var(--card-radius);
       overflow: hidden;
       border: 1px solid rgba(26, 69, 48, 0.14);
-      box-shadow: 0 4px 16px rgba(15, 30, 20, 0.09);
+      box-shadow: var(--card-shadow);
       background: var(--cream);
+      transition: var(--card-transition);
     }
 
     .canva-slide-wide img {
@@ -870,17 +919,18 @@
 
     .testimonial-card {
       background: linear-gradient(135deg, var(--white) 0%, var(--blush) 100%);
-      border-radius: 20px;
-      padding: 2.2rem;
+      border-radius: var(--card-radius);
+      padding: 2rem;
       border: 1px solid rgba(26, 69, 48, 0.12);
-      box-shadow: 0 4px 20px rgba(15, 30, 20, 0.1);
+      box-shadow: var(--card-shadow);
       display: flex;
       flex-direction: column;
-      gap: 1.4rem;
-      transition: transform 0.15s ease-out, box-shadow 0.2s, background 0.25s ease;
-      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
+      gap: 1.2rem;
+      transition: var(--card-transition);
     }
     .testimonial-card:hover {
+      transform: var(--card-lift);
+      box-shadow: var(--card-shadow-hover);
       background: linear-gradient(135deg, var(--rose) 0%, var(--charcoal) 100%);
     }
     .testimonial-card:hover .testimonial-quote { color: rgba(255, 255, 255, 0.88); }
@@ -896,18 +946,36 @@
     }
 
     .testimonial-quote {
+      position: relative;
       font-size: 0.95rem;
       color: var(--mid);
-      line-height: 1.75;
+      line-height: 1.7;
       font-style: italic;
+      padding-left: 1.3rem;
+      transition: color 0.25s ease;
     }
+    .testimonial-quote::before {
+      content: '\201C';
+      position: absolute;
+      left: -0.15rem;
+      top: -0.3rem;
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 2.4rem;
+      line-height: 1;
+      color: var(--rose-light);
+      opacity: 0.5;
+    }
+    .testimonial-card:hover .testimonial-quote::before { color: rgba(255, 255, 255, 0.5); }
 
     .testimonial-author {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.9rem;
       border-top: 1px solid rgba(26, 69, 48, 0.1);
-      padding-top: 1.2rem;
+      padding-top: 1.1rem;
+      margin-top: auto;
+      transition: border-color 0.25s ease;
     }
 
     .testimonial-avatar {
@@ -977,13 +1045,36 @@
     }
 
     .canva-slide,
-    .canva-slide-wide {
-      transition: transform 0.15s ease-out, box-shadow 0.2s;
-      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
-    }
     .canva-slide:hover,
     .canva-slide-wide:hover {
-      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(calc(var(--drift, 0px) - 3px));
+      transform: var(--card-lift);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    /* "View" affordance: only appears on slides whose image the lightbox
+       script actually made clickable (marked .zoomable at runtime). */
+    .canva-slide:has(img.zoomable)::after,
+    .canva-slide-wide:has(img.zoomable)::after {
+      content: '\26A2  View';
+      position: absolute;
+      bottom: 0.6rem;
+      right: 0.6rem;
+      background: rgba(15, 30, 20, 0.78);
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      pointer-events: none;
+    }
+    .canva-slide:hover:has(img.zoomable)::after,
+    .canva-slide-wide:hover:has(img.zoomable)::after {
+      opacity: 1;
+      transform: translateY(0);
     }
 
 
@@ -997,14 +1088,38 @@
       margin-bottom: 3rem;
     }
     .compare-col {
+      position: relative;
       background: linear-gradient(135deg, var(--white) 0%, var(--blush) 100%);
-      border-radius: 16px;
+      border-radius: var(--card-radius);
       padding: 2rem;
       border: 1px solid rgba(26, 69, 48, 0.12);
-      box-shadow: 0 4px 18px rgba(15, 30, 20, 0.1);
-      transition: background 0.25s ease;
+      box-shadow: var(--card-shadow);
+      transition: var(--card-transition);
+    }
+    /* The preferred card gets a visible accent border and a lifted rest
+       shadow, so it reads as the better option before you even hover. */
+    .compare-col.is-preferred {
+      border: 1px solid var(--rose);
+      border-top: 4px solid var(--rose);
+      box-shadow: var(--card-shadow-hover);
+    }
+    .preferred-tag {
+      position: absolute;
+      top: -0.7rem;
+      left: 2rem;
+      background: var(--rose);
+      color: var(--white);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      box-shadow: 0 3px 10px rgba(15, 30, 20, 0.2);
     }
     .compare-col:not(.is-muted):hover {
+      transform: var(--card-lift);
+      box-shadow: var(--card-shadow-hover);
       background: linear-gradient(135deg, var(--rose) 0%, var(--charcoal) 100%);
     }
     .compare-col:not(.is-muted):hover h3 {
@@ -1179,15 +1294,23 @@
     .pm-box {
       flex: 1;
       display: flex;
-      border-radius: 14px;
+      border-radius: var(--card-radius);
     }
+    /* Only the Etsy box gets its own hover lift here: the ClickUp box's
+       visible card IS its child .canva-slide-wide, which already lifts
+       on its own hover. Adding a second lift on this wrapper would
+       double up (and double-shift the image) on top of that. */
     .pm-box-etsy {
       align-items: center;
       border: 1px solid rgba(26, 69, 48, 0.15);
       background: linear-gradient(135deg, var(--white) 0%, var(--blush) 100%);
-      box-shadow: 0 4px 20px rgba(15, 30, 20, 0.1);
-      padding: 1.1rem 1.6rem;
-      transition: background 0.25s ease;
+      box-shadow: var(--card-shadow);
+      padding: 1.4rem 1.6rem;
+      transition: var(--card-transition);
+    }
+    .pm-box-etsy:hover {
+      transform: var(--card-lift);
+      box-shadow: var(--card-shadow-hover);
     }
     .pm-box-etsy:hover {
       background: linear-gradient(135deg, var(--rose) 0%, var(--charcoal) 100%);
@@ -1300,7 +1423,11 @@
           </div>
         </div>
         <p class="hero-roles">
-          Virtual Assistant <span>·</span> Operations Manager <span>·</span> Executive Assistant
+          <span class="role">Virtual Assistant</span>
+          <span class="dot">·</span>
+          <span class="role">Operations Manager</span>
+          <span class="dot">·</span>
+          <span class="role">Executive Assistant</span>
         </p>
         <h1>
           Hi, I'm
@@ -1424,7 +1551,8 @@
       <p class="section-subtitle">Same work. One point of contact. No agency margin.</p>
 
       <div class="compare">
-        <div class="compare-col">
+        <div class="compare-col is-preferred">
+          <span class="preferred-tag">Recommended</span>
           <h3>Working with me directly</h3>
           <ul>
             <li><strong>One person on your account.</strong> That person is me.</li>
