@@ -106,6 +106,12 @@
       overflow: hidden;
     }
     .onboarding-carousel .work-card-footer { margin-top: auto; }
+
+    /* Pink flower cursor: only on cards that open a document (Notion
+       page, PDF, spreadsheet), not on photo/certificate slides. */
+    .doc-card {
+      cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48Zz48Y2lyY2xlIGN4PSIxNiIgY3k9IjEwIiByPSI2IiBmaWxsPSIjZjRhM2MyIi8+PGNpcmNsZSBjeD0iMjIiIGN5PSIxNiIgcj0iNiIgZmlsbD0iI2Y0YTNjMiIvPjxjaXJjbGUgY3g9IjE2IiBjeT0iMjIiIHI9IjYiIGZpbGw9IiNmNGEzYzIiLz48Y2lyY2xlIGN4PSIxMCIgY3k9IjE2IiByPSI2IiBmaWxsPSIjZjRhM2MyIi8+PGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iNS41IiBmaWxsPSIjZmNlM2VlIi8+PGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMyIgZmlsbD0iI2UwNjk5YiIvPjwvZz48L3N2Zz4=") 16 16, pointer;
+    }
     @media (max-width: 480px) {
       .onboarding-carousel .work-card { flex: 0 0 88vw; }
     }
@@ -461,10 +467,7 @@
       text-align: center;
       transition: var(--card-transition);
     }
-    .stat-card:hover {
-      transform: var(--card-lift);
-      box-shadow: var(--card-shadow-hover);
-    }
+
 
     .stat-card .number {
       font-family: 'Playfair Display', serif;
@@ -741,7 +744,7 @@
       overflow: hidden;
       border: 1px solid rgba(26, 69, 48, 0.14);
       box-shadow: var(--card-shadow);
-      background: var(--cream);
+      background: var(--white);
       transition: var(--card-transition);
     }
     .canva-slide img {
@@ -760,7 +763,7 @@
       overflow: hidden;
       border: 1px solid rgba(26, 69, 48, 0.14);
       box-shadow: var(--card-shadow);
-      background: var(--cream);
+      background: var(--white);
       transition: var(--card-transition);
       text-decoration: none;
       color: inherit;
@@ -893,7 +896,7 @@
       user-select: none;
     }
 
-    .certs-scroller { position: relative; }
+    .carousel-scroller { position: relative; }
     .carousel-nav {
       position: absolute;
       top: 40%;
@@ -1320,6 +1323,8 @@
       flex: 1;
       display: flex;
       border-radius: var(--card-radius);
+      text-decoration: none;
+      color: inherit;
     }
     /* Only the Etsy box gets its own hover lift here: the ClickUp box's
        visible card IS its child .canva-slide-wide, which already lifts
@@ -1726,6 +1731,9 @@
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Canva Design Samples</p>
         <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Graphic design and marketing material built for clients. Swipe to browse.</p>
+        <div class="carousel-scroller">
+          <button type="button" class="carousel-nav prev" aria-label="Previous designs" hidden>&#8592;</button>
+          <button type="button" class="carousel-nav next" aria-label="Next designs">&#8594;</button>
         <div class="canva-carousel">
           <div class="canva-slide">
             <img src="JOB%20POSTING.png" alt="Pest-Ex: Job Posting" />
@@ -1763,6 +1771,7 @@
             <img src="CANVA%20Sample.png" alt="Canva Sample" />
             <div class="canva-slide-label">Event Poster</div>
           </div>
+        </div>
         </div>
       </div>
 
@@ -1814,7 +1823,7 @@
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Project Management</p>
         <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Operational checklist running a full Etsy launch, from account setup to order intake.</p>
-        <div class="pm-box pm-box-etsy">
+        <a class="pm-box pm-box-etsy doc-card" href="https://docs.google.com/spreadsheets/d/1qS1PBpkhBANTAjybqbtqpMWRmhmdSHG7KeAKrtpxi8c/edit?usp=sharing" target="_blank">
           <div class="etsy-bar-row">
             <div class="etsy-bar-meta">
               <div class="notion-badge" style="margin:0;">📊 Google Sheets · 5 phases</div>
@@ -1837,9 +1846,9 @@
                 <span class="phase-num">📝 Phase 5</span>&nbsp; Order intake form
               </div>
             </div>
-            <a href="https://docs.google.com/spreadsheets/d/1qS1PBpkhBANTAjybqbtqpMWRmhmdSHG7KeAKrtpxi8c/edit?usp=sharing" target="_blank" style="display:inline-block;background:var(--charcoal);color:#fff;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.78rem;font-weight:500;text-decoration:none;flex-shrink:0;align-self:flex-start;">View Full Sheet →</a>
+            <span style="display:inline-block;background:var(--charcoal);color:#fff;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.78rem;font-weight:500;flex-shrink:0;align-self:flex-start;">View Full Sheet →</span>
           </div>
-        </div>
+        </a>
       </div>
 
       <!-- ClickUp Project Management -->
@@ -1859,8 +1868,11 @@
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Operational Work</p>
         <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Systems and documentation samples from client engagements.</p>
+        <div class="carousel-scroller">
+          <button type="button" class="carousel-nav prev" aria-label="Previous work samples" hidden>&#8592;</button>
+          <button type="button" class="carousel-nav next" aria-label="Next work samples">&#8594;</button>
         <div class="canva-carousel op-work">
-          <a class="canva-slide-wide" href="Pest%20ex%20company%20profile.pdf" target="_blank" style="background:var(--white);padding:1.8rem;">
+          <a class="canva-slide-wide doc-card" href="Pest%20ex%20company%20profile.pdf" target="_blank" style="background:var(--white);padding:1.8rem;">
             <div class="notion-badge" style="margin-bottom:0.8rem;">
               📄 PDF Document
             </div>
@@ -1894,6 +1906,7 @@
             <div class="canva-slide-label">Eve's Catering: Operations &amp; Costing</div>
           </div>
         </div>
+        </div>
       </div>
 
       <!-- Portfolio / Certificates Carousel -->
@@ -1901,7 +1914,7 @@
         <p class="section-label" style="margin-bottom:0.4rem;color:rgba(255,255,255,0.85);">Portfolio</p>
         <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);margin-bottom:1rem;">Credentials and certifications that back my expertise.</p>
         <div class="swipe-hint">Swipe for more <span aria-hidden="true">&rarr;</span></div>
-        <div class="certs-scroller">
+        <div class="carousel-scroller">
         <button type="button" class="carousel-nav prev" aria-label="Previous certificates" hidden>&#8592;</button>
         <button type="button" class="carousel-nav next" aria-label="Next certificates">&#8594;</button>
         <div class="canva-carousel certs">
@@ -1941,8 +1954,11 @@
         <h2 class="section-title">Real work, <em>built in Notion.</em></h2>
         <p class="section-subtitle">Itineraries, project systems, and ready-to-fill onboarding forms. Swipe to browse.</p>
       </div>
+      <div class="carousel-scroller">
+          <button type="button" class="carousel-nav prev" aria-label="Previous Notion documents" hidden>&#8592;</button>
+          <button type="button" class="carousel-nav next" aria-label="Next Notion documents">&#8594;</button>
       <div class="canva-carousel onboarding-carousel">
-      <a class="work-card" href="https://app.notion.com/p/3858cfe1721181c2a195d3097ff2744d" target="_blank" style="margin-top:0;">
+      <a class="work-card doc-card" href="https://app.notion.com/p/3858cfe1721181c2a195d3097ff2744d" target="_blank" style="margin-top:0;">
         <div class="work-card-preview" style="background:var(--white);min-height:220px;">
           <div class="notion-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
@@ -1978,7 +1994,7 @@
         </div>
       </a>
 
-      <a class="work-card" href="https://app.notion.com/p/3cd8cfe172118133bcf5c50550e541da" target="_blank" style="margin-top:0;">
+      <a class="work-card doc-card" href="https://app.notion.com/p/3cd8cfe172118133bcf5c50550e541da" target="_blank" style="margin-top:0;">
         <div class="work-card-preview" style="background:var(--white);min-height:220px;">
           <div class="notion-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
@@ -2020,7 +2036,7 @@
 
 
         <!-- Card 1: Business Operations -->
-        <div class="work-card">
+        <a class="work-card doc-card" href="https://app.notion.com/p/3858cfe17211812b901cd898c3b031dc" target="_blank">
           <div class="work-card-preview" style="background:var(--white);min-height:220px;">
             <div class="notion-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
@@ -2050,15 +2066,13 @@
                 <span class="work-tag">Onboarding</span>
                 <span class="work-tag">Notion</span>
               </div>
-              <a href="https://app.notion.com/p/3858cfe17211812b901cd898c3b031dc" target="_blank" class="btn-notion">
-                Get Started →
-              </a>
+              <span class="btn-notion">Get Started →</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Card 2: Lifestyle Manager -->
-        <div class="work-card">
+        <a class="work-card doc-card" href="https://app.notion.com/p/3858cfe1721181b2bf28f96591d4ce1f" target="_blank">
           <div class="work-card-preview" style="background:var(--white);min-height:220px;">
             <div class="notion-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
@@ -2088,13 +2102,12 @@
                 <span class="work-tag">Onboarding</span>
                 <span class="work-tag">Notion</span>
               </div>
-              <a href="https://app.notion.com/p/3858cfe1721181b2bf28f96591d4ce1f" target="_blank" class="btn-notion">
-                Get Started →
-              </a>
+              <span class="btn-notion">Get Started →</span>
             </div>
           </div>
-        </div>
+        </a>
 
+      </div>
       </div>
 
       <p style="text-align:center;font-size:0.78rem;font-weight:700;color:var(--mid);margin-top:1.2rem;letter-spacing:0.02em;"><strong>All work displayed in this portfolio is original content created by Julia N.</strong></p>
@@ -2220,28 +2233,33 @@
   </script>
 
 <script>
-  // Arrow controls for the certificates carousel.
+  // Arrow controls for every carousel, not just certificates: each
+  // .carousel-scroller wraps one .canva-carousel row plus its own
+  // prev/next buttons, wired up independently so scrolling one row
+  // never affects another.
   (function () {
-    const row = document.querySelector('.canva-carousel.certs');
-    const prev = document.querySelector('.carousel-nav.prev');
-    const next = document.querySelector('.carousel-nav.next');
-    if (!row || !prev || !next) return;
+    document.querySelectorAll('.carousel-scroller').forEach((scroller) => {
+      const row = scroller.querySelector('.canva-carousel');
+      const prev = scroller.querySelector('.carousel-nav.prev');
+      const next = scroller.querySelector('.carousel-nav.next');
+      if (!row || !prev || !next) return;
 
-    function step() {
-      const card = row.querySelector('.canva-slide-wide');
-      return (card ? card.offsetWidth : 500) + 16;
-    }
-    function sync() {
-      const max = row.scrollWidth - row.clientWidth - 2;
-      prev.hidden = row.scrollLeft <= 2;
-      next.hidden = max <= 0 || row.scrollLeft >= max;
-    }
-    prev.addEventListener('click', () => row.scrollBy({ left: -step(), behavior: 'smooth' }));
-    next.addEventListener('click', () => row.scrollBy({ left: step(), behavior: 'smooth' }));
-    row.addEventListener('scroll', sync, { passive: true });
-    window.addEventListener('resize', sync);
-    window.addEventListener('load', sync);
-    sync();
+      function step() {
+        const card = row.querySelector('.canva-slide, .canva-slide-wide, .work-card');
+        return (card ? card.offsetWidth : 400) + 16;
+      }
+      function sync() {
+        const max = row.scrollWidth - row.clientWidth - 2;
+        prev.hidden = row.scrollLeft <= 2;
+        next.hidden = max <= 0 || row.scrollLeft >= max;
+      }
+      prev.addEventListener('click', () => row.scrollBy({ left: -step(), behavior: 'smooth' }));
+      next.addEventListener('click', () => row.scrollBy({ left: step(), behavior: 'smooth' }));
+      row.addEventListener('scroll', sync, { passive: true });
+      window.addEventListener('resize', sync);
+      window.addEventListener('load', sync);
+      sync();
+    });
   })();
 </script>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
