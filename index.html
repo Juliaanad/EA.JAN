@@ -1671,13 +1671,18 @@
     let H = canvas.height = window.innerHeight;
     window.addEventListener('resize', () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; });
 
-    const dots = Array.from({ length: 28 }, () => ({
+    // Density rather than a fixed count, so the field looks the same on a laptop and a
+    // large monitor. Capped so very large displays don't pay for motes nobody notices.
+    const DENSITY = 5.0e-4;
+    const COUNT = Math.min(Math.round(W * H * DENSITY), 1200);
+
+    const dots = Array.from({ length: COUNT }, () => ({
       x: Math.random() * W,
       y: Math.random() * H,
-      r: Math.random() * 2 + 1,
-      sx: (Math.random() - 0.5) * 0.3,
-      sy: -(Math.random() * 0.4 + 0.15),
-      o: Math.random() * 0.18 + 0.06
+      r: Math.random() * 2.4 + 2,
+      sx: (Math.random() - 0.5) * 2.12,
+      sy: -(Math.random() * 0.92 + 0.42),
+      o: Math.random() * 0.21 + 0.04
     }));
 
     function draw() {
@@ -1685,7 +1690,7 @@
       dots.forEach(d => {
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(42,97,69,${d.o})`;
+        ctx.fillStyle = `rgba(86,154,68,${d.o})`;
         ctx.fill();
         d.x += d.sx;
         d.y += d.sy;
