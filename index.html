@@ -512,10 +512,7 @@
       box-shadow: var(--card-shadow);
       transition: var(--card-transition);
     }
-    .service-card:hover {
-      transform: var(--card-lift);
-      box-shadow: var(--card-shadow-hover);
-    }
+
 
     .service-icon {
       width: 42px;
@@ -784,8 +781,11 @@
     }
 
     /* Full-bleed green band for the certificates section */
-    /* Click any portfolio image to zoom */
-    .zoomable { cursor: zoom-in; }
+    /* Click any portfolio image to zoom - pink flower cursor, not the
+       browser's default magnifying-glass zoom cursor */
+    .zoomable {
+      cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48Zz48Y2lyY2xlIGN4PSIxNiIgY3k9IjEwIiByPSI2IiBmaWxsPSIjZjRhM2MyIi8+PGNpcmNsZSBjeD0iMjIiIGN5PSIxNiIgcj0iNiIgZmlsbD0iI2Y0YTNjMiIvPjxjaXJjbGUgY3g9IjE2IiBjeT0iMjIiIHI9IjYiIGZpbGw9IiNmNGEzYzIiLz48Y2lyY2xlIGN4PSIxMCIgY3k9IjE2IiByPSI2IiBmaWxsPSIjZjRhM2MyIi8+PGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iNS41IiBmaWxsPSIjZmNlM2VlIi8+PGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMyIgZmlsbD0iI2UwNjk5YiIvPjwvZz48L3N2Zz4=") 16 16, pointer;
+    }
     .lightbox {
       position: fixed;
       inset: 0;
@@ -971,10 +971,7 @@
       gap: 1.2rem;
       transition: var(--card-transition);
     }
-    .testimonial-card:hover {
-      transform: var(--card-lift);
-      box-shadow: var(--card-shadow-hover);
-    }
+
 
 
     .testimonial-stars {
@@ -1159,10 +1156,7 @@
       border-radius: 999px;
       box-shadow: 0 3px 10px rgba(15, 30, 20, 0.2);
     }
-    .compare-col:not(.is-muted):hover {
-      transform: var(--card-lift);
-      box-shadow: var(--card-shadow-hover);
-    }
+
 
     .compare-col.is-muted {
       background: transparent;
