@@ -573,7 +573,7 @@
       .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .work-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
-      .testimonial-card.is-wide .testimonial-quote { columns: 1; }
+      .testimonial-card.is-tall { grid-column: auto; grid-row: auto; }
       .canva-slide-wide { flex: 0 0 85vw; }
       .canva-slide { flex: 0 0 200px; }
       .canva-carousel-wrap[style*="margin-left"] { margin-left: -1.5rem !important; margin-right: -1.5rem !important; padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
@@ -834,12 +834,15 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
-      align-items: start;
+      /* No align-items override: default stretch is what lets Joe C.'s
+         card span rows 1-2 and land on the same top and bottom edges as
+         Maria's and Danny's cards stacked beside it. */
     }
-    .testimonial-card.is-wide { grid-column: 1 / -1; }
-    .testimonial-card.is-wide .testimonial-quote {
-      columns: 2;
-      column-gap: 2.5rem;
+    /* Maria and Danny stack in column 1 by DOM order; Joe C. is placed in
+       column 2, spanning both their rows so all three line up. */
+    .testimonial-card.is-tall {
+      grid-column: 2;
+      grid-row: 1 / 3;
     }
 
     .testimonial-card {
@@ -901,7 +904,7 @@
 
     @media (max-width: 768px) {
       .testimonials-grid { grid-template-columns: 1fr; }
-      .testimonial-card.is-wide .testimonial-quote { columns: 1; }
+      .testimonial-card.is-tall { grid-column: auto; grid-row: auto; }
     }
 
     .section-dark { background: var(--charcoal); }
@@ -1096,6 +1099,40 @@
 
 
 
+    /* Etsy phase tiles: green gradient at rest, solid dark green on hover
+       (the same --rose used for buttons), text flips to white to stay
+       legible against the darker hover fill. */
+    .phase-tile {
+      background: linear-gradient(135deg, var(--blush) 0%, rgba(69, 123, 96, 0.4) 100%);
+      border-radius: 8px;
+      padding: 0.45rem 0.75rem;
+      font-size: 0.7rem;
+      color: var(--mid);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .phase-tile .phase-num {
+      font-weight: 600;
+      color: var(--charcoal);
+      transition: color 0.2s ease;
+    }
+    .phase-tile:hover {
+      background: var(--rose);
+      color: rgba(255, 255, 255, 0.92);
+    }
+    .phase-tile:hover .phase-num {
+      color: var(--white);
+    }
+
+    /* Project Management + ClickUp Project Management, side by side */
+    .pm-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 900px) {
+      .pm-pair { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
     /* Operational Work: force the row to a shared height instead of each
        slide sizing to its own content. */
     .canva-carousel.op-work { align-items: stretch; }
@@ -1277,7 +1314,7 @@
           </div>
 
 
-          <div class="testimonial-card is-wide">
+          <div class="testimonial-card is-tall">
             <div class="testimonial-stars">★★★★★</div>
             <p class="testimonial-quote">"Julia has been a fantastic addition to the Tinidor Foods team. She's <strong>reliable, detail-oriented, and consistently delivers high-quality work on time</strong>, even when things get hectic during market prep or event crunch time. She takes initiative, communicates clearly, and adapts quickly to shifting priorities, exactly what a small, fast-moving operation like ours needs. Beyond the day-to-day execution, Julia brings a great attitude and genuine care to her work, which makes collaborating with her easy and enjoyable. I'd <strong>recommend her without hesitation</strong> to anyone looking for a dependable, sharp virtual assistant."</p>
             <div class="testimonial-author">
@@ -1578,7 +1615,8 @@
         </div>
       </div>
 
-      <!-- Project Management -->
+      <!-- Project Management + ClickUp Project Management, side by side -->
+      <div class="pm-pair">
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Project Management</p>
         <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Operational checklist running a full Etsy launch, from account setup to order intake.</p>
@@ -1589,20 +1627,20 @@
               <span style="font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:600;color:var(--charcoal);">Etsy Shop Master Setup Checklist</span>
             </div>
             <div class="etsy-bar-phases">
-              <div style="background:rgba(255,255,255,0.8);border-radius:8px;padding:0.45rem 0.75rem;font-size:0.7rem;color:var(--mid);">
-                <span style="font-weight:600;color:var(--charcoal);">💳 Phase 1</span>&nbsp; Payoneer & Wise
+              <div class="phase-tile">
+                <span class="phase-num">💳 Phase 1</span>&nbsp; Payoneer &amp; Wise
               </div>
-              <div style="background:rgba(255,255,255,0.8);border-radius:8px;padding:0.45rem 0.75rem;font-size:0.7rem;color:var(--mid);">
-                <span style="font-weight:600;color:var(--charcoal);">🛍️ Phase 2</span>&nbsp; Etsy account setup
+              <div class="phase-tile">
+                <span class="phase-num">🛍️ Phase 2</span>&nbsp; Etsy account setup
               </div>
-              <div style="background:rgba(255,255,255,0.8);border-radius:8px;padding:0.45rem 0.75rem;font-size:0.7rem;color:var(--mid);">
-                <span style="font-weight:600;color:var(--charcoal);">🎨 Phase 3</span>&nbsp; Shop branding
+              <div class="phase-tile">
+                <span class="phase-num">🎨 Phase 3</span>&nbsp; Shop branding
               </div>
-              <div style="background:rgba(255,255,255,0.8);border-radius:8px;padding:0.45rem 0.75rem;font-size:0.7rem;color:var(--mid);">
-                <span style="font-weight:600;color:var(--charcoal);">📋 Phase 4</span>&nbsp; Policies & FAQs
+              <div class="phase-tile">
+                <span class="phase-num">📋 Phase 4</span>&nbsp; Policies &amp; FAQs
               </div>
-              <div style="background:rgba(255,255,255,0.8);border-radius:8px;padding:0.45rem 0.75rem;font-size:0.7rem;color:var(--mid);">
-                <span style="font-weight:600;color:var(--charcoal);">📝 Phase 5</span>&nbsp; Order intake form
+              <div class="phase-tile">
+                <span class="phase-num">📝 Phase 5</span>&nbsp; Order intake form
               </div>
             </div>
             <a href="https://docs.google.com/spreadsheets/d/1qS1PBpkhBANTAjybqbtqpMWRmhmdSHG7KeAKrtpxi8c/edit?usp=sharing" target="_blank" style="display:inline-block;background:var(--charcoal);color:#fff;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.78rem;font-weight:500;text-decoration:none;flex-shrink:0;align-self:flex-start;">View Full Sheet →</a>
@@ -1627,6 +1665,7 @@
             The board structure, custom fields, severity levels, and workflow are shown exactly as built.
           </p>
         </div>
+      </div>
       </div>
 
       <!-- Operational Work Carousel -->
