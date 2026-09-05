@@ -1112,6 +1112,59 @@
     @media (max-width: 900px) {
       .pres-pair { grid-template-columns: 1fr; gap: 3rem; }
     }
+
+    /* Hero rate bubble */
+    .hero-rate-bubble {
+      position: absolute;
+      right: -0.5rem;
+      bottom: 1rem;
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      background: var(--rose);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transform: rotate(-8deg);
+      box-shadow: 0 10px 30px rgba(23, 43, 28, 0.28);
+      border: 3px solid var(--cream);
+      z-index: 2;
+    }
+    .hero-rate-bubble .amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+    .hero-rate-bubble .amount span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      margin-top: 0.15rem;
+    }
+    .hero-rate-bubble .tag {
+      font-size: 0.58rem;
+      line-height: 1.35;
+      color: rgba(255, 255, 255, 0.88);
+      margin-top: 0.35rem;
+      padding: 0 0.6rem;
+    }
+    @media (max-width: 768px) {
+      .hero-rate-bubble {
+        width: 108px;
+        height: 108px;
+        right: 0;
+        bottom: -0.5rem;
+      }
+      .hero-rate-bubble .amount { font-size: 1.2rem; }
+    }
   </style>
 </head>
 <body>
@@ -1158,6 +1211,10 @@
       <div class="hero-photo">
         <div class="photo-frame">
           <img src="Julia%20Nadal%20Photo.JPEG" alt="Julia N." />
+          <div class="hero-rate-bubble">
+            <p class="amount">$12<span>Per Hour</span></p>
+            <p class="tag">Honest work. Real commitment.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1170,27 +1227,23 @@
       <h2 class="section-title">Organized. Reliable. <em>Detail-driven.</em></h2>
       <div class="about-grid" style="margin-top:2.5rem;">
         <div class="about-text">
-          <p style="font-size:0.95rem;color:var(--charcoal);font-weight:500;margin-bottom:1.2rem;">Executive Assistant and Business Operations Manager, based in Manila.</p>
+          <p style="font-size:0.95rem;color:var(--charcoal);font-weight:500;margin-bottom:1.2rem;">Executive Assistant &amp; Ops Manager, based in Manila.</p>
           <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.75rem;">
             <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
-              Executive support and operational efficiency for founders and owners.
+              Executive support for founders and owners.
             </li>
             <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
-              High-level calendars, inbox, and daily operations.
+              Calendars, inbox, and daily operations.
             </li>
             <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
-              Systems and workflows that scale as the business grows.
+              Systems that scale with your business.
             </li>
             <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
-              Full ownership of the backend. You keep the work only you can do.
-            </li>
-            <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
-              <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
-              Open to remote roles worldwide.
+              Remote, worldwide.
             </li>
           </ul>
         </div>
