@@ -89,7 +89,6 @@
         radial-gradient(circle at 38% 38%, rgba(69, 123, 96, 0.3) 0%, transparent 42%),
         var(--charcoal);
     }
-    #work .section-label { color: #8fc9a8; }
     #work .section-title { color: var(--white); }
     #work .section-title em { color: #8fc9a8; }
     #work .section-subtitle { color: rgba(255, 255, 255, 0.75); }
@@ -429,10 +428,15 @@
     .section-inner { max-width: 1100px; margin: 0 auto; }
 
     .section-label {
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      display: inline-block;
+      background: var(--blush);
       color: var(--rose);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
       margin-bottom: 0.6rem;
     }
 
@@ -620,7 +624,6 @@
 
     /* CONTACT */
     #contact { background: var(--charcoal); }
-    #contact .section-label { color: var(--label-dark); }
     #contact .section-title { color: var(--white); }
     #contact .section-title em { color: var(--label-dark); }
     #contact .section-subtitle { color: rgba(255,255,255,0.55); }
@@ -1072,7 +1075,6 @@
     }
 
     .section-dark { background: var(--charcoal); }
-    .section-dark .section-label { color: var(--label-dark); }
     .section-dark .section-title { color: #ffffff; }
     .section-dark .section-title em { color: var(--label-dark); }
     .section-dark .section-subtitle { color: rgba(255,255,255,0.65); }
@@ -1935,7 +1937,7 @@
 
       <!-- Portfolio / Certificates Carousel -->
       <div class="canva-carousel-wrap certs-band" style="background:var(--rose);border-radius:var(--card-radius);padding:2rem;">
-        <p class="section-label" style="margin-bottom:0.4rem;color:rgba(255,255,255,0.85);">Certificates</p>
+        <p class="section-label" style="margin-bottom:0.4rem;">Certificates</p>
         <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);margin-bottom:1rem;">Credentials and certifications that back my expertise.</p>
         <div class="swipe-hint">Swipe for more <span aria-hidden="true">&rarr;</span></div>
         <div class="carousel-scroller">
