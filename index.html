@@ -1003,7 +1003,7 @@
       border-radius: 20px;
       padding: 2.6rem;
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr minmax(0, 1fr);
       gap: 2.5rem;
       align-items: center;
     }
@@ -1032,11 +1032,10 @@
       letter-spacing: 0.06em;
       color: rgba(255, 255, 255, 0.55);
     }
-    .rate-note {
-      font-size: 0.82rem;
-      color: rgba(255, 255, 255, 0.6);
+    .rate-second {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.72);
       margin-top: 0.9rem;
-      max-width: 38ch;
     }
     .rate-card .btn-primary {
       display: inline-block;
@@ -1045,30 +1044,33 @@
       color: var(--charcoal);
     }
     .rate-card .btn-primary:hover { background: var(--blush); }
-    .rate-terms {
-      display: grid;
-      gap: 1.1rem;
+    .rate-expect {
       padding-left: 2.5rem;
       border-left: 1px solid rgba(87, 150, 122, 0.3);
     }
-    .rate-terms dt {
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.45);
-      margin-bottom: 0.15rem;
+    .rate-expect ul { list-style: none; display: grid; gap: 0.7rem; }
+    .rate-expect li {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.6;
+      padding-left: 1.3rem;
+      position: relative;
     }
-    .rate-terms dd {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--white);
-      white-space: nowrap;
+    .rate-expect li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--rose-light);
     }
 
     @media (max-width: 768px) {
       .compare { grid-template-columns: 1fr; }
       .rate-card { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
-      .rate-terms {
+      .rate-expect {
         padding-left: 0;
         padding-top: 1.5rem;
         border-left: none;
@@ -1084,10 +1086,10 @@
     <a href="#hero" class="nav-logo">Julia N.</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#rates">Rates</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#work">My Work</a></li>
-      <li><a href="#rates">Rates</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -1227,6 +1229,58 @@
       </div>
     </div>
   </section>
+
+  <!-- WHY DIRECT + RATE -->
+  <section id="rates">
+    <div class="section-inner">
+      <p class="section-label">Working Together</p>
+      <h2 class="section-title">Hire direct, <em>not through an agency.</em></h2>
+      <p class="section-subtitle">Same work. One point of contact. No agency margin.</p>
+
+      <div class="compare">
+        <div class="compare-col">
+          <h3>Working with me directly</h3>
+          <ul>
+            <li><strong>One person on your account.</strong> That person is me.</li>
+            <li><strong>I learn your systems once.</strong> The context stays with your business.</li>
+            <li><strong>You talk to me.</strong> There is no account manager in between.</li>
+            <li><strong>Priorities change by message.</strong> No change request needed.</li>
+            <li><strong>A direct agreement.</strong> No placement fee. No lock-in.</li>
+          </ul>
+        </div>
+        <div class="compare-col is-muted">
+          <h3>Through an agency</h3>
+          <ul>
+            <li>Your tasks go to whoever is free that day.</li>
+            <li>Part of your fee covers agency overhead.</li>
+            <li>Requests pass through an account manager.</li>
+            <li>Staff change. You explain your systems again.</li>
+            <li>The agency sets the terms.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rate-card">
+        <div class="rate-main">
+          <p class="rate-label">Flat monthly rate</p>
+          <p class="rate-figure">$2,000 <span>USD per month</span></p>
+          <p class="rate-second">Approximately $12 per hour.</p>
+          <a href="#contact" class="btn-primary">Work With Me</a>
+        </div>
+        <div class="rate-expect">
+          <p class="rate-label">What to expect from me</p>
+          <ul>
+            <li>8 hours a day, Monday to Friday.</li>
+            <li>40 hours a week.</li>
+            <li>One point of contact. Me.</li>
+            <li>The same person every month.</li>
+            <li>Your systems learned once, not repeatedly.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- SERVICES -->
   <section id="services" class="section-dark">
@@ -1772,61 +1826,6 @@
     </div>
   </section>
 
-
-  <!-- WHY DIRECT + RATE -->
-  <section id="rates">
-    <div class="section-inner">
-      <p class="section-label">Working Together</p>
-      <h2 class="section-title">Hire direct, <em>not through an agency.</em></h2>
-      <p class="section-subtitle">The same work, one point of contact, and the whole rate goes to the person actually doing it.</p>
-
-      <div class="compare">
-        <div class="compare-col">
-          <h3>Working with me directly</h3>
-          <ul>
-            <li><strong>One person on your account.</strong> I learn your systems and preferences once, and that context stays with your business.</li>
-            <li><strong>The full rate pays for the work.</strong> There is no agency margin sitting between what you spend and what you get.</li>
-            <li><strong>You talk to me.</strong> Priorities change with a message, not a request passed down a chain.</li>
-            <li><strong>A simple direct agreement.</strong> No placement fee, and no long lock-in to sign before we start.</li>
-            <li><strong>Continuity you can plan around.</strong> The person who set up your workflows is the person still running them next quarter.</li>
-          </ul>
-        </div>
-        <div class="compare-col is-muted">
-          <h3>Through an agency</h3>
-          <ul>
-            <li>Your account usually sits with a pool of assistants, and whoever is free takes the task.</li>
-            <li>Part of what you pay covers the agency's overhead and margin rather than the work itself.</li>
-            <li>Requests are typically routed through an account manager instead of the assistant.</li>
-            <li>When staffing changes, your systems and preferences get explained again from the start.</li>
-            <li>Terms, minimums, and notice periods are set by the agency rather than agreed between us.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="rate-card">
-        <div class="rate-main">
-          <p class="rate-label">Flat monthly rate</p>
-          <p class="rate-figure">$2,000 <span>USD per month</span></p>
-          <p class="rate-note">Roughly $12 per hour at full-time hours. Billed monthly, with no placement fee and no agency margin.</p>
-          <a href="#contact" class="btn-primary">Work With Me</a>
-        </div>
-        <dl class="rate-terms">
-          <div>
-            <dt>Hours per day</dt>
-            <dd>8 hours</dd>
-          </div>
-          <div>
-            <dt>Days per week</dt>
-            <dd>Monday to Friday</dd>
-          </div>
-          <div>
-            <dt>Weekly total</dt>
-            <dd>40 hours</dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </section>
 
 
   <!-- CONTACT -->
