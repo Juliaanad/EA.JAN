@@ -87,11 +87,6 @@
       transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
     }
 
-    .work-card:hover {
-      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(calc(var(--drift, 0px) - 4px));
-      box-shadow: 0 16px 48px rgba(42, 97, 69, 0.12);
-    }
-
     .work-card-preview {
       background: linear-gradient(135deg, #f0f7f3 0%, #e8f4ee 100%);
       padding: 2rem;
@@ -391,33 +386,39 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
       align-items: start;
     }
 
+    /* One column, all four stats stacked, rather than a 2x2 block that
+       leaves the shorter text column with empty space beside it. */
     .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
     }
 
     .stat-card {
       background: var(--blush);
       border-radius: 12px;
-      padding: 1.4rem;
+      padding: 0.85rem 1.2rem;
       box-shadow: 0 3px 14px rgba(23, 43, 28, 0.08);
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
     }
 
     .stat-card .number {
       font-family: 'Playfair Display', serif;
-      font-size: 1.9rem;
+      font-size: 1.5rem;
       font-weight: 600;
       color: var(--rose);
+      flex: 0 0 auto;
+      min-width: 3.2rem;
     }
 
-    .stat-card p { font-size: 0.78rem; color: var(--mid); margin-top: 0.2rem; }
+    .stat-card p { font-size: 0.78rem; color: var(--mid); margin: 0; }
 
     .about-text p { font-size: 0.95rem; color: var(--mid); margin-bottom: 1rem; }
 
@@ -446,11 +447,6 @@
       box-shadow: 0 4px 18px rgba(23, 43, 28, 0.1);
       transition: transform 0.15s ease-out, box-shadow 0.2s;
       transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
-    }
-
-    .service-card:hover {
-      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(calc(var(--drift, 0px) - 4px));
-      box-shadow: 0 12px 40px rgba(42, 97, 69, 0.1);
     }
 
     .service-icon {
@@ -574,7 +570,7 @@
       .hero-tagline { margin-left: auto; margin-right: auto; }
       .hero-cta { justify-content: center; }
       section { padding: 4rem 1.5rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
       .services-grid .service-card { flex: 0 0 calc(50% - 0.75rem); }
       .skills-grid { grid-template-columns: 1fr; gap: 2rem; }
       .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -583,7 +579,6 @@
       .testimonial-card.is-wide .testimonial-quote { columns: 1; }
       .canva-slide-wide { flex: 0 0 85vw; }
       .canva-slide { flex: 0 0 200px; }
-      .about-stats { grid-template-columns: 1fr 1fr; }
       .canva-carousel-wrap[style*="margin-left"] { margin-left: -1.5rem !important; margin-right: -1.5rem !important; padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
     }
 
@@ -596,6 +591,11 @@
       .work-card-preview { padding: 1.2rem; }
       .work-card-body { padding: 1rem; }
       .canva-slide-wide { flex: 0 0 90vw; }
+      /* Only true phones stack About into one column; tablets keep the
+         two-column layout so the stats strip sits beside the text instead
+         of adding a full extra screen of scroll below it. */
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .stat-card { padding: 0.7rem 1rem; }
     }
 
     /* PORTFOLIO IMAGE GRID */
@@ -859,11 +859,6 @@
       transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(var(--drift, 0px));
     }
 
-    .testimonial-card:hover {
-      transform: perspective(1000px) rotateX(var(--tilt, 0deg)) translateY(calc(var(--drift, 0px) - 4px));
-      box-shadow: 0 16px 48px rgba(42, 97, 69, 0.1);
-    }
-
     .testimonial-stars {
       display: flex;
       gap: 0.2rem;
@@ -950,13 +945,6 @@
       .etsy-bar-row { flex-direction: column; align-items: flex-start; }
       .etsy-bar-meta { flex-shrink: 1; }
       .etsy-bar-phases { flex: none; width: 100%; justify-content: flex-start; }
-    }
-
-    .stat-card {
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .stat-card:hover {
-      transform: translateY(-3px);
     }
 
     .canva-slide,
@@ -1112,6 +1100,20 @@
 
 
 
+    /* Operational Work: force the row to a shared height instead of each
+       slide sizing to its own content. */
+    .canva-carousel.op-work { align-items: stretch; }
+    .canva-carousel.op-work .canva-slide-wide {
+      display: flex;
+      flex-direction: column;
+    }
+    .canva-carousel.op-work .canva-slide-wide img {
+      flex: 1;
+      min-height: 0;
+      height: auto;
+      object-fit: cover;
+    }
+
     /* Sample Itinerary + Sample PM System, side by side */
     .sample-pair {
       display: grid;
@@ -1207,7 +1209,7 @@
       <h2 class="section-title">Organized. Reliable. <em>Detail-driven.</em></h2>
       <div class="about-grid" style="margin-top:2.5rem;">
         <div class="about-text">
-          <p style="font-size:0.95rem;color:var(--charcoal);font-weight:500;margin-bottom:1.2rem;">Executive Assistant &amp; Ops Manager, based in Manila.</p>
+          <p style="font-size:0.95rem;color:var(--charcoal);font-weight:500;margin-bottom:1.2rem;">I started as an Executive Assistant and grew into an Operations Manager for the same employer, based in Manila. Now I'm looking for an executive to give that same honesty and commitment to.</p>
           <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.75rem;">
             <li style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.9rem;color:var(--mid);">
               <span style="color:var(--rose);font-size:1rem;margin-top:0.1rem;">✓</span>
@@ -1632,7 +1634,7 @@
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Operational Work</p>
         <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Systems and documentation samples from client engagements.</p>
-        <div class="canva-carousel">
+        <div class="canva-carousel op-work">
           <div class="canva-slide-wide" style="background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ee 100%);padding:1.8rem;">
             <div class="notion-badge" style="margin-bottom:0.8rem;">
               📄 PDF Document
