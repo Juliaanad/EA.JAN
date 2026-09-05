@@ -78,7 +78,17 @@
     .nav-links a:hover { color: var(--label-dark); }
 
     /* WORK SAMPLES */
-    #work { background: var(--white); }
+#work { background: var(--white); }
+    /* Full-bleed band: breaks out of the page's max-width column to
+       span the entire viewport edge to edge, unlike a boxed panel. The
+       negative side margins pull it out; the matching padding pushes
+       its content back in line with everything else. */
+    .full-bleed-dark {
+      background: var(--rose);
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 3rem calc(50vw - 50%);
+    }
 
     .work-grid {
       display: grid;
@@ -1738,15 +1748,14 @@
   <!-- WORK SAMPLES -->
   <section id="work">
     <div class="section-inner">
-      <div style="background:var(--rose);border-radius:var(--card-radius);padding:2.5rem 2rem;">
       <p class="section-label">Portfolio</p>
-      <h2 class="section-title" style="color:var(--white);">Work samples from real <em style="color:#8fc9a8;">client engagements.</em></h2>
-      <p class="section-subtitle" style="color:rgba(255,255,255,0.75);">Design, operations, and coordination work. All original, all shipped for real clients.</p>
+      <h2 class="section-title">Work samples from real <em>client engagements.</em></h2>
+      <p class="section-subtitle">Design, operations, and coordination work. All original, all shipped for real clients.</p>
 
       <!-- Canva Design Samples -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Canva Design Samples</p>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Graphic design and marketing material built for clients. Swipe to browse.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Graphic design and marketing material built for clients. Swipe to browse.</p>
         <div class="carousel-scroller">
           <button type="button" class="carousel-nav prev" aria-label="Previous designs" hidden>&#8592;</button>
           <button type="button" class="carousel-nav next" aria-label="Next designs">&#8594;</button>
@@ -1790,13 +1799,12 @@
         </div>
         </div>
       </div>
-      </div>
 
-      <div style="background:var(--white);border-radius:var(--card-radius);padding:2.5rem 2rem;box-shadow:var(--card-shadow);">
+      <div class="full-bleed-dark">
       <!-- Business Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Business Presentations</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Client-facing company profile, designed end to end. 7 slides, use the arrows.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Client-facing company profile, designed end to end. 7 slides, use the arrows.</p>
         <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(26, 69, 48,0.15);background:var(--cream);box-shadow:0 4px 20px rgba(15, 30, 20,0.1);">
           <div style="padding:0.9rem 1.4rem;background:var(--white);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Pest-Ex Company Profile · 7 slides</div>
@@ -1817,7 +1825,7 @@
       <!-- EA Onboarding Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">EA Onboarding Presentations</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Shared with an executive on day one. Sets expectations and maps the first two weeks.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Shared with an executive on day one. Sets expectations and maps the first two weeks.</p>
         <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(26, 69, 48,0.15);background:var(--cream);box-shadow:0 4px 20px rgba(15, 30, 20,0.1);">
           <div style="padding:0.9rem 1.4rem;background:var(--white);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Canva · 8 slides</div>
@@ -1834,6 +1842,7 @@
             </iframe>
           </div>
         </div>
+      </div>
       </div>
 
       <!-- Project Management + ClickUp Project Management, side by side -->
@@ -1925,7 +1934,6 @@
           </div>
         </div>
         </div>
-      </div>
       </div>
 
       <!-- Portfolio / Certificates Carousel -->
