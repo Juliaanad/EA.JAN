@@ -87,6 +87,9 @@
     }
 
     .work-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
       border-radius: var(--card-radius);
       border: 1px solid rgba(26, 69, 48, 0.14);
       box-shadow: var(--card-shadow);
@@ -142,11 +145,7 @@
     .preview-line.medium { width: 80%; }
     .preview-line.long { width: 95%; }
 
-    .work-card-body { padding: 1.4rem; background: linear-gradient(135deg, var(--white) 0%, var(--blush) 100%); transition: background 0.25s ease; }
-
-    .work-card:hover .work-card-body { background: linear-gradient(135deg, var(--rose) 0%, var(--charcoal) 100%); }
-    .work-card:hover .work-card-body p { color: rgba(255, 255, 255, 0.85); }
-    .work-card:hover .work-tag { background: rgba(255, 255, 255, 0.18); color: var(--white); }
+    .work-card-body { padding: 1.4rem; background: var(--white); }
 
     .work-card-body p { font-size: 0.85rem; color: var(--mid); margin-bottom: 1rem; line-height: 1.6; }
 
@@ -384,8 +383,8 @@
     .section-inner { max-width: 1100px; margin: 0 auto; }
 
     .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--rose);
       margin-bottom: 0.6rem;
@@ -425,7 +424,7 @@
     }
 
     .stat-card {
-      background: linear-gradient(135deg, var(--blush) 0%, #cfe4d7 100%);
+      background: var(--white);
       border-radius: var(--card-radius);
       padding: 1.5rem;
       box-shadow: var(--card-shadow);
@@ -440,10 +439,7 @@
     .stat-card:hover {
       transform: var(--card-lift);
       box-shadow: var(--card-shadow-hover);
-      background: linear-gradient(135deg, var(--rose) 0%, var(--charcoal) 100%);
     }
-    .stat-card:hover .number { color: var(--white); }
-    .stat-card:hover p { color: rgba(255, 255, 255, 0.85); }
 
     .stat-card .number {
       font-family: 'Playfair Display', serif;
@@ -481,7 +477,7 @@
     .service-card {
       display: flex;
       flex-direction: column;
-      background: linear-gradient(135deg, var(--white) 0%, var(--blush) 100%);
+      background: var(--white);
       border-radius: var(--card-radius);
       padding: 1.6rem;
       border: 1px solid rgba(26, 69, 48, 0.12);
@@ -491,11 +487,7 @@
     .service-card:hover {
       transform: var(--card-lift);
       box-shadow: var(--card-shadow-hover);
-      background: linear-gradient(135deg, var(--rose) 0%, var(--charcoal) 100%);
     }
-    .service-card:hover h3 { color: var(--white); }
-    .service-card:hover li { color: rgba(255, 255, 255, 0.85); }
-    .service-card:hover .service-icon { background: rgba(255, 255, 255, 0.16); }
 
     .service-icon {
       width: 42px;
@@ -745,6 +737,8 @@
       box-shadow: var(--card-shadow);
       background: var(--cream);
       transition: var(--card-transition);
+      text-decoration: none;
+      color: inherit;
     }
 
     .canva-slide-wide img {
@@ -758,13 +752,7 @@
       line-height: 1.3;
       color: var(--mid);
       font-weight: 500;
-      background: linear-gradient(135deg, var(--white) 0%, var(--blush) 100%);
-      transition: background 0.25s ease, color 0.25s ease;
-    }
-    .canva-slide:hover .canva-slide-label,
-    .canva-slide-wide:hover .canva-slide-label {
-      background: linear-gradient(135deg, var(--rose) 0%, var(--charcoal) 100%);
-      color: var(--white);
+      background: var(--white);
     }
 
     /* Full-bleed green band for the certificates section */
@@ -810,6 +798,33 @@
       padding: 0;
     }
     .lightbox-close:hover { background: rgba(255, 255, 255, 0.95); color: var(--charcoal); }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.14);
+      color: #fff;
+      font-size: 1.4rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+    }
+    .lightbox-nav:hover { background: rgba(255, 255, 255, 0.95); color: var(--charcoal); }
+    .lightbox-nav.prev { left: 16px; }
+    .lightbox-nav.next { right: 16px; }
+    .lightbox-nav[hidden] { display: none; }
+    @media (max-width: 600px) {
+      .lightbox-nav { width: 40px; height: 40px; font-size: 1.2rem; }
+      .lightbox-nav.prev { left: 8px; }
+      .lightbox-nav.next { right: 8px; }
+    }
     .lightbox-caption {
       position: absolute;
       bottom: 22px;
@@ -931,12 +946,8 @@
     .testimonial-card:hover {
       transform: var(--card-lift);
       box-shadow: var(--card-shadow-hover);
-      background: linear-gradient(135deg, var(--rose) 0%, var(--charcoal) 100%);
     }
-    .testimonial-card:hover .testimonial-quote { color: rgba(255, 255, 255, 0.88); }
-    .testimonial-card:hover .testimonial-name { color: var(--white); }
-    .testimonial-card:hover .testimonial-role { color: rgba(255, 255, 255, 0.75); }
-    .testimonial-card:hover .testimonial-author { border-top-color: rgba(255, 255, 255, 0.2); }
+
 
     .testimonial-stars {
       display: flex;
@@ -966,7 +977,7 @@
       color: var(--rose-light);
       opacity: 0.5;
     }
-    .testimonial-card:hover .testimonial-quote::before { color: rgba(255, 255, 255, 0.5); }
+
 
     .testimonial-author {
       display: flex;
@@ -1089,7 +1100,7 @@
     }
     .compare-col {
       position: relative;
-      background: linear-gradient(135deg, var(--white) 0%, var(--blush) 100%);
+      background: var(--white);
       border-radius: var(--card-radius);
       padding: 2rem;
       border: 1px solid rgba(26, 69, 48, 0.12);
@@ -1120,14 +1131,8 @@
     .compare-col:not(.is-muted):hover {
       transform: var(--card-lift);
       box-shadow: var(--card-shadow-hover);
-      background: linear-gradient(135deg, var(--rose) 0%, var(--charcoal) 100%);
     }
-    .compare-col:not(.is-muted):hover h3 {
-      color: var(--white);
-      border-bottom-color: rgba(255, 255, 255, 0.25);
-    }
-    .compare-col:not(.is-muted):hover li { color: rgba(255, 255, 255, 0.85); }
-    .compare-col:not(.is-muted):hover li::before { background: var(--label-dark); }
+
     .compare-col.is-muted {
       background: transparent;
       border-style: dashed;
@@ -1258,24 +1263,16 @@
        (the same --rose used for buttons), text flips to white to stay
        legible against the darker hover fill. */
     .phase-tile {
-      background: linear-gradient(135deg, var(--blush) 0%, rgba(69, 123, 96, 0.4) 100%);
+      background: var(--white);
+      border: 1px solid rgba(26, 69, 48, 0.12);
       border-radius: 8px;
       padding: 0.45rem 0.75rem;
       font-size: 0.7rem;
       color: var(--mid);
-      transition: background 0.2s ease, color 0.2s ease;
     }
     .phase-tile .phase-num {
       font-weight: 600;
       color: var(--charcoal);
-      transition: color 0.2s ease;
-    }
-    .phase-tile:hover {
-      background: var(--rose);
-      color: rgba(255, 255, 255, 0.92);
-    }
-    .phase-tile:hover .phase-num {
-      color: var(--white);
     }
 
     /* Project Management + ClickUp Project Management, side by side.
@@ -1303,7 +1300,7 @@
     .pm-box-etsy {
       align-items: center;
       border: 1px solid rgba(26, 69, 48, 0.15);
-      background: linear-gradient(135deg, var(--white) 0%, var(--blush) 100%);
+      background: var(--white);
       box-shadow: var(--card-shadow);
       padding: 1.4rem 1.6rem;
       transition: var(--card-transition);
@@ -1312,14 +1309,6 @@
       transform: var(--card-lift);
       box-shadow: var(--card-shadow-hover);
     }
-    .pm-box-etsy:hover {
-      background: linear-gradient(135deg, var(--rose) 0%, var(--charcoal) 100%);
-    }
-    /* the title span sets its own inline color, so this needs !important
-       to actually win on hover. Phase tiles keep their own independent
-       hover (gradient -> solid rose) untouched by the card-level hover. */
-    .pm-box-etsy:hover .etsy-bar-meta span { color: var(--white) !important; }
-    .pm-box-etsy:hover .etsy-bar-meta .notion-badge { color: var(--white); }
     .pm-box-clickup { align-items: stretch; }
     .pm-box-clickup .canva-slide-wide {
       width: 100%;
@@ -1389,6 +1378,10 @@
       .sample-pair { grid-template-columns: 1fr; gap: 2rem; }
       .sample-pair .work-card { height: auto; min-height: 400px; }
     }
+    /* Extra clearance below the pair, on top of .canva-carousel-wrap's
+       normal 3rem margin-top, so the certificates band never crowds the
+       cards above it regardless of how tall their content runs. */
+    .sample-pair { margin-bottom: 2rem; }
   </style>
 </head>
 <body>
@@ -1882,7 +1875,7 @@
         <p class="section-label" style="margin-bottom:0.4rem;">Operational Work</p>
         <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Systems and documentation samples from client engagements.</p>
         <div class="canva-carousel op-work">
-          <div class="canva-slide-wide" style="background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ee 100%);padding:1.8rem;">
+          <a class="canva-slide-wide" href="Pest%20ex%20company%20profile.pdf" target="_blank" style="background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ee 100%);padding:1.8rem;">
             <div class="notion-badge" style="margin-bottom:0.8rem;">
               📄 PDF Document
             </div>
@@ -1905,8 +1898,8 @@
                 Step-by-step treatment and service workflow
               </div>
             </div>
-            <a href="Pest%20ex%20company%20profile.pdf" target="_blank" style="display:inline-block;background:var(--charcoal);color:#fff;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.78rem;font-weight:500;text-decoration:none;">View PDF →</a>
-          </div>
+            <span style="display:inline-block;background:var(--charcoal);color:#fff;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.78rem;font-weight:500;">View PDF →</span>
+          </a>
           <div class="canva-slide-wide">
             <img src="SOP%20previous%20works.JPG1.JPG" alt="Eve's Catering: Menu Design Suite" />
             <div class="canva-slide-label">Eve's Catering: Menu Design Suite</div>
@@ -1925,7 +1918,7 @@
         <p class="section-label" style="margin-bottom:0.4rem;">Sample Itinerary</p>
         <p style="font-size:0.85rem;color:var(--mid);">A sample executive travel itinerary built end-to-end. Click to view the full document in Notion.</p>
       </div>
-      <div class="work-card" style="margin-top:0;">
+      <a class="work-card" href="https://app.notion.com/p/3858cfe1721181c2a195d3097ff2744d" target="_blank" style="margin-top:0;">
         <div class="work-card-preview" style="background:linear-gradient(135deg,#edf4ee 0%,#f0f7f3 100%);min-height:220px;">
           <div class="notion-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
@@ -1956,12 +1949,10 @@
               <span class="work-tag">Expense Management</span>
               <span class="work-tag">Notion</span>
             </div>
-            <a href="https://app.notion.com/p/3858cfe1721181c2a195d3097ff2744d" target="_blank" class="btn-notion">
-              View in Notion →
-            </a>
+            <span class="btn-notion">View in Notion →</span>
           </div>
         </div>
-      </div>
+      </a>
 
       </div>
 
@@ -1970,14 +1961,14 @@
         <p class="section-label" style="margin-bottom:0.4rem;">Sample Project Management System</p>
         <p style="font-size:0.85rem;color:var(--mid);">A complete project management system built end-to-end in Notion for a startup product launch. Click to explore the full workspace.</p>
       </div>
-      <div class="work-card" style="margin-top:0;">
+      <a class="work-card" href="https://app.notion.com/p/3cd8cfe172118133bcf5c50550e541da" target="_blank" style="margin-top:0;">
         <div class="work-card-preview" style="background:linear-gradient(135deg,#edf4ee 0%,#f0f7f3 100%);min-height:220px;">
           <div class="notion-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
             Notion Workspace
           </div>
           <h4 style="font-size:1.15rem;">Project Management Hub &nbsp;|&nbsp; Fintech App Launch</h4>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:0.6rem;margin-top:0.8rem;">
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-top:0.8rem;">
             <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
               <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#128202; 5 Projects</div>
               Owner, health status<br/>and target date on each
@@ -2005,12 +1996,10 @@
               <span class="work-tag">Stakeholder Reporting</span>
               <span class="work-tag">Notion</span>
             </div>
-            <a href="https://app.notion.com/p/3cd8cfe172118133bcf5c50550e541da" target="_blank" class="btn-notion">
-              View in Notion &rarr;
-            </a>
+            <span class="btn-notion">View in Notion &rarr;</span>
           </div>
         </div>
-      </div>
+      </a>
 
       </div>
       </div>
@@ -2288,8 +2277,10 @@
   })();
 </script>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <button class="lightbox-nav prev" type="button" aria-label="Previous image" hidden>&#8249;</button>
   <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
   <img src="" alt="" />
+  <button class="lightbox-nav next" type="button" aria-label="Next image" hidden>&#8250;</button>
   <div class="lightbox-caption"></div>
 </div>
 <script>
@@ -2310,28 +2301,55 @@
     });
   })();
 
-  // Click-to-zoom for portfolio and certificate images.
+  // Click-to-zoom for portfolio and certificate images, with prev/next
+  // navigation so a gallery can still be swiped or arrowed through while
+  // zoomed in, instead of closing and reopening for every image.
   (function () {
     const lb = document.getElementById('lightbox');
     if (!lb) return;
     const img = lb.querySelector('img');
     const cap = lb.querySelector('.lightbox-caption');
     const closeBtn = lb.querySelector('.lightbox-close');
+    const prevBtn = lb.querySelector('.lightbox-nav.prev');
+    const nextBtn = lb.querySelector('.lightbox-nav.next');
     const shots = document.querySelectorAll('#work .canva-slide img, #work .canva-slide-wide img');
     let lastFocus = null;
+    let group = [];
+    let index = 0;
+
+    function render() {
+      const t = group[index];
+      img.src = t.currentSrc || t.src;
+      img.alt = t.alt || '';
+      const label = t.parentElement.querySelector('.canva-slide-label');
+      cap.textContent = label ? label.textContent.trim() : (t.alt || '');
+      const multi = group.length > 1;
+      prevBtn.hidden = !multi;
+      nextBtn.hidden = !multi;
+    }
+
+    function go(delta) {
+      index = (index + delta + group.length) % group.length;
+      render();
+    }
+
+    function open(t) {
+      lastFocus = t;
+      // Swipe/arrow through the gallery the image actually belongs to
+      // (its carousel row), not every zoomable image on the page.
+      const carousel = t.closest('.canva-carousel');
+      const scope = carousel || document.getElementById('work') || document;
+      group = Array.from(scope.querySelectorAll('img.zoomable'));
+      index = Math.max(0, group.indexOf(t));
+      render();
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
 
     shots.forEach((t) => {
       t.classList.add('zoomable');
-      t.addEventListener('click', () => {
-        lastFocus = t;
-        img.src = t.currentSrc || t.src;
-        img.alt = t.alt || '';
-        const label = t.parentElement.querySelector('.canva-slide-label');
-        cap.textContent = label ? label.textContent.trim() : (t.alt || '');
-        lb.classList.add('open');
-        document.body.style.overflow = 'hidden';
-        closeBtn.focus();
-      });
+      t.addEventListener('click', () => open(t));
     });
 
     function close() {
@@ -2341,12 +2359,32 @@
       cap.textContent = '';
       if (lastFocus) lastFocus.focus({ preventScroll: true });
     }
+
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); go(-1); });
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); go(1); });
+
     lb.addEventListener('click', (e) => {
       if (e.target === lb || e.target === closeBtn || e.target === cap) close();
     });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lb.classList.contains('open')) close();
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') go(-1);
+      if (e.key === 'ArrowRight') go(1);
     });
+
+    // Touch swipe, active anywhere over the open lightbox.
+    let touchStartX = null;
+    lb.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+      if (touchStartX === null) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      touchStartX = null;
+      if (Math.abs(dx) < 40) return;
+      go(dx > 0 ? -1 : 1);
+    }, { passive: true });
   })();
 </script>
 </body>
