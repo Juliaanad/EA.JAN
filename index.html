@@ -78,7 +78,15 @@
     .nav-links a:hover { color: var(--label-dark); }
 
     /* WORK SAMPLES */
-    #work { background: var(--white); }
+    #work { background: linear-gradient(160deg, var(--rose) 0%, var(--charcoal) 100%); }
+    /* --label-dark (used elsewhere against solid charcoal) reads at only
+       3.6:1 near the lighter, rose end of this gradient; this section
+       needs a color proven safe across the whole gradient, not just one
+       end of it. */
+    #work .section-label { color: #8fc9a8; }
+    #work .section-title { color: var(--white); }
+    #work .section-title em { color: #8fc9a8; }
+    #work .section-subtitle { color: rgba(255, 255, 255, 0.75); }
 
     .work-grid {
       display: grid;
@@ -528,14 +536,35 @@
       transition: background 0.25s ease;
     }
 
+    .service-title-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.5rem;
+      margin-bottom: 0.7rem;
+    }
     .service-card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
       line-height: 1.35;
       color: var(--charcoal);
-      margin-bottom: 0.7rem;
+      margin-bottom: 0;
       transition: color 0.25s ease;
     }
+    .skill-pill {
+      display: inline-block;
+      flex: none;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .skill-pill.level-advance { background: var(--rose); color: var(--white); }
+    .skill-pill.level-mid { background: var(--rose-light); color: var(--white); }
+    .skill-pill.level-intermediate { background: var(--blush); color: var(--rose); }
 
     .service-card p { font-size: 0.85rem; color: var(--mid); line-height: 1.7; }
 
@@ -863,12 +892,7 @@
       padding: 0 1rem;
     }
 
-    .certs-band {
-      background: var(--charcoal);
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
-      padding: 3rem calc(50vw - 50%) 2.5rem;
-    }
+
 
     /* Certificates: one identical image box, filled edge to edge, so every
        card is the same size and the labels sit on one line. */
@@ -1581,12 +1605,12 @@
   <section id="services" class="section-dark">
     <div class="section-inner">
       <p class="section-label">What I Offer</p>
-      <h2 class="section-title">Services built for <em>busy executives.</em></h2>
-      <p class="section-subtitle">Full coverage of the day to day, from calendar to vendors.</p>
+      <h2 class="section-title">Senior-level support for <em>busy executives.</em></h2>
+      <p class="section-subtitle">Full coverage of the day to day, handled with executive-level judgment.</p>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">📅</div>
-          <h3>Calendar & Schedule Management</h3>
+          <div class="service-title-row"><h3>Calendar & Schedule Management</h3><span class="skill-pill level-advance">Advance</span></div>
           <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
             <li>Schedule and confirm meetings</li>
             <li>Resolve conflicts and protect focus time</li>
@@ -1595,7 +1619,7 @@
         </div>
         <div class="service-card">
           <div class="service-icon">📬</div>
-          <h3>Inbox & Email Management</h3>
+          <div class="service-title-row"><h3>Inbox & Email Management</h3><span class="skill-pill level-advance">Advance</span></div>
           <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
             <li>Filter, organize, and prioritize emails</li>
             <li>Draft and respond on your behalf</li>
@@ -1604,7 +1628,7 @@
         </div>
         <div class="service-card">
           <div class="service-icon">✈️</div>
-          <h3>Travel Coordination</h3>
+          <div class="service-title-row"><h3>Travel Coordination</h3><span class="skill-pill level-intermediate">Intermediate</span></div>
           <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
             <li>Book flights, hotels, and transfers</li>
             <li>Build detailed travel itineraries</li>
@@ -1613,7 +1637,7 @@
         </div>
         <div class="service-card">
           <div class="service-icon">⚙️</div>
-          <h3>Operations & Admin Support</h3>
+          <div class="service-title-row"><h3>Operations & Admin Support</h3><span class="skill-pill level-mid">Intermediate to Advance</span></div>
           <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
             <li>Build and maintain SOPs</li>
             <li>Data entry and file organization</li>
@@ -1622,7 +1646,7 @@
         </div>
         <div class="service-card">
           <div class="service-icon">📊</div>
-          <h3>Project Coordination</h3>
+          <div class="service-title-row"><h3>Project Coordination</h3><span class="skill-pill level-advance">Advance</span></div>
           <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
             <li>Track tasks and deadlines</li>
             <li>Follow up on deliverables</li>
@@ -1631,7 +1655,7 @@
         </div>
         <div class="service-card">
           <div class="service-icon">💬</div>
-          <h3>Communication & Liaison</h3>
+          <div class="service-title-row"><h3>Communication & Liaison</h3><span class="skill-pill level-advance">Advance</span></div>
           <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
             <li>Act as point of contact for your team</li>
             <li>Coordinate with clients and vendors</li>
@@ -1640,7 +1664,7 @@
         </div>
         <div class="service-card">
           <div class="service-icon">📱</div>
-          <h3>Social Media Management</h3>
+          <div class="service-title-row"><h3>Social Media Management</h3><span class="skill-pill level-intermediate">Intermediate</span></div>
           <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
             <li>Design branded graphics using Canva</li>
             <li>Write captions and schedule posts</li>
@@ -1724,7 +1748,7 @@
       <!-- Canva Design Samples -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Canva Design Samples</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Graphic design and marketing material built for clients. Swipe to browse.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Graphic design and marketing material built for clients. Swipe to browse.</p>
         <div class="carousel-scroller">
           <button type="button" class="carousel-nav prev" aria-label="Previous designs" hidden>&#8592;</button>
           <button type="button" class="carousel-nav next" aria-label="Next designs">&#8594;</button>
@@ -1772,7 +1796,7 @@
       <!-- Business Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Business Presentations</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Client-facing company profile, designed end to end. 7 slides, use the arrows.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Client-facing company profile, designed end to end. 7 slides, use the arrows.</p>
         <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(26, 69, 48,0.15);background:var(--cream);box-shadow:0 4px 20px rgba(15, 30, 20,0.1);">
           <div style="padding:0.9rem 1.4rem;background:var(--white);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Pest-Ex Company Profile · 7 slides</div>
@@ -1793,7 +1817,7 @@
       <!-- EA Onboarding Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">EA Onboarding Presentations</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Shared with an executive on day one. Sets expectations and maps the first two weeks.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Shared with an executive on day one. Sets expectations and maps the first two weeks.</p>
         <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(26, 69, 48,0.15);background:var(--cream);box-shadow:0 4px 20px rgba(15, 30, 20,0.1);">
           <div style="padding:0.9rem 1.4rem;background:var(--white);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Canva · 8 slides</div>
@@ -1816,7 +1840,7 @@
       <div class="pm-pair">
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Project Management</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Operational checklist running a full Etsy launch, from account setup to order intake.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Operational checklist running a full Etsy launch, from account setup to order intake.</p>
         <a class="pm-box pm-box-etsy doc-card" href="https://docs.google.com/spreadsheets/d/1qS1PBpkhBANTAjybqbtqpMWRmhmdSHG7KeAKrtpxi8c/edit?usp=sharing" target="_blank">
           <div class="etsy-bar-row">
             <div class="etsy-bar-meta">
@@ -1848,7 +1872,7 @@
       <!-- ClickUp Project Management -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">ClickUp Project Management</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Bug board built and run for a dev team. Intake, triage, assignment, and status in one view. 18 open items, click to enlarge.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Bug board built and run for a dev team. Intake, triage, assignment, and status in one view. 18 open items, click to enlarge.</p>
         <div class="pm-box pm-box-clickup canva-carousel">
           <div class="canva-slide-wide">
             <img src="Click%20Up%20Project%20Management.JPG" alt="ClickUp: Bug Tracking Board" />
@@ -1861,7 +1885,7 @@
       <!-- Operational Work Carousel -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Operational Work</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Systems and documentation samples from client engagements.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Systems and documentation samples from client engagements.</p>
         <div class="carousel-scroller">
           <button type="button" class="carousel-nav prev" aria-label="Previous work samples" hidden>&#8592;</button>
           <button type="button" class="carousel-nav next" aria-label="Next work samples">&#8594;</button>
@@ -2104,7 +2128,7 @@
       </div>
       </div>
 
-      <p style="text-align:center;font-size:0.78rem;font-weight:700;color:var(--mid);margin-top:1.2rem;letter-spacing:0.02em;"><strong>All work displayed in this portfolio is original content created by Julia N.</strong></p>
+      <p style="text-align:center;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.7);margin-top:1.2rem;letter-spacing:0.02em;"><strong style="color:var(--white);">All work displayed in this portfolio is original content created by Julia N.</strong></p>
 
 
     </div>
