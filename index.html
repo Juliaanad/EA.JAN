@@ -1153,7 +1153,10 @@
 
     .compare {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
       gap: 1.5rem;
       margin-bottom: 3rem;
     }
@@ -1167,32 +1170,11 @@
       transition: var(--card-transition);
     }
     /* The preferred card gets a visible accent border and a lifted rest
-       shadow, so it reads as the better option before you even hover. */
+       shadow, so it stands out as a highlight card. */
     .compare-col.is-preferred {
       border: 1px solid var(--rose);
       border-top: 4px solid var(--rose);
       box-shadow: var(--card-shadow-hover);
-    }
-    .preferred-tag {
-      position: absolute;
-      top: -0.7rem;
-      left: 2rem;
-      background: var(--rose);
-      color: var(--white);
-      font-size: 0.66rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.8rem;
-      border-radius: 999px;
-      box-shadow: 0 3px 10px rgba(15, 30, 20, 0.2);
-    }
-
-
-    .compare-col.is-muted {
-      background: transparent;
-      border-style: dashed;
-      border-color: rgba(26, 69, 48, 0.22);
     }
     .compare-col h3 {
       font-family: 'Playfair Display', serif;
@@ -1203,7 +1185,6 @@
       padding-bottom: 0.9rem;
       border-bottom: 1px solid rgba(26, 69, 48, 0.12);
     }
-    .compare-col.is-muted h3 { color: var(--mid); }
     .compare-col ul { list-style: none; display: grid; gap: 0.9rem; }
     .compare-col li {
       font-size: 0.85rem;
@@ -1221,10 +1202,6 @@
       height: 7px;
       border-radius: 50%;
       background: var(--rose);
-    }
-    .compare-col.is-muted li::before {
-      background: transparent;
-      border: 1px solid rgba(26, 69, 48, 0.35);
     }
     .compare-col li strong { color: var(--charcoal); font-weight: 600; }
 
@@ -1299,7 +1276,6 @@
     }
 
     @media (max-width: 768px) {
-      .compare { grid-template-columns: 1fr; }
       .rate-card { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
       .rate-expect {
         padding-left: 0;
@@ -1555,12 +1531,11 @@
   <section id="rates">
     <div class="section-inner">
       <p class="section-label">Working Together</p>
-      <h2 class="section-title">Hire direct, <em>not through an agency.</em></h2>
-      <p class="section-subtitle">Same work. One point of contact. No agency margin.</p>
+      <h2 class="section-title">Work with me, <em>directly.</em></h2>
+      <p class="section-subtitle">One point of contact. Full commitment to your business.</p>
 
       <div class="compare">
         <div class="compare-col is-preferred">
-          <span class="preferred-tag">Recommended</span>
           <h3>Working with me directly</h3>
           <ul>
             <li><strong>One person on your account.</strong> That person is me.</li>
@@ -1568,16 +1543,6 @@
             <li><strong>You talk to me.</strong> There is no account manager in between.</li>
             <li><strong>Priorities change by message.</strong> No change request needed.</li>
             <li><strong>A direct agreement.</strong> No placement fee. No lock-in.</li>
-          </ul>
-        </div>
-        <div class="compare-col is-muted">
-          <h3>Through an agency</h3>
-          <ul>
-            <li>Your tasks go to whoever is free that day.</li>
-            <li>Part of your fee covers agency overhead.</li>
-            <li>Requests pass through an account manager.</li>
-            <li>Staff change. You explain your systems again.</li>
-            <li>The agency sets the terms.</li>
           </ul>
         </div>
       </div>
