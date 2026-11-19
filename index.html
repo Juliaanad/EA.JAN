@@ -3399,6 +3399,16 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #about .client-testimonials-section .testimonial-card:nth-child(2) .testimonial-quote{font-size:.78rem!important;line-height:1.46!important;}
 #about .client-testimonials-section .testimonial-card:nth-child(2) .testimonial-author{margin-top:auto!important;}
 
+
+/* Private Coursera certificate preview: never expose original middle names or original verification link */
+#certificates .coursera-private-cert .coursera-cert-preview{box-sizing:border-box;width:100%;height:170px;padding:14px 12px;background:#fff;border:1px solid #c9ddcf;border-radius:10px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:8px;overflow:hidden;color:#263b32;}
+#certificates .coursera-cert-brand{font-size:1.15rem;color:#1877f2;line-height:1;}
+#certificates .coursera-cert-brand strong{color:#233238;}
+#certificates .coursera-cert-person{font-family:Georgia,serif;font-size:1.08rem;letter-spacing:.02em;}
+#certificates .coursera-cert-course{font-family:Georgia,serif;font-size:.76rem;line-height:1.25;}
+#certificates .coursera-cert-footer{font-size:.62rem;color:#5b6e65;}
+@media(max-width:700px){#certificates .coursera-private-cert .coursera-cert-preview{height:140px;padding:10px;gap:6px;}#certificates .coursera-cert-person{font-size:.9rem;}#certificates .coursera-cert-course{font-size:.66rem;}}
+
 </style>
 </head>
 <body>
@@ -3480,6 +3490,15 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
           <div class="canva-slide-wide">
             <img src="Hubspot%20Certificate.png" alt="HubSpot: Sales Hub Software Certified" />
             <div class="canva-slide-label">HubSpot: Sales Hub Software Certified</div>
+          </div>
+          <div class="canva-slide-wide coursera-private-cert">
+            <div class="coursera-cert-preview" role="img" aria-label="Meta and Coursera Introduction to Social Media Marketing course certificate for Julia Nadal, November 13, 2026">
+              <div class="coursera-cert-brand">∞ <strong>Meta</strong></div>
+              <div class="coursera-cert-person">Julia Nadal</div>
+              <div class="coursera-cert-course">Introduction to Social Media Marketing</div>
+              <div class="coursera-cert-footer">Coursera · November 13, 2026</div>
+            </div>
+            <div class="canva-slide-label">Meta / Coursera: Introduction to Social Media Marketing</div>
           </div>
         </div>
         </div>
