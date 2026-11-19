@@ -1389,6 +1389,29 @@
       #work .canva-carousel.op-work .canva-slide-wide img,
       #work .pm-box-clickup .canva-slide-wide img { max-height: 280px; object-fit: contain; }
     }
+
+    /* Unified work-sample gallery proportions and alignment */
+    #work .presentation-pair { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; align-items: stretch; margin-top: 2rem; }
+    #work .presentation-pair > .canva-carousel-wrap { min-width: 0; margin-top: 0; display: flex; flex-direction: column; }
+    #work .presentation-pair .pres-frame { width: 100%; max-width: none; margin-top: auto; }
+    #work .presentation-pair .pres-frame > div:first-child { min-height: 60px; }
+    #work .presentation-pair .pres-frame iframe { max-height: none; }
+    #work .canva-carousel { align-items: stretch; }
+    #work .canva-slide-wide { display: flex; flex-direction: column; min-width: 0; }
+    #work .canva-slide-wide img { display: block; flex: 0 0 auto !important; }
+    #work .canva-slide-label { margin-top: auto; min-height: 2.75rem; display: flex; align-items: center; }
+    #work .canva-slide, #work .canva-slide-wide { border-radius: 12px; }
+    #work .canva-carousel-wrap > p:not(.section-label) { min-height: 2.6em; line-height: 1.55; }
+    #work .pm-pair { align-items: stretch; gap: 1.5rem; }
+    #work .pm-pair > .canva-carousel-wrap { min-width: 0; }
+    #work .pm-box { min-height: 260px; }
+    #work .pm-box-clickup .canva-slide-wide { height: 100%; }
+    @media (max-width: 900px) {
+      #work .presentation-pair { grid-template-columns: 1fr; gap: 2rem; }
+      #work .presentation-pair .pres-frame { max-width: 760px; }
+      #work .canva-carousel-wrap > p:not(.section-label) { min-height: 0; }
+      #work .pm-box { min-height: 0; }
+    }
 </style>
 </head>
 <body>
@@ -1737,6 +1760,7 @@
         <a href="Social%20Media%20Portfolio.html" class="btn-primary" style="display:inline-block;">View Social Media Portfolio →</a>
       </div>
 
+      <div class="presentation-pair">
       <!-- Business Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Business Presentations</p>
@@ -1778,6 +1802,8 @@
             </iframe>
           </div>
         </div>
+      </div>
+
       </div>
 
       <!-- Project Management + ClickUp Project Management, side by side -->
