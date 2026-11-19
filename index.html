@@ -3190,6 +3190,16 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 }
 #lightbox .lightbox-close {z-index:10!important;cursor:pointer!important;}
 
+
+/* PDF card: visual document-cover thumbnail instead of generic PDF icon */
+#work .featured-work-preview-pdf-cover {position:relative!important;overflow:hidden!important;background:#eaf1eb!important;}
+#work .featured-work-preview-pdf-cover .featured-profile-cover {width:100%!important;height:100%!important;}
+#work .featured-pdf-corner {position:absolute;right:10px;bottom:10px;z-index:2;background:#1b4931;color:#fff;border-radius:5px;padding:5px 8px;font-size:.66rem;font-weight:800;letter-spacing:.08em;box-shadow:0 2px 8px #0002;}
+/* Only the OUTER certificates section becomes a muted forest green */
+#certificates {background:#315a46!important;padding-top:36px!important;padding-bottom:44px!important;}
+#certificates .section-inner {background:transparent!important;}
+@media(max-width:600px){#certificates{padding-top:24px!important;padding-bottom:30px!important;}}
+
 </style>
 </head>
 <body>
@@ -3599,7 +3609,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <div class="featured-work-label">ClickUp Project Management <span aria-hidden="true">↗</span></div>
     </a>
     <a class="featured-work-tile" href="Pest%20ex%20company%20profile.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Pest-Ex Company Profile PDF">
-      <div class="featured-work-preview featured-work-preview-document"><span class="featured-doc-icon" aria-hidden="true">📄</span><span>PDF Document</span></div>
+      <div class="featured-work-preview featured-work-preview-profile featured-work-preview-pdf-cover"><div class="featured-profile-cover"><span class="featured-profile-kicker">COMPANY PROFILE</span><strong>Pest-Ex</strong><span>Business Presentation</span><i></i><small>Overview · Services · Company Story</small></div><span class="featured-pdf-corner">PDF</span></div>
       <div class="featured-work-label">Pest-Ex Company Profile <span aria-hidden="true">↗</span></div>
     </a>
     <a class="featured-work-tile" href="SOP%20previous%20works.JPG1.JPG" target="_blank" rel="noopener noreferrer" aria-label="View Eve's Catering Menu Design Suite">
