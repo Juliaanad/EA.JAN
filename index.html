@@ -3295,6 +3295,16 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #work .first-two-weeks-viewer iframe{display:block;width:100%;height:100%;border:0;}
 @media(max-width:760px){#work .first-two-weeks-feature{grid-template-columns:1fr;gap:20px;min-height:0;padding:24px 18px;margin:30px auto;}#work .first-two-weeks-copy h3{font-size:2rem;}}
 
+
+/* Tighter social media album: five photos per row on desktop */
+#work .social-photo-album-wrap{margin-top:24px!important;margin-bottom:24px!important;}
+#work .social-photo-album{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:12px!important;padding:14px!important;}
+#work .social-photo-album .social-photo-card{gap:5px!important;}
+#work .social-photo-album .social-photo-card .featured-work-label{min-height:0!important;padding:3px 1px!important;font-size:.68rem!important;line-height:1.3!important;}
+@media(max-width:1050px){#work .social-photo-album{grid-template-columns:repeat(4,minmax(0,1fr))!important;}}
+@media(max-width:750px){#work .social-photo-album{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:9px!important;padding:11px!important;}}
+@media(max-width:480px){#work .social-photo-album{grid-template-columns:repeat(2,minmax(0,1fr))!important;}}
+
 </style>
 </head>
 <body>
