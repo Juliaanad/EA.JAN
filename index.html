@@ -2812,6 +2812,47 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #work .featured-sheet-sub {margin:4px 0 6px;}
 }
 
+
+/* Fix cropped Pest-Ex caption: explicit two-row PDF tile with safe spacing */
+#work .canva-carousel.op-work > a.op-pdf-card {
+ display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+ grid-template-rows:minmax(0,1fr) 44px!important;
+ gap:10px!important;height:310px!important;min-height:310px!important;
+ max-height:none!important;overflow:visible!important;padding:0 0 4px!important;
+ text-decoration:none!important;align-items:stretch!important;
+}
+#work .canva-carousel.op-work > a.op-pdf-card .op-pdf-preview {
+ display:flex!important;flex-direction:row!important;align-items:center!important;
+ justify-content:center!important;gap:8px!important;min-height:0!important;
+ width:100%!important;height:auto!important;margin:0!important;
+ padding:12px!important;background:#f2f4f2!important;border:1px solid #dce5df!important;
+ border-radius:12px!important;color:#345a43!important;font-size:1rem!important;
+}
+#work .canva-carousel.op-work > a.op-pdf-card .op-pdf-caption {
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ width:100%!important;min-width:0!important;min-height:44px!important;
+ height:auto!important;max-height:none!important;margin:0!important;
+ padding:5px 6px!important;text-align:center!important;white-space:normal!important;
+ overflow:visible!important;line-height:1.35!important;font-size:.8rem!important;
+ font-weight:600!important;color:#1c3426!important;
+}
+#work .canva-carousel.op-work > .canva-slide-wide:not(.op-pdf-card) {
+ height:310px!important;min-height:310px!important;max-height:none!important;
+ padding-bottom:4px!important;overflow:visible!important;
+}
+#work .canva-carousel.op-work > .canva-slide-wide:not(.op-pdf-card) .canva-slide-label {
+ min-height:44px!important;height:44px!important;max-height:none!important;
+ line-height:1.35!important;white-space:normal!important;padding:5px 6px!important;
+}
+@media(max-width:600px) {
+ #work .canva-carousel.op-work > a.op-pdf-card,
+ #work .canva-carousel.op-work > .canva-slide-wide:not(.op-pdf-card) {
+ height:246px!important;min-height:246px!important;max-height:none!important;
+ }
+ #work .canva-carousel.op-work > a.op-pdf-card {grid-template-rows:minmax(0,1fr) 44px!important;}
+ #work .canva-carousel.op-work > a.op-pdf-card .op-pdf-caption {font-size:.7rem!important;}
+}
+
 </style>
 </head>
 <body>
@@ -3201,31 +3242,10 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
           <button type="button" class="carousel-nav prev" aria-label="Previous work samples" hidden>&#8592;</button>
           <button type="button" class="carousel-nav next" aria-label="Next work samples">&#8594;</button>
         <div class="canva-carousel op-work">
-          <a class="canva-slide-wide doc-card" href="Pest%20ex%20company%20profile.pdf" target="_blank" style="background:var(--white);padding:1.8rem;">
-            <div class="notion-badge" style="margin-bottom:0.8rem;">
-              📄 PDF Document
-            </div>
-            <div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--charcoal);font-weight:600;margin-bottom:1rem;">Pest-Ex Company Profile</div>
-            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-bottom:1.2rem;">
-              <div style="background:rgba(255,255,255,0.75);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-                <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🏢 Who We Are</div>
-                Company background and what Pest-Ex stands for
-              </div>
-              <div style="background:rgba(255,255,255,0.75);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-                <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">✅ Why Choose Us</div>
-                Differentiators and client value proposition
-              </div>
-              <div style="background:rgba(255,255,255,0.75);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-                <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🎯 Mission &amp; Vision</div>
-                Core purpose and long-term direction
-              </div>
-              <div style="background:rgba(255,255,255,0.75);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-                <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🐜 Termite Service Process</div>
-                Step-by-step treatment and service workflow
-              </div>
-            </div>
-            <span style="display:inline-block;background:var(--charcoal);color:#fff;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.78rem;font-weight:500;">View PDF →</span>
-          </a>
+          <a class="canva-slide-wide doc-card op-pdf-card" href="Pest%20ex%20company%20profile.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Pest-Ex Company Profile PDF">
+  <div class="op-pdf-preview"><span aria-hidden="true">📄</span><span>PDF Document</span></div>
+  <div class="op-pdf-caption">Pest-Ex Company Profile</div>
+</a>
           <div class="canva-slide-wide">
             <img src="SOP%20previous%20works.JPG1.JPG" alt="Eve's Catering: Menu Design Suite" />
             <div class="canva-slide-label">Eve's Catering: Menu Design Suite</div>
