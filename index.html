@@ -4018,6 +4018,18 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #about .client-testimonials-section .testimonial-card:first-child .testimonial-role {
  max-width:220px!important;
 }
+
+/* Maria's review preview: same three-line limit as the other two cards. */
+#about .client-testimonials-section .testimonial-card:first-child .testimonial-quote {
+ display:-webkit-box!important;-webkit-box-orient:vertical!important;
+ -webkit-line-clamp:3!important;line-clamp:3!important;
+ overflow:hidden!important;max-height:calc(1.55em * 3)!important;
+}
+#about .client-testimonials-section .testimonial-card:first-child.expanded .testimonial-quote {
+ display:block!important;max-height:none!important;
+ -webkit-line-clamp:unset!important;line-clamp:unset!important;
+ overflow:visible!important;
+}
 </style>
 </head>
 <body>
