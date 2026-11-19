@@ -1816,6 +1816,96 @@
  #rates .rates-two-column > .compare > .compare-col { padding:22px!important; }
 }
 
+
+/* Exact equal-card geometry and compact Notion content */
+#work .canva-carousel.onboarding-carousel {
+ display:flex!important;flex-wrap:nowrap!important;align-items:stretch!important;
+ gap:16px!important;overflow-x:auto!important;overflow-y:hidden!important;
+ scroll-snap-type:x mandatory!important;
+}
+#work .canva-carousel.onboarding-carousel > a.work-card {
+ flex:0 0 calc((100% - 48px)/4)!important;
+ width:calc((100% - 48px)/4)!important;
+ min-width:0!important;max-width:calc((100% - 48px)/4)!important;
+ height:440px!important;min-height:440px!important;max-height:440px!important;
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ margin:0!important;padding:0!important;box-sizing:border-box!important;
+ overflow:hidden!important;scroll-snap-align:start!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview {
+ flex:0 0 220px!important;height:220px!important;min-height:220px!important;
+ max-height:220px!important;padding:14px!important;
+ display:flex!important;flex-direction:column!important;
+ overflow:hidden!important;box-sizing:border-box!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview h4 {
+ flex:0 0 auto!important;font-size:.94rem!important;line-height:1.3!important;
+ height:2.6em!important;min-height:2.6em!important;max-height:2.6em!important;
+ margin:10px 0!important;overflow:hidden!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] {
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ grid-auto-rows:1fr!important;gap:6px!important;margin-top:4px!important;
+ flex:1 1 auto!important;min-height:0!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] > div {
+ padding:8px!important;font-size:.66rem!important;line-height:1.3!important;
+ min-width:0!important;overflow:hidden!important;overflow-wrap:anywhere!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] > div > div {
+ font-size:.68rem!important;line-height:1.25!important;margin-bottom:4px!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-body {
+ flex:1 1 auto!important;min-height:0!important;max-height:none!important;
+ padding:14px!important;display:flex!important;flex-direction:column!important;
+ justify-content:space-between!important;gap:10px!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-body > p {
+ margin:0!important;font-size:.78rem!important;line-height:1.4!important;
+ display:-webkit-box!important;-webkit-box-orient:vertical!important;
+ -webkit-line-clamp:2!important;overflow:hidden!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-footer {
+ margin-top:auto!important;display:flex!important;flex-direction:column!important;
+ align-items:flex-start!important;gap:8px!important;
+}
+#work .canva-carousel.onboarding-carousel .work-tags {
+ display:flex!important;flex-wrap:wrap!important;gap:5px!important;
+ max-height:56px!important;overflow:hidden!important;
+}
+#work .canva-carousel.onboarding-carousel .work-tag { font-size:.64rem!important;padding:4px 7px!important; }
+#work .canva-carousel.onboarding-carousel .btn-notion { margin-top:auto!important; }
+#work .pm-pair { align-items:stretch!important; }
+#work .pm-pair > .canva-carousel-wrap { display:flex!important;flex-direction:column!important; }
+#work .pm-pair .pm-box { flex:1!important;min-height:320px!important; }
+#work .pm-pair .pm-box-clickup .canva-slide-wide { width:100%!important;max-width:100%!important; }
+#work .pm-pair .pm-box-clickup img { height:260px!important;max-height:260px!important;object-fit:contain!important; }
+#work .presentation-pair { align-items:stretch!important; }
+#work .presentation-pair > .canva-carousel-wrap { display:flex!important;flex-direction:column!important; }
+#work .presentation-pair .pres-frame { flex:1!important;min-height:0!important; }
+#work .canva-carousel.certs { display:flex!important;flex-wrap:nowrap!important;align-items:stretch!important; }
+#work .canva-carousel.certs > .canva-slide-wide {
+ height:260px!important;min-height:260px!important;max-height:260px!important;
+ display:flex!important;flex-direction:column!important;
+}
+#work .canva-carousel.certs img { height:200px!important;max-height:200px!important;object-fit:contain!important; }
+#work .canva-carousel.certs .canva-slide-label { flex:1!important;min-height:0!important;text-align:center!important;justify-content:center!important; }
+@media(max-width:1100px) {
+ #work .canva-carousel.onboarding-carousel > a.work-card {
+ flex-basis:calc((100% - 32px)/3)!important;width:calc((100% - 32px)/3)!important;max-width:calc((100% - 32px)/3)!important;
+ }
+}
+@media(max-width:850px) {
+ #work .canva-carousel.onboarding-carousel > a.work-card {
+ flex-basis:calc((100% - 16px)/2)!important;width:calc((100% - 16px)/2)!important;max-width:calc((100% - 16px)/2)!important;
+ }
+}
+@media(max-width:560px) {
+ #work .canva-carousel.onboarding-carousel > a.work-card {
+ flex-basis:85%!important;width:85%!important;max-width:85%!important;
+ }
+}
+
 </style>
 </head>
 <body>
@@ -2356,24 +2446,24 @@
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
             Notion Document
           </div>
-          <h4 style="font-size:1.15rem;">Executive Travel: Melbourne to Manila &nbsp;|&nbsp; Dec 17–28, 2026</h4>
+          <h4 style="font-size:1.15rem;">Executive Travel Itinerary</h4>
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-top:0.8rem;">
             <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
               <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">✈️ Flights</div>
-              PR 218 · 09:20 AEDT<br/>Business Class · Seat 3A
+              Flight details
             </div>
             <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
               <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🏨 Hotel</div>
-              Discovery Primea, Makati<br/>11 nights · Deluxe King Suite
+              Hotel booking
             </div>
             <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
               <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">💰 Budget</div>
-              AUD $19,850 total<br/>Full expense breakdown
+              Expense tracker
             </div>
           </div>
         </div>
         <div class="work-card-body">
-          <p>A full 12-day executive travel itinerary covering flights, hotel, hour-by-hour schedule, business meetings, curated dining, day trips, Christmas Eve arrangements, and a complete expense tracker. Built end-to-end by Julia N.</p>
+          <p>12-day itinerary with travel bookings, schedules, and expenses.</p>
           <div class="work-card-footer">
             <div class="work-tags">
               <span class="work-tag">Travel Coordination</span>
@@ -2392,28 +2482,28 @@
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
             Notion Workspace
           </div>
-          <h4 style="font-size:1.15rem;">Project Management Hub &nbsp;|&nbsp; Fintech App Launch</h4>
+          <h4 style="font-size:1.15rem;">Fintech Project Hub</h4>
           <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-top:0.8rem;">
             <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
               <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#128202; 5 Projects</div>
-              Owner, health status<br/>and target date on each
+              Owners &amp; status
             </div>
             <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
               <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#9201;&#65039; 3 Sprints</div>
-              Committed vs delivered<br/>points, with retros
+              Sprint progress
             </div>
             <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
               <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#9989; 24 Tasks</div>
-              Board, calendar and<br/>by-owner views
+              Task tracking
             </div>
             <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
               <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#128221; Meeting Log</div>
-              Every decision turned<br/>into an assigned action
+              Action items
             </div>
           </div>
         </div>
         <div class="work-card-body">
-          <p>A full project management system built in Notion for a fintech launch: five projects, two-week sprints, and twenty-four tasks across board, calendar, and owner views, plus an escalation matrix and a founder weekly-review template. Built end-to-end by Julia N.</p>
+          <p>Fintech launch tracker: 5 projects, 3 sprints, and 24 tasks.</p>
           <div class="work-card-footer">
             <div class="work-tags">
               <span class="work-tag">Project Management</span>
@@ -2434,24 +2524,24 @@
               <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
               Notion Document
             </div>
-            <h4>Client Onboarding (Business Operations)</h4>
+            <h4>Business Onboarding</h4>
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-top:0.8rem;">
               <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
                 <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🔧 Tools & Stack</div>
-                Software, platforms, and systems you use daily
+                Daily tools
               </div>
               <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
                 <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">📬 Comms Style</div>
-                How and when you prefer to be reached
+                Contact preferences
               </div>
               <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
                 <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🎯 Priorities</div>
-                Your goals and what matters most right now
+                Key goals
               </div>
             </div>
           </div>
           <div class="work-card-body">
-            <p>For <strong>executives and business owners</strong>. Fill this out when you're ready to work with me. It covers your <strong>tools, workflows, communication preferences, and priorities</strong> so I can get started immediately.</p>
+            <p>Business setup: tools, workflows, contacts, and priorities.</p>
             <div class="work-card-footer">
               <div class="work-tags">
                 <span class="work-tag">Operations</span>
@@ -2470,24 +2560,24 @@
               <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
               Notion Document
             </div>
-            <h4>Client Onboarding (Lifestyle Management)</h4>
+            <h4>Lifestyle Onboarding</h4>
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-top:0.8rem;">
               <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
                 <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">✈️ Travel</div>
-                Preferences, airlines, hotels, and trip style
+                Travel preferences
               </div>
               <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
                 <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🏠 Household</div>
-                Routines, vendors, and recurring needs
+                Household routines
               </div>
               <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
                 <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">📅 Schedule</div>
-                Personal calendar and lifestyle priorities
+                Personal schedule
               </div>
             </div>
           </div>
           <div class="work-card-body">
-            <p>For clients needing <strong>personal and lifestyle support</strong>. This form captures your <strong>travel preferences, household routines, and personal scheduling needs</strong> so I can manage your life seamlessly behind the scenes.</p>
+            <p>Lifestyle setup: travel, household, and scheduling preferences.</p>
             <div class="work-card-footer">
               <div class="work-tags">
                 <span class="work-tag">Lifestyle</span>
