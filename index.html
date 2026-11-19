@@ -3437,6 +3437,64 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 @media(max-width:850px){#certificates .canva-carousel.certs{grid-template-columns:repeat(3,minmax(0,1fr))!important;}}
 @media(max-width:540px){#certificates .canva-carousel.certs{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}#certificates .canva-carousel.certs>.canva-slide-wide img,#certificates .coursera-private-cert .coursera-cert-preview{height:130px!important;max-height:130px!important;}}
 
+
+/* Testimonials: fill the available page width while preserving readable reviews */
+#about .client-testimonials-section{
+ width:calc(100vw - 48px)!important;max-width:1760px!important;
+ margin:32px 0 0 50%!important;transform:translateX(-50%)!important;
+ box-sizing:border-box!important;padding:26px clamp(20px,3vw,52px)!important;
+}
+#about .client-testimonials-section .testimonials-grid{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:0!important;width:100%!important;align-items:stretch!important;
+}
+#about .client-testimonials-section .testimonial-card:nth-child(1),
+#about .client-testimonials-section .testimonial-card:nth-child(2){
+ min-width:0!important;display:flex!important;flex-direction:column!important;
+ padding:12px clamp(12px,2vw,32px) 24px!important;gap:10px!important;
+ border-bottom:1px solid #dce7df!important;
+}
+#about .client-testimonials-section .testimonial-card:nth-child(1){padding-left:0!important;border-right:1px solid #dce7df!important;}
+#about .client-testimonials-section .testimonial-card:nth-child(2){padding-right:0!important;border-right:0!important;}
+#about .client-testimonials-section .testimonial-card:nth-child(2) .testimonial-quote{font-size:.87rem!important;line-height:1.58!important;}
+#about .client-testimonials-section .testimonial-card.is-tall{
+ grid-column:1/-1!important;display:grid!important;
+ grid-template-columns:minmax(0,1fr) 220px!important;
+ grid-template-areas:"stars author" "quote author" "actions author"!important;
+ gap:8px 28px!important;align-items:start!important;
+ border:0!important;padding:22px 0 0!important;
+}
+#about .client-testimonials-section .testimonial-card.is-tall .testimonial-stars{grid-area:stars!important;}
+#about .client-testimonials-section .testimonial-card.is-tall .testimonial-quote{grid-area:quote!important;font-size:.9rem!important;line-height:1.55!important;}
+#about .client-testimonials-section .testimonial-card.is-tall .testimonial-author{
+ grid-area:author!important;align-self:center!important;margin:0!important;
+ padding:0 0 0 20px!important;border-left:1px solid #dce7df!important;
+ border-top:0!important;width:100%!important;
+}
+#about .client-testimonials-section .testimonial-card.is-tall .testimonial-expand{
+ grid-area:actions!important;justify-self:start!important;margin:0!important;
+}
+#about .client-testimonials-section .testimonial-card.is-tall #view-review-btn{
+ grid-area:actions!important;justify-self:start!important;margin:0 0 0 155px!important;
+}
+@media(max-width:800px){
+ #about .client-testimonials-section{width:calc(100vw - 24px)!important;padding:18px!important;}
+ #about .client-testimonials-section .testimonials-grid{grid-template-columns:1fr!important;}
+ #about .client-testimonials-section .testimonial-card:nth-child(1),
+ #about .client-testimonials-section .testimonial-card:nth-child(2){
+  padding:16px 0!important;border-right:0!important;border-bottom:1px solid #dce7df!important;
+ }
+ #about .client-testimonials-section .testimonial-card.is-tall{
+  grid-column:1!important;display:flex!important;flex-direction:column!important;
+  gap:10px!important;padding:16px 0 0!important;
+ }
+ #about .client-testimonials-section .testimonial-card.is-tall .testimonial-author{
+  width:100%!important;align-self:stretch!important;padding:10px 0 0!important;
+  border-left:0!important;border-top:1px solid #dce7df!important;
+ }
+ #about .client-testimonials-section .testimonial-card.is-tall #view-review-btn{margin:0!important;}
+}
+
 </style>
 </head>
 <body>
