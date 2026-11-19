@@ -2946,6 +2946,30 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #work .featured-doc-icon {font-size:1.35rem!important;}
 }
 
+
+/* Notion joins the same single album: no separate heading or gallery */
+#work .featured-work-preview-notion {
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ justify-content:center!important;gap:12px!important;padding:15px!important;
+ background:#f2f4f2!important;border:1px solid #e2e9e4!important;color:#284834!important;
+}
+#work .featured-notion-head {display:flex;align-items:center;gap:7px;font-size:.7rem;font-weight:700;color:#67806c;}
+#work .featured-notion-head > span:last-child {margin-left:auto;letter-spacing:2px;}
+#work .featured-notion-icon {width:25px;height:25px;display:flex;align-items:center;justify-content:center;border:1px solid #d7e1d9;border-radius:5px;background:#fff;font-family:Georgia,serif;font-size:1rem;color:#23402e;}
+#work .featured-notion-title {font-family:'Playfair Display',serif;font-size:clamp(.95rem,1.5vw,1.3rem);font-weight:600;line-height:1.25;overflow-wrap:anywhere;}
+#work .featured-notion-subtitle {font-size:.72rem;color:#68806e;}
+#work .featured-notion-lines {display:flex;flex-direction:column;gap:8px;}
+#work .featured-notion-lines span {height:9px;border-radius:4px;background:#fff;border:1px solid #e0e9e2;}
+#work .featured-notion-lines span:nth-child(2) {width:83%;}
+#work .featured-notion-lines span:nth-child(3) {width:67%;}
+@media(max-width:560px){
+ #work .featured-work-preview-notion {gap:7px!important;padding:9px!important;}
+ #work .featured-notion-title {font-size:.85rem!important;}
+ #work .featured-notion-subtitle {font-size:.64rem!important;}
+ #work .featured-notion-lines {gap:5px!important;}
+ #work .featured-notion-lines span {height:7px;}
+}
+
 </style>
 </head>
 <body>
@@ -3294,7 +3318,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <!-- Four featured work samples — same gallery style as Operational Work -->
 <div class="featured-work-gallery-wrap">
   <p class="section-label">Featured Projects</p>
-  <p class="featured-work-intro">Presentations, onboarding, project management, and operations — all in one album.</p>
+  <p class="featured-work-intro">Presentations, operations, and Notion projects — all in one album.</p>
   <div class="featured-work-gallery">
     <a class="featured-work-tile" href="Pest%20ex%20company%20profile.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Pest-Ex business presentation PDF">
       <div class="featured-work-preview featured-work-preview-profile">
@@ -3332,6 +3356,42 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
     <a class="featured-work-tile" href="SOP%20previous%20works.JPG2.JPG" target="_blank" rel="noopener noreferrer" aria-label="View Eve's Catering Operations and Costing">
       <div class="featured-work-preview featured-work-preview-image"><img src="SOP%20previous%20works.JPG2.JPG" alt="Eve's Catering operational spreadsheets and costing" loading="lazy"></div>
       <div class="featured-work-label">Eve's Catering: Operations &amp; Costing <span aria-hidden="true">↗</span></div>
+    </a>
+    <a class="featured-work-tile featured-notion-tile" href="https://app.notion.com/p/3858cfe1721181c2a195d3097ff2744d" target="_blank" rel="noopener noreferrer" aria-label="Open Executive Travel Itinerary in Notion">
+      <div class="featured-work-preview featured-work-preview-notion">
+        <div class="featured-notion-head"><span class="featured-notion-icon">N</span><span>Notion</span><span aria-hidden="true">•••</span></div>
+        <div class="featured-notion-title">Executive Travel Itinerary</div>
+        <div class="featured-notion-subtitle">Travel &amp; bookings</div>
+        <div class="featured-notion-lines"><span></span><span></span><span></span></div>
+      </div>
+      <div class="featured-work-label">Executive Travel Itinerary <span aria-hidden="true">↗</span></div>
+    </a>
+    <a class="featured-work-tile featured-notion-tile" href="https://app.notion.com/p/3cd8cfe172118133bcf5c50550e541da" target="_blank" rel="noopener noreferrer" aria-label="Open Fintech Project Hub in Notion">
+      <div class="featured-work-preview featured-work-preview-notion">
+        <div class="featured-notion-head"><span class="featured-notion-icon">N</span><span>Notion</span><span aria-hidden="true">•••</span></div>
+        <div class="featured-notion-title">Fintech Project Hub</div>
+        <div class="featured-notion-subtitle">Project tracking</div>
+        <div class="featured-notion-lines"><span></span><span></span><span></span></div>
+      </div>
+      <div class="featured-work-label">Fintech Project Hub <span aria-hidden="true">↗</span></div>
+    </a>
+    <a class="featured-work-tile featured-notion-tile" href="https://app.notion.com/p/3858cfe17211812b901cd898c3b031dc" target="_blank" rel="noopener noreferrer" aria-label="Open Business Onboarding in Notion">
+      <div class="featured-work-preview featured-work-preview-notion">
+        <div class="featured-notion-head"><span class="featured-notion-icon">N</span><span>Notion</span><span aria-hidden="true">•••</span></div>
+        <div class="featured-notion-title">Business Onboarding</div>
+        <div class="featured-notion-subtitle">Operations setup</div>
+        <div class="featured-notion-lines"><span></span><span></span><span></span></div>
+      </div>
+      <div class="featured-work-label">Business Onboarding <span aria-hidden="true">↗</span></div>
+    </a>
+    <a class="featured-work-tile featured-notion-tile" href="https://app.notion.com/p/3858cfe1721181b2bf28f96591d4ce1f" target="_blank" rel="noopener noreferrer" aria-label="Open Lifestyle Onboarding in Notion">
+      <div class="featured-work-preview featured-work-preview-notion">
+        <div class="featured-notion-head"><span class="featured-notion-icon">N</span><span>Notion</span><span aria-hidden="true">•••</span></div>
+        <div class="featured-notion-title">Lifestyle Onboarding</div>
+        <div class="featured-notion-subtitle">Personal support</div>
+        <div class="featured-notion-lines"><span></span><span></span><span></span></div>
+      </div>
+      <div class="featured-work-label">Lifestyle Onboarding <span aria-hidden="true">↗</span></div>
     </a>
   </div>
 </div>
@@ -3375,54 +3435,6 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
         </p>
       </div>
 
-
-      <div style="margin-top:4rem;border-top:1px solid rgba(26, 69, 48,0.12);padding-top:3.5rem;">
-        <p class="section-label" style="margin-bottom:0.6rem;">Sample Notion Documents</p>
-        <h2 class="section-title" style="color:var(--charcoal);">Organized work, <em>built in Notion.</em></h2>
-        <p class="section-subtitle" style="color:var(--mid);">Four Notion projects, all in one gallery.</p>
-      </div>
-      <div class="carousel-scroller">
-          <button type="button" class="carousel-nav prev" aria-label="Previous Notion documents" hidden>&#8592;</button>
-          <button type="button" class="carousel-nav next" aria-label="Next Notion documents">&#8594;</button>
-      <div class="canva-carousel onboarding-carousel notion-gallery">
-<a class="notion-gallery-tile" href="https://app.notion.com/p/3858cfe1721181c2a195d3097ff2744d" target="_blank" rel="noopener noreferrer" aria-label="Open Executive Travel Itinerary in Notion">
- <div class="notion-gallery-preview">
-   <div class="notion-preview-top"><span class="notion-preview-icon">N</span><span>Notion</span><span class="notion-preview-dots">•••</span></div>
-   <div class="notion-preview-title">Executive Travel Itinerary</div>
-   <div class="notion-preview-subtitle">Travel &amp; bookings</div>
-   <div class="notion-preview-list"><div><span class="notion-preview-check">01</span><span>Flights</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">02</span><span>Hotel</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">03</span><span>Budget</span><span class="notion-preview-line"></span></div></div>
- </div>
- <div class="notion-gallery-label">Executive Travel Itinerary <span aria-hidden="true">↗</span></div>
-</a>
-<a class="notion-gallery-tile" href="https://app.notion.com/p/3cd8cfe172118133bcf5c50550e541da" target="_blank" rel="noopener noreferrer" aria-label="Open Fintech Project Hub in Notion">
- <div class="notion-gallery-preview">
-   <div class="notion-preview-top"><span class="notion-preview-icon">N</span><span>Notion</span><span class="notion-preview-dots">•••</span></div>
-   <div class="notion-preview-title">Fintech Project Hub</div>
-   <div class="notion-preview-subtitle">Project tracking</div>
-   <div class="notion-preview-list"><div><span class="notion-preview-check">01</span><span>Projects</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">02</span><span>Sprints</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">03</span><span>Tasks</span><span class="notion-preview-line"></span></div></div>
- </div>
- <div class="notion-gallery-label">Fintech Project Hub <span aria-hidden="true">↗</span></div>
-</a>
-<a class="notion-gallery-tile" href="https://app.notion.com/p/3858cfe17211812b901cd898c3b031dc" target="_blank" rel="noopener noreferrer" aria-label="Open Business Onboarding in Notion">
- <div class="notion-gallery-preview">
-   <div class="notion-preview-top"><span class="notion-preview-icon">N</span><span>Notion</span><span class="notion-preview-dots">•••</span></div>
-   <div class="notion-preview-title">Business Onboarding</div>
-   <div class="notion-preview-subtitle">Operations setup</div>
-   <div class="notion-preview-list"><div><span class="notion-preview-check">01</span><span>Tools</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">02</span><span>Contacts</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">03</span><span>Priorities</span><span class="notion-preview-line"></span></div></div>
- </div>
- <div class="notion-gallery-label">Business Onboarding <span aria-hidden="true">↗</span></div>
-</a>
-<a class="notion-gallery-tile" href="https://app.notion.com/p/3858cfe1721181b2bf28f96591d4ce1f" target="_blank" rel="noopener noreferrer" aria-label="Open Lifestyle Onboarding in Notion">
- <div class="notion-gallery-preview">
-   <div class="notion-preview-top"><span class="notion-preview-icon">N</span><span>Notion</span><span class="notion-preview-dots">•••</span></div>
-   <div class="notion-preview-title">Lifestyle Onboarding</div>
-   <div class="notion-preview-subtitle">Personal support</div>
-   <div class="notion-preview-list"><div><span class="notion-preview-check">01</span><span>Travel</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">02</span><span>Household</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">03</span><span>Schedule</span><span class="notion-preview-line"></span></div></div>
- </div>
- <div class="notion-gallery-label">Lifestyle Onboarding <span aria-hidden="true">↗</span></div>
-</a>
-      </div>
-      </div>
 
       <p style="text-align:center;font-size:0.78rem;font-weight:700;color:var(--mid);margin-top:1.2rem;letter-spacing:0.02em;"><strong style="color:var(--charcoal);">All work displayed in this portfolio is original content created by Julia N.</strong></p>
 
