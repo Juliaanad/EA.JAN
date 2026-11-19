@@ -2188,7 +2188,7 @@ body {overflow-x:hidden;}
 section[id] {scroll-margin-top:85px;}
 #about .section-inner,#rates .section-inner,#services .section-inner,
 #skills .section-inner,#work .section-inner,#contact .section-inner {
- width:min(var(--site-width),calc(100% - 2*var(--site-gutter)));
+ width:min(var(--site-width),calc(100% - var(--site-gutter) - var(--site-gutter)));
  max-width:var(--site-width);
  margin-inline:auto;
 }
