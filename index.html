@@ -3110,6 +3110,37 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #about .client-testimonials-section .testimonial-quote {font-size:.94rem!important;}
 }
 
+
+/* Give the long testimonial horizontal reading width instead of a tall narrow column */
+@media(min-width:901px){
+ #about .client-testimonials-section .testimonials-grid {
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  column-gap:0!important;row-gap:0!important;
+ }
+ #about .client-testimonials-section .testimonial-card:nth-child(2) {
+  border-right:0!important;padding-right:0!important;
+ }
+ #about .client-testimonials-section .testimonial-card.is-tall {
+  grid-column:1 / -1!important;
+  display:grid!important;grid-template-columns:minmax(0,1fr) 190px!important;
+  grid-template-areas:"stars author" "quote author" "action author"!important;
+  align-items:center!important;column-gap:24px!important;row-gap:10px!important;
+  border-top:1px solid #dce7df!important;border-right:0!important;
+  margin-top:18px!important;padding:22px 0 0!important;
+ }
+ #about .client-testimonials-section .testimonial-card.is-tall .testimonial-stars {grid-area:stars!important;}
+ #about .client-testimonials-section .testimonial-card.is-tall .testimonial-quote {
+  grid-area:quote!important;max-width:none!important;width:100%!important;
+  font-size:.94rem!important;line-height:1.75!important;
+ }
+ #about .client-testimonials-section .testimonial-card.is-tall .testimonial-author {
+  grid-area:author!important;align-self:center!important;
+ }
+ #about .client-testimonials-section .testimonial-card.is-tall #view-review-btn {
+  grid-area:action!important;justify-self:start!important;
+ }
+}
+
 </style>
 </head>
 <body>
