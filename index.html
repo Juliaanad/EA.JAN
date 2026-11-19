@@ -3250,6 +3250,16 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #work .social-filter-btn[aria-pressed="true"]{background:#214a33;color:#fff;border-color:#214a33;}
 #work .social-photo-album .social-photo-card[hidden]{display:none!important;}
 
+
+/* Solo, half-screen Work With Me section, without the former two-card layout */
+#contact.solo-work-contact{min-height:50vh!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:64px 22px!important;box-sizing:border-box!important;}
+#contact .solo-work-inner{width:100%!important;max-width:760px!important;margin:0 auto!important;text-align:center!important;padding:0!important;}
+#contact .solo-work-inner .section-label{margin:0 auto 14px!important;}
+#contact .solo-work-inner .section-title{margin:0 auto 14px!important;}
+#contact .solo-work-inner .section-subtitle{margin:0 auto 26px!important;max-width:560px!important;}
+#contact .solo-work-inner .btn-primary{display:inline-flex!important;align-items:center!important;justify-content:center!important;}
+@media(max-width:600px){#contact.solo-work-contact{min-height:42vh!important;padding:48px 20px!important;}}
+
 </style>
 </head>
 <body>
@@ -3581,15 +3591,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       </div>
       <div class="featured-work-label">Executive Travel Itinerary <span aria-hidden="true">↗</span></div>
     </a>
-    <a class="featured-work-tile featured-notion-tile" href="https://app.notion.com/p/3cd8cfe172118133bcf5c50550e541da" target="_blank" rel="noopener noreferrer" aria-label="Open Fintech Project Hub in Notion">
-      <div class="featured-work-preview featured-work-preview-notion">
-        <div class="featured-notion-head"><span class="featured-notion-icon">N</span><span>Notion</span><span aria-hidden="true">•••</span></div>
-        <div class="featured-notion-title">Fintech Project Hub</div>
-        <div class="featured-notion-subtitle">Project tracking</div>
-        <div class="featured-notion-lines"><span></span><span></span><span></span></div>
-      </div>
-      <div class="featured-work-label">Fintech Project Hub <span aria-hidden="true">↗</span></div>
-    </a>
+
     <a class="featured-work-tile featured-notion-tile" href="https://app.notion.com/p/3858cfe17211812b901cd898c3b031dc" target="_blank" rel="noopener noreferrer" aria-label="Open Business Onboarding in Notion">
       <div class="featured-work-preview featured-work-preview-notion">
         <div class="featured-notion-head"><span class="featured-notion-icon">N</span><span>Notion</span><span aria-hidden="true">•••</span></div>
@@ -3641,19 +3643,12 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 
 
   <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-inner" style="max-width:680px;">
-      <p class="section-label" style="text-align:center;">Get In Touch</p>
-      <h2 class="section-title" style="text-align:center;">Let's work <em>together.</em></h2>
-      <p class="section-subtitle" style="text-align:center;margin:0.8rem auto 2.5rem;max-width:480px;">Available for remote collaborations. Let's talk about your needs.</p>
-
-      <div style="display:flex;justify-content:center;">
-        <a href="mailto:juliaangnadal@gmail.com" class="btn-primary" style="font-size:0.95rem;padding:1rem 2.2rem;">✉ Email Me</a>
-      </div>
-
-      <div style="margin-top:1.8rem;text-align:center;font-size:0.82rem;color:rgba(255,255,255,0.45);">
-        juliaangnadal@gmail.com
-      </div>
+  <section id="contact" class="solo-work-contact">
+    <div class="section-inner solo-work-inner">
+      <p class="section-label">Working Together</p>
+      <h2 class="section-title">Work with me, <em>directly.</em></h2>
+      <p class="section-subtitle">Dedicated support. Clear communication. Flexible collaboration.</p>
+      <a href="mailto:juliaangnadal@gmail.com" class="btn-primary">✉ Work With Me</a>
     </div>
   </section>
 
