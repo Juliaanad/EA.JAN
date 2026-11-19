@@ -1676,6 +1676,91 @@
  #work .canva-carousel.certs img { height:120px!important;max-height:120px!important; }
 }
 
+
+/* Screenshot-matched alignment: independent half-width cards and swipe overflow */
+#rates .rates-two-column { display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:24px!important;align-items:stretch!important; }
+#rates .rates-two-column > .compare { display:block!important;grid-template-columns:none!important;max-width:none!important;width:100%!important;margin:0!important;min-width:0!important; }
+#rates .rates-two-column > .compare > .compare-col { width:100%!important;max-width:none!important;height:100%!important;margin:0!important;box-sizing:border-box!important; }
+#rates .rates-two-column > .rate-card {
+ width:100%!important;max-width:none!important;min-width:0!important;
+ margin:0!important;box-sizing:border-box!important;
+ display:flex!important;flex-direction:column!important;
+ justify-content:space-between!important;align-items:stretch!important;
+ gap:24px!important;padding:28px!important;
+}
+#rates .rates-two-column .rate-main,#rates .rates-two-column .rate-expect { width:100%!important;min-width:0!important; }
+#rates .rates-two-column .rate-expect {
+ border-left:0!important;border-top:1px solid rgba(255,255,255,.22)!important;
+ padding:20px 0 0!important;margin:0!important;
+}
+#rates .rates-two-column .rate-expect ul { display:grid!important;grid-template-columns:1fr!important;gap:6px!important; }
+#rates .rates-two-column .rate-expect li { font-size:.8rem!important;line-height:1.45!important; }
+#work .pm-pair { display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:24px!important;align-items:start!important; }
+#work .pm-pair > .canva-carousel-wrap { min-width:0!important;width:100%!important;max-width:100%!important;margin:0!important; }
+#work .pm-pair .pm-box-clickup { width:100%!important;max-width:100%!important;min-width:0!important;display:block!important; }
+#work .pm-pair .pm-box-clickup .canva-slide-wide {
+ width:100%!important;max-width:none!important;min-width:0!important;
+ margin:0!important;box-sizing:border-box!important;
+}
+#work .pm-pair .pm-box-clickup img {
+ display:block!important;width:100%!important;height:245px!important;max-height:245px!important;
+ object-fit:contain!important;background:#f3f5f1;
+}
+#work .pm-pair .pm-box-etsy { width:100%!important;max-width:100%!important;box-sizing:border-box!important; }
+#work .canva-carousel.certs {
+ display:flex!important;flex-wrap:nowrap!important;gap:16px!important;
+ overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;
+ scrollbar-width:thin!important;padding:6px 0 14px!important;align-items:stretch!important;
+}
+#work .canva-carousel.certs > .canva-slide-wide {
+ flex:0 0 calc((100% - 48px)/4)!important;min-width:0!important;
+ max-width:calc((100% - 48px)/4)!important;width:auto!important;
+ scroll-snap-align:start!important;height:auto!important;box-sizing:border-box!important;
+}
+#work .canva-carousel.certs img { width:100%!important;height:160px!important;max-height:160px!important;object-fit:contain!important; }
+#work .canva-carousel.onboarding-carousel {
+ display:flex!important;flex-wrap:nowrap!important;gap:16px!important;
+ overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;
+ scrollbar-width:thin!important;padding:8px 2px 18px!important;align-items:stretch!important;
+}
+#work .canva-carousel.onboarding-carousel > .work-card {
+ flex:0 0 calc((100% - 48px)/4)!important;width:auto!important;
+ min-width:0!important;max-width:calc((100% - 48px)/4)!important;
+ height:auto!important;margin:0!important;scroll-snap-align:start!important;
+ display:flex!important;flex-direction:column!important;box-sizing:border-box!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview { padding:15px!important;min-height:0!important;flex:1 0 auto!important; }
+#work .canva-carousel.onboarding-carousel .work-card-preview h4 { font-size:.94rem!important;line-height:1.35!important;overflow-wrap:anywhere; }
+#work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] {
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] > div {
+ min-width:0!important;padding:8px!important;overflow-wrap:anywhere;
+}
+#work .canva-carousel.onboarding-carousel .work-card-body { padding:14px!important; }
+#work .canva-carousel.onboarding-carousel .work-card-body p { -webkit-line-clamp:3!important; }
+#work .canva-carousel.onboarding-carousel .work-card-footer { margin-top:auto!important; }
+#work .carousel-scroller:has(.certs) .carousel-nav,
+#work .carousel-scroller:has(.onboarding-carousel) .carousel-nav { display:flex!important; }
+#work .carousel-scroller:has(.certs) .carousel-nav[hidden],
+#work .carousel-scroller:has(.onboarding-carousel) .carousel-nav[hidden] { display:none!important; }
+#work .carousel-scroller:has(.certs) .carousel-nav:disabled,
+#work .carousel-scroller:has(.onboarding-carousel) .carousel-nav:disabled { opacity:.3;pointer-events:none; }
+#work .certs-band .swipe-hint { display:block!important; }
+@media(max-width:1100px) {
+ #work .canva-carousel.onboarding-carousel > .work-card { flex-basis:calc((100% - 32px)/3)!important;max-width:calc((100% - 32px)/3)!important; }
+}
+@media(max-width:850px) {
+ #rates .rates-two-column,#work .pm-pair { grid-template-columns:1fr!important; }
+ #work .canva-carousel.onboarding-carousel > .work-card { flex-basis:calc((100% - 16px)/2)!important;max-width:calc((100% - 16px)/2)!important; }
+ #work .canva-carousel.certs > .canva-slide-wide { flex-basis:calc((100% - 16px)/2)!important;max-width:calc((100% - 16px)/2)!important; }
+}
+@media(max-width:560px) {
+ #work .canva-carousel.onboarding-carousel > .work-card { flex-basis:85%!important;max-width:85%!important; }
+ #work .canva-carousel.certs > .canva-slide-wide { flex-basis:76%!important;max-width:76%!important; }
+ #rates .rates-two-column > .rate-card { padding:22px!important; }
+}
+
 </style>
 </head>
 <body>
