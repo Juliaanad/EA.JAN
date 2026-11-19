@@ -3409,6 +3409,13 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #certificates .coursera-cert-footer{font-size:.62rem;color:#5b6e65;}
 @media(max-width:700px){#certificates .coursera-private-cert .coursera-cert-preview{height:140px;padding:10px;gap:6px;}#certificates .coursera-cert-person{font-size:.9rem;}#certificates .coursera-cert-course{font-size:.66rem;}}
 
+
+/* Remove decorative pale-green quotation glyphs on every testimonial */
+#about .client-testimonials-section .testimonial-quote::before,
+#about .client-testimonials-section .testimonial-quote::after{content:none!important;display:none!important;}
+#about .client-testimonials-section .testimonial-quote{text-indent:0!important;padding-left:0!important;}
+#about .client-testimonials-section .danny-original-review{display:inline-block;margin-top:7px;color:#1e4933;font-size:.73rem;font-weight:700;text-decoration:underline;text-underline-offset:3px;}
+
 </style>
 </head>
 <body>
@@ -3577,6 +3584,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
               <div>
                 <div class="testimonial-name">Danny K.</div>
                 <div class="testimonial-role">Founder & Ex-CEO, Pest-Ex Australia · CEO, Pest-Ex Philippines</div>
+                <a class="danny-original-review" href="Work%20testimonial%20-%20Danny%20Kelly.PNG" target="_blank" rel="noopener noreferrer">View actual review ↗</a>
               </div>
             </div>
           </div>
