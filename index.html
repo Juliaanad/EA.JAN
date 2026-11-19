@@ -3550,6 +3550,27 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 @media(max-width:800px){
  #about .client-testimonials-section{width:100%!important;max-width:100%!important;margin:16px auto 0!important;}
 }
+
+/* Hero and certificates share one uninterrupted cream-and-sage background */
+.hero-certificates-continuum{
+ position:relative;isolation:isolate;
+ background:
+  radial-gradient(ellipse 54% 38% at 12% 12%,rgba(49,103,72,.19) 0%,transparent 75%),
+  radial-gradient(ellipse 48% 42% at 87% 38%,rgba(86,145,111,.20) 0%,transparent 75%),
+  radial-gradient(ellipse 60% 35% at 15% 86%,rgba(71,132,92,.13) 0%,transparent 75%),
+  var(--cream);
+}
+.hero-certificates-continuum #hero,
+.hero-certificates-continuum #certificates{
+ background:transparent!important;
+}
+.hero-certificates-continuum #certificates{
+ position:relative;z-index:1;border-top:0!important;
+ margin-top:0!important;
+}
+.hero-certificates-continuum #certificates::before,
+.hero-certificates-continuum #certificates::after{display:none!important;}
+.hero-certificates-continuum #hero{margin-bottom:0!important;}
 </style>
 </head>
 <body>
@@ -3565,6 +3586,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
     </ul>
   </nav>
 
+  <div class="hero-certificates-continuum">
   <!-- HERO -->
   <section id="hero">
     <div class="hero-blob hero-blob-1"></div>
@@ -3641,6 +3663,8 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       </div>
     </div>
   </section>
+
+  </div>
 
   <!-- ABOUT -->
   <section id="about">
