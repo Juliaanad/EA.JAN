@@ -4663,6 +4663,30 @@ body>nav{
 @media(max-width:480px){
  #skills>.section-inner{width:calc(100% - 32px)!important;}
 }
+
+/* One continuous painted-green canvas for navigation, Hero and Certificates. */
+.hero-certificates-continuum{
+ position:relative!important;
+ isolation:isolate!important;
+ background:
+ radial-gradient(ellipse 50% 55% at 75% 22%,rgba(112,174,121,.38),transparent 80%),
+ radial-gradient(ellipse 55% 65% at 18% 72%,rgba(144,192,139,.28),transparent 82%),
+ repeating-linear-gradient(155deg,rgba(77,124,85,.018) 0px,rgba(77,124,85,.018) 1px,transparent 1px,transparent 9px),
+ #f8f8ef!important;
+ background-attachment:scroll!important;
+}
+.hero-certificates-continuum #hero,
+.hero-certificates-continuum #certificates{
+ background:none!important;background-image:none!important;
+ box-shadow:none!important;border:0!important;
+}
+.hero-certificates-continuum #hero::before,
+.hero-certificates-continuum #hero::after,
+.hero-certificates-continuum #certificates::before,
+.hero-certificates-continuum #certificates::after{display:none!important;}
+.hero-certificates-continuum #hero .hero-blob{display:none!important;}
+.hero-certificates-continuum #hero{margin-bottom:0!important;}
+.hero-certificates-continuum #certificates{margin-top:0!important;}
 </style>
 </head>
 <body>
