@@ -2898,6 +2898,54 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #rates .rates-two-column .compare-col.is-preferred,#rates .rates-two-column > .rate-card {padding:22px!important;}
 }
 
+
+/* Unified portfolio album: first row 4 projects, second row 3 operational samples */
+#work .featured-work-gallery-wrap {margin:24px 0 34px!important;}
+#work .featured-work-gallery {
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ gap:18px!important;padding:20px!important;align-items:stretch!important;
+ border:1px solid #d9e4dc!important;border-radius:18px!important;background:#fff!important;
+}
+#work .featured-work-gallery > .featured-work-tile {
+ display:flex!important;flex-direction:column!important;justify-content:flex-start!important;
+ gap:9px!important;width:100%!important;min-width:0!important;max-width:none!important;
+ height:auto!important;min-height:0!important;margin:0!important;
+ overflow:visible!important;align-self:stretch!important;
+}
+#work .featured-work-gallery .featured-work-preview {
+ flex:0 0 auto!important;height:auto!important;min-height:0!important;max-height:none!important;
+ aspect-ratio:1 / 1!important;width:100%!important;overflow:hidden!important;
+ border-radius:12px!important;
+}
+#work .featured-work-gallery .featured-work-label {
+ display:flex!important;align-items:flex-start!important;justify-content:center!important;
+ height:auto!important;min-height:38px!important;max-height:none!important;
+ padding:4px 4px 2px!important;line-height:1.35!important;
+ font-size:.77rem!important;white-space:normal!important;overflow:visible!important;
+ overflow-wrap:break-word!important;text-align:center!important;
+}
+#work .featured-work-preview-image img {
+ display:block!important;width:100%!important;height:100%!important;
+ object-fit:contain!important;background:#f2f4f2!important;
+}
+#work .featured-work-preview-document {
+ flex-direction:column!important;gap:8px!important;
+ background:#f2f4f2!important;color:#345a43!important;
+ border:1px solid #dce5df!important;font-weight:600!important;font-size:.92rem!important;
+}
+#work .featured-doc-icon {font-size:1.65rem!important;line-height:1!important;}
+#work .featured-work-gallery .featured-profile-cover {min-width:0!important;min-height:0!important;}
+#work .featured-work-gallery .featured-ea-cover {min-width:0!important;}
+@media(max-width:900px) {
+ #work .featured-work-gallery {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important;}
+}
+@media(max-width:560px) {
+ #work .featured-work-gallery {padding:12px!important;gap:12px!important;}
+ #work .featured-work-gallery .featured-work-label {font-size:.69rem!important;min-height:42px!important;}
+ #work .featured-work-preview-document {font-size:.73rem!important;}
+ #work .featured-doc-icon {font-size:1.35rem!important;}
+}
+
 </style>
 </head>
 <body>
@@ -3246,7 +3294,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <!-- Four featured work samples — same gallery style as Operational Work -->
 <div class="featured-work-gallery-wrap">
   <p class="section-label">Featured Projects</p>
-  <p class="featured-work-intro">Presentations, onboarding, and project management.</p>
+  <p class="featured-work-intro">Presentations, onboarding, project management, and operations — all in one album.</p>
   <div class="featured-work-gallery">
     <a class="featured-work-tile" href="Pest%20ex%20company%20profile.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Pest-Ex business presentation PDF">
       <div class="featured-work-preview featured-work-preview-profile">
@@ -3273,32 +3321,20 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <div class="featured-work-preview featured-work-preview-clickup"><img src="Click%20Up%20Project%20Management.JPG" alt="ClickUp bug tracking board screenshot" loading="lazy"></div>
       <div class="featured-work-label">ClickUp Project Management <span aria-hidden="true">↗</span></div>
     </a>
+    <a class="featured-work-tile" href="Pest%20ex%20company%20profile.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Pest-Ex Company Profile PDF">
+      <div class="featured-work-preview featured-work-preview-document"><span class="featured-doc-icon" aria-hidden="true">📄</span><span>PDF Document</span></div>
+      <div class="featured-work-label">Pest-Ex Company Profile <span aria-hidden="true">↗</span></div>
+    </a>
+    <a class="featured-work-tile" href="SOP%20previous%20works.JPG1.JPG" target="_blank" rel="noopener noreferrer" aria-label="View Eve's Catering Menu Design Suite">
+      <div class="featured-work-preview featured-work-preview-image"><img src="SOP%20previous%20works.JPG1.JPG" alt="Eve's Catering menu designs" loading="lazy"></div>
+      <div class="featured-work-label">Eve's Catering: Menu Design Suite <span aria-hidden="true">↗</span></div>
+    </a>
+    <a class="featured-work-tile" href="SOP%20previous%20works.JPG2.JPG" target="_blank" rel="noopener noreferrer" aria-label="View Eve's Catering Operations and Costing">
+      <div class="featured-work-preview featured-work-preview-image"><img src="SOP%20previous%20works.JPG2.JPG" alt="Eve's Catering operational spreadsheets and costing" loading="lazy"></div>
+      <div class="featured-work-label">Eve's Catering: Operations &amp; Costing <span aria-hidden="true">↗</span></div>
+    </a>
   </div>
 </div>
-
-      <!-- Operational Work Carousel -->
-      <div class="canva-carousel-wrap">
-        <p class="section-label" style="margin-bottom:0.4rem;">Operational Work</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Operational systems and documentation.</p>
-        <div class="carousel-scroller">
-          <button type="button" class="carousel-nav prev" aria-label="Previous work samples" hidden>&#8592;</button>
-          <button type="button" class="carousel-nav next" aria-label="Next work samples">&#8594;</button>
-        <div class="canva-carousel op-work">
-          <a class="canva-slide-wide doc-card op-pdf-card" href="Pest%20ex%20company%20profile.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Pest-Ex Company Profile PDF">
-  <div class="op-pdf-preview"><span aria-hidden="true">📄</span><span>PDF Document</span></div>
-  <div class="op-pdf-caption">Pest-Ex Company Profile</div>
-</a>
-          <div class="canva-slide-wide">
-            <img src="SOP%20previous%20works.JPG1.JPG" alt="Eve's Catering: Menu Design Suite" />
-            <div class="canva-slide-label">Eve's Catering: Menu Design Suite</div>
-          </div>
-          <div class="canva-slide-wide">
-            <img src="SOP%20previous%20works.JPG2.JPG" alt="Eve's Catering: Operations & Costing" />
-            <div class="canva-slide-label">Eve's Catering: Operations &amp; Costing</div>
-          </div>
-        </div>
-        </div>
-      </div>
 
       <!-- Portfolio / Certificates Carousel -->
       <div class="canva-carousel-wrap certs-band full-bleed-dark">
