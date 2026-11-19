@@ -3848,6 +3848,31 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #about .client-testimonials-section .testimonial-card.expanded .testimonial-quote {
  -webkit-line-clamp:unset!important;line-clamp:unset!important;
 }
+
+/* Testimonials remain compact until the visitor chooses Read full review. */
+#about .client-testimonials-section .testimonials-grid {align-items:start!important;}
+#about .client-testimonials-section .testimonial-card,
+#about .client-testimonials-section .testimonial-card.is-tall {
+ height:auto!important;min-height:0!important;max-height:none!important;
+ align-self:start!important;padding:18px 22px!important;
+ overflow:visible!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-quote {
+ display:-webkit-box!important;-webkit-box-orient:vertical!important;
+ -webkit-line-clamp:3!important;line-clamp:3!important;
+ overflow:hidden!important;margin:0 0 8px!important;
+}
+#about .client-testimonials-section .testimonial-card.expanded .testimonial-quote,
+#about .client-testimonials-section .testimonial-card.is-tall.expanded .testimonial-quote {
+ display:block!important;-webkit-line-clamp:unset!important;line-clamp:unset!important;
+ overflow:visible!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-author {
+ margin-top:10px!important;padding-top:10px!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-expand {margin:4px 0 8px!important;}
+#about .client-testimonials-section .testimonial-card .testimonial-review-button,
+#about .client-testimonials-section .testimonial-card #view-review-btn {margin-top:8px!important;}
 </style>
 </head>
 <body>
