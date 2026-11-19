@@ -2538,6 +2538,69 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #work .canva-carousel.certs .canva-slide-label {font-size:.66rem!important;}
 }
 
+
+/* Operational Work: use the exact certificate-gallery visual language */
+#work .canva-carousel-wrap:has(.op-work) {margin-top:28px!important;margin-bottom:28px!important;}
+#work .carousel-scroller:has(.op-work) {
+ background:#fff!important;border:1px solid #d9e4dc!important;border-radius:18px!important;
+ padding:20px!important;box-shadow:none!important;overflow:visible!important;
+}
+#work .canva-carousel.op-work {
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:18px!important;padding:0!important;overflow:visible!important;align-items:stretch!important;
+}
+#work .canva-carousel.op-work > * {
+ height:290px!important;min-height:290px!important;max-height:290px!important;
+ width:100%!important;min-width:0!important;max-width:none!important;
+ border:0!important;border-radius:0!important;box-shadow:none!important;
+ background:transparent!important;padding:0!important;gap:8px!important;
+ display:flex!important;flex-direction:column!important;justify-content:space-between!important;
+}
+#work .canva-carousel.op-work > .canva-slide-wide img {
+ width:100%!important;height:246px!important;min-height:246px!important;max-height:246px!important;
+ flex:0 0 246px!important;object-fit:contain!important;
+ background:#f2f4f2!important;border-radius:12px!important;padding:9px!important;
+}
+#work .canva-carousel.op-work .canva-slide-label {
+ min-height:36px!important;height:36px!important;max-height:36px!important;
+ color:#1c3426!important;font-size:.78rem!important;font-weight:600!important;
+ text-align:center!important;display:flex!important;align-items:center!important;justify-content:center!important;
+}
+/* PDF sample gets the same preview frame, without removing its destination */
+#work .canva-carousel.op-work > a.doc-card {
+ height:290px!important;min-height:290px!important;max-height:290px!important;
+ padding:0!important;gap:8px!important;justify-content:space-between!important;
+}
+#work .canva-carousel.op-work > a.doc-card > .notion-badge {
+ width:100%!important;height:246px!important;min-height:246px!important;max-height:246px!important;
+ flex:0 0 246px!important;margin:0!important;border-radius:12px!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ background:#f2f4f2!important;font-size:1rem!important;
+}
+#work .canva-carousel.op-work > a.doc-card > div[style*="font-family"] {
+ margin:0!important;text-align:center!important;font-family:inherit!important;
+ font-size:.78rem!important;line-height:1.3!important;height:36px!important;
+ min-height:36px!important;max-height:36px!important;display:flex!important;
+ align-items:center!important;justify-content:center!important;
+}
+#work .canva-carousel.op-work > a.doc-card > span[style*="display:inline-block"] {display:none!important;}
+@media(max-width:800px){
+ #work .carousel-scroller:has(.op-work) {padding:12px!important;}
+ #work .canva-carousel.op-work {gap:12px!important;}
+}
+@media(max-width:600px){
+ #work .canva-carousel.op-work {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ #work .canva-carousel.op-work > *,#work .canva-carousel.op-work > a.doc-card {
+ height:230px!important;min-height:230px!important;max-height:230px!important;
+ }
+ #work .canva-carousel.op-work > .canva-slide-wide img,
+ #work .canva-carousel.op-work > a.doc-card > .notion-badge {
+ height:184px!important;min-height:184px!important;max-height:184px!important;flex-basis:184px!important;
+ }
+ #work .canva-carousel.op-work .canva-slide-label,
+ #work .canva-carousel.op-work > a.doc-card > div[style*="font-family"] {font-size:.66rem!important;}
+}
+
 </style>
 </head>
 <body>
