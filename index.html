@@ -4511,6 +4511,32 @@ body>nav .nav-links a:hover{color:#55846a!important;}
 @media(max-width:760px){
  :root{--site-nav-height:80px;}
 }
+
+/* Final navigation and hero alignment: slimmer nav and consistent horizontal gutters */
+:root{--site-nav-height:58px!important;--site-gutter:clamp(24px,5vw,90px);}
+body>nav{
+ height:var(--site-nav-height)!important;min-height:0!important;
+ box-sizing:border-box!important;padding:8px var(--site-gutter)!important;
+ display:flex!important;align-items:center!important;
+}
+body>nav .nav-logo{font-size:1.18rem!important;line-height:1.2!important;}
+body>nav .nav-links{align-items:center!important;margin:0!important;}
+body>nav .nav-links a{font-size:11px!important;line-height:1.3!important;}
+.hero-certificates-continuum{padding-top:var(--site-nav-height)!important;}
+.hero-certificates-continuum #hero{padding:32px 0 24px!important;scroll-margin-top:var(--site-nav-height)!important;}
+.hero-certificates-continuum #hero .hero-inner,
+.hero-certificates-continuum #certificates .section-inner{
+ width:calc(100% - 2 * var(--site-gutter))!important;
+ max-width:1320px!important;margin-left:auto!important;margin-right:auto!important;
+}
+.hero-certificates-continuum #certificates{padding-top:12px!important;}
+@media(max-width:760px){
+ :root{--site-nav-height:56px!important;--site-gutter:20px;}
+ body>nav{padding:8px 20px!important;}
+ body>nav .nav-links{gap:10px!important;}
+ body>nav .nav-links a{font-size:10px!important;}
+ .hero-certificates-continuum #hero{padding-top:24px!important;}
+}
 </style>
 </head>
 <body>
