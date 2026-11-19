@@ -3222,6 +3222,17 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #work .canva-embed-preview iframe {display:block;width:100%;height:100%;border:0;background:#e9edea;}
 #work .canva-embed-tile .featured-work-label {min-height:0!important;}
 
+
+/* Social media photo album matches the Featured Projects grid exactly */
+#work .social-photo-album-wrap {margin-top:42px!important;}
+#work .social-photo-album .social-photo-card {border:0;background:transparent;padding:0;cursor:zoom-in;text-align:center;font:inherit;color:inherit;}
+#work .social-photo-album .social-photo-card:focus-visible {outline:3px solid #315a46;outline-offset:4px;}
+#work .social-photo-album .social-photo-card .featured-work-preview {aspect-ratio:1/1!important;height:auto!important;width:100%!important;min-height:0!important;padding:0!important;background:#edf1ed!important;overflow:hidden!important;}
+#work .social-photo-album .social-photo-card img {width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;}
+#work .social-photo-album .social-photo-card .featured-work-label {font-size:.76rem!important;line-height:1.4!important;min-height:40px!important;}
+#work .social-album-status {grid-column:1/-1;text-align:center;color:#355b40;padding:16px;}
+@media(max-width:560px){#work .social-photo-album .social-photo-card .featured-work-label{font-size:.69rem!important;}}
+
 </style>
 </head>
 <body>
@@ -3642,6 +3653,15 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
   </div>
 </div>
 
+
+      <!-- Social media photos from the existing self-contained portfolio -->
+      <div class="featured-work-gallery-wrap social-photo-album-wrap" id="social-media-projects">
+        <p class="section-label">Social Media Projects</p>
+        <p class="featured-work-intro">Social media designs and creative content — a photo album.</p>
+        <div class="featured-work-gallery social-photo-album" id="social-photo-album" aria-label="Social media design photo album">
+          <p class="social-album-status">Loading social media photos…</p>
+        </div>
+      </div>
       <!-- Copyright Notice -->
       <div style="margin-top:2.5rem;padding:1.4rem 1.8rem;background:#f0f5f1;border:1px solid rgba(26, 69, 48,0.2);border-radius:12px;box-shadow:0 3px 14px rgba(15, 30, 20,0.06);display:flex;align-items:flex-start;gap:0.9rem;">
         <span style="font-size:1.2rem;flex-shrink:0;">🔒</span>
@@ -3971,6 +3991,67 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initializePdfCards);else initializePdfCards();
 })();
 </script>
+
+
+<script>
+/* Extract the original embedded photos without sending visitors to the other portfolio page. */
+(function(){
+  async function loadSocialPhotoAlbum(){
+    const album=document.getElementById('social-photo-album');if(!album)return;
+    try{
+      const response=await fetch('Social_Media_Portfolio_Aligned_No_Empty_Space.html',{cache:'force-cache'});
+      if(!response.ok)throw new Error('Portfolio source unavailable');
+      const source=new DOMParser().parseFromString(await response.text(),'text/html');
+      const all=Array.from(source.querySelectorAll('img')).filter(img=>img.src.startsWith('data:image/'));
+      /* Exclude profile photo, "before" comparisons, reference images and zoomed crops. */
+      const selected=all.filter(img=>{
+        const alt=(img.getAttribute('alt')||'').toLowerCase();
+        return alt&&!alt.includes('cat in a frog hat')&&!alt.startsWith('before:')&&!alt.startsWith('zoom:')&&!alt.startsWith('a generic chatgpt')&&!alt.includes('reference photo')&&!alt.startsWith('what i saw:');
+      });
+      if(!selected.length)throw new Error('No project images found');
+      const fragment=document.createDocumentFragment();
+      const lightbox=document.getElementById('lightbox');
+      for(const original of selected){
+        const alt=original.getAttribute('alt')||'Social media design';
+        const card=document.createElement('button');card.type='button';card.className='featured-work-tile social-photo-card';
+        const preview=document.createElement('span');preview.className='featured-work-preview';
+        const img=document.createElement('img');img.src=original.src;img.alt=alt;img.loading='lazy';preview.appendChild(img);
+        const caption=document.createElement('span');caption.className='featured-work-label';caption.textContent=alt;
+        card.append(preview,caption);
+        card.addEventListener('click',()=>{
+          const modal=document.getElementById('social-photo-modal');
+          if(!modal)return;
+          modal.querySelector('img').src=img.src;modal.querySelector('img').alt=alt;
+          modal.querySelector('.social-photo-caption').textContent=alt;
+          modal.hidden=false;document.body.style.overflow='hidden';
+          modal.querySelector('.social-photo-close').focus();
+        });
+        fragment.appendChild(card);
+      }
+      album.replaceChildren(fragment);
+    }catch(e){album.querySelector('.social-album-status').textContent='Social media images are temporarily unavailable.';}
+  }
+  function setupSocialPhotoModal(){
+    const modal=document.createElement('div');modal.id='social-photo-modal';modal.hidden=true;
+    modal.innerHTML='<div class="social-photo-dialog" role="dialog" aria-modal="true" aria-label="Social media photo preview"><button class="social-photo-close" type="button" aria-label="Close preview">×</button><img alt=""><p class="social-photo-caption"></p></div>';
+    document.body.appendChild(modal);
+    const close=()=>{modal.hidden=true;document.body.style.overflow='';};
+    modal.querySelector('.social-photo-close').addEventListener('click',close);
+    modal.addEventListener('click',e=>{if(e.target===modal)close();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)close();});
+  }
+  function init(){setupSocialPhotoModal();loadSocialPhotoAlbum();}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<style>
+#social-photo-modal[hidden]{display:none!important}
+#social-photo-modal{position:fixed;inset:0;z-index:99999;background:rgba(8,24,16,.89);display:flex;align-items:center;justify-content:center;padding:55px 18px 25px}
+.social-photo-dialog{position:relative;max-width:min(900px,96vw);max-height:90vh;display:flex;flex-direction:column;align-items:center;gap:10px}
+.social-photo-dialog img{display:block;max-width:100%;max-height:75vh;object-fit:contain;border-radius:8px;background:#fff}
+.social-photo-caption{color:white;text-align:center;font-size:.85rem;margin:0}
+.social-photo-close{position:absolute;right:0;top:-46px;width:38px;height:38px;border:0;border-radius:50%;background:#fff;color:#173e2b;font-size:29px;cursor:pointer}
+</style>
 
 </body>
 </html>
