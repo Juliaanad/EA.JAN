@@ -2094,6 +2094,51 @@
  #work .canva-carousel.onboarding-carousel .work-tags { max-height:26px!important; }
 }
 
+
+/* Certificate album: compact full-width photo gallery, two readable pages per spread */
+#work .certs-band { padding-top:48px!important;padding-bottom:48px!important; }
+#work .certs-band .section-inner { max-width:1320px!important; }
+#work .certs-band .swipe-hint { display:block!important;margin:0 0 12px!important; }
+#work .certs-band .carousel-scroller { position:relative!important;width:100%!important;max-width:100%!important; }
+#work .canva-carousel.certs {
+ display:flex!important;flex-wrap:nowrap!important;grid-template-columns:none!important;
+ gap:18px!important;width:100%!important;max-width:100%!important;
+ overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;
+ align-items:stretch!important;padding:2px 2px 12px!important;
+ scrollbar-width:thin!important;box-sizing:border-box!important;
+}
+#work .canva-carousel.certs > .canva-slide-wide {
+ flex:0 0 calc((100% - 18px)/2)!important;
+ width:calc((100% - 18px)/2)!important;max-width:calc((100% - 18px)/2)!important;
+ min-width:0!important;height:390px!important;min-height:390px!important;max-height:390px!important;
+ padding:16px!important;margin:0!important;box-sizing:border-box!important;
+ background:#fff!important;border-radius:16px!important;scroll-snap-align:start!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:space-between!important;overflow:hidden!important;
+}
+#work .canva-carousel.certs > .canva-slide-wide img {
+ display:block!important;width:100%!important;height:310px!important;max-height:310px!important;
+ min-height:0!important;flex:1 1 auto!important;object-fit:contain!important;
+ object-position:center!important;background:#fff!important;margin:0!important;
+}
+#work .canva-carousel.certs > .canva-slide-wide .canva-slide-label {
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ width:100%!important;height:48px!important;min-height:48px!important;max-height:48px!important;
+ padding:8px!important;margin:0!important;text-align:center!important;
+ font-size:.92rem!important;line-height:1.25!important;box-sizing:border-box!important;
+}
+#work .certs-band .carousel-scroller > .carousel-nav { display:flex!important;z-index:5!important; }
+#work .certs-band .carousel-scroller > .carousel-nav[hidden] { display:none!important; }
+#work .certs-band .carousel-scroller > .carousel-nav:disabled { opacity:.35!important;pointer-events:none!important; }
+@media(max-width:700px){
+ #work .certs-band { padding-top:36px!important;padding-bottom:36px!important; }
+ #work .canva-carousel.certs > .canva-slide-wide {
+ flex-basis:90%!important;width:90%!important;max-width:90%!important;
+ height:340px!important;min-height:340px!important;max-height:340px!important;
+ }
+ #work .canva-carousel.certs > .canva-slide-wide img { height:265px!important;max-height:265px!important; }
+}
+
 </style>
 </head>
 <body>
@@ -2582,7 +2627,7 @@
       <!-- Portfolio / Certificates Carousel -->
       <div class="canva-carousel-wrap certs-band full-bleed-dark">
         <p class="section-label" style="margin-bottom:0.4rem;">Certificates</p>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Professional credentials. Swipe to see more.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Browse my certificates like an album.</p>
         <div class="swipe-hint">Swipe for more <span aria-hidden="true">&rarr;</span></div>
         <div class="carousel-scroller">
         <button type="button" class="carousel-nav prev" aria-label="Previous certificates" hidden>&#8592;</button>
