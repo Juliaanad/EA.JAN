@@ -3643,6 +3643,27 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  border:1px solid rgba(255,255,255,.25)!important;
  box-shadow:0 7px 20px rgba(0,0,0,.16)!important;
 }
+
+/* Exact same frame dimensions for the Meta PDF as the ClickUp certificate images */
+#certificates .canva-carousel.certs>.canva-slide-wide .meta-coursera-pdf-preview{
+ display:block!important;box-sizing:border-box!important;
+ width:100%!important;height:246px!important;min-height:246px!important;max-height:246px!important;
+ flex:0 0 246px!important;align-self:stretch!important;
+ margin:0!important;padding:8px!important;
+ background:#f2f4f2!important;border:1px solid #c9ddcf!important;border-radius:12px!important;
+ overflow:hidden!important;pointer-events:none!important;
+}
+@media(max-width:850px){
+ #certificates .canva-carousel.certs>.canva-slide-wide .meta-coursera-pdf-preview{
+  height:230px!important;min-height:230px!important;max-height:230px!important;flex-basis:230px!important;
+ }
+}
+@media(max-width:600px){
+ #certificates .canva-carousel.certs>.canva-slide-wide .meta-coursera-pdf-preview{
+  height:184px!important;min-height:184px!important;max-height:184px!important;
+  flex-basis:184px!important;padding:5px!important;
+ }
+}
 </style>
 </head>
 <body>
