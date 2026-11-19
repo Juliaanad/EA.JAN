@@ -1761,6 +1761,61 @@
  #rates .rates-two-column > .rate-card { padding:22px!important; }
 }
 
+
+/* Final precision pass: center content, remove awkward whitespace, full-width certificate strip */
+#rates .rates-two-column { align-items:stretch!important;gap:24px!important; }
+#rates .rates-two-column > .compare,#rates .rates-two-column > .rate-card { min-width:0!important;width:100%!important; }
+#rates .rates-two-column > .compare > .compare-col {
+ display:flex!important;flex-direction:column!important;justify-content:center!important;
+ padding:28px!important;height:100%!important;box-sizing:border-box!important;
+}
+#rates .rates-two-column .compare-col h3 { text-align:center!important;margin-bottom:20px!important; }
+#rates .rates-two-column .compare-col ul { margin:0 auto!important;max-width:420px!important;width:100%!important; }
+#rates .rates-two-column > .rate-card { justify-content:center!important;gap:22px!important; }
+#rates .rates-two-column .rate-main { text-align:center!important; }
+#rates .rates-two-column .rate-figure { justify-content:center!important;flex-wrap:wrap!important;gap:8px!important; }
+#rates .rates-two-column .rate-expect { text-align:center!important; }
+#rates .rates-two-column .rate-expect ul { max-width:420px!important;margin:auto!important;text-align:left!important; }
+#work .pm-pair { align-items:stretch!important; }
+#work .pm-pair > .canva-carousel-wrap { display:flex!important;flex-direction:column!important; }
+#work .pm-pair > .canva-carousel-wrap > p:not(.section-label) {
+ min-height:44px!important;margin:0 0 16px!important;line-height:1.45!important;
+}
+#work .pm-pair .pm-box { flex:1 1 auto!important;min-height:310px!important; }
+#work .pm-pair .pm-box-etsy { display:flex!important;align-items:center!important;justify-content:center!important; }
+#work .pm-pair .pm-box-clickup { display:flex!important;align-items:stretch!important; }
+#work .pm-pair .pm-box-clickup .canva-slide-wide { display:flex!important;flex-direction:column!important;justify-content:space-between!important; }
+#work .pm-pair .pm-box-clickup img { width:100%!important;height:260px!important;max-height:260px!important;object-fit:contain!important; }
+#work .presentation-pair > .canva-carousel-wrap > p:not(.section-label) {
+ min-height:42px!important;line-height:1.45!important;
+}
+#work .canva-carousel.certs { width:100%!important;max-width:none!important; }
+#work .canva-carousel.certs > .canva-slide-wide {
+ flex:0 0 calc((100% - 48px)/4)!important;max-width:calc((100% - 48px)/4)!important;
+ min-width:0!important;
+}
+#work .canva-carousel.certs img { height:190px!important;max-height:190px!important;object-fit:contain!important; }
+#work .canva-carousel.certs .canva-slide-label {
+ min-height:48px!important;justify-content:center!important;text-align:center!important;
+ font-size:.76rem!important;padding:10px!important;
+}
+#work .carousel-scroller:has(.certs) { width:100%!important;max-width:none!important; }
+#work .canva-carousel.onboarding-carousel .work-card-preview { text-align:left; }
+#work .canva-carousel.onboarding-carousel .work-card-preview h4 { min-height:3.8em!important; }
+#work .canva-carousel.onboarding-carousel .work-card-body { display:flex!important;flex-direction:column!important;justify-content:space-between!important; }
+#work .canva-carousel.onboarding-carousel .work-card-body p { -webkit-line-clamp:2!important; }
+#work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] { gap:8px!important; }
+#work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] > div { font-size:.75rem!important; }
+@media(max-width:850px) {
+ #work .canva-carousel.certs > .canva-slide-wide { flex-basis:calc((100% - 16px)/2)!important;max-width:calc((100% - 16px)/2)!important; }
+ #work .pm-pair .pm-box { min-height:0!important; }
+}
+@media(max-width:560px) {
+ #work .canva-carousel.certs > .canva-slide-wide { flex-basis:76%!important;max-width:76%!important; }
+ #work .canva-carousel.certs img { height:190px!important;max-height:190px!important; }
+ #rates .rates-two-column > .compare > .compare-col { padding:22px!important; }
+}
+
 </style>
 </head>
 <body>
@@ -1918,18 +1973,18 @@
     <div class="section-inner">
       <p class="section-label">Working Together</p>
       <h2 class="section-title">Work with me, <em>directly.</em></h2>
-      <p class="section-subtitle">One point of contact. Full commitment to your business.</p>
+      <p class="section-subtitle">Direct support. Clear communication. Full commitment.</p>
 
       <div class="rates-two-column">
       <div class="compare">
         <div class="compare-col is-preferred">
           <h3>Working with me directly</h3>
           <ul>
-            <li><strong>One person on your account.</strong> That person is me.</li>
-            <li><strong>I learn your systems once.</strong> The context stays with your business.</li>
-            <li><strong>You talk to me.</strong> There is no account manager in between.</li>
-            <li><strong>Priorities change by message.</strong> No change request needed.</li>
-            <li><strong>A direct agreement.</strong> No placement fee. No lock-in.</li>
+            <li><strong>One dedicated contact.</strong> Work directly with me.</li>
+            <li><strong>Consistent support.</strong> I know your systems.</li>
+            <li><strong>Direct communication.</strong> No middleman.</li>
+            <li><strong>Flexible priorities.</strong> Simple updates.</li>
+            <li><strong>Simple agreement.</strong> No placement fee or lock-in.</li>
           </ul>
         </div>
       </div>
@@ -1943,15 +1998,13 @@
         <div class="rate-expect">
           <p class="rate-label">What to expect from me</p>
           <ul>
-            <li>8 hours a day, Monday to Friday.</li>
-            <li>40 hours a week.</li>
-            <li>One point of contact. Me.</li>
-            <li>The same person every month.</li>
-            <li>Your systems learned once, not repeatedly.</li>
-            <li>Honest, direct communication.</li>
-            <li>Full commitment to your business.</li>
-            <li>Careful, high-quality work.</li>
-            <li>Confidentiality on everything I handle.</li>
+            <li>Monday–Friday · 40 hours/week.</li>
+            <li>One consistent point of contact.</li>
+            <li>Familiar with your systems.</li>
+            <li>Clear, direct communication.</li>
+            <li>Dedicated support.</li>
+            <li>Detail-focused work.</li>
+            <li>Confidentiality assured.</li>
           </ul>
         </div>
       </div>      </div>
@@ -2115,7 +2168,7 @@
       <!-- Business Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Business Presentations</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Client-facing company profile, designed end to end. 7 slides, use the arrows.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Company profile · 7 slides.</p>
         <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(26, 69, 48,0.15);background:var(--cream);box-shadow:0 4px 20px rgba(15, 30, 20,0.1);">
           <div style="padding:0.9rem 1.4rem;background:var(--white);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Pest-Ex Company Profile · 7 slides</div>
@@ -2136,7 +2189,7 @@
       <!-- EA Onboarding Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">EA Onboarding Presentations</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Shared with an executive on day one. Sets expectations and maps the first two weeks.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Executive onboarding · first two weeks.</p>
         <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(26, 69, 48,0.15);background:var(--cream);box-shadow:0 4px 20px rgba(15, 30, 20,0.1);">
           <div style="padding:0.9rem 1.4rem;background:var(--white);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Canva · 8 slides</div>
@@ -2161,7 +2214,7 @@
       <div class="pm-pair">
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Project Management</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Operational checklist running a full Etsy launch, from account setup to order intake.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Etsy launch checklist · 5 phases.</p>
         <a class="pm-box pm-box-etsy doc-card" href="https://docs.google.com/spreadsheets/d/1qS1PBpkhBANTAjybqbtqpMWRmhmdSHG7KeAKrtpxi8c/edit?usp=sharing" target="_blank">
           <div class="etsy-bar-row">
             <div class="etsy-bar-meta">
@@ -2193,7 +2246,7 @@
       <!-- ClickUp Project Management -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">ClickUp Project Management</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Bug board built and run for a dev team. Intake, triage, assignment, and status in one view. 18 open items, click to enlarge.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Development bug tracker · 18 open items. Click to enlarge.</p>
         <div class="pm-box pm-box-clickup canva-carousel">
           <div class="canva-slide-wide">
             <img src="Click%20Up%20Project%20Management.JPG" alt="ClickUp: Bug Tracking Board" />
@@ -2251,7 +2304,7 @@
       <!-- Portfolio / Certificates Carousel -->
       <div class="canva-carousel-wrap certs-band full-bleed-dark">
         <p class="section-label" style="margin-bottom:0.4rem;">Certificates</p>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Credentials and certifications that back my expertise.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Professional credentials. Swipe to see more.</p>
         <div class="swipe-hint">Swipe for more <span aria-hidden="true">&rarr;</span></div>
         <div class="carousel-scroller">
         <button type="button" class="carousel-nav prev" aria-label="Previous certificates" hidden>&#8592;</button>
@@ -2291,7 +2344,7 @@
       <div style="margin-top:4rem;border-top:1px solid rgba(26, 69, 48,0.12);padding-top:3.5rem;">
         <p class="section-label" style="margin-bottom:0.6rem;">Sample Notion Documents</p>
         <h2 class="section-title" style="color:var(--charcoal);">Real work, <em>built in Notion.</em></h2>
-        <p class="section-subtitle" style="color:var(--mid);">Itineraries, project systems, and ready-to-fill onboarding forms. Swipe to browse.</p>
+        <p class="section-subtitle" style="color:var(--mid);">Travel, project systems, and onboarding. Swipe to explore.</p>
       </div>
       <div class="carousel-scroller">
           <button type="button" class="carousel-nav prev" aria-label="Previous Notion documents" hidden>&#8592;</button>
