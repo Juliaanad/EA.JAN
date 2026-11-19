@@ -5418,5 +5418,23 @@ document.querySelectorAll('.testimonial-expand').forEach(button=>{
  button.addEventListener('click',()=>setExpanded(!card.classList.contains('expanded')));
 });
 </script>
+
+<!-- Navigation changes from transparent to solid green after scrolling. -->
+<style>
+body > nav { background:transparent!important; background-color:transparent!important; background-image:none!important; backdrop-filter:none!important; -webkit-backdrop-filter:none!important; border-bottom-color:transparent!important; transition:background-color .25s ease,box-shadow .25s ease!important; }
+body > nav.nav-is-scrolled { background:#1a4530!important; background-color:#1a4530!important; background-image:none!important; box-shadow:0 3px 14px rgba(8,30,18,.18)!important; border-bottom-color:rgba(255,255,255,.12)!important; }
+body > nav.nav-is-scrolled .nav-logo {color:#fff!important;}
+body > nav.nav-is-scrolled .nav-links a {color:rgba(255,255,255,.88)!important;}
+body > nav.nav-is-scrolled .nav-links a:hover {color:#fff!important;}
+</style>
+<script>
+(function(){
+ const nav=document.querySelector('body > nav');
+ if(!nav)return;
+ const update=()=>nav.classList.toggle('nav-is-scrolled',window.scrollY>24);
+ window.addEventListener('scroll',update,{passive:true});
+ update();
+})();
+</script>
 </body>
 </html>
