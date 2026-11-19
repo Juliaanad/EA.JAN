@@ -3181,6 +3181,15 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #about .client-testimonials-section .testimonial-card:last-child {border-bottom:0!important;}
 }
 
+
+/* Image album items open an in-page lightbox, never navigate away */
+#work .featured-work-gallery .featured-work-tile:has(img) {cursor:zoom-in!important;}
+#work .featured-work-gallery .featured-work-tile:has(img) .featured-work-label span {display:none!important;}
+#work .featured-work-gallery .featured-work-tile:has(img) .featured-work-label::after {
+ content:"  ⤢ Preview";font-size:.7em;font-weight:500;color:#4b7659;
+}
+#lightbox .lightbox-close {z-index:10!important;cursor:pointer!important;}
+
 </style>
 </head>
 <body>
@@ -3839,7 +3848,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
     const closeBtn = lb.querySelector('.lightbox-close');
     const prevBtn = lb.querySelector('.lightbox-nav.prev');
     const nextBtn = lb.querySelector('.lightbox-nav.next');
-    const shots = document.querySelectorAll('#work .canva-slide img, #work .canva-slide-wide img');
+    const shots = document.querySelectorAll('#work .canva-slide img, #work .canva-slide-wide img, #work .featured-work-gallery .featured-work-tile img, #certificates .canva-carousel.certs img');
     let lastFocus = null;
     let group = [];
     let index = 0;
@@ -3848,8 +3857,9 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       const t = group[index];
       img.src = t.currentSrc || t.src;
       img.alt = t.alt || '';
-      const label = t.parentElement.querySelector('.canva-slide-label');
-      cap.textContent = label ? label.textContent.trim() : (t.alt || '');
+      const tile = t.closest('.featured-work-tile');
+      const label = tile ? tile.querySelector('.featured-work-label') : t.parentElement.querySelector('.canva-slide-label');
+      cap.textContent = label ? label.textContent.replace('↗', '').trim() : (t.alt || '');
       const multi = group.length > 1;
       prevBtn.hidden = !multi;
       nextBtn.hidden = !multi;
@@ -3865,7 +3875,8 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       // Swipe/arrow through the gallery the image actually belongs to
       // (its carousel row), not every zoomable image on the page.
       const carousel = t.closest('.canva-carousel');
-      const scope = carousel || document.getElementById('work') || document;
+      const gallery = t.closest('.featured-work-gallery');
+      const scope = carousel || gallery || document.getElementById('work') || document;
       group = Array.from(scope.querySelectorAll('img.zoomable'));
       index = Math.max(0, group.indexOf(t));
       render();
@@ -3876,7 +3887,14 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 
     shots.forEach((t) => {
       t.classList.add('zoomable');
-      t.addEventListener('click', () => open(t));
+      const tile = t.closest('#work .featured-work-gallery .featured-work-tile');
+      if (tile) {
+        // Keep photo previews inside the portfolio instead of navigating to a raw image URL.
+        tile.addEventListener('click', (event) => { event.preventDefault(); open(t); });
+        tile.setAttribute('aria-label', 'Preview ' + (t.alt || 'portfolio photo') + ' on this page');
+      } else {
+        t.addEventListener('click', (event) => { event.preventDefault(); open(t); });
+      }
     });
 
     function close() {
