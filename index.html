@@ -4053,11 +4053,6 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  font-weight:400!important;line-height:1.4!important;
 }
 
-/* Hover to read testimonials; mobile retains tap-to-expand. */
-@media (hover:hover) and (pointer:fine) {
- #about .client-testimonials-section .testimonial-card {transition:box-shadow .2s ease,transform .2s ease!important;}
- #about .client-testimonials-section .testimonial-card:hover {z-index:2!important;}
-}
 
 /* What I Offer: consistent 15px typography across all four service cards. */
 #services .services-grid-four .service-card h3,
@@ -4139,6 +4134,12 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 }
 #services .services-grid-four .service-card h3 {font-weight:700!important;}
 #services .services-grid-four .service-card p {font-weight:400!important;}
+/* Testimonials: no hover interactions or visual movement; click Read full review only. */
+#about .client-testimonials-section .testimonial-card,
+#about .client-testimonials-section .testimonial-card:hover {
+ transform:none!important;transition:none!important;
+ box-shadow:none!important;
+}
 </style>
 </head>
 <body>
