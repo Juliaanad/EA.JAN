@@ -4692,6 +4692,17 @@ body>nav{
 /* Certificates now follow portfolio, retaining the same painted-sage visual identity. */
 #certificates{background:radial-gradient(ellipse 65% 75% at 72% 25%,rgba(112,174,121,.25),transparent 80%),#f8f8ef!important;}
 </style>
+<style>
+/* Services continue the same painted sage backdrop as the hero, with no separate dark band. */
+#services.section-dark{
+ background-color:#f8f8ef!important;
+ background-image:radial-gradient(ellipse 50% 55% at 75% 22%,rgba(112,174,121,.38),transparent 80%),radial-gradient(ellipse 55% 65% at 18% 72%,rgba(144,192,139,.28),transparent 82%),repeating-linear-gradient(155deg,rgba(77,124,85,.018) 0px,rgba(77,124,85,.018) 1px,transparent 1px,transparent 9px)!important;
+ color:#173e2b!important;border:0!important;box-shadow:none!important;
+}
+#services .service-card{background:rgba(255,255,255,.88)!important;color:#173e2b!important;border:1px solid rgba(55,109,72,.14)!important;}
+#services .service-card h3{color:#173e2b!important;}
+#services .service-card p{color:#466451!important;}
+</style>
 </head>
 <body>
 
@@ -4751,10 +4762,7 @@ body>nav{
   <!-- SERVICES -->
   <section id="services" class="section-dark">
     <div class="section-inner">
-      <p class="section-label">What I Offer</p>
-      <h2 class="section-title">Support that keeps your business <em>moving.</em></h2>
-      <p class="section-subtitle">Four core services. One reliable point of contact.</p>
-      <div class="services-grid services-grid-four">
+            <div class="services-grid services-grid-four">
         <div class="service-card"><div class="service-icon">📅</div><h3>Executive Assistance</h3><p>Calendar, inbox, travel arrangements, and day-to-day communication.</p></div>
         <div class="service-card"><div class="service-icon">⚙️</div><h3>Business Operations</h3><p>Administrative support, SOPs, documentation, and organized workflows.</p></div>
         <div class="service-card"><div class="service-icon">📊</div><h3>Project Coordination</h3><p>Task tracking, deadlines, team follow-ups, and project management tools.</p></div>
