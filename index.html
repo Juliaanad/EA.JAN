@@ -4389,6 +4389,33 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  .hero-certificates-continuum #hero{padding-bottom:20px!important;}
  .hero-certificates-continuum #certificates{padding-bottom:28px!important;}
 }
+
+/* Painted green flashlight: a single continuous canvas across hero and certificates */
+.hero-certificates-continuum{
+ position:relative!important;isolation:isolate;
+ background-color:#f9f8f1!important;
+ background-image:
+ radial-gradient(ellipse 65% 55% at 82% 25%,rgba(101,159,112,.32) 0%,rgba(156,196,153,.20) 43%,transparent 78%),
+ radial-gradient(ellipse 48% 38% at 55% 63%,rgba(121,171,127,.19),transparent 80%),
+ radial-gradient(ellipse 58% 35% at 96% 91%,rgba(110,165,116,.24),transparent 80%),
+ repeating-linear-gradient(166deg,transparent 0px,rgba(65,113,74,.012) 2px,transparent 5px,transparent 18px)!important;
+}
+.hero-certificates-continuum #hero,
+.hero-certificates-continuum #certificates{
+ background:transparent!important;background-image:none!important;
+ border:0!important;box-shadow:none!important;
+}
+.hero-certificates-continuum #certificates .section-inner,
+.hero-certificates-continuum #certificates .certs-band.full-bleed-dark{
+ background:transparent!important;background-image:none!important;
+ border:0!important;box-shadow:none!important;
+}
+.hero-certificates-continuum #hero{min-height:0!important;margin:0!important;padding-bottom:16px!important;}
+.hero-certificates-continuum #certificates{margin:0!important;padding-top:0!important;border-top:0!important;}
+.hero-certificates-continuum #hero::before,
+.hero-certificates-continuum #hero::after,
+.hero-certificates-continuum #certificates::before,
+.hero-certificates-continuum #certificates::after{display:none!important;}
 </style>
 </head>
 <body>
