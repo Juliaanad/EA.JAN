@@ -3038,6 +3038,78 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #about .testimonials-grid .testimonial-quote {font-size:.83rem!important;}
 }
 
+
+/* Client Testimonials ONLY: readable white certificate-style horizontal row */
+#about .client-testimonials-section {
+ background:#ffffff!important;color:#14291b!important;
+ margin:42px 0 0!important;padding:30px 26px!important;
+ border-radius:18px!important;border:1px solid #dce7df!important;
+}
+#about .client-testimonials-section > .section-label {
+ color:#204e33!important;margin-bottom:20px!important;
+}
+#about .client-testimonials-section .testimonials-grid {
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:0!important;max-width:none!important;width:100%!important;
+ padding:0!important;margin:0!important;align-items:stretch!important;
+}
+#about .client-testimonials-section .testimonial-card,
+#about .client-testimonials-section .testimonial-card.is-tall {
+ display:flex!important;flex-direction:column!important;align-items:flex-start!important;
+ justify-content:flex-start!important;gap:13px!important;
+ width:100%!important;min-width:0!important;max-width:none!important;
+ height:auto!important;min-height:0!important;max-height:none!important;
+ padding:8px 23px!important;margin:0!important;
+ background:#ffffff!important;color:#14291b!important;
+ border:0!important;border-right:1px solid #dce7df!important;
+ border-radius:0!important;box-shadow:none!important;transform:none!important;
+}
+#about .client-testimonials-section .testimonial-card:first-child {padding-left:0!important;}
+#about .client-testimonials-section .testimonial-card:last-child {padding-right:0!important;border-right:0!important;border-bottom:0!important;}
+#about .client-testimonials-section .testimonial-stars {
+ display:block!important;flex:none!important;margin:0!important;
+ color:#9c7834!important;font-size:1.02rem!important;line-height:1.2!important;
+}
+#about .client-testimonials-section .testimonial-quote {
+ display:block!important;flex:1 1 auto!important;
+ margin:0!important;padding:0!important;max-width:none!important;
+ font-size:.91rem!important;line-height:1.7!important;font-weight:400!important;
+ color:#203b2a!important;overflow:visible!important;white-space:normal!important;
+ overflow-wrap:break-word!important;opacity:1!important;
+}
+#about .client-testimonials-section .testimonial-quote strong {color:#153c25!important;font-weight:700!important;}
+#about .client-testimonials-section .testimonial-author {
+ display:flex!important;flex-direction:row!important;align-items:center!important;
+ justify-content:flex-start!important;gap:10px!important;
+ width:100%!important;margin:6px 0 0!important;padding:0!important;
+ text-align:left!important;min-width:0!important;
+}
+#about .client-testimonials-section .testimonial-author > div:last-child {min-width:0!important;}
+#about .client-testimonials-section .testimonial-avatar {
+ flex:0 0 42px!important;width:42px!important;height:42px!important;
+ min-width:42px!important;max-width:42px!important;border-radius:50%!important;
+ object-fit:cover!important;
+}
+#about .client-testimonials-section .testimonial-name {color:#153c25!important;font-size:.85rem!important;line-height:1.4!important;}
+#about .client-testimonials-section .testimonial-role {color:#4e6655!important;font-size:.72rem!important;line-height:1.45!important;}
+#about .client-testimonials-section #view-review-btn {
+ align-self:flex-start!important;flex:none!important;margin-top:2px!important;
+ background:#1a4530!important;color:#fff!important;font-size:.75rem!important;
+ padding:9px 12px!important;
+}
+@media(max-width:900px) {
+ #about .client-testimonials-section {padding:24px 18px!important;}
+ #about .client-testimonials-section .testimonials-grid {grid-template-columns:1fr!important;}
+ #about .client-testimonials-section .testimonial-card,
+ #about .client-testimonials-section .testimonial-card.is-tall {
+  padding:22px 0!important;border-right:0!important;
+  border-bottom:1px solid #dce7df!important;
+ }
+ #about .client-testimonials-section .testimonial-card:first-child {padding-top:0!important;}
+ #about .client-testimonials-section .testimonial-card:last-child {padding-bottom:0!important;}
+ #about .client-testimonials-section .testimonial-quote {font-size:.94rem!important;}
+}
+
 </style>
 </head>
 <body>
@@ -3176,7 +3248,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
         </div>
       </div>
 
-      <div style="margin-top:3rem;">
+      <div class="client-testimonials-section">
         <p class="section-label" style="margin-bottom:1.2rem;">Client Testimonials</p>
         <div class="testimonials-grid">
 
