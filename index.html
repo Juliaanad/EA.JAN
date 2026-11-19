@@ -3571,6 +3571,47 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 .hero-certificates-continuum #certificates::before,
 .hero-certificates-continuum #certificates::after{display:none!important;}
 .hero-certificates-continuum #hero{margin-bottom:0!important;}
+
+/* Reference-inspired testimonials: separate floating review cards on the page background */
+#about {background:var(--cream)!important;}
+#about .client-testimonials-section{
+ width:100%!important;max-width:none!important;margin:24px auto 0!important;
+ padding:0!important;background:transparent!important;border:0!important;
+ border-radius:0!important;box-shadow:none!important;
+}
+#about .client-testimonials-section>.section-label{margin-bottom:18px!important;}
+#about .client-testimonials-section .testimonials-grid{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:18px!important;align-items:stretch!important;width:100%!important;
+ padding:0!important;margin:0!important;
+}
+#about .client-testimonials-section .testimonial-card,
+#about .client-testimonials-section .testimonial-card:nth-child(1),
+#about .client-testimonials-section .testimonial-card:nth-child(2),
+#about .client-testimonials-section .testimonial-card.is-tall{
+ grid-column:auto!important;grid-row:auto!important;
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ width:auto!important;min-width:0!important;max-width:none!important;
+ margin:0!important;padding:22px 20px!important;
+ background:#fff!important;border:1px solid #e2e7e2!important;
+ border-radius:13px!important;box-shadow:0 3px 10px rgba(24,56,38,.08)!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-stars{color:#f5b72e!important;font-size:1.13rem!important;letter-spacing:2px!important;margin-bottom:12px!important;}
+#about .client-testimonials-section .testimonial-card .testimonial-quote{margin:0 0 14px!important;line-height:1.65!important;}
+#about .client-testimonials-section .testimonial-card .testimonial-author{margin-top:auto!important;padding-top:14px!important;}
+#about .client-testimonials-section .testimonial-card .testimonial-expand,
+#about .client-testimonials-section .testimonial-card .testimonial-review-button{
+ align-self:flex-start!important;max-width:100%!important;
+}
+@media(max-width:900px){
+ #about .client-testimonials-section .testimonials-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ #about .client-testimonials-section .testimonial-card.is-tall{grid-column:1/-1!important;}
+}
+@media(max-width:600px){
+ #about .client-testimonials-section .testimonials-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px!important;}
+ #about .client-testimonials-section .testimonial-card.is-tall{grid-column:auto!important;}
+ #about .client-testimonials-section .testimonial-card{padding:20px 17px!important;}
+}
 </style>
 </head>
 <body>
