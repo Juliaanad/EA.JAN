@@ -3284,6 +3284,17 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 @media(min-width:901px){#about .client-testimonials-section .testimonial-card.is-tall{grid-template-areas:"stars author" "quote author" "action author"!important;}#about .client-testimonials-section .testimonial-expand{grid-area:action!important;}#about .client-testimonials-section #view-review-btn{grid-area:action!important;margin-left:130px!important;}}
 @media(max-width:900px){#about .client-testimonials-section{padding:18px!important;}#about .client-testimonials-section .testimonial-card,#about .client-testimonials-section .testimonial-card.is-tall{grid-template-columns:1fr!important;grid-template-areas:none!important;padding:13px 0!important;margin:0!important;}#about .client-testimonials-section .testimonial-expand,#about .client-testimonials-section #view-review-btn{grid-area:auto!important;margin:0!important;justify-self:start!important;}#about .client-testimonials-section .testimonial-card.is-tall .testimonial-quote{-webkit-line-clamp:3!important;}}
 
+
+/* Solo half-page feature for Your First 2 Weeks onboarding deck */
+#work .first-two-weeks-feature{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:30px;min-height:50vh;max-width:1120px;margin:38px auto;padding:30px 34px;background:#edf3ed;border:1px solid #d5e3d8;border-radius:20px;box-sizing:border-box;}
+#work .first-two-weeks-copy h3{font-family:Georgia,serif;color:#193d2b;font-size:clamp(2rem,4vw,3.3rem);line-height:1.08;margin:16px 0;}
+#work .first-two-weeks-copy h3 em{color:#386d4e;}
+#work .first-two-weeks-copy p:not(.section-label){font-size:.95rem;line-height:1.65;color:#3b5b48;margin-bottom:22px;}
+#work .first-two-weeks-link{display:inline-block;padding:12px 17px;background:#1e4933;color:#fff;border-radius:999px;text-decoration:none;font-size:.84rem;font-weight:700;}
+#work .first-two-weeks-viewer{width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:13px;background:#fff;box-shadow:0 8px 25px #163b2b20;}
+#work .first-two-weeks-viewer iframe{display:block;width:100%;height:100%;border:0;}
+@media(max-width:760px){#work .first-two-weeks-feature{grid-template-columns:1fr;gap:20px;min-height:0;padding:24px 18px;margin:30px auto;}#work .first-two-weeks-copy h3{font-size:2rem;}}
+
 </style>
 </head>
 <body>
@@ -3570,13 +3581,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
   <p class="section-label">Featured Projects</p>
   <p class="featured-work-intro">Presentations, operations, and Notion projects — all in one album.</p>
   <div class="featured-work-gallery">
-    <div class="featured-work-tile canva-embed-tile" aria-label="EA Onboarding presentation preview">
-      <div class="featured-work-preview canva-embed-preview">
-        <iframe loading="lazy" title="EA Onboarding — actual Canva presentation, use player controls to browse slides" src="https://www.canva.com/design/DAHNNF_ji38/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
-      <div class="featured-work-label">EA Onboarding</div>
-      <a class="pdf-open-original" href="https://www.canva.com/design/DAHNNF_ji38/cmhIzjmhlXO8g2sfHdKW_Q/view" target="_blank" rel="noopener noreferrer">Open full presentation ↗</a>
-    </div>
+
     <a class="featured-work-tile" href="https://docs.google.com/spreadsheets/d/1qS1PBpkhBANTAjybqbtqpMWRmhmdSHG7KeAKrtpxi8c/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open Etsy shop project management checklist">
       <div class="featured-work-preview featured-work-preview-sheet">
         <div class="featured-sheet-head"><span>▦</span> ETSY SHOP SETUP</div>
@@ -3646,6 +3651,17 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
         
         <div class="featured-work-gallery social-photo-album" id="social-photo-album" aria-label="Social media design photo album">
           <p class="social-album-status">Loading social media photos…</p>
+        </div>
+      </div>
+      <div class="first-two-weeks-feature" id="first-two-weeks">
+        <div class="first-two-weeks-copy">
+          <p class="section-label">Onboarding Highlight</p>
+          <h3>Your First <em>2 Weeks</em></h3>
+          <p>A closer look at my executive assistant onboarding presentation. Browse the actual slides right here.</p>
+          <a href="https://www.canva.com/design/DAHNNF_ji38/cmhIzjmhlXO8g2sfHdKW_Q/view" target="_blank" rel="noopener noreferrer" class="first-two-weeks-link">View full presentation ↗</a>
+        </div>
+        <div class="first-two-weeks-viewer">
+          <iframe loading="lazy" title="Your First 2 Weeks — swipeable Canva onboarding presentation" src="https://www.canva.com/design/DAHNNF_ji38/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
       <!-- Copyright Notice -->
