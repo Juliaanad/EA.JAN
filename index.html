@@ -2601,6 +2601,91 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #work .canva-carousel.op-work > a.doc-card > div[style*="font-family"] {font-size:.66rem!important;}
 }
 
+
+/* Screenshot-based cleanup: four identical Instagram-style work cards */
+#work .presentation-pair,#work .pm-pair {gap:18px!important;margin:18px 0!important;}
+#work .presentation-pair > .canva-carousel-wrap,#work .pm-pair > .canva-carousel-wrap {
+ display:flex!important;flex-direction:column!important;gap:7px!important;
+ padding:16px!important;overflow:hidden!important;min-width:0!important;
+}
+#work .presentation-pair > .canva-carousel-wrap > .section-label,
+#work .pm-pair > .canva-carousel-wrap > .section-label {
+ display:block!important;flex:0 0 auto!important;min-height:27px!important;
+ height:auto!important;line-height:1.35!important;margin:0!important;
+ padding:6px 12px!important;white-space:normal!important;
+}
+#work .presentation-pair > .canva-carousel-wrap > p:not(.section-label),
+#work .pm-pair > .canva-carousel-wrap > p:not(.section-label) {
+ flex:0 0 auto!important;height:auto!important;min-height:21px!important;
+ margin:0 0 6px!important;line-height:1.4!important;
+}
+#work .presentation-pair .pres-frame,#work .pm-pair .pm-box {
+ margin-top:auto!important;flex:0 0 auto!important;height:300px!important;
+ min-height:300px!important;max-height:300px!important;width:100%!important;
+ overflow:hidden!important;border:1px solid #dfe6df!important;border-radius:12px!important;
+}
+#work .presentation-pair .pres-frame > div:first-child {
+ display:flex!important;align-items:center!important;gap:10px!important;
+ padding:8px 10px!important;min-height:48px!important;max-height:48px!important;
+ overflow:hidden!important;
+}
+#work .presentation-pair .pres-frame > div:first-child > * {
+ min-width:0!important;max-width:100%!important;white-space:normal!important;
+ overflow-wrap:anywhere!important;font-size:.78rem!important;line-height:1.3!important;
+}
+#work .presentation-pair .pres-frame > div:last-child {height:250px!important;min-height:0!important;}
+#work .pm-pair .pm-box-etsy {
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ padding:10px!important;gap:8px!important;background:#fff!important;
+}
+#work .pm-pair .project-preview-sheet {
+ display:flex!important;flex-direction:column!important;gap:8px!important;
+ flex:1 1 auto!important;min-height:0!important;overflow:hidden!important;
+ padding:14px!important;border-radius:9px!important;background:#f2f4f2!important;
+ border:1px solid #e2e9e3!important;color:#234431!important;
+}
+#work .pm-pair .sheet-top {display:flex;align-items:center;gap:5px;}
+#work .pm-pair .sheet-dot {width:7px;height:7px;border-radius:50%;background:#cad8cd;}
+#work .pm-pair .sheet-app {margin-left:auto;font-size:.7rem;font-weight:700;color:#477257;}
+#work .pm-pair .sheet-title {font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;line-height:1.2;}
+#work .pm-pair .sheet-subtitle {font-size:.75rem;color:#54715c;}
+#work .pm-pair .sheet-progress {height:6px;border-radius:10px;background:#dce8df;overflow:hidden;}
+#work .pm-pair .sheet-progress span {display:block;width:60%;height:100%;background:#558f68;}
+#work .pm-pair .sheet-lines {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;overflow:hidden;}
+#work .pm-pair .sheet-lines span {
+ background:#fff;border:1px solid #e0e9e2;border-radius:6px;
+ padding:7px;font-size:.72rem;line-height:1.25;overflow-wrap:anywhere;
+}
+#work .pm-pair .project-gallery-caption {
+ flex:0 0 40px!important;display:flex!important;align-items:center!important;
+ justify-content:center!important;gap:8px!important;text-align:center!important;
+ color:#254b33!important;font-size:.8rem!important;font-weight:600!important;
+}
+#work .pm-pair .pm-box-clickup {padding:10px!important;background:#fff!important;}
+#work .pm-pair .pm-box-clickup .canva-slide-wide {height:100%!important;min-height:0!important;}
+#work .pm-pair .pm-box-clickup img {
+ display:block!important;flex:1 1 auto!important;width:100%!important;
+ height:230px!important;max-height:230px!important;object-fit:contain!important;
+ background:#f2f4f2!important;border-radius:9px!important;
+}
+#work .pm-pair .pm-box-clickup .canva-slide-label {
+ flex:0 0 40px!important;height:40px!important;min-height:40px!important;
+ max-height:40px!important;margin:0!important;font-size:.8rem!important;
+}
+@media(max-width:800px) {
+ #work .presentation-pair .pres-frame,#work .pm-pair .pm-box {
+ height:290px!important;min-height:290px!important;max-height:290px!important;
+ }
+}
+@media(max-width:560px) {
+ #work .presentation-pair .pres-frame,#work .pm-pair .pm-box {
+ height:260px!important;min-height:260px!important;max-height:260px!important;
+ }
+ #work .pm-pair .sheet-lines span {padding:5px;font-size:.67rem;}
+ #work .pm-pair .project-preview-sheet {padding:10px!important;gap:6px!important;}
+ #work .pm-pair .pm-box-clickup img {height:190px!important;max-height:190px!important;}
+}
+
 </style>
 </head>
 <body>
@@ -3000,32 +3085,16 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Project Management</p>
         <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Etsy setup · 5 phases</p>
-        <a class="pm-box pm-box-etsy doc-card" href="https://docs.google.com/spreadsheets/d/1qS1PBpkhBANTAjybqbtqpMWRmhmdSHG7KeAKrtpxi8c/edit?usp=sharing" target="_blank">
-          <div class="etsy-bar-row">
-            <div class="etsy-bar-meta">
-              <div class="notion-badge" style="margin:0;">📊 Google Sheets · 5 phases</div>
-              <span style="font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:600;color:var(--charcoal);">Etsy Shop Master Setup Checklist</span>
-            </div>
-            <div class="etsy-bar-phases">
-              <div class="phase-tile">
-                <span class="phase-num">💳 Phase 1</span>&nbsp; Payoneer &amp; Wise
-              </div>
-              <div class="phase-tile">
-                <span class="phase-num">🛍️ Phase 2</span>&nbsp; Etsy account setup
-              </div>
-              <div class="phase-tile">
-                <span class="phase-num">🎨 Phase 3</span>&nbsp; Shop branding
-              </div>
-              <div class="phase-tile">
-                <span class="phase-num">📋 Phase 4</span>&nbsp; Policies &amp; FAQs
-              </div>
-              <div class="phase-tile">
-                <span class="phase-num">📝 Phase 5</span>&nbsp; Order intake form
-              </div>
-            </div>
-            <span style="display:inline-block;background:var(--charcoal);color:#fff;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.78rem;font-weight:500;flex-shrink:0;align-self:flex-start;">View Full Sheet →</span>
-          </div>
-        </a>
+        <a class="pm-box pm-box-etsy doc-card" href="https://docs.google.com/spreadsheets/d/1qS1PBpkhBANTAjybqbtqpMWRmhmdSHG7KeAKrtpxi8c/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open Etsy Shop Master Setup Checklist in Google Sheets">
+  <div class="project-preview-sheet" aria-hidden="true">
+    <div class="sheet-top"><span class="sheet-dot"></span><span class="sheet-dot"></span><span class="sheet-dot"></span><span class="sheet-app">Google Sheets</span></div>
+    <div class="sheet-title">Etsy Shop Setup</div>
+    <div class="sheet-subtitle">Five-phase launch checklist</div>
+    <div class="sheet-progress"><span></span></div>
+    <div class="sheet-lines"><span>01 · Payments</span><span>02 · Shop setup</span><span>03 · Branding</span><span>04 · Policies</span><span>05 · Order forms</span></div>
+  </div>
+  <div class="project-gallery-caption">Etsy Setup Checklist <span aria-hidden="true">↗</span></div>
+</a>
       </div>
 
       <!-- ClickUp Project Management -->
