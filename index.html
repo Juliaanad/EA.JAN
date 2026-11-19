@@ -4052,6 +4052,12 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  font-family:Inter,Arial,sans-serif!important;font-size:12px!important;
  font-weight:400!important;line-height:1.4!important;
 }
+
+/* Hover to read testimonials; mobile retains tap-to-expand. */
+@media (hover:hover) and (pointer:fine) {
+ #about .client-testimonials-section .testimonial-card {transition:box-shadow .2s ease,transform .2s ease!important;}
+ #about .client-testimonials-section .testimonial-card:hover {z-index:2!important;}
+}
 </style>
 </head>
 <body>
@@ -4764,12 +4770,16 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 
 <script>
 document.querySelectorAll('.testimonial-expand').forEach(button=>{
- button.addEventListener('click',()=>{
-  const card=button.closest('.testimonial-card');
-  const expanded=card.classList.toggle('expanded');
+ const card=button.closest('.testimonial-card');
+ const setExpanded=(expanded)=>{
+  card.classList.toggle('expanded',expanded);
   button.setAttribute('aria-expanded',String(expanded));
   button.textContent=expanded?'Show less ↑':'Read full review ↓';
- });
+ };
+ // Hover previews on pointer devices; tapping still works on phones.
+ card.addEventListener('mouseenter',()=>{if(window.matchMedia('(hover: hover)').matches)setExpanded(true);});
+ card.addEventListener('mouseleave',()=>{if(window.matchMedia('(hover: hover)').matches)setExpanded(false);});
+ button.addEventListener('click',()=>setExpanded(!card.classList.contains('expanded')));
 });
 </script>
 </body>
