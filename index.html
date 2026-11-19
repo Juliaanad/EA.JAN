@@ -3819,6 +3819,35 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #about .client-testimonials-section .testimonial-card .testimonial-review-button,
  #about .client-testimonials-section .testimonial-card #view-review-btn {margin-top:7px!important;padding:8px 12px!important;}
 }
+
+/* Notion previews: remove the three decorative horizontal placeholder lines. */
+#work .featured-notion-tile .featured-notion-lines,
+#work .featured-notion-tile .featured-notion-lines span {display:none!important;}
+/* Testimonial cards end at the review panel boundary shown in the reference. */
+@media(min-width:901px) {
+ #about .client-testimonials-section .testimonial-card,
+ #about .client-testimonials-section .testimonial-card.is-tall {
+  height:340px!important;min-height:340px!important;max-height:none!important;
+  padding:20px 24px!important;overflow:visible!important;
+ }
+ #about .client-testimonials-section .testimonial-card.expanded {
+  height:auto!important;min-height:340px!important;
+ }
+ #about .client-testimonials-section .testimonial-card .testimonial-author {
+  margin-top:auto!important;padding-top:10px!important;
+ }
+ #about .client-testimonials-section .testimonial-card .testimonial-review-button,
+ #about .client-testimonials-section .testimonial-card #view-review-btn {
+  margin-top:8px!important;
+ }
+}
+/* Keep the review controls inside the same visual panel and avoid a long empty lower half. */
+#about .client-testimonials-section .testimonial-card .testimonial-quote {
+ -webkit-line-clamp:3!important;line-clamp:3!important;
+}
+#about .client-testimonials-section .testimonial-card.expanded .testimonial-quote {
+ -webkit-line-clamp:unset!important;line-clamp:unset!important;
+}
 </style>
 </head>
 <body>
