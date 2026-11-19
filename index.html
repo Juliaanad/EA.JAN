@@ -4537,6 +4537,29 @@ body>nav .nav-links a{font-size:11px!important;line-height:1.3!important;}
  body>nav .nav-links a{font-size:10px!important;}
  .hero-certificates-continuum #hero{padding-top:24px!important;}
 }
+
+/* Global alignment: every major section follows the Hero's horizontal margins. */
+:root{--site-content-max:1320px;--site-gutter:clamp(24px,5vw,90px);}
+#about>.section-inner,
+#services>.section-inner,
+#skills>.section-inner,
+#work>.section-inner,
+#contact>.section-inner,
+#certificates>.section-inner,
+#hero .hero-inner{
+ box-sizing:border-box!important;
+ width:calc(100% - 2 * var(--site-gutter))!important;
+ max-width:var(--site-content-max)!important;
+ margin-left:auto!important;margin-right:auto!important;
+ padding-left:0!important;padding-right:0!important;
+}
+#skills .section-inner{padding-left:0!important;padding-right:0!important;}
+#about .client-testimonials-section{
+ padding-left:0!important;padding-right:0!important;
+}
+@media(max-width:760px){
+ :root{--site-gutter:20px;}
+}
 </style>
 </head>
 <body>
