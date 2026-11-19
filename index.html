@@ -2322,6 +2322,103 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #rates .rates-two-column > .rate-card,#rates .rates-two-column .compare-col {padding:22px!important;}
 }
 
+
+/* Instagram-inspired portfolio: all items visible in tidy, consistent grids */
+#work .certs-band {padding-block:42px!important;}
+#work .certs-band .swipe-hint {display:none!important;}
+#work .certs-band .carousel-scroller {width:100%!important;overflow:visible!important;}
+#work .certs-band .carousel-nav {display:none!important;}
+#work .canva-carousel.certs {
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ gap:16px!important;overflow:visible!important;width:100%!important;
+ padding:0!important;align-items:stretch!important;
+}
+#work .canva-carousel.certs > .canva-slide-wide {
+ display:flex!important;flex-direction:column!important;justify-content:space-between!important;
+ flex:none!important;width:100%!important;max-width:none!important;min-width:0!important;
+ height:245px!important;min-height:245px!important;max-height:245px!important;
+ padding:10px!important;margin:0!important;background:#fff!important;
+ border:1px solid #d9e4dc!important;border-radius:15px!important;
+ box-shadow:0 6px 16px rgba(12,39,23,.08)!important;
+}
+#work .canva-carousel.certs > .canva-slide-wide img {
+ width:100%!important;height:188px!important;max-height:188px!important;min-height:0!important;
+ object-fit:contain!important;flex:1 1 auto!important;margin:0!important;
+ background:#fff!important;border-radius:8px!important;
+}
+#work .canva-carousel.certs .canva-slide-label {
+ width:100%!important;min-height:43px!important;height:43px!important;max-height:43px!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ padding:5px!important;margin:0!important;text-align:center!important;
+ font-size:.76rem!important;line-height:1.25!important;font-weight:600!important;
+}
+/* Project gallery: square thumbnails and matching tiles like an Instagram profile */
+#work .canva-carousel.op-work {
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:18px!important;overflow:visible!important;align-items:stretch!important;
+}
+#work .canva-carousel.op-work > * {
+ width:100%!important;max-width:none!important;min-width:0!important;
+ height:310px!important;min-height:310px!important;max-height:310px!important;
+ margin:0!important;padding:12px!important;border-radius:16px!important;
+ display:flex!important;flex-direction:column!important;justify-content:space-between!important;
+ background:#fff!important;border:1px solid #d9e4dc!important;overflow:hidden!important;
+}
+#work .canva-carousel.op-work > .canva-slide-wide img {
+ width:100%!important;height:240px!important;max-height:240px!important;min-height:0!important;
+ flex:1 1 auto!important;object-fit:contain!important;background:#f6f8f5!important;
+}
+#work .canva-carousel.op-work .canva-slide-label {
+ min-height:46px!important;max-height:46px!important;display:flex!important;
+ align-items:center!important;justify-content:center!important;
+ text-align:center!important;font-size:.8rem!important;padding:6px!important;
+}
+#work .canva-carousel.op-work > a.doc-card {padding:16px!important;}
+#work .canva-carousel.op-work > a.doc-card > div[style*="grid-template-columns"] {display:none!important;}
+#work .canva-carousel.op-work > a.doc-card > div[style*="font-family"] {margin:auto 0!important;text-align:center!important;font-size:1.1rem!important;}
+#work .canva-carousel.op-work > a.doc-card .notion-badge {align-self:center!important;}
+#work .carousel-scroller:has(.op-work) > .carousel-nav {display:none!important;}
+/* Notion cards: 2 x 2 gallery; no sideways browsing on desktop */
+#work .canva-carousel.onboarding-carousel {
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:18px!important;overflow:visible!important;padding:0!important;align-items:stretch!important;
+}
+#work .canva-carousel.onboarding-carousel > a.work-card {
+ flex:none!important;width:100%!important;max-width:none!important;min-width:0!important;
+ height:330px!important;min-height:330px!important;max-height:330px!important;
+ grid-template-rows:198px 132px!important;border-radius:16px!important;
+ border:1px solid #d9e4dc!important;box-shadow:0 6px 16px rgba(12,39,23,.07)!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview {
+ height:198px!important;min-height:198px!important;max-height:198px!important;
+ padding:14px!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-body {
+ height:132px!important;min-height:132px!important;max-height:132px!important;
+ padding:12px 14px!important;
+}
+#work .carousel-scroller:has(.onboarding-carousel) > .carousel-nav {display:none!important;}
+/* Even project section headings and margins */
+#work .presentation-pair,#work .pm-pair {gap:20px!important;}
+#work .presentation-pair > *,#work .pm-pair > * {min-width:0!important;}
+@media(max-width:900px){
+ #work .canva-carousel.certs {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ #work .canva-carousel.op-work {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media(max-width:600px){
+ #work .canva-carousel.certs {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}
+ #work .canva-carousel.certs > .canva-slide-wide {height:205px!important;min-height:205px!important;max-height:205px!important;padding:7px!important;}
+ #work .canva-carousel.certs > .canva-slide-wide img {height:148px!important;max-height:148px!important;}
+ #work .canva-carousel.certs .canva-slide-label {font-size:.66rem!important;min-height:43px!important;height:43px!important;max-height:43px!important;}
+ #work .canva-carousel.op-work {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}
+ #work .canva-carousel.op-work > * {height:230px!important;min-height:230px!important;max-height:230px!important;padding:8px!important;}
+ #work .canva-carousel.op-work > .canva-slide-wide img {height:170px!important;max-height:170px!important;}
+ #work .canva-carousel.op-work .canva-slide-label {font-size:.68rem!important;}
+ #work .canva-carousel.onboarding-carousel {grid-template-columns:1fr!important;gap:14px!important;}
+ #work .canva-carousel.onboarding-carousel > a.work-card {height:325px!important;min-height:325px!important;max-height:325px!important;grid-template-rows:193px 132px!important;}
+ #work .canva-carousel.onboarding-carousel .work-card-preview {height:193px!important;min-height:193px!important;max-height:193px!important;}
+}
+
 </style>
 </head>
 <body>
@@ -2810,7 +2907,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <!-- Portfolio / Certificates Carousel -->
       <div class="canva-carousel-wrap certs-band full-bleed-dark">
         <p class="section-label" style="margin-bottom:0.4rem;">Certificates</p>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Browse my certificate album.</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">All certificates at a glance.</p>
         <div class="swipe-hint">Swipe for more <span aria-hidden="true">&rarr;</span></div>
         <div class="carousel-scroller">
         <button type="button" class="carousel-nav prev" aria-label="Previous certificates" hidden>&#8592;</button>
@@ -2850,7 +2947,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <div style="margin-top:4rem;border-top:1px solid rgba(26, 69, 48,0.12);padding-top:3.5rem;">
         <p class="section-label" style="margin-bottom:0.6rem;">Sample Notion Documents</p>
         <h2 class="section-title" style="color:var(--charcoal);">Organized work, <em>built in Notion.</em></h2>
-        <p class="section-subtitle" style="color:var(--mid);">Travel, projects, and onboarding. Swipe to explore.</p>
+        <p class="section-subtitle" style="color:var(--mid);">Travel, project systems, and onboarding samples.</p>
       </div>
       <div class="carousel-scroller">
           <button type="button" class="carousel-nav prev" aria-label="Previous Notion documents" hidden>&#8592;</button>
