@@ -2139,6 +2139,36 @@
  #work .canva-carousel.certs > .canva-slide-wide img { height:265px!important;max-height:265px!important; }
 }
 
+
+/* Working Together: balanced two-column cards with consistent spacing */
+#rates .rates-two-column {display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:24px!important;align-items:stretch!important;margin-top:32px!important;}
+#rates .rates-two-column > .compare,
+#rates .rates-two-column > .rate-card {width:100%!important;max-width:none!important;min-width:0!important;min-height:510px!important;height:auto!important;margin:0!important;box-sizing:border-box!important;border-radius:20px!important;}
+#rates .rates-two-column > .compare {display:flex!important;align-items:stretch!important;padding:0!important;}
+#rates .rates-two-column .compare-col.is-preferred {
+ width:100%!important;max-width:none!important;min-width:0!important;
+ display:flex!important;flex-direction:column!important;justify-content:center!important;
+ padding:42px 46px!important;box-sizing:border-box!important;
+}
+#rates .rates-two-column .compare-col h3 {text-align:center!important;margin:0 0 28px!important;padding-bottom:20px!important;}
+#rates .rates-two-column .compare-col ul {width:100%!important;max-width:490px!important;margin:0 auto!important;padding-left:22px!important;}
+#rates .rates-two-column .compare-col li {margin-bottom:17px!important;line-height:1.55!important;}
+#rates .rates-two-column .compare-col li:last-child {margin-bottom:0!important;}
+#rates .rates-two-column > .rate-card {
+ display:flex!important;flex-direction:column!important;justify-content:center!important;
+ padding:34px 42px!important;gap:22px!important;
+}
+#rates .rates-two-column .rate-main {padding:0 0 24px!important;margin:0!important;text-align:center!important;}
+#rates .rates-two-column .rate-expect {padding:0!important;margin:0!important;}
+#rates .rates-two-column .rate-expect > .rate-label {text-align:center!important;margin:0 0 16px!important;}
+#rates .rates-two-column .rate-expect ul {max-width:430px!important;margin:0 auto!important;padding-left:22px!important;}
+#rates .rates-two-column .rate-expect li {margin-bottom:9px!important;line-height:1.45!important;}
+@media(max-width:850px){
+ #rates .rates-two-column {grid-template-columns:1fr!important;gap:20px!important;}
+ #rates .rates-two-column > .compare,#rates .rates-two-column > .rate-card {min-height:0!important;}
+ #rates .rates-two-column .compare-col.is-preferred,#rates .rates-two-column > .rate-card {padding:30px 26px!important;}
+}
+
 </style>
 </head>
 <body>
@@ -2301,12 +2331,12 @@
       <div class="rates-two-column">
       <div class="compare">
         <div class="compare-col is-preferred">
-          <h3>Working with me directly</h3>
+          <h3>Why work with me?</h3>
           <ul>
             <li><strong>One dedicated contact.</strong> Work directly with me.</li>
-            <li><strong>Consistent support.</strong> I know your systems.</li>
+            <li><strong>Continuity you can count on.</strong> Your systems, workflows, and preferences stay familiar.</li>
             <li><strong>Direct communication.</strong> No middleman.</li>
-            <li><strong>Flexible priorities.</strong> Simple updates.</li>
+            <li><strong>Flexible priorities.</strong> Adjust tasks as your business evolves.</li>
             <li><strong>Simple agreement.</strong> No placement fee or lock-in.</li>
           </ul>
         </div>
