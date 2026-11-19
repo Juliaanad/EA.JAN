@@ -2686,6 +2686,63 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #work .pm-pair .pm-box-clickup img {height:190px!important;max-height:190px!important;}
 }
 
+
+/* Notion gallery — match the four-column Certificates reference exactly */
+#work .carousel-scroller:has(.notion-gallery) {
+ background:#fff!important;border:1px solid #d9e4dc!important;
+ border-radius:18px!important;padding:20px!important;overflow:visible!important;
+}
+#work .carousel-scroller:has(.notion-gallery) > .carousel-nav {display:none!important;}
+#work .canva-carousel.notion-gallery {
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ gap:18px!important;padding:0!important;margin:0!important;
+ width:100%!important;overflow:visible!important;align-items:stretch!important;
+}
+#work .notion-gallery-tile {
+ display:flex!important;flex-direction:column!important;gap:8px!important;
+ min-width:0!important;width:100%!important;max-width:none!important;
+ height:290px!important;min-height:290px!important;max-height:290px!important;
+ padding:0!important;margin:0!important;text-decoration:none!important;color:#1c3426!important;
+ background:transparent!important;border:0!important;box-shadow:none!important;
+ transition:transform .2s ease!important;
+}
+#work .notion-gallery-tile:hover {transform:translateY(-3px)!important;}
+#work .notion-gallery-preview {
+ flex:0 0 246px!important;height:246px!important;min-height:246px!important;max-height:246px!important;
+ display:flex!important;flex-direction:column!important;gap:12px!important;
+ padding:14px!important;overflow:hidden!important;background:#f2f4f2!important;
+ border-radius:12px!important;border:1px solid #e4e9e5!important;
+}
+#work .notion-preview-top {display:flex;align-items:center;gap:7px;font-size:.69rem;font-weight:700;color:#63756a;}
+#work .notion-preview-icon {display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;border:1px solid #d0dcd3;border-radius:5px;background:#fff;color:#233f2b;font-family:Georgia,serif;font-size:1rem;}
+#work .notion-preview-dots {margin-left:auto;letter-spacing:2px;}
+#work .notion-preview-title {font-family:'Playfair Display',serif;font-size:clamp(.86rem,1.3vw,1.13rem);font-weight:600;line-height:1.25;color:#183c28;min-height:40px;}
+#work .notion-preview-subtitle {font-size:.71rem;color:#66806d;}
+#work .notion-preview-list {display:flex;flex-direction:column;gap:7px;overflow:hidden;}
+#work .notion-preview-list > div {display:flex;align-items:center;gap:7px;background:#fff;border:1px solid #e0e8e2;border-radius:6px;padding:7px 8px;font-size:.68rem;color:#385340;white-space:nowrap;}
+#work .notion-preview-check {color:#8aa491;font-size:.61rem;font-weight:700;}
+#work .notion-preview-line {height:4px;border-radius:8px;background:#e8eeea;flex:1;min-width:0;}
+#work .notion-gallery-label {
+ height:36px!important;min-height:36px!important;max-height:36px!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ gap:5px!important;text-align:center!important;font-size:.78rem!important;
+ line-height:1.25!important;font-weight:600!important;color:#1c3426!important;
+}
+#work .notion-gallery-label span {color:#5e8768;}
+@media(max-width:900px){
+ #work .canva-carousel.notion-gallery {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;}
+}
+@media(max-width:600px){
+ #work .carousel-scroller:has(.notion-gallery) {padding:12px!important;}
+ #work .notion-gallery-tile {height:230px!important;min-height:230px!important;max-height:230px!important;}
+ #work .notion-gallery-preview {flex-basis:184px!important;height:184px!important;min-height:184px!important;max-height:184px!important;padding:9px!important;gap:6px!important;}
+ #work .notion-preview-title {font-size:.8rem!important;min-height:30px!important;}
+ #work .notion-preview-subtitle {font-size:.65rem!important;}
+ #work .notion-preview-list {gap:4px!important;}
+ #work .notion-preview-list > div {font-size:.62rem!important;padding:4px!important;}
+ #work .notion-gallery-label {font-size:.66rem!important;}
+}
+
 </style>
 </head>
 <body>
@@ -3198,161 +3255,48 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <div style="margin-top:4rem;border-top:1px solid rgba(26, 69, 48,0.12);padding-top:3.5rem;">
         <p class="section-label" style="margin-bottom:0.6rem;">Sample Notion Documents</p>
         <h2 class="section-title" style="color:var(--charcoal);">Organized work, <em>built in Notion.</em></h2>
-        <p class="section-subtitle" style="color:var(--mid);">Travel, project systems, and onboarding samples.</p>
+        <p class="section-subtitle" style="color:var(--mid);">Four Notion projects, all in one gallery.</p>
       </div>
       <div class="carousel-scroller">
           <button type="button" class="carousel-nav prev" aria-label="Previous Notion documents" hidden>&#8592;</button>
           <button type="button" class="carousel-nav next" aria-label="Next Notion documents">&#8594;</button>
-      <div class="canva-carousel onboarding-carousel">
-      <a class="work-card doc-card" href="https://app.notion.com/p/3858cfe1721181c2a195d3097ff2744d" target="_blank" style="margin-top:0;">
-        <div class="work-card-preview" style="background:var(--white);min-height:220px;">
-          <div class="notion-badge">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
-            Notion Document
-          </div>
-          <h4 style="font-size:1.15rem;">Executive Travel Itinerary</h4>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-top:0.8rem;">
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">✈️ Flights</div>
-              Flight details
-            </div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🏨 Hotel</div>
-              Hotel booking
-            </div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">💰 Budget</div>
-              Expense tracker
-            </div>
-          </div>
-        </div>
-        <div class="work-card-body">
-          <p>Travel plan, bookings & budget.</p>
-          <div class="work-card-footer">
-            <div class="work-tags">
-              <span class="work-tag">Travel</span>
-              <span class="work-tag">Itinerary</span>
-              <span class="work-tag">Expenses</span>
-              <span class="work-tag">Notion</span>
-            </div>
-            <span class="btn-notion">View in Notion →</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="work-card doc-card" href="https://app.notion.com/p/3cd8cfe172118133bcf5c50550e541da" target="_blank" style="margin-top:0;">
-        <div class="work-card-preview" style="background:var(--white);min-height:220px;">
-          <div class="notion-badge">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
-            Notion Workspace
-          </div>
-          <h4 style="font-size:1.15rem;">Fintech Project Hub</h4>
-          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-top:0.8rem;">
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#128202; 5 Projects</div>
-              Owners &amp; status
-            </div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#9201;&#65039; 3 Sprints</div>
-              Sprint progress
-            </div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#9989; 24 Tasks</div>
-              Task tracking
-            </div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-              <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">&#128221; Meeting Log</div>
-              Action items
-            </div>
-          </div>
-        </div>
-        <div class="work-card-body">
-          <p>5 projects · 3 sprints · 24 tasks.</p>
-          <div class="work-card-footer">
-            <div class="work-tags">
-              <span class="work-tag">Projects</span>
-              <span class="work-tag">Sprints</span>
-              <span class="work-tag">Reporting</span>
-              <span class="work-tag">Notion</span>
-            </div>
-            <span class="btn-notion">View in Notion &rarr;</span>
-          </div>
-        </div>
-      </a>
-
-
-        <!-- Card 1: Business Operations -->
-        <a class="work-card doc-card" href="https://app.notion.com/p/3858cfe17211812b901cd898c3b031dc" target="_blank">
-          <div class="work-card-preview" style="background:var(--white);min-height:220px;">
-            <div class="notion-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
-              Notion Document
-            </div>
-            <h4>Business Onboarding</h4>
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-top:0.8rem;">
-              <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-                <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🔧 Tools & Stack</div>
-                Daily tools
-              </div>
-              <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-                <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">📬 Comms Style</div>
-                Contact preferences
-              </div>
-              <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-                <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🎯 Priorities</div>
-                Key goals
-              </div>
-            </div>
-          </div>
-          <div class="work-card-body">
-            <p>Business setup: tools, workflows, contacts, and priorities.</p>
-            <div class="work-card-footer">
-              <div class="work-tags">
-                <span class="work-tag">Operations</span>
-                <span class="work-tag">Onboarding</span>
-                <span class="work-tag">Notion</span>
-              </div>
-              <span class="btn-notion">Get Started →</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- Card 2: Lifestyle Manager -->
-        <a class="work-card doc-card" href="https://app.notion.com/p/3858cfe1721181b2bf28f96591d4ce1f" target="_blank">
-          <div class="work-card-preview" style="background:var(--white);min-height:220px;">
-            <div class="notion-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4"/></svg>
-              Notion Document
-            </div>
-            <h4>Lifestyle Onboarding</h4>
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-top:0.8rem;">
-              <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-                <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">✈️ Travel</div>
-                Travel preferences
-              </div>
-              <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-                <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">🏠 Household</div>
-                Household routines
-              </div>
-              <div style="background:rgba(255,255,255,0.7);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--mid);">
-                <div style="font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;">📅 Schedule</div>
-                Personal schedule
-              </div>
-            </div>
-          </div>
-          <div class="work-card-body">
-            <p>Lifestyle setup: travel, household, and scheduling preferences.</p>
-            <div class="work-card-footer">
-              <div class="work-tags">
-                <span class="work-tag">Lifestyle</span>
-                <span class="work-tag">Onboarding</span>
-                <span class="work-tag">Notion</span>
-              </div>
-              <span class="btn-notion">Get Started →</span>
-            </div>
-          </div>
-        </a>
-
+      <div class="canva-carousel onboarding-carousel notion-gallery">
+<a class="notion-gallery-tile" href="https://app.notion.com/p/3858cfe1721181c2a195d3097ff2744d" target="_blank" rel="noopener noreferrer" aria-label="Open Executive Travel Itinerary in Notion">
+ <div class="notion-gallery-preview">
+   <div class="notion-preview-top"><span class="notion-preview-icon">N</span><span>Notion</span><span class="notion-preview-dots">•••</span></div>
+   <div class="notion-preview-title">Executive Travel Itinerary</div>
+   <div class="notion-preview-subtitle">Travel &amp; bookings</div>
+   <div class="notion-preview-list"><div><span class="notion-preview-check">01</span><span>Flights</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">02</span><span>Hotel</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">03</span><span>Budget</span><span class="notion-preview-line"></span></div></div>
+ </div>
+ <div class="notion-gallery-label">Executive Travel Itinerary <span aria-hidden="true">↗</span></div>
+</a>
+<a class="notion-gallery-tile" href="https://app.notion.com/p/3cd8cfe172118133bcf5c50550e541da" target="_blank" rel="noopener noreferrer" aria-label="Open Fintech Project Hub in Notion">
+ <div class="notion-gallery-preview">
+   <div class="notion-preview-top"><span class="notion-preview-icon">N</span><span>Notion</span><span class="notion-preview-dots">•••</span></div>
+   <div class="notion-preview-title">Fintech Project Hub</div>
+   <div class="notion-preview-subtitle">Project tracking</div>
+   <div class="notion-preview-list"><div><span class="notion-preview-check">01</span><span>Projects</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">02</span><span>Sprints</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">03</span><span>Tasks</span><span class="notion-preview-line"></span></div></div>
+ </div>
+ <div class="notion-gallery-label">Fintech Project Hub <span aria-hidden="true">↗</span></div>
+</a>
+<a class="notion-gallery-tile" href="https://app.notion.com/p/3858cfe17211812b901cd898c3b031dc" target="_blank" rel="noopener noreferrer" aria-label="Open Business Onboarding in Notion">
+ <div class="notion-gallery-preview">
+   <div class="notion-preview-top"><span class="notion-preview-icon">N</span><span>Notion</span><span class="notion-preview-dots">•••</span></div>
+   <div class="notion-preview-title">Business Onboarding</div>
+   <div class="notion-preview-subtitle">Operations setup</div>
+   <div class="notion-preview-list"><div><span class="notion-preview-check">01</span><span>Tools</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">02</span><span>Contacts</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">03</span><span>Priorities</span><span class="notion-preview-line"></span></div></div>
+ </div>
+ <div class="notion-gallery-label">Business Onboarding <span aria-hidden="true">↗</span></div>
+</a>
+<a class="notion-gallery-tile" href="https://app.notion.com/p/3858cfe1721181b2bf28f96591d4ce1f" target="_blank" rel="noopener noreferrer" aria-label="Open Lifestyle Onboarding in Notion">
+ <div class="notion-gallery-preview">
+   <div class="notion-preview-top"><span class="notion-preview-icon">N</span><span>Notion</span><span class="notion-preview-dots">•••</span></div>
+   <div class="notion-preview-title">Lifestyle Onboarding</div>
+   <div class="notion-preview-subtitle">Personal support</div>
+   <div class="notion-preview-list"><div><span class="notion-preview-check">01</span><span>Travel</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">02</span><span>Household</span><span class="notion-preview-line"></span></div><div><span class="notion-preview-check">03</span><span>Schedule</span><span class="notion-preview-line"></span></div></div>
+ </div>
+ <div class="notion-gallery-label">Lifestyle Onboarding <span aria-hidden="true">↗</span></div>
+</a>
       </div>
       </div>
 
