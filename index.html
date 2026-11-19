@@ -3702,6 +3702,67 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 @media (max-width:1023px) {
   #certificates .canva-carousel.certs > .canva-slide-wide .meta-cert-crop {height:190px!important;flex-basis:190px!important;}
 }
+
+/* Consistent testimonial card composition, including both action buttons. */
+#about .client-testimonials-section .testimonials-grid {
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:24px!important;align-items:stretch!important;
+}
+#about .client-testimonials-section .testimonial-card,
+#about .client-testimonials-section .testimonial-card.is-tall {
+ grid-column:auto!important;display:flex!important;flex-direction:column!important;
+ min-width:0!important;height:100%!important;min-height:440px!important;
+ padding:28px 26px!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-stars {
+ flex:0 0 auto!important;margin:0 0 24px!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-quote {
+ flex:0 0 auto!important;margin:0 0 12px!important;
+ display:-webkit-box!important;-webkit-box-orient:vertical!important;
+ -webkit-line-clamp:4!important;line-clamp:4!important;
+ overflow:hidden!important;
+}
+#about .client-testimonials-section .testimonial-card.expanded .testimonial-quote {
+ display:block!important;-webkit-line-clamp:unset!important;line-clamp:unset!important;
+ overflow:visible!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-expand {
+ order:1!important;align-self:flex-start!important;margin:0 0 16px!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-author {
+ order:2!important;margin-top:auto!important;padding:16px 0 0!important;
+ width:100%!important;border-top:1px solid #dbe7df!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-review-button,
+#about .client-testimonials-section .testimonial-card #view-review-btn {
+ order:3!important;align-self:flex-start!important;justify-self:auto!important;
+ margin:16px 0 0!important;
+}
+@media(max-width:900px) {
+ #about .client-testimonials-section .testimonials-grid {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media(max-width:600px) {
+ #about .client-testimonials-section .testimonials-grid {grid-template-columns:minmax(0,1fr)!important;gap:16px!important;}
+ #about .client-testimonials-section .testimonial-card,
+ #about .client-testimonials-section .testimonial-card.is-tall {min-height:0!important;padding:22px 18px!important;}
+}
+/* Uniform centered Notion project previews and equal tile margins. */
+#work .featured-work-gallery {align-items:stretch!important;}
+#work .featured-notion-tile {margin:0!important;padding:0!important;align-items:stretch!important;}
+#work .featured-notion-tile .featured-work-preview-notion {
+ box-sizing:border-box!important;width:100%!important;
+ padding:20px!important;margin:0!important;
+ display:flex!important;flex-direction:column!important;
+ align-items:center!important;justify-content:center!important;
+ text-align:center!important;gap:12px!important;
+}
+#work .featured-notion-tile .featured-notion-head,
+#work .featured-notion-tile .featured-notion-title,
+#work .featured-notion-tile .featured-notion-subtitle {
+ width:100%!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important;
+}
+#work .featured-notion-tile .featured-notion-lines {width:min(85%,220px)!important;margin:0 auto!important;}
 </style>
 </head>
 <body>
