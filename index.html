@@ -4068,6 +4068,55 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 }
 #services .services-grid-four .service-card h3 {font-weight:700!important;}
 #services .services-grid-four .service-card p {font-weight:400!important;}
+
+/* Compact testimonials: remove blank gap and standardize ALL three font sizes. */
+#about .client-testimonials-section .testimonials-grid {
+ align-items:start!important;
+}
+#about .client-testimonials-section .testimonial-card,
+#about .client-testimonials-section .testimonial-card.is-tall {
+ height:auto!important;min-height:0!important;max-height:none!important;
+ align-self:start!important;padding:18px 22px!important;
+ display:flex!important;flex-direction:column!important;
+}
+#about .client-testimonials-section .testimonial-card.expanded,
+#about .client-testimonials-section .testimonial-card.is-tall.expanded {
+ height:auto!important;min-height:0!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-stars {
+ margin:0 0 12px!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-quote {
+ font-family:Inter,Arial,sans-serif!important;font-size:15px!important;
+ line-height:1.55!important;font-weight:400!important;letter-spacing:normal!important;
+ margin:0 0 12px!important;
+ display:-webkit-box!important;-webkit-box-orient:vertical!important;
+ -webkit-line-clamp:3!important;line-clamp:3!important;
+ overflow:hidden!important;max-height:calc(15px * 1.55 * 3)!important;
+}
+#about .client-testimonials-section .testimonial-card.expanded .testimonial-quote {
+ display:block!important;max-height:none!important;
+ -webkit-line-clamp:unset!important;line-clamp:unset!important;overflow:visible!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-quote strong {
+ font-family:inherit!important;font-size:inherit!important;line-height:inherit!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-actions {
+ margin:0 0 12px!important;gap:8px 14px!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-author {
+ margin:0!important;margin-top:0!important;padding:12px 0 0!important;
+ min-height:0!important;width:100%!important;align-items:center!important;
+ border-top:1px solid #dbe7df!important;border-left:0!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-name {
+ font-family:Inter,Arial,sans-serif!important;font-size:14px!important;
+ line-height:1.35!important;font-weight:700!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-role {
+ font-family:Inter,Arial,sans-serif!important;font-size:12px!important;
+ line-height:1.4!important;font-weight:400!important;
+}
 </style>
 </head>
 <body>
