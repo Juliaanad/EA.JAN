@@ -3612,6 +3612,21 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #about .client-testimonials-section .testimonial-card.is-tall{grid-column:auto!important;}
  #about .client-testimonials-section .testimonial-card{padding:20px 17px!important;}
 }
+
+/* Keep original Meta PDF fully visible inside the same thumbnail frame as other certificates */
+#certificates .canva-carousel.certs>.canva-slide-wide{min-width:0!important;}
+#certificates .canva-carousel.certs>.canva-slide-wide .meta-coursera-pdf-preview{
+ display:block!important;box-sizing:border-box!important;
+ width:100%!important;height:190px!important;min-height:0!important;max-height:190px!important;
+ padding:5px!important;margin:0!important;overflow:hidden!important;
+ background:#f8fbf8!important;border:1px solid #c9ddcf!important;
+ border-radius:10px!important;pointer-events:none!important;
+}
+@media(max-width:600px){
+ #certificates .canva-carousel.certs>.canva-slide-wide .meta-coursera-pdf-preview{
+  height:140px!important;max-height:140px!important;
+ }
+}
 </style>
 </head>
 <body>
