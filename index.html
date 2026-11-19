@@ -4848,9 +4848,7 @@ document.querySelectorAll('.testimonial-expand').forEach(button=>{
   button.setAttribute('aria-expanded',String(expanded));
   button.textContent=expanded?'Show less ↑':'Read full review ↓';
  };
- // Hover previews on pointer devices; tapping still works on phones.
- card.addEventListener('mouseenter',()=>{if(window.matchMedia('(hover: hover)').matches)setExpanded(true);});
- card.addEventListener('mouseleave',()=>{if(window.matchMedia('(hover: hover)').matches)setExpanded(false);});
+ // Expand or collapse only when the visitor clicks the review control.
  button.addEventListener('click',()=>setExpanded(!card.classList.contains('expanded')));
 });
 </script>
