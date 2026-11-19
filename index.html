@@ -2016,6 +2016,84 @@
  #work .pm-pair > .canva-carousel-wrap { grid-template-rows:auto auto minmax(0,1fr)!important;row-gap:12px!important; }
 }
 
+
+/* Notion gallery: equal, compact, reliably aligned card geometry */
+#work .canva-carousel.onboarding-carousel {
+ display:flex!important;flex-wrap:nowrap!important;align-items:stretch!important;
+ gap:20px!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;
+ padding:6px 2px 16px!important;
+}
+#work .canva-carousel.onboarding-carousel > a.work-card {
+ flex:0 0 calc((100% - 20px)/2)!important;
+ width:calc((100% - 20px)/2)!important;max-width:calc((100% - 20px)/2)!important;
+ height:310px!important;min-height:310px!important;max-height:310px!important;
+ box-sizing:border-box!important;display:grid!important;
+ grid-template-rows:190px 120px!important;gap:0!important;
+ padding:0!important;margin:0!important;overflow:hidden!important;
+ scroll-snap-align:start!important;align-self:stretch!important;
+}
+#work .canva-carousel.onboarding-carousel > a.work-card > .work-card-preview {
+ height:190px!important;min-height:190px!important;max-height:190px!important;
+ box-sizing:border-box!important;padding:14px 16px!important;margin:0!important;
+ display:grid!important;grid-template-rows:25px 42px minmax(0,1fr)!important;
+ gap:7px!important;align-content:start!important;overflow:hidden!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview > .notion-badge {
+ margin:0!important;justify-self:start!important;align-self:center!important;
+ height:25px!important;box-sizing:border-box!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview > h4 {
+ height:42px!important;min-height:42px!important;max-height:42px!important;
+ margin:0!important;font-size:1rem!important;line-height:1.25!important;
+ display:flex!important;align-items:center!important;overflow:hidden!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] {
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ grid-template-rows:repeat(2,minmax(0,1fr))!important;
+ gap:5px!important;margin:0!important;padding:0!important;
+ height:100%!important;min-height:0!important;overflow:hidden!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] > div {
+ padding:4px 7px!important;min-height:0!important;overflow:hidden!important;
+ font-size:.68rem!important;line-height:1.25!important;box-sizing:border-box!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] > div > div {
+ margin:0 0 2px!important;font-size:.69rem!important;line-height:1.2!important;
+}
+#work .canva-carousel.onboarding-carousel > a.work-card > .work-card-body {
+ height:120px!important;min-height:120px!important;max-height:120px!important;
+ box-sizing:border-box!important;padding:10px 16px!important;margin:0!important;
+ display:grid!important;grid-template-rows:34px minmax(0,1fr)!important;
+ gap:6px!important;overflow:hidden!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-body > p {
+ height:34px!important;min-height:34px!important;max-height:34px!important;
+ margin:0!important;font-size:.78rem!important;line-height:1.35!important;
+ display:-webkit-box!important;-webkit-line-clamp:2!important;
+ -webkit-box-orient:vertical!important;overflow:hidden!important;
+}
+#work .canva-carousel.onboarding-carousel .work-card-footer {
+ margin:0!important;display:flex!important;align-items:center!important;
+ justify-content:space-between!important;gap:8px!important;min-height:0!important;
+}
+#work .canva-carousel.onboarding-carousel .work-tags {
+ display:flex!important;flex-wrap:wrap!important;gap:4px!important;
+ max-height:45px!important;overflow:hidden!important;flex:1!important;
+}
+#work .canva-carousel.onboarding-carousel .work-tag {
+ font-size:.62rem!important;padding:3px 6px!important;white-space:nowrap!important;
+}
+#work .canva-carousel.onboarding-carousel .btn-notion {
+ margin:0!important;flex:0 0 auto!important;white-space:nowrap!important;
+ padding:9px 12px!important;font-size:.72rem!important;
+}
+@media(max-width:700px){
+ #work .canva-carousel.onboarding-carousel > a.work-card {
+ flex-basis:88%!important;width:88%!important;max-width:88%!important;
+ }
+ #work .canva-carousel.onboarding-carousel .work-tags { max-height:26px!important; }
+}
+
 </style>
 </head>
 <body>
@@ -2573,12 +2651,12 @@
           </div>
         </div>
         <div class="work-card-body">
-          <p>12-day itinerary with travel bookings, schedules, and expenses.</p>
+          <p>Travel plan, bookings & budget.</p>
           <div class="work-card-footer">
             <div class="work-tags">
-              <span class="work-tag">Travel Coordination</span>
+              <span class="work-tag">Travel</span>
               <span class="work-tag">Itinerary</span>
-              <span class="work-tag">Expense Management</span>
+              <span class="work-tag">Expenses</span>
               <span class="work-tag">Notion</span>
             </div>
             <span class="btn-notion">View in Notion →</span>
@@ -2613,12 +2691,12 @@
           </div>
         </div>
         <div class="work-card-body">
-          <p>Fintech launch tracker: 5 projects, 3 sprints, and 24 tasks.</p>
+          <p>5 projects · 3 sprints · 24 tasks.</p>
           <div class="work-card-footer">
             <div class="work-tags">
-              <span class="work-tag">Project Management</span>
-              <span class="work-tag">Sprint Planning</span>
-              <span class="work-tag">Stakeholder Reporting</span>
+              <span class="work-tag">Projects</span>
+              <span class="work-tag">Sprints</span>
+              <span class="work-tag">Reporting</span>
               <span class="work-tag">Notion</span>
             </div>
             <span class="btn-notion">View in Notion &rarr;</span>
