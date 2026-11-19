@@ -3215,6 +3215,13 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #work .pdf-open-original {font-size:.7rem;color:#28553b;text-align:center;text-decoration:underline;text-underline-offset:2px;}
 #work .pdf-swipe-tile .featured-work-label {min-height:0!important;}
 
+
+/* Actual Canva slide deck embedded inside compact project album tile */
+#work .canva-embed-tile {cursor:default!important;}
+#work .canva-embed-preview {position:relative!important;overflow:hidden!important;background:#e9edea!important;aspect-ratio:1/1!important;}
+#work .canva-embed-preview iframe {display:block;width:100%;height:100%;border:0;background:#e9edea;}
+#work .canva-embed-tile .featured-work-label {min-height:0!important;}
+
 </style>
 </head>
 <body>
@@ -3559,23 +3566,13 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
   <p class="section-label">Featured Projects</p>
   <p class="featured-work-intro">Presentations, operations, and Notion projects — all in one album.</p>
   <div class="featured-work-gallery">
-    <div class="featured-work-tile pdf-swipe-tile" data-pdf="Pest%20ex%20company%20profile.pdf" aria-label="Business Presentation seven-page PDF slide viewer">
-  <div class="featured-work-preview pdf-slide-viewer">
-    <div class="pdf-slide-track" role="region" aria-label="Swipe through Pest-Ex PDF pages"><div class="pdf-slide-frame"><span class="pdf-loading">Loading original presentation…</span></div></div>
-    <button type="button" class="pdf-slide-prev" aria-label="Previous PDF page">‹</button>
-    <button type="button" class="pdf-slide-next" aria-label="Next PDF page">›</button>
-    <span class="pdf-slide-count" aria-live="polite">1 / 7</span>
-  </div>
-  <div class="featured-work-label">Business Presentation</div>
-  <a class="pdf-open-original" href="Pest%20ex%20company%20profile.pdf" target="_blank" rel="noopener noreferrer">Open full PDF ↗</a>
-</div>
-    <a class="featured-work-tile" href="https://www.canva.com/design/DAHNNF_ji38/cmhIzjmhlXO8g2sfHdKW_Q/view" target="_blank" rel="noopener noreferrer" aria-label="Open EA onboarding presentation">
-      <div class="featured-work-preview featured-work-preview-ea">
-        <div class="featured-ea-cover"><span>EFFICIENCY</span><strong>Your First<br>2 Weeks</strong><small>Executive Assistant Onboarding</small></div>
-        <div class="featured-ea-scene"><div class="featured-ea-window"></div><div class="featured-ea-desk"></div><div class="featured-ea-laptop"></div></div>
+    <div class="featured-work-tile canva-embed-tile" aria-label="EA Onboarding presentation preview">
+      <div class="featured-work-preview canva-embed-preview">
+        <iframe loading="lazy" title="EA Onboarding — actual Canva presentation, use player controls to browse slides" src="https://www.canva.com/design/DAHNNF_ji38/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
-      <div class="featured-work-label">EA Onboarding <span aria-hidden="true">↗</span></div>
-    </a>
+      <div class="featured-work-label">EA Onboarding</div>
+      <a class="pdf-open-original" href="https://www.canva.com/design/DAHNNF_ji38/cmhIzjmhlXO8g2sfHdKW_Q/view" target="_blank" rel="noopener noreferrer">Open full presentation ↗</a>
+    </div>
     <a class="featured-work-tile" href="https://docs.google.com/spreadsheets/d/1qS1PBpkhBANTAjybqbtqpMWRmhmdSHG7KeAKrtpxi8c/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open Etsy shop project management checklist">
       <div class="featured-work-preview featured-work-preview-sheet">
         <div class="featured-sheet-head"><span>▦</span> ETSY SHOP SETUP</div>
