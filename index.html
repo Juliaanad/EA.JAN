@@ -3770,6 +3770,30 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
   transform:scale(.65)!important;
   transform-origin:top left!important;
 }
+
+/* Shorter, less narrow-looking testimonial cards with balanced spacing. */
+#about .client-testimonials-section .testimonial-card,
+#about .client-testimonials-section .testimonial-card.is-tall {
+ min-height:320px!important;
+ height:auto!important;
+ padding:22px 24px!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-stars {margin-bottom:14px!important;}
+#about .client-testimonials-section .testimonial-card .testimonial-quote {
+ -webkit-line-clamp:3!important;line-clamp:3!important;
+ margin-bottom:8px!important;line-height:1.5!important;
+}
+#about .client-testimonials-section .testimonial-card.expanded .testimonial-quote {
+ -webkit-line-clamp:unset!important;line-clamp:unset!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-expand {margin-bottom:8px!important;}
+#about .client-testimonials-section .testimonial-card .testimonial-author {padding-top:10px!important;}
+#about .client-testimonials-section .testimonial-card .testimonial-review-button,
+#about .client-testimonials-section .testimonial-card #view-review-btn {margin-top:10px!important;}
+@media(max-width:600px) {
+ #about .client-testimonials-section .testimonial-card,
+ #about .client-testimonials-section .testimonial-card.is-tall {min-height:0!important;padding:20px!important;}
+}
 </style>
 </head>
 <body>
