@@ -3605,12 +3605,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <h2 class="section-title">Selected work, <em>thoughtfully organized.</em></h2>
       <p class="section-subtitle">A gallery of presentations, systems, and creative work.</p>
 
-      <div style="margin:2rem 0 2.5rem;padding:1.6rem;border:1px solid rgba(26,69,48,.2);border-radius:16px;background:#e2eee6;">
-        <p class="section-label" style="margin-bottom:.5rem;">Social Media Portfolio</p>
-        <h3 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,2rem);color:#0f1e14;margin-bottom:.75rem;">Social media & content design</h3>
-        <p style="color:#3a5545;margin-bottom:1.25rem;line-height:1.6;">Brand concepts, social graphics, and content planning.</p>
-        <a href="Social_Media_Portfolio_Aligned_No_Empty_Space.html" class="btn-primary" style="display:inline-block;">View Social Media Portfolio →</a>
-      </div>
+
 
       <!-- Four featured work samples — same gallery style as Operational Work -->
 <div class="featured-work-gallery-wrap">
@@ -4036,7 +4031,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       /* Exclude profile photo, "before" comparisons, reference images and zoomed crops. */
       const selected=all.filter(img=>{
         const alt=(img.getAttribute('alt')||'').toLowerCase();
-        return alt&&!alt.includes('cat in a frog hat')&&!alt.startsWith('zoom:')&&!alt.startsWith('a generic chatgpt')&&!alt.includes('reference photo');
+        return alt&&!alt.includes('mini pepper mushroom puff')&&!alt.includes('pepper mushroom puff')&&!alt.includes('cat in a frog hat')&&!alt.startsWith('zoom:')&&!alt.startsWith('a generic chatgpt')&&!alt.includes('reference photo');
       });
       if(!selected.length)throw new Error('No project images found');
       const fragment=document.createDocumentFragment();
