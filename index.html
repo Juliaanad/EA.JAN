@@ -1378,7 +1378,7 @@
       #work .canva-carousel.op-work .canva-slide-wide img,
       #work .pm-box-clickup .canva-slide-wide img { height: 245px; max-height: 245px; object-fit: contain; flex: none; }
       #work .canva-slide img { height: 245px; object-fit: contain; background: #f3f4f0; }
-      #work .canva-carousel.certs .canva-slide-wide img { aspect-ratio: auto; object-fit: contain; }
+      #certificates .canva-carousel.certs .canva-slide-wide img { aspect-ratio: auto; object-fit: contain; }
       #work .canva-carousel-wrap { margin-top: 2rem; }
       #work .pres-frame { max-width: 760px; }
       #work .pres-frame iframe { max-height: 430px; }
@@ -1416,20 +1416,20 @@
     /* Laptop gallery: 2–3 tidy columns instead of one oversized item */
     @media (min-width: 1024px) {
       #work .canva-carousel.op-work,
-      #work .canva-carousel.certs,
+      #certificates .canva-carousel.certs,
       #work .canva-carousel.onboarding-carousel {
         display: grid; grid-template-columns: repeat(3,minmax(0,1fr));
         gap: 1.15rem; overflow: visible; scroll-snap-type: none;
         align-items: stretch; padding: .35rem 0 1rem;
       }
       #work .canva-carousel.op-work > *,
-      #work .canva-carousel.certs > *,
+      #certificates .canva-carousel.certs > *,
       #work .canva-carousel.onboarding-carousel > * {
         width: 100%; max-width: none; min-width: 0; height: 100%;
         margin: 0 !important; scroll-snap-align: none;
       }
       #work .canva-carousel.op-work .canva-slide-wide img,
-      #work .canva-carousel.certs .canva-slide-wide img {
+      #certificates .canva-carousel.certs .canva-slide-wide img {
         width: 100%; height: 205px; max-height: 205px; object-fit: contain;
         background: #f4f5f2;
       }
@@ -1439,41 +1439,41 @@
       #work .canva-carousel.onboarding-carousel .work-card-body { padding: 1rem; }
       #work .canva-carousel.onboarding-carousel .work-card-preview [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
       #work .carousel-scroller:has(.op-work) > .carousel-nav,
-      #work .carousel-scroller:has(.certs) > .carousel-nav,
+      #certificates .carousel-scroller:has(.certs) > .carousel-nav,
       #work .carousel-scroller:has(.onboarding-carousel) > .carousel-nav { display: none !important; }
     }
     @media (min-width: 700px) and (max-width: 1023px) {
       #work .canva-carousel.op-work,
-      #work .canva-carousel.certs,
+      #certificates .canva-carousel.certs,
       #work .canva-carousel.onboarding-carousel {
         display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
         gap: 1rem; overflow: visible; scroll-snap-type: none;
       }
       #work .canva-carousel.op-work > *,
-      #work .canva-carousel.certs > *,
+      #certificates .canva-carousel.certs > *,
       #work .canva-carousel.onboarding-carousel > * { width: 100%; max-width: none; min-width: 0; margin: 0 !important; }
       #work .carousel-scroller:has(.op-work) > .carousel-nav,
-      #work .carousel-scroller:has(.certs) > .carousel-nav,
+      #certificates .carousel-scroller:has(.certs) > .carousel-nav,
       #work .carousel-scroller:has(.onboarding-carousel) > .carousel-nav { display: none !important; }
     }
 
     /* Compact illustrated work gallery: four columns on wide laptops */
     @media (min-width: 1280px) {
       #work .canva-carousel.op-work,
-      #work .canva-carousel.certs,
+      #certificates .canva-carousel.certs,
       #work .canva-carousel.onboarding-carousel {
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 1rem;
       }
       #work .canva-carousel.op-work .canva-slide-wide img,
-      #work .canva-carousel.certs .canva-slide-wide img { height: 175px; max-height: 175px; }
+      #certificates .canva-carousel.certs .canva-slide-wide img { height: 175px; max-height: 175px; }
       #work .canva-carousel.onboarding-carousel .work-card-preview { padding: .85rem; }
       #work .canva-carousel.onboarding-carousel .work-card-body { padding: .85rem; }
       #work .canva-carousel.onboarding-carousel .work-card-preview h4 { font-size: .9rem !important; }
     }
     @media (min-width: 1024px) and (max-width: 1279px) {
       #work .canva-carousel.op-work,
-      #work .canva-carousel.certs,
+      #certificates .canva-carousel.certs,
       #work .canva-carousel.onboarding-carousel { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
@@ -1494,22 +1494,22 @@
 #work .pm-pair .pm-box-clickup .canva-slide-wide { max-width:100%;width:100%; }
 #work .pm-pair .pm-box-clickup .canva-slide-wide img { height:235px;max-height:235px;object-fit:contain;background:#f4f5f2; }
 #work .canva-carousel-wrap > .section-label { margin-left:0; }
-#work .canva-carousel.certs { display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:1rem!important;overflow:visible!important;scroll-snap-type:none!important;align-items:stretch!important; }
-#work .canva-carousel.certs > .canva-slide-wide { width:100%!important;max-width:none!important;min-width:0!important;flex:none!important;height:auto!important;margin:0!important;display:flex;flex-direction:column; }
-#work .canva-carousel.certs img { width:100%!important;height:155px!important;max-height:155px!important;aspect-ratio:auto!important;object-fit:contain!important;background:#f4f5f2;flex:0 0 auto!important; }
-#work .canva-carousel.certs .canva-slide-label { margin-top:auto;min-height:3.1rem;font-size:.72rem;line-height:1.35;display:flex;align-items:center; }
-#work .carousel-scroller:has(.certs) .carousel-nav { display:none!important; }
+#certificates .canva-carousel.certs { display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:1rem!important;overflow:visible!important;scroll-snap-type:none!important;align-items:stretch!important; }
+#certificates .canva-carousel.certs > .canva-slide-wide { width:100%!important;max-width:none!important;min-width:0!important;flex:none!important;height:auto!important;margin:0!important;display:flex;flex-direction:column; }
+#certificates .canva-carousel.certs img { width:100%!important;height:155px!important;max-height:155px!important;aspect-ratio:auto!important;object-fit:contain!important;background:#f4f5f2;flex:0 0 auto!important; }
+#certificates .canva-carousel.certs .canva-slide-label { margin-top:auto;min-height:3.1rem;font-size:.72rem;line-height:1.35;display:flex;align-items:center; }
+#certificates .carousel-scroller:has(.certs) .carousel-nav { display:none!important; }
 @media(max-width:900px) {
  #rates .rates-two-column { grid-template-columns:1fr; }
  #rates .rates-two-column .rate-expect ul { grid-template-columns:repeat(2,minmax(0,1fr)); }
  #work .pm-pair { grid-template-columns:1fr; }
- #work .canva-carousel.certs { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+ #certificates .canva-carousel.certs { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
 }
 @media(max-width:540px) {
  #rates .section-inner,#work .section-inner { width:calc(100% - 2rem); }
  #rates .rates-two-column .rate-expect ul { grid-template-columns:1fr; }
- #work .canva-carousel.certs img { height:130px!important;max-height:130px!important; }
- #work .canva-carousel.certs .canva-slide-label { font-size:.66rem; }
+ #certificates .canva-carousel.certs img { height:130px!important;max-height:130px!important; }
+ #certificates .canva-carousel.certs .canva-slide-label { font-size:.66rem; }
 }
 
 /* FINAL RESPONSIVE DESIGN SYSTEM — consistent half-page project cards */
@@ -1548,16 +1548,16 @@
 #work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] > div {
  min-width:0;padding:10px!important;overflow-wrap:anywhere;
 }
-#work .canva-carousel.certs {
+#certificates .canva-carousel.certs {
  display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
  gap:16px!important;overflow:visible!important;align-items:start!important;
 }
-#work .canva-carousel.certs > .canva-slide-wide { min-width:0!important;width:100%!important;max-width:none!important;height:auto!important; }
-#work .canva-carousel.certs img { width:100%!important;height:165px!important;max-height:165px!important;object-fit:contain!important; }
-#work .certs-band .swipe-hint { display:none; }
+#certificates .canva-carousel.certs > .canva-slide-wide { min-width:0!important;width:100%!important;max-width:none!important;height:auto!important; }
+#certificates .canva-carousel.certs img { width:100%!important;height:165px!important;max-height:165px!important;object-fit:contain!important; }
+#certificates .certs-band .swipe-hint { display:none; }
 #work .carousel-scroller:has(.op-work) .carousel-nav,
 #work .carousel-scroller:has(.onboarding-carousel) .carousel-nav,
-#work .carousel-scroller:has(.certs) .carousel-nav { display:none!important; }
+#certificates .carousel-scroller:has(.certs) .carousel-nav { display:none!important; }
 #work .canva-slide-wide, #work .work-card, #work .pres-frame, #work .pm-box { border-radius:14px; }
 #work .canva-slide-label { min-height:52px;display:flex;align-items:center;line-height:1.4; }
 #work .canva-carousel-wrap > .section-label { margin:0 0 8px!important; }
@@ -1567,14 +1567,14 @@
 @media (max-width:900px) {
  #work .presentation-pair,#work .pm-pair,#rates .rates-two-column { grid-template-columns:1fr;gap:20px; }
  #work .canva-carousel.op-work,#work .canva-carousel.onboarding-carousel { gap:16px!important; }
- #work .canva-carousel.certs { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+ #certificates .canva-carousel.certs { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
 }
 @media (max-width:650px) {
  #work .section-inner,#rates .section-inner { width:calc(100% - 32px); }
  #work .canva-carousel.op-work,#work .canva-carousel.onboarding-carousel { grid-template-columns:1fr!important; }
  #work .canva-carousel.op-work .canva-slide-wide img { height:220px!important;max-height:220px!important; }
  #work .pm-pair .pm-box-clickup img { height:220px!important;max-height:220px!important; }
- #work .canva-carousel.certs img { height:125px!important;max-height:125px!important; }
+ #certificates .canva-carousel.certs img { height:125px!important;max-height:125px!important; }
  #work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
 }
 
@@ -1650,14 +1650,14 @@
  grid-template-columns:repeat(2,minmax(0,1fr))!important;
 }
 #work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] > div { min-width:0;overflow-wrap:anywhere; }
-#work .canva-carousel.certs {
+#certificates .canva-carousel.certs {
  display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
  gap:16px!important;align-items:start!important;overflow:visible!important;
 }
-#work .canva-carousel.certs > * { min-width:0!important;max-width:none!important;width:100%!important;height:auto!important; }
-#work .canva-carousel.certs img { height:155px!important;max-height:155px!important;width:100%!important;object-fit:contain!important; }
-#work .canva-carousel.certs .canva-slide-label { min-height:48px;font-size:.76rem;line-height:1.4; }
-#work .certs-band .swipe-hint,#work .carousel-scroller:has(.certs) .carousel-nav,
+#certificates .canva-carousel.certs > * { min-width:0!important;max-width:none!important;width:100%!important;height:auto!important; }
+#certificates .canva-carousel.certs img { height:155px!important;max-height:155px!important;width:100%!important;object-fit:contain!important; }
+#certificates .canva-carousel.certs .canva-slide-label { min-height:48px;font-size:.76rem;line-height:1.4; }
+#certificates .certs-band .swipe-hint,#certificates .carousel-scroller:has(.certs) .carousel-nav,
 #work .carousel-scroller:has(.op-work) .carousel-nav,
 #work .carousel-scroller:has(.onboarding-carousel) .carousel-nav { display:none!important; }
 #work .pm-pair .pm-box-clickup img { height:250px!important;max-height:250px!important;object-fit:contain!important; }
@@ -1666,14 +1666,14 @@
 @media(max-width:900px) {
  #rates .rates-two-column,#work .presentation-pair,#work .pm-pair { grid-template-columns:1fr; }
  #skills .skills-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
- #work .canva-carousel.certs { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+ #certificates .canva-carousel.certs { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
 }
 @media(max-width:640px) {
  #about .section-inner,#rates .section-inner,#skills .section-inner,#work .section-inner { width:calc(100% - 32px); }
  #skills .skills-grid,#work .canva-carousel.op-work,#work .canva-carousel.onboarding-carousel { grid-template-columns:1fr!important; }
  #rates .rates-two-column .rate-expect ul { grid-template-columns:1fr; }
  #work .canva-carousel.op-work .canva-slide-wide img,#work .pm-pair .pm-box-clickup img { height:210px!important;max-height:210px!important; }
- #work .canva-carousel.certs img { height:120px!important;max-height:120px!important; }
+ #certificates .canva-carousel.certs img { height:120px!important;max-height:120px!important; }
 }
 
 
@@ -1707,17 +1707,17 @@
  object-fit:contain!important;background:#f3f5f1;
 }
 #work .pm-pair .pm-box-etsy { width:100%!important;max-width:100%!important;box-sizing:border-box!important; }
-#work .canva-carousel.certs {
+#certificates .canva-carousel.certs {
  display:flex!important;flex-wrap:nowrap!important;gap:16px!important;
  overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;
  scrollbar-width:thin!important;padding:6px 0 14px!important;align-items:stretch!important;
 }
-#work .canva-carousel.certs > .canva-slide-wide {
+#certificates .canva-carousel.certs > .canva-slide-wide {
  flex:0 0 calc((100% - 48px)/4)!important;min-width:0!important;
  max-width:calc((100% - 48px)/4)!important;width:auto!important;
  scroll-snap-align:start!important;height:auto!important;box-sizing:border-box!important;
 }
-#work .canva-carousel.certs img { width:100%!important;height:160px!important;max-height:160px!important;object-fit:contain!important; }
+#certificates .canva-carousel.certs img { width:100%!important;height:160px!important;max-height:160px!important;object-fit:contain!important; }
 #work .canva-carousel.onboarding-carousel {
  display:flex!important;flex-wrap:nowrap!important;gap:16px!important;
  overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;
@@ -1740,24 +1740,24 @@
 #work .canva-carousel.onboarding-carousel .work-card-body { padding:14px!important; }
 #work .canva-carousel.onboarding-carousel .work-card-body p { -webkit-line-clamp:3!important; }
 #work .canva-carousel.onboarding-carousel .work-card-footer { margin-top:auto!important; }
-#work .carousel-scroller:has(.certs) .carousel-nav,
+#certificates .carousel-scroller:has(.certs) .carousel-nav,
 #work .carousel-scroller:has(.onboarding-carousel) .carousel-nav { display:flex!important; }
-#work .carousel-scroller:has(.certs) .carousel-nav[hidden],
+#certificates .carousel-scroller:has(.certs) .carousel-nav[hidden],
 #work .carousel-scroller:has(.onboarding-carousel) .carousel-nav[hidden] { display:none!important; }
-#work .carousel-scroller:has(.certs) .carousel-nav:disabled,
+#certificates .carousel-scroller:has(.certs) .carousel-nav:disabled,
 #work .carousel-scroller:has(.onboarding-carousel) .carousel-nav:disabled { opacity:.3;pointer-events:none; }
-#work .certs-band .swipe-hint { display:block!important; }
+#certificates .certs-band .swipe-hint { display:block!important; }
 @media(max-width:1100px) {
  #work .canva-carousel.onboarding-carousel > .work-card { flex-basis:calc((100% - 32px)/3)!important;max-width:calc((100% - 32px)/3)!important; }
 }
 @media(max-width:850px) {
  #rates .rates-two-column,#work .pm-pair { grid-template-columns:1fr!important; }
  #work .canva-carousel.onboarding-carousel > .work-card { flex-basis:calc((100% - 16px)/2)!important;max-width:calc((100% - 16px)/2)!important; }
- #work .canva-carousel.certs > .canva-slide-wide { flex-basis:calc((100% - 16px)/2)!important;max-width:calc((100% - 16px)/2)!important; }
+ #certificates .canva-carousel.certs > .canva-slide-wide { flex-basis:calc((100% - 16px)/2)!important;max-width:calc((100% - 16px)/2)!important; }
 }
 @media(max-width:560px) {
  #work .canva-carousel.onboarding-carousel > .work-card { flex-basis:85%!important;max-width:85%!important; }
- #work .canva-carousel.certs > .canva-slide-wide { flex-basis:76%!important;max-width:76%!important; }
+ #certificates .canva-carousel.certs > .canva-slide-wide { flex-basis:76%!important;max-width:76%!important; }
  #rates .rates-two-column > .rate-card { padding:22px!important; }
 }
 
@@ -1789,17 +1789,17 @@
 #work .presentation-pair > .canva-carousel-wrap > p:not(.section-label) {
  min-height:42px!important;line-height:1.45!important;
 }
-#work .canva-carousel.certs { width:100%!important;max-width:none!important; }
-#work .canva-carousel.certs > .canva-slide-wide {
+#certificates .canva-carousel.certs { width:100%!important;max-width:none!important; }
+#certificates .canva-carousel.certs > .canva-slide-wide {
  flex:0 0 calc((100% - 48px)/4)!important;max-width:calc((100% - 48px)/4)!important;
  min-width:0!important;
 }
-#work .canva-carousel.certs img { height:190px!important;max-height:190px!important;object-fit:contain!important; }
-#work .canva-carousel.certs .canva-slide-label {
+#certificates .canva-carousel.certs img { height:190px!important;max-height:190px!important;object-fit:contain!important; }
+#certificates .canva-carousel.certs .canva-slide-label {
  min-height:48px!important;justify-content:center!important;text-align:center!important;
  font-size:.76rem!important;padding:10px!important;
 }
-#work .carousel-scroller:has(.certs) { width:100%!important;max-width:none!important; }
+#certificates .carousel-scroller:has(.certs) { width:100%!important;max-width:none!important; }
 #work .canva-carousel.onboarding-carousel .work-card-preview { text-align:left; }
 #work .canva-carousel.onboarding-carousel .work-card-preview h4 { min-height:3.8em!important; }
 #work .canva-carousel.onboarding-carousel .work-card-body { display:flex!important;flex-direction:column!important;justify-content:space-between!important; }
@@ -1807,12 +1807,12 @@
 #work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] { gap:8px!important; }
 #work .canva-carousel.onboarding-carousel .work-card-preview > div[style*="grid-template-columns"] > div { font-size:.75rem!important; }
 @media(max-width:850px) {
- #work .canva-carousel.certs > .canva-slide-wide { flex-basis:calc((100% - 16px)/2)!important;max-width:calc((100% - 16px)/2)!important; }
+ #certificates .canva-carousel.certs > .canva-slide-wide { flex-basis:calc((100% - 16px)/2)!important;max-width:calc((100% - 16px)/2)!important; }
  #work .pm-pair .pm-box { min-height:0!important; }
 }
 @media(max-width:560px) {
- #work .canva-carousel.certs > .canva-slide-wide { flex-basis:76%!important;max-width:76%!important; }
- #work .canva-carousel.certs img { height:190px!important;max-height:190px!important; }
+ #certificates .canva-carousel.certs > .canva-slide-wide { flex-basis:76%!important;max-width:76%!important; }
+ #certificates .canva-carousel.certs img { height:190px!important;max-height:190px!important; }
  #rates .rates-two-column > .compare > .compare-col { padding:22px!important; }
 }
 
@@ -1883,13 +1883,13 @@
 #work .presentation-pair { align-items:stretch!important; }
 #work .presentation-pair > .canva-carousel-wrap { display:flex!important;flex-direction:column!important; }
 #work .presentation-pair .pres-frame { flex:1!important;min-height:0!important; }
-#work .canva-carousel.certs { display:flex!important;flex-wrap:nowrap!important;align-items:stretch!important; }
-#work .canva-carousel.certs > .canva-slide-wide {
+#certificates .canva-carousel.certs { display:flex!important;flex-wrap:nowrap!important;align-items:stretch!important; }
+#certificates .canva-carousel.certs > .canva-slide-wide {
  height:260px!important;min-height:260px!important;max-height:260px!important;
  display:flex!important;flex-direction:column!important;
 }
-#work .canva-carousel.certs img { height:200px!important;max-height:200px!important;object-fit:contain!important; }
-#work .canva-carousel.certs .canva-slide-label { flex:1!important;min-height:0!important;text-align:center!important;justify-content:center!important; }
+#certificates .canva-carousel.certs img { height:200px!important;max-height:200px!important;object-fit:contain!important; }
+#certificates .canva-carousel.certs .canva-slide-label { flex:1!important;min-height:0!important;text-align:center!important;justify-content:center!important; }
 @media(max-width:1100px) {
  #work .canva-carousel.onboarding-carousel > a.work-card {
  flex-basis:calc((100% - 32px)/3)!important;width:calc((100% - 32px)/3)!important;max-width:calc((100% - 32px)/3)!important;
@@ -1908,7 +1908,7 @@
 
 
 /* Certificates: readable half-page slides, never tiny thumbnails. */
-#work .canva-carousel.certs {
+#certificates .canva-carousel.certs {
  display:flex!important;flex-wrap:nowrap!important;gap:22px!important;
  overflow-x:auto!important;overflow-y:hidden!important;
  scroll-snap-type:x mandatory!important;scroll-padding-inline:2px!important;
@@ -1916,7 +1916,7 @@
  width:100%!important;max-width:100%!important;box-sizing:border-box!important;
  scrollbar-width:thin!important;
 }
-#work .canva-carousel.certs > .canva-slide-wide {
+#certificates .canva-carousel.certs > .canva-slide-wide {
  flex:0 0 calc((100% - 22px)/2)!important;
  width:calc((100% - 22px)/2)!important;
  max-width:calc((100% - 22px)/2)!important;min-width:0!important;
@@ -1926,13 +1926,13 @@
  align-items:center!important;gap:12px!important;scroll-snap-align:start!important;
  background:#fff!important;border-radius:18px!important;
 }
-#work .canva-carousel.certs > .canva-slide-wide img {
+#certificates .canva-carousel.certs > .canva-slide-wide img {
  display:block!important;flex:1 1 auto!important;
  width:100%!important;height:350px!important;max-height:350px!important;
  min-height:0!important;object-fit:contain!important;object-position:center!important;
  margin:auto!important;background:#fff!important;
 }
-#work .canva-carousel.certs > .canva-slide-wide .canva-slide-label {
+#certificates .canva-carousel.certs > .canva-slide-wide .canva-slide-label {
  display:flex!important;align-items:center!important;justify-content:center!important;
  flex:0 0 45px!important;width:100%!important;min-height:45px!important;
  max-height:45px!important;margin:0!important;padding:4px 8px!important;
@@ -1943,13 +1943,13 @@
 #work .carousel-scroller:has(.canva-carousel.certs) .carousel-nav.next { display:flex!important; }
 #work .carousel-scroller:has(.canva-carousel.certs) .carousel-nav.prev:not([hidden]) { display:flex!important; }
 @media(max-width:750px) {
- #work .canva-carousel.certs > .canva-slide-wide {
+ #certificates .canva-carousel.certs > .canva-slide-wide {
  flex-basis:88%!important;width:88%!important;max-width:88%!important;
  height:370px!important;min-height:370px!important;max-height:370px!important;
  padding:12px!important;
  }
- #work .canva-carousel.certs > .canva-slide-wide img { height:290px!important;max-height:290px!important; }
- #work .canva-carousel.certs > .canva-slide-wide .canva-slide-label { font-size:.86rem!important; }
+ #certificates .canva-carousel.certs > .canva-slide-wide img { height:290px!important;max-height:290px!important; }
+ #certificates .canva-carousel.certs > .canva-slide-wide .canva-slide-label { font-size:.86rem!important; }
 }
 
 
@@ -2096,18 +2096,18 @@
 
 
 /* Certificate album: compact full-width photo gallery, two readable pages per spread */
-#work .certs-band { padding-top:48px!important;padding-bottom:48px!important; }
-#work .certs-band .section-inner { max-width:1320px!important; }
-#work .certs-band .swipe-hint { display:block!important;margin:0 0 12px!important; }
-#work .certs-band .carousel-scroller { position:relative!important;width:100%!important;max-width:100%!important; }
-#work .canva-carousel.certs {
+#certificates .certs-band { padding-top:48px!important;padding-bottom:48px!important; }
+#certificates .certs-band .section-inner { max-width:1320px!important; }
+#certificates .certs-band .swipe-hint { display:block!important;margin:0 0 12px!important; }
+#certificates .certs-band .carousel-scroller { position:relative!important;width:100%!important;max-width:100%!important; }
+#certificates .canva-carousel.certs {
  display:flex!important;flex-wrap:nowrap!important;grid-template-columns:none!important;
  gap:18px!important;width:100%!important;max-width:100%!important;
  overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;
  align-items:stretch!important;padding:2px 2px 12px!important;
  scrollbar-width:thin!important;box-sizing:border-box!important;
 }
-#work .canva-carousel.certs > .canva-slide-wide {
+#certificates .canva-carousel.certs > .canva-slide-wide {
  flex:0 0 calc((100% - 18px)/2)!important;
  width:calc((100% - 18px)/2)!important;max-width:calc((100% - 18px)/2)!important;
  min-width:0!important;height:390px!important;min-height:390px!important;max-height:390px!important;
@@ -2116,27 +2116,27 @@
  display:flex!important;flex-direction:column!important;align-items:center!important;
  justify-content:space-between!important;overflow:hidden!important;
 }
-#work .canva-carousel.certs > .canva-slide-wide img {
+#certificates .canva-carousel.certs > .canva-slide-wide img {
  display:block!important;width:100%!important;height:310px!important;max-height:310px!important;
  min-height:0!important;flex:1 1 auto!important;object-fit:contain!important;
  object-position:center!important;background:#fff!important;margin:0!important;
 }
-#work .canva-carousel.certs > .canva-slide-wide .canva-slide-label {
+#certificates .canva-carousel.certs > .canva-slide-wide .canva-slide-label {
  display:flex!important;align-items:center!important;justify-content:center!important;
  width:100%!important;height:48px!important;min-height:48px!important;max-height:48px!important;
  padding:8px!important;margin:0!important;text-align:center!important;
  font-size:.92rem!important;line-height:1.25!important;box-sizing:border-box!important;
 }
-#work .certs-band .carousel-scroller > .carousel-nav { display:flex!important;z-index:5!important; }
-#work .certs-band .carousel-scroller > .carousel-nav[hidden] { display:none!important; }
-#work .certs-band .carousel-scroller > .carousel-nav:disabled { opacity:.35!important;pointer-events:none!important; }
+#certificates .certs-band .carousel-scroller > .carousel-nav { display:flex!important;z-index:5!important; }
+#certificates .certs-band .carousel-scroller > .carousel-nav[hidden] { display:none!important; }
+#certificates .certs-band .carousel-scroller > .carousel-nav:disabled { opacity:.35!important;pointer-events:none!important; }
 @media(max-width:700px){
- #work .certs-band { padding-top:36px!important;padding-bottom:36px!important; }
- #work .canva-carousel.certs > .canva-slide-wide {
+ #certificates .certs-band { padding-top:36px!important;padding-bottom:36px!important; }
+ #certificates .canva-carousel.certs > .canva-slide-wide {
  flex-basis:90%!important;width:90%!important;max-width:90%!important;
  height:340px!important;min-height:340px!important;max-height:340px!important;
  }
- #work .canva-carousel.certs > .canva-slide-wide img { height:265px!important;max-height:265px!important; }
+ #certificates .canva-carousel.certs > .canva-slide-wide img { height:265px!important;max-height:265px!important; }
 }
 
 
@@ -2282,14 +2282,14 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #work .canva-carousel.onboarding-carousel .btn-notion {flex:0 0 auto!important;white-space:nowrap!important;font-size:.73rem!important;padding:9px 11px!important;}
 
 /* Certificate album: two generous images per spread, one on phone */
-#work .certs-band {padding-block:42px!important;}
-#work .canva-carousel.certs {display:flex!important;flex-wrap:nowrap!important;gap:20px!important;align-items:stretch!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;padding:4px 2px 12px!important;}
-#work .canva-carousel.certs > .canva-slide-wide {flex:0 0 calc((100% - 20px)/2)!important;width:calc((100% - 20px)/2)!important;max-width:calc((100% - 20px)/2)!important;min-width:0!important;height:400px!important;min-height:400px!important;max-height:400px!important;padding:16px!important;margin:0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:space-between!important;border-radius:var(--site-radius)!important;}
-#work .canva-carousel.certs img {width:100%!important;height:325px!important;max-height:325px!important;object-fit:contain!important;flex:1 1 auto!important;background:#fff!important;}
-#work .canva-carousel.certs .canva-slide-label {height:48px!important;min-height:48px!important;max-height:48px!important;display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;font-size:.9rem!important;line-height:1.3!important;}
-#work .certs-band .swipe-hint {display:block!important;}
-#work .carousel-scroller:has(.certs) > .carousel-nav {display:flex!important;}
-#work .carousel-scroller:has(.certs) > .carousel-nav[hidden] {display:none!important;}
+#certificates .certs-band {padding-block:42px!important;}
+#certificates .canva-carousel.certs {display:flex!important;flex-wrap:nowrap!important;gap:20px!important;align-items:stretch!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;padding:4px 2px 12px!important;}
+#certificates .canva-carousel.certs > .canva-slide-wide {flex:0 0 calc((100% - 20px)/2)!important;width:calc((100% - 20px)/2)!important;max-width:calc((100% - 20px)/2)!important;min-width:0!important;height:400px!important;min-height:400px!important;max-height:400px!important;padding:16px!important;margin:0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:space-between!important;border-radius:var(--site-radius)!important;}
+#certificates .canva-carousel.certs img {width:100%!important;height:325px!important;max-height:325px!important;object-fit:contain!important;flex:1 1 auto!important;background:#fff!important;}
+#certificates .canva-carousel.certs .canva-slide-label {height:48px!important;min-height:48px!important;max-height:48px!important;display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;font-size:.9rem!important;line-height:1.3!important;}
+#certificates .certs-band .swipe-hint {display:block!important;}
+#certificates .carousel-scroller:has(.certs) > .carousel-nav {display:flex!important;}
+#certificates .carousel-scroller:has(.certs) > .carousel-nav[hidden] {display:none!important;}
 
 /* Contact: compact, clear call to action */
 #contact .section-inner {max-width:700px!important;text-align:center;}
@@ -2315,8 +2315,8 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #work .canva-carousel.onboarding-carousel > a.work-card {flex:0 0 88%!important;width:88%!important;max-width:88%!important;height:350px!important;min-height:350px!important;max-height:350px!important;grid-template-rows:210px 140px!important;}
  #work .canva-carousel.onboarding-carousel .work-card-preview {height:210px!important;min-height:210px!important;max-height:210px!important;}
  #work .canva-carousel.onboarding-carousel .work-card-body {height:140px!important;min-height:140px!important;max-height:140px!important;}
- #work .canva-carousel.certs > .canva-slide-wide {flex-basis:90%!important;width:90%!important;max-width:90%!important;height:345px!important;min-height:345px!important;max-height:345px!important;}
- #work .canva-carousel.certs img {height:265px!important;max-height:265px!important;}
+ #certificates .canva-carousel.certs > .canva-slide-wide {flex-basis:90%!important;width:90%!important;max-width:90%!important;height:345px!important;min-height:345px!important;max-height:345px!important;}
+ #certificates .canva-carousel.certs img {height:265px!important;max-height:265px!important;}
  #work .pm-pair .pm-box {min-height:0!important;height:auto!important;max-height:none!important;}
  #work .pm-pair .pm-box-clickup img {height:240px!important;max-height:240px!important;}
  #rates .rates-two-column > .rate-card,#rates .rates-two-column .compare-col {padding:22px!important;}
@@ -2324,16 +2324,16 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 
 
 /* Instagram-inspired portfolio: all items visible in tidy, consistent grids */
-#work .certs-band {padding-block:42px!important;}
-#work .certs-band .swipe-hint {display:none!important;}
-#work .certs-band .carousel-scroller {width:100%!important;overflow:visible!important;}
-#work .certs-band .carousel-nav {display:none!important;}
-#work .canva-carousel.certs {
+#certificates .certs-band {padding-block:42px!important;}
+#certificates .certs-band .swipe-hint {display:none!important;}
+#certificates .certs-band .carousel-scroller {width:100%!important;overflow:visible!important;}
+#certificates .certs-band .carousel-nav {display:none!important;}
+#certificates .canva-carousel.certs {
  display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
  gap:16px!important;overflow:visible!important;width:100%!important;
  padding:0!important;align-items:stretch!important;
 }
-#work .canva-carousel.certs > .canva-slide-wide {
+#certificates .canva-carousel.certs > .canva-slide-wide {
  display:flex!important;flex-direction:column!important;justify-content:space-between!important;
  flex:none!important;width:100%!important;max-width:none!important;min-width:0!important;
  height:245px!important;min-height:245px!important;max-height:245px!important;
@@ -2341,12 +2341,12 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  border:1px solid #d9e4dc!important;border-radius:15px!important;
  box-shadow:0 6px 16px rgba(12,39,23,.08)!important;
 }
-#work .canva-carousel.certs > .canva-slide-wide img {
+#certificates .canva-carousel.certs > .canva-slide-wide img {
  width:100%!important;height:188px!important;max-height:188px!important;min-height:0!important;
  object-fit:contain!important;flex:1 1 auto!important;margin:0!important;
  background:#fff!important;border-radius:8px!important;
 }
-#work .canva-carousel.certs .canva-slide-label {
+#certificates .canva-carousel.certs .canva-slide-label {
  width:100%!important;min-height:43px!important;height:43px!important;max-height:43px!important;
  display:flex!important;align-items:center!important;justify-content:center!important;
  padding:5px!important;margin:0!important;text-align:center!important;
@@ -2402,14 +2402,14 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #work .presentation-pair,#work .pm-pair {gap:20px!important;}
 #work .presentation-pair > *,#work .pm-pair > * {min-width:0!important;}
 @media(max-width:900px){
- #work .canva-carousel.certs {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ #certificates .canva-carousel.certs {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
  #work .canva-carousel.op-work {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
 }
 @media(max-width:600px){
- #work .canva-carousel.certs {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}
- #work .canva-carousel.certs > .canva-slide-wide {height:205px!important;min-height:205px!important;max-height:205px!important;padding:7px!important;}
- #work .canva-carousel.certs > .canva-slide-wide img {height:148px!important;max-height:148px!important;}
- #work .canva-carousel.certs .canva-slide-label {font-size:.66rem!important;min-height:43px!important;height:43px!important;max-height:43px!important;}
+ #certificates .canva-carousel.certs {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}
+ #certificates .canva-carousel.certs > .canva-slide-wide {height:205px!important;min-height:205px!important;max-height:205px!important;padding:7px!important;}
+ #certificates .canva-carousel.certs > .canva-slide-wide img {height:148px!important;max-height:148px!important;}
+ #certificates .canva-carousel.certs .canva-slide-label {font-size:.66rem!important;min-height:43px!important;height:43px!important;max-height:43px!important;}
  #work .canva-carousel.op-work {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}
  #work .canva-carousel.op-work > * {height:230px!important;min-height:230px!important;max-height:230px!important;padding:8px!important;}
  #work .canva-carousel.op-work > .canva-slide-wide img {height:170px!important;max-height:170px!important;}
@@ -2508,34 +2508,34 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 
 
 /* Certificate gallery matched to the requested four-across reference */
-#work .certs-band.full-bleed-dark {background:#f8faf8!important;color:#142a1c!important;border-radius:20px!important;padding:30px 28px!important;margin-top:34px!important;}
-#work .certs-band .section-label {color:#173b2a!important;background:#e2eee6!important;}
-#work .certs-band > p:not(.section-label) {color:#4a6553!important;}
-#work .certs-band .carousel-scroller {background:#fff!important;border:1px solid #d9e4dc!important;border-radius:18px!important;padding:20px!important;box-shadow:none!important;}
-#work .canva-carousel.certs {gap:18px!important;}
-#work .canva-carousel.certs > .canva-slide-wide {
+#certificates .certs-band.full-bleed-dark {background:#f8faf8!important;color:#142a1c!important;border-radius:20px!important;padding:30px 28px!important;margin-top:34px!important;}
+#certificates .certs-band .section-label {color:#173b2a!important;background:#e2eee6!important;}
+#certificates .certs-band > p:not(.section-label) {color:#4a6553!important;}
+#certificates .certs-band .carousel-scroller {background:#fff!important;border:1px solid #d9e4dc!important;border-radius:18px!important;padding:20px!important;box-shadow:none!important;}
+#certificates .canva-carousel.certs {gap:18px!important;}
+#certificates .canva-carousel.certs > .canva-slide-wide {
  height:290px!important;min-height:290px!important;max-height:290px!important;
  background:transparent!important;border:0!important;box-shadow:none!important;
  padding:0!important;gap:8px!important;border-radius:0!important;
 }
-#work .canva-carousel.certs > .canva-slide-wide img {
+#certificates .canva-carousel.certs > .canva-slide-wide img {
  height:246px!important;max-height:246px!important;min-height:246px!important;
  width:100%!important;object-fit:contain!important;flex:0 0 246px!important;
  background:#f2f4f2!important;border-radius:12px!important;padding:9px!important;
 }
-#work .canva-carousel.certs .canva-slide-label {
+#certificates .canva-carousel.certs .canva-slide-label {
  height:36px!important;min-height:36px!important;max-height:36px!important;
  color:#1c3426!important;font-size:.78rem!important;font-weight:600!important;
 }
 @media(max-width:800px){
- #work .certs-band.full-bleed-dark {padding:22px 15px!important;}
- #work .certs-band .carousel-scroller {padding:12px!important;}
- #work .canva-carousel.certs {gap:12px!important;}
+ #certificates .certs-band.full-bleed-dark {padding:22px 15px!important;}
+ #certificates .certs-band .carousel-scroller {padding:12px!important;}
+ #certificates .canva-carousel.certs {gap:12px!important;}
 }
 @media(max-width:600px){
- #work .canva-carousel.certs > .canva-slide-wide {height:230px!important;min-height:230px!important;max-height:230px!important;}
- #work .canva-carousel.certs > .canva-slide-wide img {height:184px!important;min-height:184px!important;max-height:184px!important;flex-basis:184px!important;padding:5px!important;}
- #work .canva-carousel.certs .canva-slide-label {font-size:.66rem!important;}
+ #certificates .canva-carousel.certs > .canva-slide-wide {height:230px!important;min-height:230px!important;max-height:230px!important;}
+ #certificates .canva-carousel.certs > .canva-slide-wide img {height:184px!important;min-height:184px!important;max-height:184px!important;flex-basis:184px!important;padding:5px!important;}
+ #certificates .canva-carousel.certs .canva-slide-label {font-size:.66rem!important;}
 }
 
 
@@ -2970,6 +2970,17 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #work .featured-notion-lines span {height:7px;}
 }
 
+
+/* Certificates now sit directly after the hero, using the same album grid */
+#certificates {padding:30px 0 40px!important;background:#faf8f3!important;}
+#certificates .section-inner {max-width:1200px;margin:0 auto;padding:0 24px;}
+#certificates .certs-band {margin:0!important;}
+#certificates .certs-band .carousel-scroller {overflow:visible!important;}
+#certificates .certs-band .carousel-nav,#certificates .certs-band .swipe-hint {display:none!important;}
+#certificates .canva-carousel.certs {display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:18px!important;overflow:visible!important;}
+#certificates .canva-carousel.certs > .canva-slide-wide {min-width:0!important;max-width:none!important;width:100%!important;}
+@media(max-width:850px){#certificates .canva-carousel.certs{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;}}
+@media(max-width:600px){#certificates {padding:18px 0 26px!important;}#certificates .section-inner{padding:0 12px;}}
 </style>
 </head>
 <body>
@@ -3023,6 +3034,39 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <div class="hero-photo">
         <div class="photo-frame">
           <img src="Julia%20Nadal%20Photo.JPEG" alt="Julia N." />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES: immediately below hero -->
+  <section id="certificates" aria-label="Professional certifications">
+    <div class="section-inner">
+      <div class="canva-carousel-wrap certs-band full-bleed-dark">
+        <p class="section-label" style="margin-bottom:0.4rem;">Certificates</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">All certificates at a glance.</p>
+        <div class="swipe-hint">Swipe for more <span aria-hidden="true">&rarr;</span></div>
+        <div class="carousel-scroller">
+        <button type="button" class="carousel-nav prev" aria-label="Previous certificates" hidden>&#8592;</button>
+        <button type="button" class="carousel-nav next" aria-label="Next certificates">&#8594;</button>
+        <div class="canva-carousel certs">
+          <div class="canva-slide-wide">
+            <img src="ClickUp%20Novice%20Certificate.jpg" alt="ClickUp: Novice Certified" />
+            <div class="canva-slide-label">ClickUp: Novice Certified</div>
+          </div>
+          <div class="canva-slide-wide">
+            <img src="ClickUp%20Brain%20Certificate.jpg" alt="ClickUp: Brain Expert Certified" />
+            <div class="canva-slide-label">ClickUp: Brain Expert Certified</div>
+          </div>
+          <div class="canva-slide-wide">
+            <img src="SOP%20previous%20works.JPG" alt="Udemy: Executive Business Assistant Certificate" />
+            <div class="canva-slide-label">Udemy: Executive Business Assistant Certificate</div>
+          </div>
+          <div class="canva-slide-wide">
+            <img src="Hubspot%20Certificate.png" alt="HubSpot: Sales Hub Software Certified" />
+            <div class="canva-slide-label">HubSpot: Sales Hub Software Certified</div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -3395,35 +3439,6 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
     </a>
   </div>
 </div>
-
-      <!-- Portfolio / Certificates Carousel -->
-      <div class="canva-carousel-wrap certs-band full-bleed-dark">
-        <p class="section-label" style="margin-bottom:0.4rem;">Certificates</p>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;">All certificates at a glance.</p>
-        <div class="swipe-hint">Swipe for more <span aria-hidden="true">&rarr;</span></div>
-        <div class="carousel-scroller">
-        <button type="button" class="carousel-nav prev" aria-label="Previous certificates" hidden>&#8592;</button>
-        <button type="button" class="carousel-nav next" aria-label="Next certificates">&#8594;</button>
-        <div class="canva-carousel certs">
-          <div class="canva-slide-wide">
-            <img src="ClickUp%20Novice%20Certificate.jpg" alt="ClickUp: Novice Certified" />
-            <div class="canva-slide-label">ClickUp: Novice Certified</div>
-          </div>
-          <div class="canva-slide-wide">
-            <img src="ClickUp%20Brain%20Certificate.jpg" alt="ClickUp: Brain Expert Certified" />
-            <div class="canva-slide-label">ClickUp: Brain Expert Certified</div>
-          </div>
-          <div class="canva-slide-wide">
-            <img src="SOP%20previous%20works.JPG" alt="Udemy: Executive Business Assistant Certificate" />
-            <div class="canva-slide-label">Udemy: Executive Business Assistant Certificate</div>
-          </div>
-          <div class="canva-slide-wide">
-            <img src="Hubspot%20Certificate.png" alt="HubSpot: Sales Hub Software Certified" />
-            <div class="canva-slide-label">HubSpot: Sales Hub Software Certified</div>
-          </div>
-        </div>
-        </div>
-      </div>
 
       <!-- Copyright Notice -->
       <div style="margin-top:2.5rem;padding:1.4rem 1.8rem;background:#f0f5f1;border:1px solid rgba(26, 69, 48,0.2);border-radius:12px;box-shadow:0 3px 14px rgba(15, 30, 20,0.06);display:flex;align-items:flex-start;gap:0.9rem;">
