@@ -3438,6 +3438,25 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 @media(max-width:540px){#certificates .canva-carousel.certs{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}#certificates .canva-carousel.certs>.canva-slide-wide img,#certificates .coursera-private-cert .coursera-cert-preview{height:130px!important;max-height:130px!important;}}
 
 
+
+/* Testimonial avatars are static identity images; only matching review buttons open evidence */
+#about .client-testimonials-section .testimonial-avatar {pointer-events:none!important;cursor:default!important;}
+#about .client-testimonials-section .testimonial-author {position:relative!important;}
+#about .client-testimonials-section .testimonial-author img {user-select:none!important;}
+#about .client-testimonials-section .testimonial-review-button,
+#about .client-testimonials-section #view-review-btn {
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ align-self:flex-start!important;width:max-content!important;max-width:100%!important;
+ background:#1a4530!important;color:#fff!important;border:1px solid #1a4530!important;
+ border-radius:9px!important;padding:10px 15px!important;margin:8px 0 0!important;
+ font-family:inherit!important;font-size:.76rem!important;font-weight:650!important;
+ line-height:1.35!important;text-decoration:none!important;cursor:pointer!important;
+ box-shadow:none!important;white-space:normal!important;text-align:center!important;
+}
+#about .client-testimonials-section .testimonial-review-button:hover,
+#about .client-testimonials-section #view-review-btn:hover {background:#2c6146!important;color:#fff!important;}
+#about .client-testimonials-section .testimonial-card:nth-child(2) .testimonial-review-button {margin-top:12px!important;}
+#about .client-testimonials-section .testimonial-card.is-tall #view-review-btn {grid-area:action!important;justify-self:start!important;}
 </style>
 </head>
 <body>
@@ -3601,9 +3620,10 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
               <div>
                 <div class="testimonial-name">Danny K.</div>
                 <div class="testimonial-role">Founder & Ex-CEO, Pest-Ex Australia · CEO, Pest-Ex Philippines</div>
-                <a class="danny-original-review" href="Work%20testimonial%20-%20Danny%20Kelly.PNG" target="_blank" rel="noopener noreferrer">View actual review ↗</a>
+                
               </div>
             </div>
+            <a class="testimonial-review-button" href="Work%20testimonial%20-%20Danny%20Kelly.PNG" target="_blank" rel="noopener noreferrer">Click to view actual review →</a>
           </div>
 
 
@@ -3618,7 +3638,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
               </div>
             </div>
             <button type="button" class="testimonial-expand" aria-expanded="false">Read full review ↓</button>
-            <button type="button" id="view-review-btn" style="align-self:flex-start;background:var(--charcoal);color:#fff;border:none;padding:0.55rem 1.2rem;border-radius:8px;font-size:0.78rem;font-weight:500;font-family:inherit;cursor:pointer;">Click to view actual review &rarr;</button>
+            <button type="button" id="view-review-btn" class="testimonial-review-button">Click to view actual review →</button>
           </div>
 
         </div>
