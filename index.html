@@ -4117,6 +4117,19 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  font-family:Inter,Arial,sans-serif!important;font-size:12px!important;
  line-height:1.4!important;font-weight:400!important;
 }
+
+/* Requested testimonial review text: 13px on all three cards. */
+#about .client-testimonials-section .testimonial-card .testimonial-quote,
+#about .client-testimonials-section .testimonial-card:first-child .testimonial-quote,
+#about .client-testimonials-section .testimonial-card:nth-child(2) .testimonial-quote,
+#about .client-testimonials-section .testimonial-card:nth-child(3) .testimonial-quote {
+ font-family:Inter,Arial,sans-serif!important;font-size:13px!important;
+ line-height:1.55!important;letter-spacing:normal!important;
+ max-height:calc(13px * 1.55 * 3)!important;
+}
+#about .client-testimonials-section .testimonial-card.expanded .testimonial-quote {
+ max-height:none!important;
+}
 </style>
 </head>
 <body>
