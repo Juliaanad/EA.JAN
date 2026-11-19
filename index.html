@@ -4354,6 +4354,41 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #about .client-testimonials-section {padding:24px 0 30px!important;}
  #services {padding-top:24px!important;padding-bottom:30px!important;}
 }
+
+/* One continuous surface for hero and certificates — no visible seam or divider. */
+.hero-certificates-continuum {
+ background:
+ radial-gradient(ellipse 54% 38% at 12% 12%,rgba(49,103,72,.19),transparent 75%),
+ radial-gradient(ellipse 48% 42% at 87% 38%,rgba(86,145,111,.20),transparent 75%),
+ radial-gradient(ellipse 60% 35% at 15% 86%,rgba(71,132,92,.13),transparent 75%),
+ var(--cream)!important;
+}
+.hero-certificates-continuum #hero,
+.hero-certificates-continuum #certificates,
+.hero-certificates-continuum #certificates .section-inner,
+.hero-certificates-continuum #certificates .certs-band.full-bleed-dark {
+ background:transparent!important;
+ background-image:none!important;
+ border:0!important;box-shadow:none!important;
+}
+.hero-certificates-continuum #hero {
+ min-height:0!important;
+ margin:0!important;
+ padding-bottom:30px!important;
+}
+.hero-certificates-continuum #certificates {
+ margin:0!important;padding:0 0 42px!important;
+ border-top:0!important;
+}
+.hero-certificates-continuum #hero::before,
+.hero-certificates-continuum #hero::after,
+.hero-certificates-continuum #certificates::before,
+.hero-certificates-continuum #certificates::after {display:none!important;}
+.hero-certificates-continuum #certificates .certs-band.full-bleed-dark {margin:0!important;padding:0!important;}
+@media(max-width:600px){
+ .hero-certificates-continuum #hero{padding-bottom:20px!important;}
+ .hero-certificates-continuum #certificates{padding-bottom:28px!important;}
+}
 </style>
 </head>
 <body>
