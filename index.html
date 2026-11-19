@@ -1476,6 +1476,41 @@
       #work .canva-carousel.certs,
       #work .canva-carousel.onboarding-carousel { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
+
+/* Unified page geometry and balanced work/rates layout */
+#rates .section-inner, #work .section-inner { width:min(1100px,calc(100% - 3rem)); margin-inline:auto; }
+#rates .rates-two-column { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;align-items:stretch;margin-top:2rem; }
+#rates .rates-two-column .compare { width:100%;max-width:none;margin:0;display:block; }
+#rates .rates-two-column .compare-col { height:100%;padding:clamp(1.25rem,2vw,2rem); }
+#rates .rates-two-column .rate-card { margin:0;padding:clamp(1.25rem,2vw,2rem);height:100%;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:1.4rem;min-width:0; }
+#rates .rates-two-column .rate-figure { font-size:clamp(2rem,3vw,2.7rem); }
+#rates .rates-two-column .rate-expect { padding:1.1rem 0 0;border-left:0;border-top:1px solid rgba(69,123,96,.3); }
+#rates .rates-two-column .rate-expect ul { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem 1rem; }
+#rates .rates-two-column .rate-expect li { font-size:.76rem;line-height:1.45; }
+#work .pm-pair { grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;align-items:start; }
+#work .pm-pair > .canva-carousel-wrap { width:100%;min-width:0;margin:0; }
+#work .pm-pair .pm-box { flex:0 0 auto;min-height:0; }
+#work .pm-pair .pm-box-clickup { display:block;width:100%; }
+#work .pm-pair .pm-box-clickup .canva-slide-wide { max-width:100%;width:100%; }
+#work .pm-pair .pm-box-clickup .canva-slide-wide img { height:235px;max-height:235px;object-fit:contain;background:#f4f5f2; }
+#work .canva-carousel-wrap > .section-label { margin-left:0; }
+#work .canva-carousel.certs { display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:1rem!important;overflow:visible!important;scroll-snap-type:none!important;align-items:stretch!important; }
+#work .canva-carousel.certs > .canva-slide-wide { width:100%!important;max-width:none!important;min-width:0!important;flex:none!important;height:auto!important;margin:0!important;display:flex;flex-direction:column; }
+#work .canva-carousel.certs img { width:100%!important;height:155px!important;max-height:155px!important;aspect-ratio:auto!important;object-fit:contain!important;background:#f4f5f2;flex:0 0 auto!important; }
+#work .canva-carousel.certs .canva-slide-label { margin-top:auto;min-height:3.1rem;font-size:.72rem;line-height:1.35;display:flex;align-items:center; }
+#work .carousel-scroller:has(.certs) .carousel-nav { display:none!important; }
+@media(max-width:900px) {
+ #rates .rates-two-column { grid-template-columns:1fr; }
+ #rates .rates-two-column .rate-expect ul { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ #work .pm-pair { grid-template-columns:1fr; }
+ #work .canva-carousel.certs { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+}
+@media(max-width:540px) {
+ #rates .section-inner,#work .section-inner { width:calc(100% - 2rem); }
+ #rates .rates-two-column .rate-expect ul { grid-template-columns:1fr; }
+ #work .canva-carousel.certs img { height:130px!important;max-height:130px!important; }
+ #work .canva-carousel.certs .canva-slide-label { font-size:.66rem; }
+}
 </style>
 </head>
 <body>
@@ -1635,6 +1670,7 @@
       <h2 class="section-title">Work with me, <em>directly.</em></h2>
       <p class="section-subtitle">One point of contact. Full commitment to your business.</p>
 
+      <div class="rates-two-column">
       <div class="compare">
         <div class="compare-col is-preferred">
           <h3>Working with me directly</h3>
@@ -1668,7 +1704,8 @@
             <li>Confidentiality on everything I handle.</li>
           </ul>
         </div>
-      </div>
+      </div>      </div>
+
     </div>
   </section>
 
