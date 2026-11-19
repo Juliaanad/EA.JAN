@@ -4187,6 +4187,24 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
   margin:0 0 10px!important;
  }
 }
+
+/* Tools & Skills: uniform card heights, balanced rows, and compact consistent tags. */
+#skills .skills-grid {
+ display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;
+ gap:14px!important;align-items:stretch!important;
+}
+#skills .skill-group {
+ box-sizing:border-box!important;min-width:0!important;
+ height:100%!important;min-height:0!important;
+ padding:18px 15px!important;display:flex!important;flex-direction:column!important;
+}
+#skills .skill-group h3 {font-size:12px!important;line-height:1.4!important;min-height:34px!important;margin-bottom:10px!important;}
+#skills .skill-tags {display:flex!important;flex-wrap:wrap!important;align-content:flex-start!important;align-items:flex-start!important;gap:7px!important;}
+#skills .skill-tag {font-family:Inter,Arial,sans-serif!important;font-size:12px!important;line-height:1.3!important;padding:6px 9px!important;white-space:nowrap!important;}
+#skills .skill-tag img {width:14px!important;height:14px!important;object-fit:contain!important;}
+@media(max-width:1150px){#skills .skills-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}}
+@media(max-width:750px){#skills .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}}
+@media(max-width:420px){#skills .skills-grid{grid-template-columns:1fr!important;}}
 </style>
 </head>
 <body>
@@ -4395,7 +4413,11 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
         <div class="skill-group">
           <h3>Other Tools</h3>
           <div class="skill-tags">
-            <span class="skill-tag"><img src="https://cdn.simpleicons.org/microsoft" alt="Microsoft Office" onerror="this.style.display='none'" />Microsoft Office</span>
+            <span class="skill-tag"><img src="https://cdn.simpleicons.org/microsoftexcel" alt="Excel" onerror="this.style.display='none'" />Excel</span>
+            <span class="skill-tag"><img src="https://cdn.simpleicons.org/microsoftword" alt="Word" onerror="this.style.display='none'" />Word</span>
+            <span class="skill-tag"><img src="https://cdn.simpleicons.org/microsoftpowerpoint" alt="PowerPoint" onerror="this.style.display='none'" />PowerPoint</span>
+            <span class="skill-tag"><img src="https://cdn.simpleicons.org/microsoftoutlook" alt="Outlook" onerror="this.style.display='none'" />Outlook</span>
+            <span class="skill-tag"><img src="https://cdn.simpleicons.org/microsoftonenote" alt="OneNote" onerror="this.style.display='none'" />OneNote</span>
             <span class="skill-tag"><img src="https://cdn.simpleicons.org/canva" alt="Canva" onerror="this.style.display='none'" />Canva</span>
             <span class="skill-tag"><img src="https://cdn.simpleicons.org/dropbox" alt="Dropbox" onerror="this.style.display='none'" />Dropbox</span>
             <span class="skill-tag"><img src="https://cdn.simpleicons.org/calendly" alt="Calendly" onerror="this.style.display='none'" />Calendly</span>
