@@ -3498,11 +3498,6 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #about .client-testimonials-section .testimonial-card:first-child .testimonial-quote{display:block!important;-webkit-line-clamp:unset!important;line-clamp:unset!important;overflow:visible!important;}
 #about .client-testimonials-section .testimonial-card:first-child .testimonial-author{padding-top:12px!important;}
 
-/* Render the actual uploaded Coursera PDF in its certificate tile, masking private name details. */
-#certificates .coursera-private-cert .coursera-actual-pdf{position:relative;width:100%;height:150px;overflow:hidden;border:1px solid #d5dfd8;border-radius:9px;background:#fff;pointer-events:none;isolation:isolate;}
-#certificates .coursera-private-cert .coursera-actual-pdf iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;pointer-events:none;}
-#certificates .coursera-private-cert .coursera-name-mask{position:absolute;z-index:2;left:9%;top:32%;width:50%;height:15%;display:flex;align-items:center;padding-left:3%;background:#fff;color:#333;font-family:Georgia,serif;font-size:clamp(9px,1.05vw,15px);letter-spacing:.02em;}
-@media(max-width:700px){#certificates .coursera-private-cert .coursera-actual-pdf{height:130px;}#certificates .coursera-private-cert .coursera-name-mask{font-size:10px;}}
 </style>
 </head>
 <body>
@@ -3586,7 +3581,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
             <div class="canva-slide-label">HubSpot: Sales Hub Software Certified</div>
           </div>
           <div class="canva-slide-wide coursera-private-cert">
-            <div class="coursera-actual-pdf" role="img" aria-label="Actual uploaded Meta Coursera certificate, with name details covered for privacy"><iframe src="Coursera%2031U8SXSQZE4U.pdf#toolbar=0&navpanes=0&scrollbar=0&view=Fit" title="Meta Coursera certificate PDF preview" tabindex="-1" loading="lazy"></iframe><span class="coursera-name-mask" aria-hidden="true">Julia Nadal</span></div>
+            <img src="meta-certificate-private.jpg" alt="Actual Meta and Coursera Introduction to Social Media Marketing certificate, with private names obscured" loading="lazy" />
             <div class="canva-slide-label">Meta / Coursera: Introduction to Social Media Marketing</div>
           </div>
         </div>
