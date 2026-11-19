@@ -4214,6 +4214,49 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #skills .microsoft-office-group .skill-tag img {width:17px!important;height:17px!important;display:block!important;object-fit:contain!important;}
 @media(max-width:750px){#skills .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}}
 @media(max-width:420px){#skills .skills-grid{grid-template-columns:1fr!important;}}
+
+/* Compact, unboxed Tools & Skills directory with individual app logos. */
+#skills {padding-top:28px!important;padding-bottom:30px!important;min-height:0!important;}
+#skills .section-inner {padding-top:0!important;padding-bottom:0!important;}
+#skills .section-title {margin-bottom:5px!important;}
+#skills .section-subtitle {margin-bottom:12px!important;}
+#skills .skills-grid {
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:18px 28px!important;align-items:start!important;margin-top:14px!important;
+}
+#skills .skill-group,#skills .skill-group.microsoft-office-group {
+ background:transparent!important;border:0!important;border-radius:0!important;
+ box-shadow:none!important;outline:0!important;
+ padding:0!important;margin:0!important;min-height:0!important;height:auto!important;
+ display:block!important;
+}
+#skills .skill-group h3 {
+ min-height:0!important;margin:0 0 9px!important;
+ font-size:12px!important;line-height:1.3!important;letter-spacing:.09em!important;
+}
+#skills .skill-group .skill-tags,
+#skills .microsoft-office-group .skill-tags {
+ display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;
+ align-items:center!important;align-content:flex-start!important;gap:8px 14px!important;
+}
+#skills .skill-group .skill-tag,#skills .microsoft-office-group .skill-tag {
+ display:inline-flex!important;align-items:center!important;
+ background:transparent!important;border:0!important;outline:0!important;
+ border-radius:0!important;box-shadow:none!important;
+ padding:0!important;margin:0!important;gap:6px!important;
+ font-family:Inter,Arial,sans-serif!important;font-size:12px!important;
+ line-height:1.4!important;white-space:nowrap!important;
+}
+#skills .skill-group .skill-tag img,#skills .microsoft-office-group .skill-tag img {
+ display:inline-block!important;width:17px!important;height:17px!important;
+ max-width:17px!important;object-fit:contain!important;flex:0 0 17px!important;
+}
+@media(max-width:750px){
+ #skills .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important;}
+}
+@media(max-width:470px){
+ #skills .skills-grid{grid-template-columns:1fr!important;gap:16px!important;}
+}
 </style>
 </head>
 <body>
