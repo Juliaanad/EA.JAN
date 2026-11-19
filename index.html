@@ -3794,6 +3794,31 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #about .client-testimonials-section .testimonial-card,
  #about .client-testimonials-section .testimonial-card.is-tall {min-height:0!important;padding:20px!important;}
 }
+
+/* Testimonials: compact half-screen section on desktop, no tall empty cards. */
+@media(min-width:901px){
+ #about {padding-top:20px!important;padding-bottom:20px!important;}
+ #about .client-testimonials-section {margin:0!important;padding:0!important;}
+ #about .client-testimonials-section .testimonials-grid {gap:16px!important;}
+ #about .client-testimonials-section .testimonial-card,
+ #about .client-testimonials-section .testimonial-card.is-tall {
+  min-height:0!important;height:clamp(260px,43vh,360px)!important;
+  padding:16px 20px!important;overflow:hidden!important;
+ }
+ #about .client-testimonials-section .testimonial-card.expanded {height:auto!important;overflow:visible!important;}
+ #about .client-testimonials-section .testimonial-card .testimonial-stars {margin-bottom:8px!important;}
+ #about .client-testimonials-section .testimonial-card .testimonial-quote {
+  font-size:.9rem!important;line-height:1.4!important;
+  -webkit-line-clamp:3!important;line-clamp:3!important;margin-bottom:6px!important;
+ }
+ #about .client-testimonials-section .testimonial-card.expanded .testimonial-quote {
+  -webkit-line-clamp:unset!important;line-clamp:unset!important;
+ }
+ #about .client-testimonials-section .testimonial-card .testimonial-expand {margin-bottom:4px!important;}
+ #about .client-testimonials-section .testimonial-card .testimonial-author {padding-top:8px!important;}
+ #about .client-testimonials-section .testimonial-card .testimonial-review-button,
+ #about .client-testimonials-section .testimonial-card #view-review-btn {margin-top:7px!important;padding:8px 12px!important;}
+}
 </style>
 </head>
 <body>
