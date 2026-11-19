@@ -3416,6 +3416,27 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #about .client-testimonials-section .testimonial-quote{text-indent:0!important;padding-left:0!important;}
 #about .client-testimonials-section .danny-original-review{display:inline-block;margin-top:7px;color:#1e4933;font-size:.73rem;font-weight:700;text-decoration:underline;text-underline-offset:3px;}
 
+
+/* Five certificates in one continuous desktop row, without a second row */
+#certificates .canva-carousel.certs{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:12px!important;align-items:start!important;overflow:visible!important;}
+#certificates .canva-carousel.certs>.canva-slide-wide{width:100%!important;min-width:0!important;max-width:none!important;min-height:0!important;height:auto!important;}
+#certificates .canva-carousel.certs>.canva-slide-wide img,#certificates .coursera-private-cert .coursera-cert-preview{height:150px!important;max-height:150px!important;width:100%!important;box-sizing:border-box!important;object-fit:contain!important;}
+#certificates .canva-carousel.certs .canva-slide-label{font-size:.68rem!important;line-height:1.3!important;min-height:0!important;}
+#certificates .coursera-private-cert .coursera-certificate-visual{display:grid!important;grid-template-columns:minmax(0,1fr) 31%!important;gap:0!important;padding:8px!important;background:#fff!important;border:1px solid #d3dad5!important;border-radius:9px!important;align-items:stretch!important;overflow:hidden!important;text-align:left!important;color:#1c2924!important;}
+#certificates .coursera-certificate-visual .coursera-cert-left{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:flex-start!important;gap:5px!important;min-width:0!important;overflow:hidden!important;}
+#certificates .coursera-certificate-visual .coursera-cert-brand{font-size:1.05rem!important;line-height:1!important;white-space:nowrap!important;}
+#certificates .coursera-certificate-visual .meta-infinity{color:#0866ff!important;font-weight:700!important;font-size:1.5rem!important;vertical-align:middle!important;}
+#certificates .coursera-certificate-visual .coursera-cert-date{font-size:.46rem!important;color:#555!important;}
+#certificates .coursera-certificate-visual .coursera-cert-person{font-family:Georgia,serif!important;font-size:.93rem!important;line-height:1.05!important;font-weight:700!important;}
+#certificates .coursera-certificate-visual .coursera-cert-completed{font-size:.44rem!important;}
+#certificates .coursera-certificate-visual .coursera-cert-course{font-family:Georgia,serif!important;font-size:.64rem!important;font-weight:700!important;line-height:1.12!important;}
+#certificates .coursera-certificate-visual .coursera-cert-footnote{font-size:.38rem!important;line-height:1.2!important;}
+#certificates .coursera-certificate-visual .coursera-cert-ribbon{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:space-around!important;background:linear-gradient(135deg,#eef0f5,#cdd3de)!important;border:1px solid #bdc5cf!important;clip-path:polygon(0 0,100% 0,100% 88%,50% 100%,0 88%)!important;text-align:center!important;padding:8px 3px 16px!important;color:#222!important;}
+#certificates .coursera-certificate-visual .coursera-cert-ribbon span{font-size:.48rem!important;letter-spacing:.08em!important;line-height:1.5!important;}
+#certificates .coursera-certificate-visual .coursera-cert-ribbon strong{font-size:.73rem!important;letter-spacing:-.04em!important;}
+@media(max-width:850px){#certificates .canva-carousel.certs{grid-template-columns:repeat(3,minmax(0,1fr))!important;}}
+@media(max-width:540px){#certificates .canva-carousel.certs{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}#certificates .canva-carousel.certs>.canva-slide-wide img,#certificates .coursera-private-cert .coursera-cert-preview{height:130px!important;max-height:130px!important;}}
+
 </style>
 </head>
 <body>
@@ -3499,11 +3520,16 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
             <div class="canva-slide-label">HubSpot: Sales Hub Software Certified</div>
           </div>
           <div class="canva-slide-wide coursera-private-cert">
-            <div class="coursera-cert-preview" role="img" aria-label="Meta and Coursera Introduction to Social Media Marketing course certificate for Julia Nadal, November 13, 2026">
-              <div class="coursera-cert-brand">∞ <strong>Meta</strong></div>
-              <div class="coursera-cert-person">Julia Nadal</div>
-              <div class="coursera-cert-course">Introduction to Social Media Marketing</div>
-              <div class="coursera-cert-footer">Coursera · November 13, 2026</div>
+            <div class="coursera-cert-preview coursera-certificate-visual" role="img" aria-label="Privacy-safe reproduction of the Meta Coursera Introduction to Social Media Marketing certificate for Julia Nadal, November 13, 2026">
+              <div class="coursera-cert-left">
+                <div class="coursera-cert-brand"><span class="meta-infinity">∞</span> <strong>Meta</strong></div>
+                <div class="coursera-cert-date">Nov 13, 2026</div>
+                <div class="coursera-cert-person">Julia Nadal</div>
+                <div class="coursera-cert-completed">has successfully completed</div>
+                <div class="coursera-cert-course">Introduction to Social Media Marketing</div>
+                <div class="coursera-cert-footnote">an online course authorized by Meta and offered through Coursera</div>
+              </div>
+              <div class="coursera-cert-ribbon"><span>COURSE<br>CERTIFICATE</span><strong>coursera</strong></div>
             </div>
             <div class="canva-slide-label">Meta / Coursera: Introduction to Social Media Marketing</div>
           </div>
