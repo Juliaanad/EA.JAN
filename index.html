@@ -3305,6 +3305,21 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 @media(max-width:750px){#work .social-photo-album{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:9px!important;padding:11px!important;}}
 @media(max-width:480px){#work .social-photo-album{grid-template-columns:repeat(2,minmax(0,1fr))!important;}}
 
+
+/* Compact tools and skills: all five groups on one row, no oversized empty cards */
+#skills{padding-top:48px!important;padding-bottom:52px!important;}
+#skills .section-title{margin-bottom:10px!important;}
+#skills .section-subtitle{margin-bottom:22px!important;}
+#skills .skills-grid{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:12px!important;align-items:start!important;margin-top:20px!important;}
+#skills .skill-group{min-width:0!important;height:auto!important;min-height:0!important;padding:17px 14px!important;border-radius:15px!important;box-shadow:0 3px 12px rgba(15,30,20,.045)!important;}
+#skills .skill-group h3{margin:0 0 12px!important;font-size:.67rem!important;letter-spacing:.09em!important;line-height:1.35!important;}
+#skills .skill-tags{display:flex!important;flex-wrap:wrap!important;gap:6px!important;}
+#skills .skill-tag{padding:5px 8px!important;gap:5px!important;font-size:.7rem!important;line-height:1.3!important;white-space:normal!important;}
+#skills .skill-tag img{width:13px!important;height:13px!important;flex:none!important;}
+@media(max-width:1150px){#skills .skills-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}}
+@media(max-width:750px){#skills .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}#skills .skill-group{padding:14px 11px!important;}}
+@media(max-width:420px){#skills .skills-grid{grid-template-columns:1fr!important;}}
+
 </style>
 </head>
 <body>
