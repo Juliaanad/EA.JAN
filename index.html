@@ -2853,6 +2853,51 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #work .canva-carousel.op-work > a.op-pdf-card .op-pdf-caption {font-size:.7rem!important;}
 }
 
+
+/* Compact Working Together: remove excessive whitespace and oversized cards */
+#rates {padding-top:58px!important;padding-bottom:62px!important;}
+#rates .rates-two-column {
+ max-width:990px!important;margin:24px auto 0!important;
+ gap:18px!important;align-items:stretch!important;
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;
+}
+#rates .rates-two-column > .compare,
+#rates .rates-two-column > .rate-card {
+ min-height:0!important;height:auto!important;max-height:none!important;
+ border-radius:16px!important;
+}
+#rates .rates-two-column > .compare {align-items:stretch!important;}
+#rates .rates-two-column .compare-col.is-preferred {
+ padding:24px 27px!important;justify-content:flex-start!important;
+}
+#rates .rates-two-column .compare-col h3 {
+ font-size:1.23rem!important;margin:0 0 15px!important;
+ padding:0 0 13px!important;line-height:1.3!important;
+}
+#rates .rates-two-column .compare-col ul {
+ max-width:100%!important;margin:0!important;padding-left:20px!important;
+}
+#rates .rates-two-column .compare-col li {
+ margin-bottom:10px!important;line-height:1.42!important;font-size:.83rem!important;
+}
+#rates .rates-two-column .compare-col li:last-child {margin-bottom:0!important;}
+#rates .rates-two-column > .rate-card {
+ padding:23px 28px!important;gap:14px!important;justify-content:flex-start!important;
+}
+#rates .rate-main {padding:0 0 14px!important;margin:0!important;}
+#rates .rate-main .rate-label {margin-bottom:7px!important;}
+#rates .rate-figure {font-size:2.3rem!important;line-height:1.2!important;margin:0 0 13px!important;}
+#rates .rate-figure span {font-size:.78rem!important;}
+#rates .rate-main .btn-primary {padding:10px 22px!important;font-size:.83rem!important;}
+#rates .rate-expect {padding:13px 0 0!important;margin:0!important;}
+#rates .rate-expect > .rate-label {margin:0 0 9px!important;}
+#rates .rate-expect ul {max-width:100%!important;padding-left:20px!important;margin:0!important;}
+#rates .rate-expect li {margin-bottom:7px!important;font-size:.79rem!important;line-height:1.4!important;}
+@media(max-width:800px){
+ #rates .rates-two-column {grid-template-columns:1fr!important;max-width:560px!important;}
+ #rates .rates-two-column .compare-col.is-preferred,#rates .rates-two-column > .rate-card {padding:22px!important;}
+}
+
 </style>
 </head>
 <body>
@@ -3018,9 +3063,9 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
           <h3>Why work with me?</h3>
           <ul>
             <li><strong>One dedicated contact.</strong> Work directly with me.</li>
-            <li><strong>Continuity you can count on.</strong> Your systems, workflows, and preferences stay familiar.</li>
+            <li><strong>Continuity you can count on.</strong> I learn your systems and preferences.</li>
             <li><strong>Direct communication.</strong> No middleman.</li>
-            <li><strong>Flexible priorities.</strong> Adjust tasks as your business evolves.</li>
+            <li><strong>Flexible priorities.</strong> Support that adapts to your needs.</li>
             <li><strong>Simple agreement.</strong> No placement fee or lock-in.</li>
           </ul>
         </div>
@@ -3036,12 +3081,9 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
           <p class="rate-label">What to expect from me</p>
           <ul>
             <li>Monday–Friday · 40 hours/week.</li>
-            <li>One consistent point of contact.</li>
-            <li>Familiar with your systems.</li>
-            <li>Clear, direct communication.</li>
-            <li>Dedicated support.</li>
-            <li>Detail-focused work.</li>
-            <li>Confidentiality assured.</li>
+            <li>Direct, consistent communication.</li>
+            <li>Familiarity with your systems.</li>
+            <li>Detail-focused, confidential support.</li>
           </ul>
         </div>
       </div>      </div>
