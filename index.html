@@ -4610,6 +4610,33 @@ body>nav{
 @media(max-width:480px){
  :root{--site-page-margin:16px!important;}
 }
+
+/* Consistent two-inch side gutters for Tools & Skills and Portfolio. */
+#skills>.section-inner,
+#work>.section-inner,
+#services>.section-inner,
+#about>.section-inner,
+#contact>.section-inner{
+ width:calc(100% - 4in)!important;
+ max-width:none!important;
+ margin-inline:auto!important;
+ padding-inline:0!important;
+ box-sizing:border-box!important;
+}
+#skills .skills-grid,#skills .section-label,#skills .section-subtitle,
+#work .section-label,#work .section-title,#work .section-subtitle{
+ margin-left:0!important;margin-right:0!important;
+}
+@media(max-width:900px){
+ #skills>.section-inner,#work>.section-inner,#services>.section-inner,#about>.section-inner,#contact>.section-inner{
+ width:calc(100% - 48px)!important;
+ }
+}
+@media(max-width:480px){
+ #skills>.section-inner,#work>.section-inner,#services>.section-inner,#about>.section-inner,#contact>.section-inner{
+ width:calc(100% - 32px)!important;
+ }
+}
 </style>
 </head>
 <body>
