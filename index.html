@@ -4577,6 +4577,39 @@ body>nav .nav-links a{font-size:11px!important;line-height:1.3!important;}
   width:calc(100% - 40px)!important;
  }
 }
+
+/* Uniform two-inch horizontal page margins on desktop, across every section. */
+:root{--site-page-margin:2in!important;}
+body>nav,
+#hero .hero-inner,
+#certificates>.section-inner,
+#about>.section-inner,
+#services>.section-inner,
+#skills>.section-inner,
+#work>.section-inner,
+#contact>.section-inner{
+ box-sizing:border-box!important;
+ width:calc(100% - 2 * var(--site-page-margin))!important;
+ max-width:none!important;
+ margin-left:auto!important;margin-right:auto!important;
+ padding-left:0!important;padding-right:0!important;
+}
+body>nav{
+ width:100%!important;max-width:none!important;
+ padding-left:var(--site-page-margin)!important;
+ padding-right:var(--site-page-margin)!important;
+}
+.hero-certificates-continuum #hero .hero-inner,
+.hero-certificates-continuum #certificates .section-inner{
+ width:calc(100% - 2 * var(--site-page-margin))!important;
+ max-width:none!important;
+}
+@media(max-width:900px){
+ :root{--site-page-margin:24px!important;}
+}
+@media(max-width:480px){
+ :root{--site-page-margin:16px!important;}
+}
 </style>
 </head>
 <body>
