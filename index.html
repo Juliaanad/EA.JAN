@@ -3141,6 +3141,46 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  }
 }
 
+
+/* Screenshot fix: keep long review in a wide row, never a narrow third column */
+#about .client-testimonials-section {overflow:visible!important;}
+#about .client-testimonials-section .testimonials-grid {
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ grid-auto-flow:row!important;gap:0!important;overflow:visible!important;
+}
+#about .client-testimonials-section .testimonial-card:nth-child(1) {grid-column:1!important;grid-row:1!important;}
+#about .client-testimonials-section .testimonial-card:nth-child(2) {grid-column:2!important;grid-row:1!important;border-right:0!important;}
+#about .client-testimonials-section .testimonial-card.is-tall {
+ grid-column:1 / -1!important;grid-row:2!important;
+ border-top:1px solid #dce7df!important;border-right:0!important;
+ padding:24px 0 0!important;margin-top:20px!important;
+ min-width:0!important;max-width:100%!important;
+}
+#about .client-testimonials-section .testimonial-card.is-tall .testimonial-quote {
+ font-style:normal!important;color:#203b2a!important;
+ white-space:normal!important;overflow-wrap:break-word!important;
+ max-width:none!important;max-height:none!important;overflow:visible!important;
+}
+@media(min-width:901px){
+ #about .client-testimonials-section .testimonial-card.is-tall {
+  display:grid!important;grid-template-columns:minmax(0,1fr) 190px!important;
+  grid-template-areas:"stars author" "quote author" "action author"!important;
+  column-gap:28px!important;row-gap:10px!important;
+ }
+}
+@media(max-width:900px){
+ #about .client-testimonials-section .testimonials-grid {grid-template-columns:minmax(0,1fr)!important;}
+ #about .client-testimonials-section .testimonial-card:nth-child(1),
+ #about .client-testimonials-section .testimonial-card:nth-child(2),
+ #about .client-testimonials-section .testimonial-card.is-tall {
+  grid-column:1!important;grid-row:auto!important;
+  padding:20px 0!important;margin:0!important;
+  border-right:0!important;border-top:0!important;
+  border-bottom:1px solid #dce7df!important;
+ }
+ #about .client-testimonials-section .testimonial-card:last-child {border-bottom:0!important;}
+}
+
 </style>
 </head>
 <body>
