@@ -3643,7 +3643,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <div class="featured-work-gallery-wrap social-photo-album-wrap" id="social-media-projects">
         <p class="section-label">Social Media Projects</p>
         <p class="featured-work-intro">Social media designs and creative content — a photo album.</p>
-        <div class="social-album-filters" id="social-album-filters" aria-label="Social media project categories"></div>
+        
         <div class="featured-work-gallery social-photo-album" id="social-photo-album" aria-label="Social media design photo album">
           <p class="social-album-status">Loading social media photos…</p>
         </div>
@@ -3989,20 +3989,9 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       });
       if(!selected.length)throw new Error('No project images found');
       const fragment=document.createDocumentFragment();
-      const filters=document.getElementById('social-album-filters');
-      const categories=['All','Before & After','Mockups','Concept Styles','Other Designs'];
-      const classify=(original)=>{
-        const alt=(original.getAttribute('alt')||'').toLowerCase();
-        const context=(original.closest('article,figure,.ba-card,.an-one,.ig')?.textContent||'').slice(0,450).toLowerCase();
-        const cls=(original.closest('article,figure,.ba-card,.an-one,.ig')?.className||'').toString().toLowerCase();
-        if(/before:|after:|what i saw:|what i made:/.test(alt)||/\bba-card\b|\bba2-card\b|\ban-one\b/.test(cls)||/before\s*\/\s*after/.test(context))return 'Before & After';
-        if(/mockup|phone screen|device frame|instagram profile/.test(alt+' '+context+' '+cls))return 'Mockups';
-        if(/concept|feed|style|coffee|matcha|cookie|skincare/.test(alt+' '+context+' '+cls))return 'Concept Styles';
-        return 'Other Designs';
-      };
       for(const original of selected){
         const alt=original.getAttribute('alt')||'Social media design';
-        const card=document.createElement('button');card.type='button';card.className='featured-work-tile social-photo-card';card.dataset.category=classify(original);
+        const card=document.createElement('button');card.type='button';card.className='featured-work-tile social-photo-card';
         const preview=document.createElement('span');preview.className='featured-work-preview';
         const img=document.createElement('img');img.src=original.src;img.alt=alt;img.loading='lazy';preview.appendChild(img);
         const caption=document.createElement('span');caption.className='featured-work-label';caption.textContent=alt;
@@ -4018,15 +4007,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
         fragment.appendChild(card);
       }
       album.replaceChildren(fragment);
-      const cards=Array.from(album.querySelectorAll('.social-photo-card'));
-      const available=categories.filter(cat=>cat==='All'||cards.some(card=>card.dataset.category===cat));
-      filters.replaceChildren(...available.map(cat=>{
-        const btn=document.createElement('button');btn.type='button';btn.className='social-filter-btn';btn.textContent=cat;btn.setAttribute('aria-pressed',cat==='All'?'true':'false');
-        btn.addEventListener('click',()=>{
-          for(const card of cards)card.hidden=cat!=='All'&&card.dataset.category!==cat;
-          for(const other of filters.children)other.setAttribute('aria-pressed',other===btn?'true':'false');
-        });return btn;
-      }));
+
     }catch(e){album.querySelector('.social-album-status').textContent='Social media images are temporarily unavailable.';}
   }
   function setupSocialPhotoModal(){
