@@ -3200,6 +3200,21 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #certificates .section-inner {background:transparent!important;}
 @media(max-width:600px){#certificates{padding-top:24px!important;padding-bottom:30px!important;}}
 
+
+/* Swipeable real PDF pages inside small portfolio thumbnails */
+#work .pdf-swipe-tile {cursor:default!important;}
+#work .pdf-slide-viewer {position:relative!important;overflow:hidden!important;background:#e9edea!important;aspect-ratio:1/1!important;min-height:0!important;}
+#work .pdf-slide-track {display:flex;width:100%;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;touch-action:pan-x pan-y;scrollbar-width:none;}
+#work .pdf-slide-track::-webkit-scrollbar {display:none;}
+#work .pdf-slide-frame {flex:0 0 100%;width:100%;height:100%;display:flex;align-items:center;justify-content:center;scroll-snap-align:start;scroll-snap-stop:always;background:#e9edea;}
+#work .pdf-slide-frame canvas {display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 1px 8px #0002;}
+#work .pdf-loading {padding:16px;text-align:center;color:#345a43;font-size:.75rem;}
+#work .pdf-slide-prev,#work .pdf-slide-next {position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:29px;height:35px;border:0;border-radius:8px;background:#183e30df;color:#fff;font-size:24px;line-height:1;cursor:pointer;}
+#work .pdf-slide-prev {left:5px;} #work .pdf-slide-next {right:5px;}
+#work .pdf-slide-count {position:absolute;bottom:8px;left:50%;transform:translateX(-50%);z-index:2;background:#183e30e8;color:#fff;border-radius:15px;padding:4px 10px;font-size:.67rem;pointer-events:none;}
+#work .pdf-open-original {font-size:.7rem;color:#28553b;text-align:center;text-decoration:underline;text-underline-offset:2px;}
+#work .pdf-swipe-tile .featured-work-label {min-height:0!important;}
+
 </style>
 </head>
 <body>
@@ -3544,12 +3559,16 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
   <p class="section-label">Featured Projects</p>
   <p class="featured-work-intro">Presentations, operations, and Notion projects — all in one album.</p>
   <div class="featured-work-gallery">
-    <a class="featured-work-tile" href="Pest%20ex%20company%20profile.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Pest-Ex business presentation PDF">
-      <div class="featured-work-preview featured-work-preview-profile">
-        <div class="featured-profile-cover"><span class="featured-profile-kicker">COMPANY PROFILE</span><strong>Pest-Ex</strong><span>Business Presentation</span><i></i><small>Overview · Services · Company Story</small></div>
-      </div>
-      <div class="featured-work-label">Business Presentation <span aria-hidden="true">↗</span></div>
-    </a>
+    <div class="featured-work-tile pdf-swipe-tile" data-pdf="Pest%20ex%20company%20profile.pdf" aria-label="Business Presentation seven-page PDF slide viewer">
+  <div class="featured-work-preview pdf-slide-viewer">
+    <div class="pdf-slide-track" role="region" aria-label="Swipe through Pest-Ex PDF pages"><div class="pdf-slide-frame"><span class="pdf-loading">Loading original presentation…</span></div></div>
+    <button type="button" class="pdf-slide-prev" aria-label="Previous PDF page">‹</button>
+    <button type="button" class="pdf-slide-next" aria-label="Next PDF page">›</button>
+    <span class="pdf-slide-count" aria-live="polite">1 / 7</span>
+  </div>
+  <div class="featured-work-label">Business Presentation</div>
+  <a class="pdf-open-original" href="Pest%20ex%20company%20profile.pdf" target="_blank" rel="noopener noreferrer">Open full PDF ↗</a>
+</div>
     <a class="featured-work-tile" href="https://www.canva.com/design/DAHNNF_ji38/cmhIzjmhlXO8g2sfHdKW_Q/view" target="_blank" rel="noopener noreferrer" aria-label="Open EA onboarding presentation">
       <div class="featured-work-preview featured-work-preview-ea">
         <div class="featured-ea-cover"><span>EFFICIENCY</span><strong>Your First<br>2 Weeks</strong><small>Executive Assistant Onboarding</small></div>
@@ -3569,10 +3588,16 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <div class="featured-work-preview featured-work-preview-clickup"><img src="Click%20Up%20Project%20Management.JPG" alt="ClickUp bug tracking board screenshot" loading="lazy"></div>
       <div class="featured-work-label">ClickUp Project Management <span aria-hidden="true">↗</span></div>
     </a>
-    <a class="featured-work-tile" href="Pest%20ex%20company%20profile.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Pest-Ex Company Profile PDF">
-      <div class="featured-work-preview featured-work-preview-profile featured-work-preview-pdf-cover"><div class="featured-profile-cover"><span class="featured-profile-kicker">COMPANY PROFILE</span><strong>Pest-Ex</strong><span>Business Presentation</span><i></i><small>Overview · Services · Company Story</small></div><span class="featured-pdf-corner">PDF</span></div>
-      <div class="featured-work-label">Pest-Ex Company Profile <span aria-hidden="true">↗</span></div>
-    </a>
+    <div class="featured-work-tile pdf-swipe-tile" data-pdf="Pest%20ex%20company%20profile.pdf" aria-label="Pest-Ex Company Profile seven-page PDF slide viewer">
+  <div class="featured-work-preview pdf-slide-viewer">
+    <div class="pdf-slide-track" role="region" aria-label="Swipe through Pest-Ex PDF pages"><div class="pdf-slide-frame"><span class="pdf-loading">Loading original presentation…</span></div></div>
+    <button type="button" class="pdf-slide-prev" aria-label="Previous PDF page">‹</button>
+    <button type="button" class="pdf-slide-next" aria-label="Next PDF page">›</button>
+    <span class="pdf-slide-count" aria-live="polite">1 / 7</span>
+  </div>
+  <div class="featured-work-label">Pest-Ex Company Profile</div>
+  <a class="pdf-open-original" href="Pest%20ex%20company%20profile.pdf" target="_blank" rel="noopener noreferrer">Open full PDF ↗</a>
+</div>
     <a class="featured-work-tile" href="SOP%20previous%20works.JPG1.JPG" target="_blank" rel="noopener noreferrer" aria-label="View Eve's Catering Menu Design Suite">
       <div class="featured-work-preview featured-work-preview-image"><img src="SOP%20previous%20works.JPG1.JPG" alt="Eve's Catering menu designs" loading="lazy"></div>
       <div class="featured-work-label">Eve's Catering: Menu Design Suite <span aria-hidden="true">↗</span></div>
@@ -3903,5 +3928,52 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
     }, { passive: true });
   })();
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+<script>
+(function(){
+  async function initializePdfCards(){
+    const tiles=Array.from(document.querySelectorAll('#work .pdf-swipe-tile'));
+    if(!tiles.length)return;
+    if(!window.pdfjsLib){tiles.forEach(t=>{t.querySelector('.pdf-loading').textContent='Preview unavailable — use Open full PDF below';});return;}
+    pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    const docs=new Map();
+    for(const tile of tiles){
+      const url=tile.dataset.pdf,track=tile.querySelector('.pdf-slide-track'),count=tile.querySelector('.pdf-slide-count');
+      try{
+        if(!docs.has(url))docs.set(url,pdfjsLib.getDocument(url).promise);
+        const doc=await docs.get(url);
+        const fragment=document.createDocumentFragment();
+        for(let pageNo=1;pageNo<=doc.numPages;pageNo++){
+          const frame=document.createElement('div');frame.className='pdf-slide-frame';
+          const canvas=document.createElement('canvas');canvas.setAttribute('aria-label','Page '+pageNo+' of '+doc.numPages);
+          frame.appendChild(canvas);fragment.appendChild(frame);
+        }
+        track.replaceChildren(fragment);
+        const frames=Array.from(track.children);
+        async function renderPage(index){
+          const canvas=frames[index]?.querySelector('canvas');if(!canvas||canvas.dataset.ready)return;
+          canvas.dataset.ready='loading';
+          try{
+            const page=await doc.getPage(index+1),base=page.getViewport({scale:1});
+            const scale=Math.min(1.35,Math.max(.45,(track.clientWidth*1.8)/base.width));
+            const vp=page.getViewport({scale});canvas.width=Math.round(vp.width);canvas.height=Math.round(vp.height);
+            await page.render({canvasContext:canvas.getContext('2d'),viewport:vp}).promise;canvas.dataset.ready='yes';
+          }catch(e){canvas.dataset.ready='';}
+        }
+        let current=0;
+        function update(){const i=Math.max(0,Math.min(frames.length-1,Math.round(track.scrollLeft/Math.max(1,track.clientWidth))));current=i;count.textContent=(i+1)+' / '+frames.length;renderPage(i);if(i>0)renderPage(i-1);if(i+1<frames.length)renderPage(i+1);}
+        function go(delta){const i=Math.max(0,Math.min(frames.length-1,current+delta));track.scrollTo({left:i*track.clientWidth,behavior:'smooth'});current=i;count.textContent=(i+1)+' / '+frames.length;renderPage(i);}
+        tile.querySelector('.pdf-slide-prev').addEventListener('click',()=>go(-1));
+        tile.querySelector('.pdf-slide-next').addEventListener('click',()=>go(1));
+        let pending=false;track.addEventListener('scroll',()=>{if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;update();});},{passive:true});
+        renderPage(0);renderPage(1);
+      }catch(e){const loading=tile.querySelector('.pdf-loading');if(loading)loading.textContent='Preview unavailable — open the PDF below';}
+    }
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initializePdfCards);else initializePdfCards();
+})();
+</script>
+
 </body>
 </html>
