@@ -3320,6 +3320,17 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 @media(max-width:750px){#skills .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}#skills .skill-group{padding:14px 11px!important;}}
 @media(max-width:420px){#skills .skills-grid{grid-template-columns:1fr!important;}}
 
+
+/* Certificates: remove only the large outer white rounded container.
+   Keep the inner certificate album and the dark green section background. */
+#certificates .certs-band.full-bleed-dark {
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+  padding:0!important;
+}
+
 </style>
 </head>
 <body>
