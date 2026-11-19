@@ -3988,6 +3988,36 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #services .services-grid-four .service-card .service-icon {
  width:42px!important;height:42px!important;font-size:1.15rem!important;
 }
+
+/* Final testimonial alignment: identical author separators and three-line Maria role. */
+#about .client-testimonials-section .testimonial-card .testimonial-author,
+#about .client-testimonials-section .testimonial-card.is-tall .testimonial-author {
+ box-sizing:border-box!important;display:flex!important;align-items:center!important;
+ gap:12px!important;width:100%!important;min-width:0!important;
+ margin-top:auto!important;padding:12px 0 0!important;
+ border-top:1px solid #dbe7df!important;border-left:0!important;
+ border-right:0!important;border-bottom:0!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-author::before,
+#about .client-testimonials-section .testimonial-card .testimonial-author::after {
+ display:none!important;content:none!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-author > div:not(.testimonial-avatar) {
+ min-width:0!important;flex:1 1 auto!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-avatar {
+ flex:0 0 40px!important;width:40px!important;height:40px!important;
+ border-radius:50%!important;margin:0!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-name {
+ font-size:.88rem!important;line-height:1.35!important;font-weight:700!important;
+}
+#about .client-testimonials-section .testimonial-card .testimonial-role {
+ font-size:.74rem!important;line-height:1.4!important;font-weight:400!important;
+}
+#about .client-testimonials-section .testimonial-card:first-child .testimonial-role {
+ max-width:220px!important;
+}
 </style>
 </head>
 <body>
