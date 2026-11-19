@@ -4503,6 +4503,14 @@ body>nav{
 body>nav .nav-logo{color:#173c2b!important;}
 body>nav .nav-links a{color:#214733!important;}
 body>nav .nav-links a:hover{color:#55846a!important;}
+
+/* Keep the entire hero below the fixed navigation bar. */
+:root{--site-nav-height:90px;}
+.hero-certificates-continuum{padding-top:var(--site-nav-height)!important;}
+.hero-certificates-continuum #hero{scroll-margin-top:var(--site-nav-height)!important;}
+@media(max-width:760px){
+ :root{--site-nav-height:80px;}
+}
 </style>
 </head>
 <body>
