@@ -3331,6 +3331,20 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
   padding:0!important;
 }
 
+
+/* Slim certificates strip: no outer OR inner white box, dark green as the backdrop */
+#certificates{background:#315a46!important;padding:14px 0 18px!important;}
+#certificates .section-inner{max-width:1280px!important;padding:0 22px!important;background:transparent!important;}
+#certificates .certs-band.full-bleed-dark{padding:0!important;margin:0!important;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;}
+#certificates .certs-band .section-label{margin:0 0 4px!important;}
+#certificates .certs-band>p:not(.section-label){color:#e6f0e9!important;margin:0 0 12px!important;font-size:.78rem!important;}
+#certificates .certs-band .carousel-scroller{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;margin:0!important;}
+#certificates .canva-carousel.certs{gap:13px!important;background:transparent!important;}
+#certificates .canva-carousel.certs>.canva-slide-wide{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0!important;height:auto!important;min-height:0!important;max-height:none!important;gap:7px!important;}
+#certificates .canva-carousel.certs>.canva-slide-wide img{width:100%!important;height:170px!important;min-height:0!important;max-height:170px!important;flex-basis:auto!important;object-fit:contain!important;background:#f0f3f0!important;border-radius:10px!important;padding:8px!important;box-sizing:border-box!important;}
+#certificates .canva-carousel.certs .canva-slide-label{color:#fff!important;background:transparent!important;font-size:.76rem!important;line-height:1.35!important;text-align:center!important;white-space:normal!important;overflow:visible!important;height:auto!important;min-height:0!important;max-height:none!important;padding:2px 3px!important;}
+@media(max-width:700px){#certificates{padding:14px 0 18px!important;}#certificates .section-inner{padding:0 12px!important;}#certificates .canva-carousel.certs{gap:10px!important;}#certificates .canva-carousel.certs>.canva-slide-wide img{height:140px!important;max-height:140px!important;padding:5px!important;}#certificates .canva-carousel.certs .canva-slide-label{font-size:.67rem!important;}}
+
 </style>
 </head>
 <body>
