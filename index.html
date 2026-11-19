@@ -3457,6 +3457,34 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #about .client-testimonials-section #view-review-btn:hover {background:#2c6146!important;color:#fff!important;}
 #about .client-testimonials-section .testimonial-card:nth-child(2) .testimonial-review-button {margin-top:12px!important;}
 #about .client-testimonials-section .testimonial-card.is-tall #view-review-btn {grid-area:action!important;justify-self:start!important;}
+
+/* Three-line testimonial previews with explicit expandable full review */
+#about .client-testimonials-section .testimonial-quote,
+#about .client-testimonials-section .testimonial-card.is-tall .testimonial-quote {
+ display:-webkit-box!important;-webkit-box-orient:vertical!important;
+ -webkit-line-clamp:3!important;line-clamp:3!important;
+ overflow:hidden!important;max-height:none!important;height:auto!important;
+ text-overflow:ellipsis!important;white-space:normal!important;
+}
+#about .client-testimonials-section .testimonial-card.expanded .testimonial-quote,
+#about .client-testimonials-section .testimonial-card.is-tall.expanded .testimonial-quote {
+ display:block!important;-webkit-line-clamp:unset!important;line-clamp:unset!important;
+ overflow:visible!important;max-height:none!important;height:auto!important;
+}
+#about .client-testimonials-section .testimonial-expand {
+ display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;
+ background:transparent!important;border:0!important;color:#235b3d!important;
+ font-family:inherit!important;font-size:.78rem!important;font-weight:650!important;
+ text-decoration:underline!important;text-underline-offset:3px!important;
+ padding:7px 0!important;margin:3px 0 8px!important;cursor:pointer!important;
+ width:max-content!important;max-width:100%!important;
+}
+#about .client-testimonials-section .testimonial-expand:hover {color:#102e20!important;}
+@media(min-width:901px){
+ #about .client-testimonials-section .testimonial-card.is-tall .testimonial-expand {
+  grid-area:actions!important;justify-self:start!important;align-self:start!important;
+ }
+}
 </style>
 </head>
 <body>
@@ -3559,6 +3587,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
           <div class="testimonial-card">
             <div class="testimonial-stars">★★★★★</div>
             <p class="testimonial-quote">"From day one she <strong>owned our calendar, inbox, and vendor communication</strong> without missing a beat. She's proactive, discreet, and always three steps ahead."</p>
+            <button type="button" class="testimonial-expand" aria-expanded="false">Read full review ↓</button>
             <div class="testimonial-author">
               <img src="Melody%20Kelly.jpg" alt="Maria K." class="testimonial-avatar" />
               <div>
@@ -3571,6 +3600,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
           <div class="testimonial-card">
             <div class="testimonial-stars">★★★★★</div>
             <p class="testimonial-quote">"I've had the pleasure of working with her for the past two years, and she is truly one of the best Operations Managers. She is highly reliable, professional, hardworking, and a fast learner. You can trust her to handle any task, and even when faced with something new, she takes the initiative to learn, adapt, and get things done efficiently. She consistently goes above and beyond, demonstrates excellent organizational and problem-solving skills, and is someone you can always depend on. I highly recommend her to any company or client looking for an exceptional Operations Manager."</p>
+            <button type="button" class="testimonial-expand" aria-expanded="false">Read full review ↓</button>
             <div class="testimonial-author">
               <img src="Work%20testimonial%20-%20Danny%20Kelly.PNG" alt="Danny K." class="testimonial-avatar" />
               <div>
