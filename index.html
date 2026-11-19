@@ -3233,6 +3233,16 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
 #work .social-album-status {grid-column:1/-1;text-align:center;color:#355b40;padding:16px;}
 @media(max-width:560px){#work .social-photo-album .social-photo-card .featured-work-label{font-size:.69rem!important;}}
 
+
+/* Four concise services, equal-height compact cards, no repetitive skill badges */
+#services .services-grid-four{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important;max-width:1200px!important;margin:26px auto 0!important;align-items:stretch!important;}
+#services .services-grid-four .service-card{min-width:0!important;min-height:0!important;height:auto!important;padding:24px 20px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:12px!important;border-radius:18px!important;}
+#services .services-grid-four .service-icon{margin:0!important;width:42px!important;height:42px!important;display:flex!important;align-items:center!important;justify-content:center!important;font-size:1.25rem!important;}
+#services .services-grid-four h3{margin:0!important;font-size:1.16rem!important;line-height:1.25!important;}
+#services .services-grid-four p{margin:0!important;font-size:.87rem!important;line-height:1.65!important;color:#3c5848!important;}
+@media(max-width:950px){#services .services-grid-four{grid-template-columns:repeat(2,minmax(0,1fr))!important;}}
+@media(max-width:560px){#services .services-grid-four{gap:12px!important;}#services .services-grid-four .service-card{padding:17px 13px!important;gap:9px!important;}#services .services-grid-four h3{font-size:.96rem!important;}#services .services-grid-four p{font-size:.76rem!important;line-height:1.5!important;}}
+
 </style>
 </head>
 <body>
@@ -3425,72 +3435,13 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
   <section id="services" class="section-dark">
     <div class="section-inner">
       <p class="section-label">What I Offer</p>
-      <h2 class="section-title">Senior-level support for <em>busy executives.</em></h2>
-      <p class="section-subtitle">Practical, reliable support for busy executives.</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">📅</div>
-          <div class="service-title-row"><h3>Calendar & Schedule Management</h3><span class="skill-pill level-advance">Advance</span></div>
-          <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
-            <li>Schedule and confirm meetings</li>
-            <li>Resolve conflicts and protect focus time</li>
-            <li>Set reminders and manage recurring events</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📬</div>
-          <div class="service-title-row"><h3>Inbox & Email Management</h3><span class="skill-pill level-advance">Advance</span></div>
-          <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
-            <li>Filter, organize, and prioritize emails</li>
-            <li>Draft and respond on your behalf</li>
-            <li>Maintain inbox zero consistently</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">✈️</div>
-          <div class="service-title-row"><h3>Travel Coordination</h3><span class="skill-pill level-intermediate">Intermediate</span></div>
-          <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
-            <li>Book flights, hotels, and transfers</li>
-            <li>Build detailed travel itineraries</li>
-            <li>Handle changes, delays, and logistics</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">⚙️</div>
-          <div class="service-title-row"><h3>Operations & Admin Support</h3><span class="skill-pill level-mid">Intermediate to Advance</span></div>
-          <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
-            <li>Build and maintain SOPs</li>
-            <li>Data entry and file organization</li>
-            <li>Process documentation and reporting</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📊</div>
-          <div class="service-title-row"><h3>Project Coordination</h3><span class="skill-pill level-advance">Advance</span></div>
-          <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
-            <li>Track tasks and deadlines</li>
-            <li>Follow up on deliverables</li>
-            <li>Manage projects in Notion, Asana, ClickUp</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">💬</div>
-          <div class="service-title-row"><h3>Communication & Liaison</h3><span class="skill-pill level-advance">Advance</span></div>
-          <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
-            <li>Act as point of contact for your team</li>
-            <li>Coordinate with clients and vendors</li>
-            <li>Represent your voice professionally</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📱</div>
-          <div class="service-title-row"><h3>Social Media Management</h3><span class="skill-pill level-intermediate">Intermediate</span></div>
-          <ul style="font-size:0.85rem;color:var(--mid);line-height:1.8;padding-left:1.1rem;">
-            <li>Design branded graphics using Canva</li>
-            <li>Write captions and schedule posts</li>
-            <li>Manage feeds across platforms</li>
-          </ul>
-        </div>
+      <h2 class="section-title">Support that keeps your business <em>moving.</em></h2>
+      <p class="section-subtitle">Four core services. One reliable point of contact.</p>
+      <div class="services-grid services-grid-four">
+        <div class="service-card"><div class="service-icon">📅</div><h3>Executive Assistance</h3><p>Calendar, inbox, travel arrangements, and day-to-day communication.</p></div>
+        <div class="service-card"><div class="service-icon">⚙️</div><h3>Business Operations</h3><p>Administrative support, SOPs, documentation, and organized workflows.</p></div>
+        <div class="service-card"><div class="service-icon">📊</div><h3>Project Coordination</h3><p>Task tracking, deadlines, team follow-ups, and project management tools.</p></div>
+        <div class="service-card"><div class="service-icon">📱</div><h3>Social Media Support</h3><p>Canva graphics, captions, content scheduling, and feed management.</p></div>
       </div>
     </div>
   </section>
