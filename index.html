@@ -3485,6 +3485,18 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
   grid-area:actions!important;justify-self:start!important;align-self:start!important;
  }
 }
+
+/* Testimonials: matching alignment and compact three-line cards */
+@media(min-width:901px){
+ #about .client-testimonials-section .testimonials-grid{align-items:stretch!important;}
+ #about .client-testimonials-section .testimonial-card:nth-child(1),
+ #about .client-testimonials-section .testimonial-card:nth-child(2){display:flex!important;flex-direction:column!important;align-items:stretch!important;}
+ #about .client-testimonials-section .testimonial-card:nth-child(1) .testimonial-author,
+ #about .client-testimonials-section .testimonial-card:nth-child(2) .testimonial-author{margin-top:auto!important;}
+ #about .client-testimonials-section .testimonial-card:nth-child(2) .testimonial-review-button{align-self:flex-start!important;}
+}
+#about .client-testimonials-section .testimonial-card:first-child .testimonial-quote{display:block!important;-webkit-line-clamp:unset!important;line-clamp:unset!important;overflow:visible!important;}
+#about .client-testimonials-section .testimonial-card:first-child .testimonial-author{padding-top:12px!important;}
 </style>
 </head>
 <body>
@@ -3587,7 +3599,6 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
           <div class="testimonial-card">
             <div class="testimonial-stars">★★★★★</div>
             <p class="testimonial-quote">"From day one she <strong>owned our calendar, inbox, and vendor communication</strong> without missing a beat. She's proactive, discreet, and always three steps ahead."</p>
-            <button type="button" class="testimonial-expand" aria-expanded="false">Read full review ↓</button>
             <div class="testimonial-author">
               <img src="Melody%20Kelly.jpg" alt="Maria K." class="testimonial-avatar" />
               <div>
