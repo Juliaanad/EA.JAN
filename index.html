@@ -4729,6 +4729,13 @@ body>nav{
  .hero-certificates-continuum #hero .hero-text{padding-left:clamp(58px,5vw,86px)!important;}
 }
 </style>
+<style>
+/* Reduce empty center gap between hero introduction and portrait on desktop. */
+@media(min-width:901px){
+ .hero-certificates-continuum #hero .hero-inner{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:24px!important;}
+ .hero-certificates-continuum #hero .hero-photo{justify-content:flex-start!important;padding-left:clamp(0px,2vw,28px)!important;box-sizing:border-box!important;}
+}
+</style>
 </head>
 <body>
 
