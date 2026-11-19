@@ -2419,6 +2419,93 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
  #work .canva-carousel.onboarding-carousel .work-card-preview {height:193px!important;min-height:193px!important;max-height:193px!important;}
 }
 
+
+/* Instagram-style Selected Work: consistent gallery tiles and aligned text */
+#work > .section-inner > .section-subtitle {margin-bottom:22px!important;}
+#work > .section-inner > div[style*="margin:2rem 0 2.5rem"] {
+ margin:20px 0 28px!important;padding:22px!important;
+ border-radius:18px!important;border:1px solid #d7e4da!important;
+ box-shadow:0 6px 18px rgba(17,45,28,.07)!important;
+}
+#work .presentation-pair,#work .pm-pair {
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:18px!important;align-items:stretch!important;margin:18px 0!important;
+}
+#work .presentation-pair > .canva-carousel-wrap,
+#work .pm-pair > .canva-carousel-wrap {
+ display:grid!important;grid-template-rows:28px 30px minmax(0,1fr)!important;
+ align-items:stretch!important;gap:0!important;min-width:0!important;width:100%!important;
+ margin:0!important;padding:14px!important;border:1px solid #d9e4dc!important;
+ border-radius:16px!important;background:#fff!important;
+ box-shadow:0 6px 16px rgba(12,39,23,.07)!important;
+}
+#work .presentation-pair > .canva-carousel-wrap > .section-label,
+#work .pm-pair > .canva-carousel-wrap > .section-label {
+ margin:0!important;font-size:.8rem!important;line-height:1.35!important;
+ align-self:center!important;white-space:normal!important;
+}
+#work .presentation-pair > .canva-carousel-wrap > p:not(.section-label),
+#work .pm-pair > .canva-carousel-wrap > p:not(.section-label) {
+ min-height:0!important;height:auto!important;margin:0!important;
+ font-size:.78rem!important;line-height:1.35!important;align-self:start!important;
+}
+#work .presentation-pair .pres-frame {
+ width:100%!important;max-width:none!important;height:310px!important;
+ min-height:310px!important;max-height:310px!important;margin:0!important;
+ display:flex!important;flex-direction:column!important;
+ overflow:hidden!important;border-radius:10px!important;box-shadow:none!important;
+}
+#work .presentation-pair .pres-frame > div:first-child {
+ flex:0 0 52px!important;min-height:52px!important;max-height:52px!important;
+ padding:8px 12px!important;overflow:hidden!important;
+}
+#work .presentation-pair .pres-frame > div:last-child {
+ position:relative!important;flex:1 1 auto!important;min-height:0!important;
+ width:100%!important;padding-bottom:0!important;
+}
+#work .presentation-pair .pres-frame iframe {width:100%!important;height:100%!important;}
+#work .pm-pair .pm-box {
+ width:100%!important;max-width:100%!important;height:310px!important;
+ min-height:310px!important;max-height:310px!important;
+ border-radius:10px!important;box-shadow:none!important;margin:0!important;
+}
+#work .pm-pair .pm-box-etsy {padding:15px!important;overflow:hidden!important;}
+#work .pm-pair .etsy-bar-row {gap:10px!important;}
+#work .pm-pair .etsy-bar-meta {gap:8px!important;}
+#work .pm-pair .phase-tile {font-size:.73rem!important;padding:6px!important;}
+#work .pm-pair .pm-box-clickup {padding:0!important;}
+#work .pm-pair .pm-box-clickup .canva-slide-wide {
+ display:flex!important;flex-direction:column!important;width:100%!important;
+ max-width:none!important;height:100%!important;
+}
+#work .pm-pair .pm-box-clickup img {
+ width:100%!important;height:260px!important;max-height:260px!important;
+ min-height:0!important;flex:1 1 auto!important;object-fit:contain!important;
+}
+#work .pm-pair .pm-box-clickup .canva-slide-label {
+ flex:0 0 44px!important;min-height:44px!important;max-height:44px!important;
+ padding:8px!important;display:flex!important;align-items:center!important;
+ justify-content:center!important;text-align:center!important;
+}
+#work .canva-carousel-wrap > .section-label {font-size:.82rem!important;}
+#work .canva-carousel.op-work {margin-top:12px!important;}
+#work .canva-carousel.op-work > * {box-shadow:0 6px 16px rgba(12,39,23,.07)!important;}
+#work .canva-carousel.op-work .canva-slide-label {font-weight:600!important;}
+@media(max-width:800px){
+ #work .presentation-pair,#work .pm-pair {grid-template-columns:1fr!important;gap:16px!important;}
+ #work .presentation-pair .pres-frame,#work .pm-pair .pm-box {
+ height:300px!important;min-height:300px!important;max-height:300px!important;
+ }
+}
+@media(max-width:560px){
+ #work .presentation-pair > .canva-carousel-wrap,
+ #work .pm-pair > .canva-carousel-wrap {padding:11px!important;}
+ #work .presentation-pair .pres-frame,#work .pm-pair .pm-box {
+ height:250px!important;min-height:250px!important;max-height:250px!important;
+ }
+ #work .pm-pair .pm-box-clickup img {height:205px!important;max-height:205px!important;}
+}
+
 </style>
 </head>
 <body>
@@ -2758,7 +2845,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
     <div class="section-inner">
       <p class="section-label">Portfolio</p>
       <h2 class="section-title">Selected work, <em>thoughtfully organized.</em></h2>
-      <p class="section-subtitle">Explore work in executive support, project coordination, and design.</p>
+      <p class="section-subtitle">A gallery of presentations, systems, and creative work.</p>
 
       <div style="margin:2rem 0 2.5rem;padding:1.6rem;border:1px solid rgba(26,69,48,.2);border-radius:16px;background:#e2eee6;">
         <p class="section-label" style="margin-bottom:.5rem;">Social Media Portfolio</p>
@@ -2771,7 +2858,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <!-- Business Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Business Presentations</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Company profile · 7 slides.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Company profile · 7 slides</p>
         <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(26, 69, 48,0.15);background:var(--cream);box-shadow:0 4px 20px rgba(15, 30, 20,0.1);">
           <div style="padding:0.9rem 1.4rem;background:var(--white);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Pest-Ex Company Profile · 7 slides</div>
@@ -2792,7 +2879,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <!-- EA Onboarding Presentations -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">EA Onboarding Presentations</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Executive onboarding · first two weeks.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Executive onboarding · 8 slides</p>
         <div class="pres-frame" style="border-radius:14px;overflow:hidden;border:1px solid rgba(26, 69, 48,0.15);background:var(--cream);box-shadow:0 4px 20px rgba(15, 30, 20,0.1);">
           <div style="padding:0.9rem 1.4rem;background:var(--white);border-bottom:1px solid rgba(26, 69, 48,0.1);display:flex;align-items:center;gap:0.8rem;">
             <div class="notion-badge">📊 Canva · 8 slides</div>
@@ -2817,7 +2904,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <div class="pm-pair">
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">Project Management</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Etsy launch checklist · 5 phases.</p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Etsy setup · 5 phases</p>
         <a class="pm-box pm-box-etsy doc-card" href="https://docs.google.com/spreadsheets/d/1qS1PBpkhBANTAjybqbtqpMWRmhmdSHG7KeAKrtpxi8c/edit?usp=sharing" target="_blank">
           <div class="etsy-bar-row">
             <div class="etsy-bar-meta">
@@ -2849,7 +2936,7 @@ a:focus-visible,button:focus-visible {outline:3px solid #88bfa1;outline-offset:3
       <!-- ClickUp Project Management -->
       <div class="canva-carousel-wrap">
         <p class="section-label" style="margin-bottom:0.4rem;">ClickUp Project Management</p>
-        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;"></p>
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Bug tracking board</p>
         <div class="pm-box pm-box-clickup canva-carousel">
           <div class="canva-slide-wide">
             <img src="Click%20Up%20Project%20Management.JPG" alt="ClickUp: Bug Tracking Board" />
