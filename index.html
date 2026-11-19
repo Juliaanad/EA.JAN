@@ -1456,6 +1456,26 @@
       #work .carousel-scroller:has(.certs) > .carousel-nav,
       #work .carousel-scroller:has(.onboarding-carousel) > .carousel-nav { display: none !important; }
     }
+
+    /* Compact illustrated work gallery: four columns on wide laptops */
+    @media (min-width: 1280px) {
+      #work .canva-carousel.op-work,
+      #work .canva-carousel.certs,
+      #work .canva-carousel.onboarding-carousel {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+      }
+      #work .canva-carousel.op-work .canva-slide-wide img,
+      #work .canva-carousel.certs .canva-slide-wide img { height: 175px; max-height: 175px; }
+      #work .canva-carousel.onboarding-carousel .work-card-preview { padding: .85rem; }
+      #work .canva-carousel.onboarding-carousel .work-card-body { padding: .85rem; }
+      #work .canva-carousel.onboarding-carousel .work-card-preview h4 { font-size: .9rem !important; }
+    }
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      #work .canva-carousel.op-work,
+      #work .canva-carousel.certs,
+      #work .canva-carousel.onboarding-carousel { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
 </style>
 </head>
 <body>
