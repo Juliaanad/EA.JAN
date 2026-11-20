@@ -4787,6 +4787,17 @@ body>nav{
 #certificates .coursera-private-cert #meta-certificate-canvas{display:block!important;position:relative!important;max-width:100%!important;max-height:100%!important;width:auto!important;height:auto!important;object-fit:contain!important;background:#fff!important;}
 #certificates .coursera-private-cert .meta-cert-pdf-fallback{display:none;font-size:12px;color:#1a4530;text-align:center;}
 </style>
+<style>
+/* Social Media Management: Meta certificate preview on hover, keyboard focus, or tap. */
+#services .social-meta-service{position:relative!important;cursor:pointer!important;overflow:visible!important;isolation:isolate;}
+#services .social-meta-service:hover,#services .social-meta-service:focus-within,#services .social-meta-service.meta-popover-open{z-index:100!important;}
+#services .social-meta-popover{position:absolute!important;z-index:101!important;bottom:calc(100% + 12px)!important;left:50%!important;transform:translate(-50%,8px)!important;width:min(340px,90vw)!important;box-sizing:border-box!important;padding:16px!important;background:#fff!important;border:1px solid #b5d4c0!important;border-radius:18px!important;box-shadow:0 18px 45px rgba(12,40,25,.22)!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;transition:opacity .18s ease,transform .18s ease,visibility .18s!important;}
+#services .social-meta-service:hover .social-meta-popover,#services .social-meta-service:focus-within .social-meta-popover,#services .social-meta-service.meta-popover-open .social-meta-popover{opacity:1!important;visibility:visible!important;transform:translate(-50%,0)!important;pointer-events:auto!important;}
+#services .social-meta-popover-heading{font-size:14px!important;font-weight:800!important;color:#1a4530!important;margin-bottom:10px!important;display:flex!important;justify-content:space-between!important;}
+#services #social-meta-preview{display:block!important;width:100%!important;height:auto!important;max-height:200px!important;object-fit:contain!important;background:white!important;border:1px solid #edf0ed!important;border-radius:8px!important;}
+#services .social-meta-popover-link{display:block!important;width:max-content!important;margin:12px auto 0!important;padding:9px 18px!important;background:#1a4530!important;color:white!important;border-radius:999px!important;font-size:12px!important;font-weight:700!important;text-decoration:none!important;}
+@media(max-width:600px){#services .social-meta-popover{left:0!important;transform:translate(0,8px)!important;width:min(340px,86vw)!important;}#services .social-meta-service:hover .social-meta-popover,#services .social-meta-service:focus-within .social-meta-popover,#services .social-meta-service.meta-popover-open .social-meta-popover{transform:translate(0,0)!important;}}
+</style>
 </head>
 <body>
 
@@ -4840,7 +4851,7 @@ body>nav{
   <section id="services" class="section-dark">
     <div class="section-inner">
             <div class="services-grid services-grid-four">
-        <div class="service-card"><div class="service-icon">📱</div><h3>Social Media Management</h3><p>Content planning, Canva graphics, caption writing, post scheduling, community engagement, and performance monitoring.</p></div>
+        <div class="service-card social-meta-service" tabindex="0" aria-label="Social Media Management, hover or tap to preview Meta certification"><div class="service-icon">📱</div><h3>Social Media Management</h3><p>Content planning, Canva graphics, caption writing, post scheduling, community engagement, and performance monitoring.</p><div class="social-meta-popover" role="group" aria-label="Meta Coursera certificate preview"><div class="social-meta-popover-heading">Meta / Coursera Certified <span aria-hidden="true">✦</span></div><canvas id="social-meta-preview" role="img" aria-label="Meta Introduction to Social Media Marketing certificate preview"></canvas><a href="#certificates" class="social-meta-popover-link">View Certificate ↗</a></div></div>
         <div class="service-card"><div class="service-icon">📊</div><h3>Project Management</h3><p>Project planning, task assignments, timelines, progress tracking, stakeholder updates, and team coordination.</p></div>
         <div class="service-card"><div class="service-icon">⚙️</div><h3>Business Operations</h3><p>Administrative support, SOPs, documentation, and organized workflows.</p></div>
         <div class="service-card"><div class="service-icon">📅</div><h3>Executive Assistance</h3><p>Calendar, inbox, travel arrangements, and day-to-day communication.</p></div>
@@ -5527,6 +5538,21 @@ body > nav.nav-is-scrolled .nav-links a:hover {color:#fff!important;}
   canvas.width=Math.ceil(vp.width);canvas.height=Math.ceil(vp.height);
   await page.render({canvasContext:canvas.getContext('2d'),viewport:vp,background:'#ffffff'}).promise;
  }catch(e){console.warn('Certificate preview unavailable:',e);canvas.style.display='none';if(fallback)fallback.style.display='block';}
+})();
+</script>
+
+<script>
+(function(){
+ const card=document.querySelector('#services .social-meta-service');
+ const preview=document.getElementById('social-meta-preview');
+ const source=document.getElementById('meta-certificate-canvas');
+ if(!card||!preview||!source)return;
+ const refresh=()=>{if(!source.width||!source.height)return;preview.width=source.width;preview.height=source.height;preview.getContext('2d').drawImage(source,0,0);};
+ card.addEventListener('mouseenter',refresh);
+ card.addEventListener('focusin',refresh);
+ card.addEventListener('click',e=>{if(e.target.closest('a'))return;refresh();card.classList.toggle('meta-popover-open');});
+ card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){if(e.target.closest('a'))return;e.preventDefault();refresh();card.classList.toggle('meta-popover-open');}if(e.key==='Escape')card.classList.remove('meta-popover-open');});
+ document.addEventListener('click',e=>{if(!card.contains(e.target))card.classList.remove('meta-popover-open');});
 })();
 </script>
 </body>
