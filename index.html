@@ -4798,6 +4798,13 @@ body>nav{
 #services .social-meta-popover-link{display:block!important;width:max-content!important;margin:12px auto 0!important;padding:9px 18px!important;background:#1a4530!important;color:white!important;border-radius:999px!important;font-size:12px!important;font-weight:700!important;text-decoration:none!important;}
 @media(max-width:600px){#services .social-meta-popover{left:0!important;transform:translate(0,8px)!important;width:min(340px,86vw)!important;}#services .social-meta-service:hover .social-meta-popover,#services .social-meta-service:focus-within .social-meta-popover,#services .social-meta-service.meta-popover-open .social-meta-popover{transform:translate(0,0)!important;}}
 </style>
+<style>
+/* Certificate previews for Project Management and Executive Assistance cards. */
+#services .related-cert-service .related-cert-images{display:flex;gap:8px;align-items:center;justify-content:center;background:#fff;}
+#services .related-cert-service .related-cert-images img{display:block;width:100%;min-width:0;max-height:195px;object-fit:contain;border:1px solid #edf0ed;border-radius:8px;background:white;}
+#services .related-cert-service .related-cert-images img:nth-child(2){width:49%;}
+#services .related-cert-service .related-cert-images:has(img:nth-child(2)) img:first-child{width:49%;}
+</style>
 </head>
 <body>
 
@@ -4852,9 +4859,9 @@ body>nav{
     <div class="section-inner">
             <div class="services-grid services-grid-four">
         <div class="service-card social-meta-service" tabindex="0" aria-label="Social Media Management, hover or tap to preview Meta certification"><div class="service-icon">📱</div><h3>Social Media Management</h3><p>Content planning, Canva graphics, caption writing, post scheduling, community engagement, and performance monitoring.</p><div class="social-meta-popover" role="group" aria-label="Meta Coursera certificate preview"><div class="social-meta-popover-heading">Meta / Coursera Certified <span aria-hidden="true">✦</span></div><canvas id="social-meta-preview" role="img" aria-label="Meta Introduction to Social Media Marketing certificate preview"></canvas><a href="#certificates" class="social-meta-popover-link">View Certificate ↗</a></div></div>
-        <div class="service-card"><div class="service-icon">📊</div><h3>Project Management</h3><p>Project planning, task assignments, timelines, progress tracking, stakeholder updates, and team coordination.</p></div>
+        <div class="service-card social-meta-service related-cert-service" tabindex="0" aria-label="Project Management, hover or tap to preview certificates"><div class="service-icon">📊</div><h3>Project Management</h3><p>Project planning, task assignments, timelines, progress tracking, stakeholder updates, and team coordination.</p><div class="social-meta-popover" role="group" aria-label="ClickUp Project Management Certificates"><div class="social-meta-popover-heading">ClickUp Project Management Certificates <span aria-hidden="true">✦</span></div><div class="related-cert-images"><img src="ClickUp%20Brain%20Certificate.jpg" alt="ClickUp Project Management Certificates" loading="lazy"><img src="ClickUp%20Novice%20Certificate.jpg" alt="ClickUp Novice Certificate" loading="lazy"></div><a href="#certificates" class="social-meta-popover-link">View Certificates ↗</a></div></div>
         <div class="service-card"><div class="service-icon">⚙️</div><h3>Business Operations</h3><p>Administrative support, SOPs, documentation, and organized workflows.</p></div>
-        <div class="service-card"><div class="service-icon">📅</div><h3>Executive Assistance</h3><p>Calendar, inbox, travel arrangements, and day-to-day communication.</p></div>
+        <div class="service-card social-meta-service related-cert-service" tabindex="0" aria-label="Executive Assistance, hover or tap to preview certificates"><div class="service-icon">📅</div><h3>Executive Assistance</h3><p>Calendar, inbox, travel arrangements, and day-to-day communication.</p><div class="social-meta-popover" role="group" aria-label="Executive Business Assistant Certificate"><div class="social-meta-popover-heading">Executive Business Assistant Certificate <span aria-hidden="true">✦</span></div><div class="related-cert-images"><img src="SOP%20previous%20works.JPG" alt="Executive Business Assistant Certificate" loading="lazy"></div><a href="#certificates" class="social-meta-popover-link">View Certificates ↗</a></div></div>
       </div>
     </div>
   </section>
@@ -5553,6 +5560,16 @@ body > nav.nav-is-scrolled .nav-links a:hover {color:#fff!important;}
  card.addEventListener('click',e=>{if(e.target.closest('a'))return;refresh();card.classList.toggle('meta-popover-open');});
  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){if(e.target.closest('a'))return;e.preventDefault();refresh();card.classList.toggle('meta-popover-open');}if(e.key==='Escape')card.classList.remove('meta-popover-open');});
  document.addEventListener('click',e=>{if(!card.contains(e.target))card.classList.remove('meta-popover-open');});
+})();
+</script>
+
+<script>
+(function(){
+ document.querySelectorAll('#services .related-cert-service').forEach(card=>{
+  card.addEventListener('click',e=>{if(e.target.closest('a'))return;card.classList.toggle('meta-popover-open');});
+  card.addEventListener('keydown',e=>{if(e.key==='Escape')card.classList.remove('meta-popover-open');else if((e.key==='Enter'||e.key===' ')&&!e.target.closest('a')){e.preventDefault();card.classList.toggle('meta-popover-open');}});
+  document.addEventListener('click',e=>{if(!card.contains(e.target))card.classList.remove('meta-popover-open');});
+ });
 })();
 </script>
 </body>
