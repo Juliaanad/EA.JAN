@@ -4784,7 +4784,7 @@ body>nav{
 <style>
 /* Center the actual Meta certificate on a white canvas instead of a black PDF viewer. */
 #certificates .canva-carousel.certs>.coursera-private-cert .meta-cert-crop{display:flex!important;align-items:center!important;justify-content:center!important;background:#fff!important;padding:10px!important;box-sizing:border-box!important;overflow:hidden!important;}
-#certificates .coursera-private-cert #meta-certificate-canvas{display:block!important;position:relative!important;max-width:100%!important;max-height:100%!important;width:auto!important;height:auto!important;object-fit:contain!important;background:#fff!important;}
+#certificates .coursera-private-cert canvas[data-certificate-pdf]{display:block!important;position:relative!important;max-width:100%!important;max-height:100%!important;width:auto!important;height:auto!important;object-fit:contain!important;background:#fff!important;}
 #certificates .coursera-private-cert .meta-cert-pdf-fallback{display:none;font-size:12px;color:#1a4530;text-align:center;}
 </style>
 <style>
@@ -5138,8 +5138,22 @@ body>nav{
             <div class="canva-slide-label">HubSpot: Sales Hub Software Certified</div>
           </div>
           <div class="canva-slide-wide coursera-private-cert">
-            <div class="meta-cert-crop"><canvas id="meta-certificate-canvas" role="img" aria-label="Meta Coursera Introduction to Social Media Marketing certificate"></canvas><a class="meta-cert-pdf-fallback" href="Coursera%2031U8SXSQZE4U.pdf" target="_blank" rel="noopener">View original certificate PDF ↗</a></div>
+            <div class="meta-cert-crop"><canvas id="meta-certificate-canvas" data-certificate-pdf="Coursera%2031U8SXSQZE4U.pdf" role="img" aria-label="Meta Coursera Introduction to Social Media Marketing certificate"></canvas><a class="meta-cert-pdf-fallback" href="Coursera%2031U8SXSQZE4U.pdf" target="_blank" rel="noopener">View original certificate PDF ↗</a></div>
             <div class="canva-slide-label">Meta / Coursera: Introduction to Social Media Marketing</div>
+          </div>
+          <div class="canva-slide-wide coursera-private-cert">
+            <div class="meta-cert-crop">
+              <canvas data-certificate-pdf="SM1.pdf" role="img" aria-label="Social Media Management course certificate from Meta and Coursera"></canvas>
+              <a class="meta-cert-pdf-fallback" href="SM1.pdf" target="_blank" rel="noopener">View certificate PDF ↗</a>
+            </div>
+            <div class="canva-slide-label">Meta / Coursera: Social Media Management</div>
+          </div>
+          <div class="canva-slide-wide coursera-private-cert">
+            <div class="meta-cert-crop">
+              <canvas data-certificate-pdf="PM.pdf" role="img" aria-label="Foundations of Project Management course certificate from Google and Coursera"></canvas>
+              <a class="meta-cert-pdf-fallback" href="PM.pdf" target="_blank" rel="noopener">View certificate PDF ↗</a>
+            </div>
+            <div class="canva-slide-label">Google / Coursera: Foundations of Project Management</div>
           </div>
         </div>
         </div>
@@ -5540,21 +5554,35 @@ body > nav.nav-is-scrolled .nav-links a:hover {color:#fff!important;}
 </script>
 
 <script type="module">
-/* Render the original Coursera PDF page directly to a canvas: no dark PDF-viewer chrome. */
-(async()=>{
- const canvas=document.getElementById('meta-certificate-canvas');
- if(!canvas)return;
- const fallback=canvas.nextElementSibling;
- try{
-  const pdfjs=await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs');
-  pdfjs.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs';
-  const doc=await pdfjs.getDocument('Coursera%2031U8SXSQZE4U.pdf').promise;
-  const page=await doc.getPage(1);
-  const vp=page.getViewport({scale:1.8});
-  canvas.width=Math.ceil(vp.width);canvas.height=Math.ceil(vp.height);
-  await page.render({canvasContext:canvas.getContext('2d'),viewport:vp,background:'#ffffff'}).promise;
- }catch(e){console.warn('Certificate preview unavailable:',e);canvas.style.display='none';if(fallback)fallback.style.display='block';}
-})();
+/* Render each certificate PDF in its card. */
+const certificates = document.querySelectorAll('#certificates canvas[data-certificate-pdf]');
+if (certificates.length) {
+  const pdfLibrary = import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs')
+    .then(pdfjs => {
+      pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs';
+      return pdfjs;
+    });
+
+  certificates.forEach(async canvas => {
+    try {
+      const pdfjs = await pdfLibrary;
+      const doc = await pdfjs.getDocument(canvas.dataset.certificatePdf).promise;
+      const page = await doc.getPage(1);
+      const viewport = page.getViewport({ scale: 1.8 });
+      canvas.width = Math.ceil(viewport.width);
+      canvas.height = Math.ceil(viewport.height);
+      await page.render({
+        canvasContext: canvas.getContext('2d'),
+        viewport,
+        background: '#ffffff'
+      }).promise;
+    } catch (error) {
+      console.warn('Certificate preview unavailable:', error);
+      canvas.style.setProperty('display', 'none', 'important');
+      canvas.nextElementSibling.style.display = 'block';
+    }
+  });
+}
 </script>
 
 <script>
