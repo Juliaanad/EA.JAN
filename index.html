@@ -5609,47 +5609,5 @@ if (certificates.length) {
  });
 })();
 </script>
-<style id="portfolio-text-sizing">
-  @layer portfolio-typography {
-    [data-portfolio-text] {
-      font-size: var(--portfolio-font-size) !important;
-      line-height: var(--portfolio-line-height) !important;
-      overflow-wrap: anywhere;
-    }
-  }
-</style>
-<script>
-  (() => {
-    const stylesheet = document.getElementById('portfolio-text-sizing').sheet;
-    const sections = '#services, #skills, #about, #work, #certificates, #contact';
-    const textElements = [...document.querySelectorAll(`:is(${sections}) *`)]
-      .filter(element => element instanceof HTMLElement && !element.matches('script, style, .carousel-nav') &&
-        [...element.childNodes].some(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim()));
-    let resizeFrame;
-
-    function enlargeText() {
-      stylesheet.disabled = true;
-      const sizes = textElements.map(element => {
-        const { fontSize, lineHeight } = getComputedStyle(element);
-        return {
-          fontSize: `${parseFloat(fontSize) * 1.5}px`,
-          lineHeight: lineHeight === 'normal' ? lineHeight : `${parseFloat(lineHeight) * 1.5}px`
-        };
-      });
-      textElements.forEach((element, index) => {
-        element.setAttribute('data-portfolio-text', '');
-        element.style.setProperty('--portfolio-font-size', sizes[index].fontSize);
-        element.style.setProperty('--portfolio-line-height', sizes[index].lineHeight);
-      });
-      stylesheet.disabled = false;
-    }
-
-    enlargeText();
-    window.addEventListener('resize', () => {
-      cancelAnimationFrame(resizeFrame);
-      resizeFrame = requestAnimationFrame(enlargeText);
-    }, { passive: true });
-  })();
-</script>
 </body>
 </html>
