@@ -5611,7 +5611,7 @@ if (certificates.length) {
 </script>
 <style id="portfolio-text-sizing">
   @layer portfolio-typography {
-    #services [data-portfolio-text], #services ~ section [data-portfolio-text] {
+    [data-portfolio-text] {
       font-size: var(--portfolio-font-size) !important;
       line-height: var(--portfolio-line-height) !important;
       overflow-wrap: anywhere;
@@ -5621,8 +5621,9 @@ if (certificates.length) {
 <script>
   (() => {
     const stylesheet = document.getElementById('portfolio-text-sizing').sheet;
-    const textElements = [...document.querySelectorAll('#services *, #services ~ section *')]
-      .filter(element => element instanceof HTMLElement && !element.matches('script, style, button[aria-controls], .carousel-nav') &&
+    const sections = '#services, #skills, #about, #work, #certificates, #contact';
+    const textElements = [...document.querySelectorAll(`:is(${sections}) *`)]
+      .filter(element => element instanceof HTMLElement && !element.matches('script, style, .carousel-nav') &&
         [...element.childNodes].some(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim()));
     let resizeFrame;
 
